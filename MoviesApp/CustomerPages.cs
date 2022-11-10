@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MoviesApp
 {
-    public partial class CustomerPages : Form
+    public partial class CustomerViewForm : Form
     {
-        public CustomerPages()
+        public CustomerViewForm()
         {
             InitializeComponent();
         }

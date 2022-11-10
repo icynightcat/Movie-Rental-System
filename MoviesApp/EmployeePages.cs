@@ -1,8 +1,8 @@
 namespace MoviesApp
 {
-    public partial class EmployeePages : Form
+    public partial class EmployeeViewForm : Form
     {
-        public EmployeePages()
+        public EmployeeViewForm()
         {
             InitializeComponent();
         }

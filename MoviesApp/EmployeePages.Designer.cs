@@ -1,6 +1,6 @@
 ﻿namespace MoviesApp
 {
-    partial class EmployeePages
+    partial class EmployeeViewForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -64,7 +64,7 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,8 +73,9 @@
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "EmployeeViewForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Employee View";
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 

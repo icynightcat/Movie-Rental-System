@@ -22,12 +22,12 @@ namespace MoviesApp
             if (accountTextInput.Text.StartsWith("E"))
             {
                 this.Close();
-                new EmployeePages().Show();
+                new EmployeeViewForm().Show();
             }
             else 
             {
                 this.Close();
-                new CustomerPages().Show();
+                new CustomerViewForm().Show();
             }
         }
     }
