@@ -63,7 +63,7 @@
             this.movieActorsTabPage.Location = new System.Drawing.Point(4, 24);
             this.movieActorsTabPage.Name = "movieActorsTabPage";
             this.movieActorsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.movieActorsTabPage.Size = new System.Drawing.Size(977, 533);
+            this.movieActorsTabPage.Size = new System.Drawing.Size(977, 497);
             this.movieActorsTabPage.TabIndex = 1;
             this.movieActorsTabPage.Text = "Actors";
             this.movieActorsTabPage.UseVisualStyleBackColor = true;
@@ -86,8 +86,9 @@
             this.movieDoneButton.TabIndex = 0;
             this.movieDoneButton.Text = "Done";
             this.movieDoneButton.UseVisualStyleBackColor = true;
+            this.movieDoneButton.Click += new System.EventHandler(this.movieDoneButton_Click);
             // 
-            // movieForm
+            // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,7 +97,7 @@
             this.Controls.Add(this.tabControl1);
             this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
-            this.Name = "movieForm";
+            this.Name = "MovieForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee View - Movie";
             this.tabControl1.ResumeLayout(false);
