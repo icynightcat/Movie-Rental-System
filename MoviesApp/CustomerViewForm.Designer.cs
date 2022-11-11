@@ -86,13 +86,36 @@
             this.custPhoneNumber = new MoviesApp.ExTextBox();
             this.custCreditCardNumber = new MoviesApp.ExTextBox();
             this.custExpiryDate = new MoviesApp.ExTextBox();
+            this.searchResults = new System.Windows.Forms.DataGridView();
+            this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rentalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.returnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieTitleYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Format = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.movieAvailableDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -142,6 +165,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.searchResults);
             this.tabPage2.Controls.Add(this.yearFromSearch);
             this.tabPage2.Controls.Add(this.yearToSearch);
             this.tabPage2.Controls.Add(this.actorSearch);
@@ -497,6 +521,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.dataGridView1);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1112, 709);
@@ -506,6 +531,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.dataGridView2);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(1112, 709);
@@ -745,6 +771,162 @@
             this.custExpiryDate.Size = new System.Drawing.Size(455, 30);
             this.custExpiryDate.TabIndex = 36;
             // 
+            // searchResults
+            // 
+            this.searchResults.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.movieTitle,
+            this.movieYear,
+            this.dataGridViewTextBoxColumn1,
+            this.movieAvailable,
+            this.movieFormat});
+            this.searchResults.Location = new System.Drawing.Point(20, 279);
+            this.searchResults.Name = "searchResults";
+            this.searchResults.RowHeadersWidth = 51;
+            this.searchResults.RowTemplate.Height = 29;
+            this.searchResults.Size = new System.Drawing.Size(1008, 295);
+            this.searchResults.TabIndex = 17;
+            // 
+            // movieTitle
+            // 
+            this.movieTitle.HeaderText = "Title";
+            this.movieTitle.MinimumWidth = 6;
+            this.movieTitle.Name = "movieTitle";
+            this.movieTitle.Width = 350;
+            // 
+            // movieYear
+            // 
+            this.movieYear.HeaderText = "Year";
+            this.movieYear.MinimumWidth = 6;
+            this.movieYear.Name = "movieYear";
+            this.movieYear.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Genre";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // movieAvailable
+            // 
+            this.movieAvailable.HeaderText = "Available";
+            this.movieAvailable.MinimumWidth = 6;
+            this.movieAvailable.Name = "movieAvailable";
+            this.movieAvailable.Width = 150;
+            // 
+            // movieFormat
+            // 
+            this.movieFormat.HeaderText = "Format";
+            this.movieFormat.MinimumWidth = 6;
+            this.movieFormat.Name = "movieFormat";
+            this.movieFormat.Width = 155;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rentalDate,
+            this.returnDate,
+            this.movieTitleYear,
+            this.Format,
+            this.Rated});
+            this.dataGridView1.Location = new System.Drawing.Point(19, 18);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(1045, 306);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // rentalDate
+            // 
+            this.rentalDate.HeaderText = "Rental date";
+            this.rentalDate.MinimumWidth = 6;
+            this.rentalDate.Name = "rentalDate";
+            this.rentalDate.Width = 160;
+            // 
+            // returnDate
+            // 
+            this.returnDate.HeaderText = "Return Date";
+            this.returnDate.MinimumWidth = 6;
+            this.returnDate.Name = "returnDate";
+            this.returnDate.Width = 160;
+            // 
+            // movieTitleYear
+            // 
+            this.movieTitleYear.HeaderText = "Title (Year)";
+            this.movieTitleYear.MinimumWidth = 6;
+            this.movieTitleYear.Name = "movieTitleYear";
+            this.movieTitleYear.Width = 350;
+            // 
+            // Format
+            // 
+            this.Format.HeaderText = "Format";
+            this.Format.MinimumWidth = 6;
+            this.Format.Name = "Format";
+            this.Format.Width = 160;
+            // 
+            // Rated
+            // 
+            this.Rated.HeaderText = "Rated";
+            this.Rated.MinimumWidth = 6;
+            this.Rated.Name = "Rated";
+            this.Rated.Width = 160;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.movieAvailableDate,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.genre,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView2.Location = new System.Drawing.Point(22, 21);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 29;
+            this.dataGridView2.Size = new System.Drawing.Size(1058, 188);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // movieAvailableDate
+            // 
+            this.movieAvailableDate.HeaderText = "Date Available";
+            this.movieAvailableDate.MinimumWidth = 6;
+            this.movieAvailableDate.Name = "movieAvailableDate";
+            this.movieAvailableDate.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 350;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Year";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 160;
+            // 
+            // genre
+            // 
+            this.genre.HeaderText = "Genre";
+            this.genre.MinimumWidth = 6;
+            this.genre.Name = "genre";
+            this.genre.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Format";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 175;
+            // 
             // CustomerViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -766,10 +948,15 @@
             this.tabPage3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -834,5 +1021,23 @@
         private ExTextBox custAddress;
         private ExTextBox custLastName;
         private ExTextBox custFirstName;
+        private DataGridView searchResults;
+        private DataGridViewTextBoxColumn movieTitle;
+        private DataGridViewTextBoxColumn movieYear;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn movieAvailable;
+        private DataGridViewTextBoxColumn movieFormat;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn rentalDate;
+        private DataGridViewTextBoxColumn returnDate;
+        private DataGridViewTextBoxColumn movieTitleYear;
+        private DataGridViewTextBoxColumn Format;
+        private DataGridViewTextBoxColumn Rated;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn movieAvailableDate;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn genre;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
