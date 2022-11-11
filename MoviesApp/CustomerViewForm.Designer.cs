@@ -33,11 +33,30 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.searchResults = new System.Windows.Forms.DataGridView();
+            this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearFromSearch = new MoviesApp.ExTextBox();
+            this.yearToSearch = new MoviesApp.ExTextBox();
+            this.actorSearch = new MoviesApp.ExTextBox();
+            this.movieTitleSearch = new MoviesApp.ExTextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.custMovieSearch = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.movieGenre = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.custExpiryDate = new MoviesApp.ExTextBox();
+            this.custCreditCardNumber = new MoviesApp.ExTextBox();
+            this.custPhoneNumber = new MoviesApp.ExTextBox();
+            this.custZipCode = new MoviesApp.ExTextBox();
+            this.custState = new MoviesApp.ExTextBox();
+            this.custCity = new MoviesApp.ExTextBox();
+            this.custAddress = new MoviesApp.ExTextBox();
+            this.custLastName = new MoviesApp.ExTextBox();
+            this.custFirstName = new MoviesApp.ExTextBox();
             this.saveChanges = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -61,7 +80,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rentalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.returnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieTitleYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Format = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.movieAvailableDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -73,49 +104,22 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.movieTitleSearch = new MoviesApp.ExTextBox();
-            this.actorSearch = new MoviesApp.ExTextBox();
-            this.yearToSearch = new MoviesApp.ExTextBox();
-            this.yearFromSearch = new MoviesApp.ExTextBox();
-            this.custFirstName = new MoviesApp.ExTextBox();
-            this.custLastName = new MoviesApp.ExTextBox();
-            this.custAddress = new MoviesApp.ExTextBox();
-            this.custCity = new MoviesApp.ExTextBox();
-            this.custState = new MoviesApp.ExTextBox();
-            this.custZipCode = new MoviesApp.ExTextBox();
-            this.custPhoneNumber = new MoviesApp.ExTextBox();
-            this.custCreditCardNumber = new MoviesApp.ExTextBox();
-            this.custExpiryDate = new MoviesApp.ExTextBox();
-            this.searchResults = new System.Windows.Forms.DataGridView();
-            this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movieYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movieAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movieFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rentalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.returnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movieTitleYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Format = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.movieAvailableDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -133,6 +137,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dataGridView4);
+            this.tabPage1.Controls.Add(this.dataGridView3);
             this.tabPage1.Controls.Add(this.label46);
             this.tabPage1.Controls.Add(this.label45);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
@@ -182,6 +188,94 @@
             this.tabPage2.Text = "Search";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // searchResults
+            // 
+            this.searchResults.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.movieTitle,
+            this.movieYear,
+            this.dataGridViewTextBoxColumn1,
+            this.movieAvailable,
+            this.movieFormat});
+            this.searchResults.Location = new System.Drawing.Point(20, 279);
+            this.searchResults.Name = "searchResults";
+            this.searchResults.RowHeadersWidth = 51;
+            this.searchResults.RowTemplate.Height = 29;
+            this.searchResults.Size = new System.Drawing.Size(1008, 295);
+            this.searchResults.TabIndex = 17;
+            // 
+            // movieTitle
+            // 
+            this.movieTitle.HeaderText = "Title";
+            this.movieTitle.MinimumWidth = 6;
+            this.movieTitle.Name = "movieTitle";
+            this.movieTitle.Width = 350;
+            // 
+            // movieYear
+            // 
+            this.movieYear.HeaderText = "Year";
+            this.movieYear.MinimumWidth = 6;
+            this.movieYear.Name = "movieYear";
+            this.movieYear.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Genre";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // movieAvailable
+            // 
+            this.movieAvailable.HeaderText = "Available";
+            this.movieAvailable.MinimumWidth = 6;
+            this.movieAvailable.Name = "movieAvailable";
+            this.movieAvailable.Width = 150;
+            // 
+            // movieFormat
+            // 
+            this.movieFormat.HeaderText = "Format";
+            this.movieFormat.MinimumWidth = 6;
+            this.movieFormat.Name = "movieFormat";
+            this.movieFormat.Width = 155;
+            // 
+            // yearFromSearch
+            // 
+            this.yearFromSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.yearFromSearch.Hint = "Year From";
+            this.yearFromSearch.Location = new System.Drawing.Point(420, 177);
+            this.yearFromSearch.Name = "yearFromSearch";
+            this.yearFromSearch.Size = new System.Drawing.Size(377, 30);
+            this.yearFromSearch.TabIndex = 16;
+            // 
+            // yearToSearch
+            // 
+            this.yearToSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.yearToSearch.Hint = "Year To";
+            this.yearToSearch.Location = new System.Drawing.Point(20, 177);
+            this.yearToSearch.Name = "yearToSearch";
+            this.yearToSearch.Size = new System.Drawing.Size(377, 30);
+            this.yearToSearch.TabIndex = 15;
+            // 
+            // actorSearch
+            // 
+            this.actorSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.actorSearch.Hint = "Actor#1, Actor#2, etc.";
+            this.actorSearch.Location = new System.Drawing.Point(20, 80);
+            this.actorSearch.Name = "actorSearch";
+            this.actorSearch.Size = new System.Drawing.Size(777, 30);
+            this.actorSearch.TabIndex = 14;
+            // 
+            // movieTitleSearch
+            // 
+            this.movieTitleSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.movieTitleSearch.Hint = "Title";
+            this.movieTitleSearch.Location = new System.Drawing.Point(20, 29);
+            this.movieTitleSearch.Name = "movieTitleSearch";
+            this.movieTitleSearch.Size = new System.Drawing.Size(777, 30);
+            this.movieTitleSearch.TabIndex = 13;
             // 
             // label39
             // 
@@ -257,6 +351,87 @@
             this.tabPage3.Text = "My Account";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click_1);
+            // 
+            // custExpiryDate
+            // 
+            this.custExpiryDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custExpiryDate.Hint = "Expiry Date";
+            this.custExpiryDate.Location = new System.Drawing.Point(10, 600);
+            this.custExpiryDate.Name = "custExpiryDate";
+            this.custExpiryDate.Size = new System.Drawing.Size(455, 30);
+            this.custExpiryDate.TabIndex = 36;
+            // 
+            // custCreditCardNumber
+            // 
+            this.custCreditCardNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custCreditCardNumber.Hint = "Credit Card Number";
+            this.custCreditCardNumber.Location = new System.Drawing.Point(10, 555);
+            this.custCreditCardNumber.Name = "custCreditCardNumber";
+            this.custCreditCardNumber.Size = new System.Drawing.Size(934, 30);
+            this.custCreditCardNumber.TabIndex = 35;
+            // 
+            // custPhoneNumber
+            // 
+            this.custPhoneNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custPhoneNumber.Hint = "Phone Number";
+            this.custPhoneNumber.Location = new System.Drawing.Point(489, 462);
+            this.custPhoneNumber.Name = "custPhoneNumber";
+            this.custPhoneNumber.Size = new System.Drawing.Size(455, 30);
+            this.custPhoneNumber.TabIndex = 34;
+            // 
+            // custZipCode
+            // 
+            this.custZipCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custZipCode.Hint = "Zip Code";
+            this.custZipCode.Location = new System.Drawing.Point(10, 462);
+            this.custZipCode.Name = "custZipCode";
+            this.custZipCode.Size = new System.Drawing.Size(455, 30);
+            this.custZipCode.TabIndex = 33;
+            // 
+            // custState
+            // 
+            this.custState.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custState.Hint = "State";
+            this.custState.Location = new System.Drawing.Point(489, 413);
+            this.custState.Name = "custState";
+            this.custState.Size = new System.Drawing.Size(455, 30);
+            this.custState.TabIndex = 32;
+            // 
+            // custCity
+            // 
+            this.custCity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custCity.Hint = "City";
+            this.custCity.Location = new System.Drawing.Point(10, 413);
+            this.custCity.Name = "custCity";
+            this.custCity.Size = new System.Drawing.Size(455, 30);
+            this.custCity.TabIndex = 31;
+            // 
+            // custAddress
+            // 
+            this.custAddress.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custAddress.Hint = "Address";
+            this.custAddress.Location = new System.Drawing.Point(10, 365);
+            this.custAddress.Name = "custAddress";
+            this.custAddress.Size = new System.Drawing.Size(934, 30);
+            this.custAddress.TabIndex = 30;
+            // 
+            // custLastName
+            // 
+            this.custLastName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custLastName.Hint = "Last Name";
+            this.custLastName.Location = new System.Drawing.Point(489, 277);
+            this.custLastName.Name = "custLastName";
+            this.custLastName.Size = new System.Drawing.Size(455, 30);
+            this.custLastName.TabIndex = 29;
+            // 
+            // custFirstName
+            // 
+            this.custFirstName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custFirstName.Hint = "First Name";
+            this.custFirstName.Location = new System.Drawing.Point(10, 277);
+            this.custFirstName.Name = "custFirstName";
+            this.custFirstName.Size = new System.Drawing.Size(455, 30);
+            this.custFirstName.TabIndex = 28;
             // 
             // saveChanges
             // 
@@ -529,6 +704,58 @@
             this.tabPage4.Text = "Order";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rentalDate,
+            this.returnDate,
+            this.movieTitleYear,
+            this.Format,
+            this.Rated});
+            this.dataGridView1.Location = new System.Drawing.Point(19, 18);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(1045, 306);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // rentalDate
+            // 
+            this.rentalDate.HeaderText = "Rental date";
+            this.rentalDate.MinimumWidth = 6;
+            this.rentalDate.Name = "rentalDate";
+            this.rentalDate.Width = 160;
+            // 
+            // returnDate
+            // 
+            this.returnDate.HeaderText = "Return Date";
+            this.returnDate.MinimumWidth = 6;
+            this.returnDate.Name = "returnDate";
+            this.returnDate.Width = 160;
+            // 
+            // movieTitleYear
+            // 
+            this.movieTitleYear.HeaderText = "Title (Year)";
+            this.movieTitleYear.MinimumWidth = 6;
+            this.movieTitleYear.Name = "movieTitleYear";
+            this.movieTitleYear.Width = 350;
+            // 
+            // Format
+            // 
+            this.Format.HeaderText = "Format";
+            this.Format.MinimumWidth = 6;
+            this.Format.Name = "Format";
+            this.Format.Width = 160;
+            // 
+            // Rated
+            // 
+            this.Rated.HeaderText = "Rated";
+            this.Rated.MinimumWidth = 6;
+            this.Rated.Name = "Rated";
+            this.Rated.Width = 160;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.dataGridView2);
@@ -538,6 +765,58 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Wishlist";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.movieAvailableDate,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.genre,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView2.Location = new System.Drawing.Point(22, 21);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 29;
+            this.dataGridView2.Size = new System.Drawing.Size(1058, 188);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // movieAvailableDate
+            // 
+            this.movieAvailableDate.HeaderText = "Date Available";
+            this.movieAvailableDate.MinimumWidth = 6;
+            this.movieAvailableDate.Name = "movieAvailableDate";
+            this.movieAvailableDate.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 350;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Year";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 160;
+            // 
+            // genre
+            // 
+            this.genre.HeaderText = "Genre";
+            this.genre.MinimumWidth = 6;
+            this.genre.Name = "genre";
+            this.genre.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Format";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 175;
             // 
             // textBox2
             // 
@@ -654,278 +933,27 @@
             this.tabPage6.Size = new System.Drawing.Size(200, 100);
             this.tabPage6.TabIndex = 0;
             // 
-            // movieTitleSearch
+            // dataGridView3
             // 
-            this.movieTitleSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.movieTitleSearch.Hint = "Title";
-            this.movieTitleSearch.Location = new System.Drawing.Point(20, 29);
-            this.movieTitleSearch.Name = "movieTitleSearch";
-            this.movieTitleSearch.Size = new System.Drawing.Size(777, 30);
-            this.movieTitleSearch.TabIndex = 13;
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(16, 58);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 29;
+            this.dataGridView3.Size = new System.Drawing.Size(1067, 290);
+            this.dataGridView3.TabIndex = 3;
             // 
-            // actorSearch
+            // dataGridView4
             // 
-            this.actorSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.actorSearch.Hint = "Actor#1, Actor#2, etc.";
-            this.actorSearch.Location = new System.Drawing.Point(20, 80);
-            this.actorSearch.Name = "actorSearch";
-            this.actorSearch.Size = new System.Drawing.Size(777, 30);
-            this.actorSearch.TabIndex = 14;
-            // 
-            // yearToSearch
-            // 
-            this.yearToSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.yearToSearch.Hint = "Year To";
-            this.yearToSearch.Location = new System.Drawing.Point(20, 177);
-            this.yearToSearch.Name = "yearToSearch";
-            this.yearToSearch.Size = new System.Drawing.Size(377, 30);
-            this.yearToSearch.TabIndex = 15;
-            // 
-            // yearFromSearch
-            // 
-            this.yearFromSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.yearFromSearch.Hint = "Year From";
-            this.yearFromSearch.Location = new System.Drawing.Point(420, 177);
-            this.yearFromSearch.Name = "yearFromSearch";
-            this.yearFromSearch.Size = new System.Drawing.Size(377, 30);
-            this.yearFromSearch.TabIndex = 16;
-            // 
-            // custFirstName
-            // 
-            this.custFirstName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custFirstName.Hint = "First Name";
-            this.custFirstName.Location = new System.Drawing.Point(10, 277);
-            this.custFirstName.Name = "custFirstName";
-            this.custFirstName.Size = new System.Drawing.Size(455, 30);
-            this.custFirstName.TabIndex = 28;
-            // 
-            // custLastName
-            // 
-            this.custLastName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custLastName.Hint = "Last Name";
-            this.custLastName.Location = new System.Drawing.Point(489, 277);
-            this.custLastName.Name = "custLastName";
-            this.custLastName.Size = new System.Drawing.Size(455, 30);
-            this.custLastName.TabIndex = 29;
-            // 
-            // custAddress
-            // 
-            this.custAddress.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custAddress.Hint = "Address";
-            this.custAddress.Location = new System.Drawing.Point(10, 365);
-            this.custAddress.Name = "custAddress";
-            this.custAddress.Size = new System.Drawing.Size(934, 30);
-            this.custAddress.TabIndex = 30;
-            // 
-            // custCity
-            // 
-            this.custCity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custCity.Hint = "City";
-            this.custCity.Location = new System.Drawing.Point(10, 413);
-            this.custCity.Name = "custCity";
-            this.custCity.Size = new System.Drawing.Size(455, 30);
-            this.custCity.TabIndex = 31;
-            // 
-            // custState
-            // 
-            this.custState.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custState.Hint = "State";
-            this.custState.Location = new System.Drawing.Point(489, 413);
-            this.custState.Name = "custState";
-            this.custState.Size = new System.Drawing.Size(455, 30);
-            this.custState.TabIndex = 32;
-            // 
-            // custZipCode
-            // 
-            this.custZipCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custZipCode.Hint = "Zip Code";
-            this.custZipCode.Location = new System.Drawing.Point(10, 462);
-            this.custZipCode.Name = "custZipCode";
-            this.custZipCode.Size = new System.Drawing.Size(455, 30);
-            this.custZipCode.TabIndex = 33;
-            // 
-            // custPhoneNumber
-            // 
-            this.custPhoneNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custPhoneNumber.Hint = "Phone Number";
-            this.custPhoneNumber.Location = new System.Drawing.Point(489, 462);
-            this.custPhoneNumber.Name = "custPhoneNumber";
-            this.custPhoneNumber.Size = new System.Drawing.Size(455, 30);
-            this.custPhoneNumber.TabIndex = 34;
-            // 
-            // custCreditCardNumber
-            // 
-            this.custCreditCardNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custCreditCardNumber.Hint = "Credit Card Number";
-            this.custCreditCardNumber.Location = new System.Drawing.Point(10, 555);
-            this.custCreditCardNumber.Name = "custCreditCardNumber";
-            this.custCreditCardNumber.Size = new System.Drawing.Size(934, 30);
-            this.custCreditCardNumber.TabIndex = 35;
-            // 
-            // custExpiryDate
-            // 
-            this.custExpiryDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custExpiryDate.Hint = "Expiry Date";
-            this.custExpiryDate.Location = new System.Drawing.Point(10, 600);
-            this.custExpiryDate.Name = "custExpiryDate";
-            this.custExpiryDate.Size = new System.Drawing.Size(455, 30);
-            this.custExpiryDate.TabIndex = 36;
-            // 
-            // searchResults
-            // 
-            this.searchResults.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.searchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.movieTitle,
-            this.movieYear,
-            this.dataGridViewTextBoxColumn1,
-            this.movieAvailable,
-            this.movieFormat});
-            this.searchResults.Location = new System.Drawing.Point(20, 279);
-            this.searchResults.Name = "searchResults";
-            this.searchResults.RowHeadersWidth = 51;
-            this.searchResults.RowTemplate.Height = 29;
-            this.searchResults.Size = new System.Drawing.Size(1008, 295);
-            this.searchResults.TabIndex = 17;
-            // 
-            // movieTitle
-            // 
-            this.movieTitle.HeaderText = "Title";
-            this.movieTitle.MinimumWidth = 6;
-            this.movieTitle.Name = "movieTitle";
-            this.movieTitle.Width = 350;
-            // 
-            // movieYear
-            // 
-            this.movieYear.HeaderText = "Year";
-            this.movieYear.MinimumWidth = 6;
-            this.movieYear.Name = "movieYear";
-            this.movieYear.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Genre";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // movieAvailable
-            // 
-            this.movieAvailable.HeaderText = "Available";
-            this.movieAvailable.MinimumWidth = 6;
-            this.movieAvailable.Name = "movieAvailable";
-            this.movieAvailable.Width = 150;
-            // 
-            // movieFormat
-            // 
-            this.movieFormat.HeaderText = "Format";
-            this.movieFormat.MinimumWidth = 6;
-            this.movieFormat.Name = "movieFormat";
-            this.movieFormat.Width = 155;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rentalDate,
-            this.returnDate,
-            this.movieTitleYear,
-            this.Format,
-            this.Rated});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1045, 306);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // rentalDate
-            // 
-            this.rentalDate.HeaderText = "Rental date";
-            this.rentalDate.MinimumWidth = 6;
-            this.rentalDate.Name = "rentalDate";
-            this.rentalDate.Width = 160;
-            // 
-            // returnDate
-            // 
-            this.returnDate.HeaderText = "Return Date";
-            this.returnDate.MinimumWidth = 6;
-            this.returnDate.Name = "returnDate";
-            this.returnDate.Width = 160;
-            // 
-            // movieTitleYear
-            // 
-            this.movieTitleYear.HeaderText = "Title (Year)";
-            this.movieTitleYear.MinimumWidth = 6;
-            this.movieTitleYear.Name = "movieTitleYear";
-            this.movieTitleYear.Width = 350;
-            // 
-            // Format
-            // 
-            this.Format.HeaderText = "Format";
-            this.Format.MinimumWidth = 6;
-            this.Format.Name = "Format";
-            this.Format.Width = 160;
-            // 
-            // Rated
-            // 
-            this.Rated.HeaderText = "Rated";
-            this.Rated.MinimumWidth = 6;
-            this.Rated.Name = "Rated";
-            this.Rated.Width = 160;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.movieAvailableDate,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.genre,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView2.Location = new System.Drawing.Point(22, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(1058, 188);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // movieAvailableDate
-            // 
-            this.movieAvailableDate.HeaderText = "Date Available";
-            this.movieAvailableDate.MinimumWidth = 6;
-            this.movieAvailableDate.Name = "movieAvailableDate";
-            this.movieAvailableDate.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 350;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Year";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 160;
-            // 
-            // genre
-            // 
-            this.genre.HeaderText = "Genre";
-            this.genre.MinimumWidth = 6;
-            this.genre.Name = "genre";
-            this.genre.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Format";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 175;
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(16, 407);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 51;
+            this.dataGridView4.RowTemplate.Height = 29;
+            this.dataGridView4.Size = new System.Drawing.Size(1067, 290);
+            this.dataGridView4.TabIndex = 4;
             // 
             // CustomerViewForm
             // 
@@ -944,19 +972,21 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1039,5 +1069,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn genre;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridView dataGridView4;
+        private DataGridView dataGridView3;
     }
 }
