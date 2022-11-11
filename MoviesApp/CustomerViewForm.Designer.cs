@@ -31,8 +31,29 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.movieTitleSearch = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.saveChanges = new System.Windows.Forms.Button();
+            this.custExpiryDate = new System.Windows.Forms.TextBox();
+            this.custCreditCardNumber = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.custPhoneNumber = new System.Windows.Forms.TextBox();
+            this.custZipCode = new System.Windows.Forms.TextBox();
+            this.custState = new System.Windows.Forms.TextBox();
+            this.custCity = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.custAddress = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.custLastName = new System.Windows.Forms.TextBox();
+            this.custFirstName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -54,13 +75,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.custFirstName = new System.Windows.Forms.TextBox();
-            this.custLastName = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.custAddress = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -72,26 +86,35 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.custCity = new System.Windows.Forms.TextBox();
-            this.custState = new System.Windows.Forms.TextBox();
-            this.custZipCode = new System.Windows.Forms.TextBox();
-            this.custPhoneNumber = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.custCreditCardNumber = new System.Windows.Forms.TextBox();
-            this.custExpiryDate = new System.Windows.Forms.TextBox();
-            this.saveChanges = new System.Windows.Forms.Button();
+            this.movieActorSearch = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.movieGenre = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.yearToSearch = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.yearFromSearch = new System.Windows.Forms.TextBox();
+            this.custMovieSearch = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -119,7 +142,19 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.label39);
+            this.tabPage2.Controls.Add(this.tableLayoutPanel3);
+            this.tabPage2.Controls.Add(this.custMovieSearch);
+            this.tabPage2.Controls.Add(this.yearFromSearch);
+            this.tabPage2.Controls.Add(this.label38);
+            this.tabPage2.Controls.Add(this.yearToSearch);
+            this.tabPage2.Controls.Add(this.label37);
+            this.tabPage2.Controls.Add(this.label36);
+            this.tabPage2.Controls.Add(this.movieGenre);
+            this.tabPage2.Controls.Add(this.label35);
+            this.tabPage2.Controls.Add(this.label34);
+            this.tabPage2.Controls.Add(this.movieActorSearch);
+            this.tabPage2.Controls.Add(this.movieTitleSearch);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -129,15 +164,15 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // textBox1
+            // movieTitleSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(19, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(652, 30);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Title";
+            this.movieTitleSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.movieTitleSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.movieTitleSearch.Location = new System.Drawing.Point(84, 25);
+            this.movieTitleSearch.Name = "movieTitleSearch";
+            this.movieTitleSearch.Size = new System.Drawing.Size(713, 30);
+            this.movieTitleSearch.TabIndex = 0;
+            this.movieTitleSearch.TextChanged += new System.EventHandler(this.movieTitleSearch_TextChanged);
             // 
             // tabPage3
             // 
@@ -173,9 +208,203 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1112, 709);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Address";
+            this.tabPage3.Text = "My Account";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click_1);
+            // 
+            // saveChanges
+            // 
+            this.saveChanges.BackColor = System.Drawing.Color.LightGray;
+            this.saveChanges.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.saveChanges.Location = new System.Drawing.Point(776, 635);
+            this.saveChanges.Name = "saveChanges";
+            this.saveChanges.Size = new System.Drawing.Size(251, 45);
+            this.saveChanges.TabIndex = 27;
+            this.saveChanges.Text = "Save Changes";
+            this.saveChanges.UseVisualStyleBackColor = false;
+            // 
+            // custExpiryDate
+            // 
+            this.custExpiryDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custExpiryDate.Location = new System.Drawing.Point(135, 607);
+            this.custExpiryDate.Name = "custExpiryDate";
+            this.custExpiryDate.Size = new System.Drawing.Size(317, 30);
+            this.custExpiryDate.TabIndex = 26;
+            // 
+            // custCreditCardNumber
+            // 
+            this.custCreditCardNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custCreditCardNumber.Location = new System.Drawing.Point(218, 558);
+            this.custCreditCardNumber.Name = "custCreditCardNumber";
+            this.custCreditCardNumber.Size = new System.Drawing.Size(726, 30);
+            this.custCreditCardNumber.TabIndex = 25;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label33.Location = new System.Drawing.Point(10, 610);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(118, 23);
+            this.label33.TabIndex = 24;
+            this.label33.Text = "Expiry Date:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label32.Location = new System.Drawing.Point(7, 561);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(192, 23);
+            this.label32.TabIndex = 23;
+            this.label32.Text = "Credit Card Number:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Arial", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label31.Location = new System.Drawing.Point(10, 513);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(239, 27);
+            this.label31.TabIndex = 22;
+            this.label31.Text = "Payment Information";
+            // 
+            // custPhoneNumber
+            // 
+            this.custPhoneNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custPhoneNumber.Location = new System.Drawing.Point(640, 459);
+            this.custPhoneNumber.Name = "custPhoneNumber";
+            this.custPhoneNumber.Size = new System.Drawing.Size(304, 30);
+            this.custPhoneNumber.TabIndex = 21;
+            // 
+            // custZipCode
+            // 
+            this.custZipCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custZipCode.Location = new System.Drawing.Point(112, 459);
+            this.custZipCode.Name = "custZipCode";
+            this.custZipCode.Size = new System.Drawing.Size(340, 30);
+            this.custZipCode.TabIndex = 20;
+            // 
+            // custState
+            // 
+            this.custState.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custState.Location = new System.Drawing.Point(562, 413);
+            this.custState.Name = "custState";
+            this.custState.Size = new System.Drawing.Size(382, 30);
+            this.custState.TabIndex = 19;
+            // 
+            // custCity
+            // 
+            this.custCity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custCity.Location = new System.Drawing.Point(70, 413);
+            this.custCity.Name = "custCity";
+            this.custCity.Size = new System.Drawing.Size(382, 30);
+            this.custCity.TabIndex = 18;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label30.Location = new System.Drawing.Point(489, 462);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(145, 23);
+            this.label30.TabIndex = 17;
+            this.label30.Text = "Phone Number:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(7, 462);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(96, 23);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "Zip Code:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label28.Location = new System.Drawing.Point(489, 413);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(63, 23);
+            this.label28.TabIndex = 15;
+            this.label28.Text = "State:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label27.Location = new System.Drawing.Point(10, 416);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(50, 23);
+            this.label27.TabIndex = 14;
+            this.label27.Text = "City:";
+            // 
+            // custAddress
+            // 
+            this.custAddress.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custAddress.Location = new System.Drawing.Point(117, 366);
+            this.custAddress.Name = "custAddress";
+            this.custAddress.Size = new System.Drawing.Size(827, 30);
+            this.custAddress.TabIndex = 13;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(10, 369);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(89, 23);
+            this.label20.TabIndex = 12;
+            this.label20.Text = "Address:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(7, 322);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(233, 27);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "Contact Information";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // custLastName
+            // 
+            this.custLastName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custLastName.Location = new System.Drawing.Point(627, 274);
+            this.custLastName.Name = "custLastName";
+            this.custLastName.Size = new System.Drawing.Size(317, 30);
+            this.custLastName.TabIndex = 10;
+            // 
+            // custFirstName
+            // 
+            this.custFirstName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custFirstName.Location = new System.Drawing.Point(135, 274);
+            this.custFirstName.Name = "custFirstName";
+            this.custFirstName.Size = new System.Drawing.Size(317, 30);
+            this.custFirstName.TabIndex = 9;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(489, 277);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 23);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "Last Name:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(7, 277);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(112, 23);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "First Name:";
             // 
             // tableLayoutPanel1
             // 
@@ -424,71 +653,6 @@
             this.tabPage5.Text = "Wishlist";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(7, 277);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(112, 23);
-            this.label17.TabIndex = 7;
-            this.label17.Text = "First Name:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(489, 277);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 23);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "Last Name:";
-            // 
-            // custFirstName
-            // 
-            this.custFirstName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custFirstName.Location = new System.Drawing.Point(135, 274);
-            this.custFirstName.Name = "custFirstName";
-            this.custFirstName.Size = new System.Drawing.Size(317, 30);
-            this.custFirstName.TabIndex = 9;
-            // 
-            // custLastName
-            // 
-            this.custLastName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custLastName.Location = new System.Drawing.Point(627, 274);
-            this.custLastName.Name = "custLastName";
-            this.custLastName.Size = new System.Drawing.Size(317, 30);
-            this.custLastName.TabIndex = 10;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(7, 322);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(233, 27);
-            this.label19.TabIndex = 11;
-            this.label19.Text = "Contact Information";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(10, 369);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(89, 23);
-            this.label20.TabIndex = 12;
-            this.label20.Text = "Address:";
-            // 
-            // custAddress
-            // 
-            this.custAddress.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custAddress.Location = new System.Drawing.Point(117, 366);
-            this.custAddress.Name = "custAddress";
-            this.custAddress.Size = new System.Drawing.Size(827, 30);
-            this.custAddress.TabIndex = 13;
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -604,134 +768,265 @@
             this.tabPage6.Size = new System.Drawing.Size(200, 100);
             this.tabPage6.TabIndex = 0;
             // 
-            // label27
+            // movieActorSearch
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label27.Location = new System.Drawing.Point(10, 416);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(50, 23);
-            this.label27.TabIndex = 14;
-            this.label27.Text = "City:";
+            this.movieActorSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.movieActorSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.movieActorSearch.Location = new System.Drawing.Point(172, 77);
+            this.movieActorSearch.Name = "movieActorSearch";
+            this.movieActorSearch.Size = new System.Drawing.Size(625, 30);
+            this.movieActorSearch.TabIndex = 1;
             // 
-            // label28
+            // label34
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label28.Location = new System.Drawing.Point(489, 413);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(63, 23);
-            this.label28.TabIndex = 15;
-            this.label28.Text = "State:";
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label34.Location = new System.Drawing.Point(20, 28);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(58, 24);
+            this.label34.TabIndex = 2;
+            this.label34.Text = "Title:";
             // 
-            // label29
+            // label35
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(7, 462);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(96, 23);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "Zip Code:";
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label35.Location = new System.Drawing.Point(20, 80);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(146, 24);
+            this.label35.TabIndex = 3;
+            this.label35.Text = "Actor/Actress:";
             // 
-            // label30
+            // movieGenre
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label30.Location = new System.Drawing.Point(489, 462);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(145, 23);
-            this.label30.TabIndex = 17;
-            this.label30.Text = "Phone Number:";
+            this.movieGenre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.movieGenre.FormattingEnabled = true;
+            this.movieGenre.Items.AddRange(new object[] {
+            "Comedy",
+            "Drama",
+            "Action",
+            "Foreign"});
+            this.movieGenre.Location = new System.Drawing.Point(101, 125);
+            this.movieGenre.Name = "movieGenre";
+            this.movieGenre.Size = new System.Drawing.Size(182, 31);
+            this.movieGenre.TabIndex = 4;
             // 
-            // custCity
+            // label36
             // 
-            this.custCity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custCity.Location = new System.Drawing.Point(70, 413);
-            this.custCity.Name = "custCity";
-            this.custCity.Size = new System.Drawing.Size(382, 30);
-            this.custCity.TabIndex = 18;
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label36.Location = new System.Drawing.Point(20, 125);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(75, 24);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Genre:";
             // 
-            // custState
+            // label37
             // 
-            this.custState.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custState.Location = new System.Drawing.Point(562, 413);
-            this.custState.Name = "custState";
-            this.custState.Size = new System.Drawing.Size(382, 30);
-            this.custState.TabIndex = 19;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label37.Location = new System.Drawing.Point(20, 176);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(89, 24);
+            this.label37.TabIndex = 6;
+            this.label37.Text = "Year To:";
             // 
-            // custZipCode
+            // yearToSearch
             // 
-            this.custZipCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custZipCode.Location = new System.Drawing.Point(112, 459);
-            this.custZipCode.Name = "custZipCode";
-            this.custZipCode.Size = new System.Drawing.Size(340, 30);
-            this.custZipCode.TabIndex = 20;
+            this.yearToSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.yearToSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.yearToSearch.Location = new System.Drawing.Point(117, 173);
+            this.yearToSearch.Name = "yearToSearch";
+            this.yearToSearch.Size = new System.Drawing.Size(250, 30);
+            this.yearToSearch.TabIndex = 7;
             // 
-            // custPhoneNumber
+            // label38
             // 
-            this.custPhoneNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custPhoneNumber.Location = new System.Drawing.Point(640, 459);
-            this.custPhoneNumber.Name = "custPhoneNumber";
-            this.custPhoneNumber.Size = new System.Drawing.Size(304, 30);
-            this.custPhoneNumber.TabIndex = 21;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label38.Location = new System.Drawing.Point(389, 176);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(114, 24);
+            this.label38.TabIndex = 8;
+            this.label38.Text = "Year From:";
             // 
-            // label31
+            // yearFromSearch
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Arial", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label31.Location = new System.Drawing.Point(10, 513);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(239, 27);
-            this.label31.TabIndex = 22;
-            this.label31.Text = "Payment Information";
+            this.yearFromSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.yearFromSearch.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.yearFromSearch.Location = new System.Drawing.Point(527, 173);
+            this.yearFromSearch.Name = "yearFromSearch";
+            this.yearFromSearch.Size = new System.Drawing.Size(270, 30);
+            this.yearFromSearch.TabIndex = 9;
             // 
-            // label32
+            // custMovieSearch
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label32.Location = new System.Drawing.Point(7, 561);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(192, 23);
-            this.label32.TabIndex = 23;
-            this.label32.Text = "Credit Card Number:";
+            this.custMovieSearch.BackColor = System.Drawing.Color.LightGray;
+            this.custMovieSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custMovieSearch.Location = new System.Drawing.Point(852, 77);
+            this.custMovieSearch.Name = "custMovieSearch";
+            this.custMovieSearch.Size = new System.Drawing.Size(176, 57);
+            this.custMovieSearch.TabIndex = 10;
+            this.custMovieSearch.Text = "Search";
+            this.custMovieSearch.UseVisualStyleBackColor = false;
             // 
-            // label33
+            // tableLayoutPanel3
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label33.Location = new System.Drawing.Point(10, 610);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(118, 23);
-            this.label33.TabIndex = 24;
-            this.label33.Text = "Expiry Date:";
+            this.tableLayoutPanel3.ColumnCount = 5;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.6875F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.3125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 192F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tableLayoutPanel3.Controls.Add(this.linkLabel5, 4, 1);
+            this.tableLayoutPanel3.Controls.Add(this.linkLabel4, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.linkLabel3, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.linkLabel2, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.linkLabel1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label44, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label43, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label42, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label41, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label40, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(20, 275);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1020, 125);
+            this.tableLayoutPanel3.TabIndex = 11;
             // 
-            // custCreditCardNumber
+            // label39
             // 
-            this.custCreditCardNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custCreditCardNumber.Location = new System.Drawing.Point(218, 558);
-            this.custCreditCardNumber.Name = "custCreditCardNumber";
-            this.custCreditCardNumber.Size = new System.Drawing.Size(726, 30);
-            this.custCreditCardNumber.TabIndex = 25;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label39.Location = new System.Drawing.Point(20, 232);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(153, 24);
+            this.label39.TabIndex = 12;
+            this.label39.Text = "Search Results";
+            this.label39.Visible = false;
             // 
-            // custExpiryDate
+            // label40
             // 
-            this.custExpiryDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custExpiryDate.Location = new System.Drawing.Point(135, 607);
-            this.custExpiryDate.Name = "custExpiryDate";
-            this.custExpiryDate.Size = new System.Drawing.Size(317, 30);
-            this.custExpiryDate.TabIndex = 26;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label40.Location = new System.Drawing.Point(3, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(51, 24);
+            this.label40.TabIndex = 13;
+            this.label40.Text = "Title";
+            this.label40.Visible = false;
             // 
-            // saveChanges
+            // label41
             // 
-            this.saveChanges.BackColor = System.Drawing.Color.LightGray;
-            this.saveChanges.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.saveChanges.Location = new System.Drawing.Point(776, 635);
-            this.saveChanges.Name = "saveChanges";
-            this.saveChanges.Size = new System.Drawing.Size(251, 45);
-            this.saveChanges.TabIndex = 27;
-            this.saveChanges.Text = "Save Changes";
-            this.saveChanges.UseVisualStyleBackColor = false;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label41.Location = new System.Drawing.Point(311, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(52, 24);
+            this.label41.TabIndex = 14;
+            this.label41.Text = "Year";
+            this.label41.Visible = false;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label42.Location = new System.Drawing.Point(445, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(68, 24);
+            this.label42.TabIndex = 14;
+            this.label42.Text = "Genre";
+            this.label42.Visible = false;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label43.Location = new System.Drawing.Point(605, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(93, 24);
+            this.label43.TabIndex = 14;
+            this.label43.Text = "Available";
+            this.label43.Visible = false;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label44.Location = new System.Drawing.Point(797, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(77, 24);
+            this.label44.TabIndex = 15;
+            this.label44.Text = "Format";
+            this.label44.Visible = false;
+            this.label44.Click += new System.EventHandler(this.label44_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(3, 62);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(200, 23);
+            this.linkLabel1.TabIndex = 13;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Movie Name Example";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Black;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel2.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel2.Location = new System.Drawing.Point(311, 62);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(115, 46);
+            this.linkLabel2.TabIndex = 14;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Movie Year Example";
+            this.linkLabel2.VisitedLinkColor = System.Drawing.Color.Black;
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel3.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel3.Location = new System.Drawing.Point(445, 62);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(129, 46);
+            this.linkLabel3.TabIndex = 14;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Movie Genre Example";
+            this.linkLabel3.VisitedLinkColor = System.Drawing.Color.Black;
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel4.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel4.Location = new System.Drawing.Point(605, 62);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(151, 46);
+            this.linkLabel4.TabIndex = 14;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Movie Available Example";
+            this.linkLabel4.VisitedLinkColor = System.Drawing.Color.Black;
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel5.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel5.Location = new System.Drawing.Point(797, 62);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(212, 23);
+            this.linkLabel5.TabIndex = 14;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "Movie Format Example";
+            this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Black;
             // 
             // CustomerViewForm
             // 
@@ -756,6 +1051,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -768,7 +1065,7 @@
         private TabPage tabPage3;
         private TabPage tabPage4;
         private TabPage tabPage5;
-        private TextBox textBox1;
+        private TextBox movieTitleSearch;
         private Label label1;
         private Label planType;
         private Label accountNumber;
@@ -820,5 +1117,27 @@
         private Label label25;
         private Label label26;
         private TabPage tabPage6;
+        private TextBox movieActorSearch;
+        private TextBox yearFromSearch;
+        private Label label38;
+        private TextBox yearToSearch;
+        private Label label37;
+        private Label label36;
+        private ComboBox movieGenre;
+        private Label label35;
+        private Label label34;
+        private Label label44;
+        private Label label39;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label43;
+        private Label label42;
+        private Label label41;
+        private Label label40;
+        private Button custMovieSearch;
+        private LinkLabel linkLabel5;
+        private LinkLabel linkLabel4;
+        private LinkLabel linkLabel3;
+        private LinkLabel linkLabel2;
+        private LinkLabel linkLabel1;
     }
 }
