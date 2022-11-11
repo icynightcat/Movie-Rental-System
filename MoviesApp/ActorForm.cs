@@ -19,7 +19,6 @@ namespace MoviesApp
         private void actorDoneButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            //new EmployeeViewForm().Show();
         }
 
         private void label1_Click(object sender, EventArgs e)

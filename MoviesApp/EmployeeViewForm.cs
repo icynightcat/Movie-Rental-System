@@ -9,12 +9,10 @@ namespace MoviesApp
 
         private void launchMovieButton_Click(object sender, EventArgs e)
         {
-                //this.Close();
                 new MovieForm().ShowDialog();
         }
         private void launchActorButton_Click(object sender, EventArgs e)
         {
-            //this.Close();
             new ActorForm().ShowDialog();
 
         }

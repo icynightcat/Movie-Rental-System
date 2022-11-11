@@ -20,7 +20,6 @@ namespace MoviesApp
         private void movieDoneButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            //new EmployeeViewForm().Show();
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)

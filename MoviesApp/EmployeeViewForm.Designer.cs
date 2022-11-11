@@ -53,7 +53,14 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.exTextBox1 = new MoviesApp.ExTextBox();
             this.customersTabPage = new System.Windows.Forms.TabPage();
+            this.customersTabControl = new System.Windows.Forms.TabControl();
+            this.searchCustomersTabPage = new System.Windows.Forms.TabPage();
+            this.mailingListTabPage = new System.Windows.Forms.TabPage();
             this.employeesTabPage = new System.Windows.Forms.TabPage();
+            this.transactionsTabPage = new System.Windows.Forms.TabPage();
+            this.transactionsTabControl = new System.Windows.Forms.TabControl();
+            this.newTransactionTabPage = new System.Windows.Forms.TabPage();
+            this.rentalHistoryTabPage = new System.Windows.Forms.TabPage();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.report1TabPage = new System.Windows.Forms.TabPage();
@@ -61,24 +68,17 @@
             this.report3TabPage = new System.Windows.Forms.TabPage();
             this.report4TabPage = new System.Windows.Forms.TabPage();
             this.report5TabPage = new System.Windows.Forms.TabPage();
-            this.transactionsTabControl = new System.Windows.Forms.TabControl();
-            this.rentalHistoryTabPage = new System.Windows.Forms.TabPage();
-            this.newTransactionTabPage = new System.Windows.Forms.TabPage();
-            this.transactionsTabPage = new System.Windows.Forms.TabPage();
-            this.customersTabControl = new System.Windows.Forms.TabControl();
-            this.searchCustomersTabPage = new System.Windows.Forms.TabPage();
-            this.mailingListTabPage = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.actorsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.customersTabPage.SuspendLayout();
+            this.customersTabControl.SuspendLayout();
+            this.transactionsTabPage.SuspendLayout();
+            this.transactionsTabControl.SuspendLayout();
             this.reportsTabPage.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            this.transactionsTabControl.SuspendLayout();
-            this.transactionsTabPage.SuspendLayout();
-            this.customersTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -369,6 +369,37 @@
             this.customersTabPage.Text = "Customers";
             this.customersTabPage.UseVisualStyleBackColor = true;
             // 
+            // customersTabControl
+            // 
+            this.customersTabControl.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.customersTabControl.Controls.Add(this.searchCustomersTabPage);
+            this.customersTabControl.Controls.Add(this.mailingListTabPage);
+            this.customersTabControl.Location = new System.Drawing.Point(-2, 0);
+            this.customersTabControl.Name = "customersTabControl";
+            this.customersTabControl.SelectedIndex = 0;
+            this.customersTabControl.Size = new System.Drawing.Size(982, 525);
+            this.customersTabControl.TabIndex = 2;
+            // 
+            // searchCustomersTabPage
+            // 
+            this.searchCustomersTabPage.Location = new System.Drawing.Point(4, 4);
+            this.searchCustomersTabPage.Name = "searchCustomersTabPage";
+            this.searchCustomersTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.searchCustomersTabPage.Size = new System.Drawing.Size(974, 497);
+            this.searchCustomersTabPage.TabIndex = 0;
+            this.searchCustomersTabPage.Text = "Search Customers";
+            this.searchCustomersTabPage.UseVisualStyleBackColor = true;
+            // 
+            // mailingListTabPage
+            // 
+            this.mailingListTabPage.Location = new System.Drawing.Point(4, 4);
+            this.mailingListTabPage.Name = "mailingListTabPage";
+            this.mailingListTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.mailingListTabPage.Size = new System.Drawing.Size(974, 497);
+            this.mailingListTabPage.TabIndex = 1;
+            this.mailingListTabPage.Text = "Mailing List";
+            this.mailingListTabPage.UseVisualStyleBackColor = true;
+            // 
             // employeesTabPage
             // 
             this.employeesTabPage.Location = new System.Drawing.Point(4, 24);
@@ -378,6 +409,48 @@
             this.employeesTabPage.TabIndex = 3;
             this.employeesTabPage.Text = "Employees";
             this.employeesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // transactionsTabPage
+            // 
+            this.transactionsTabPage.Controls.Add(this.transactionsTabControl);
+            this.transactionsTabPage.Location = new System.Drawing.Point(4, 24);
+            this.transactionsTabPage.Name = "transactionsTabPage";
+            this.transactionsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.transactionsTabPage.Size = new System.Drawing.Size(978, 534);
+            this.transactionsTabPage.TabIndex = 4;
+            this.transactionsTabPage.Text = "Transactions";
+            this.transactionsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // transactionsTabControl
+            // 
+            this.transactionsTabControl.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.transactionsTabControl.Controls.Add(this.newTransactionTabPage);
+            this.transactionsTabControl.Controls.Add(this.rentalHistoryTabPage);
+            this.transactionsTabControl.Location = new System.Drawing.Point(-2, 0);
+            this.transactionsTabControl.Name = "transactionsTabControl";
+            this.transactionsTabControl.SelectedIndex = 0;
+            this.transactionsTabControl.Size = new System.Drawing.Size(982, 525);
+            this.transactionsTabControl.TabIndex = 1;
+            // 
+            // newTransactionTabPage
+            // 
+            this.newTransactionTabPage.Location = new System.Drawing.Point(4, 4);
+            this.newTransactionTabPage.Name = "newTransactionTabPage";
+            this.newTransactionTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.newTransactionTabPage.Size = new System.Drawing.Size(974, 497);
+            this.newTransactionTabPage.TabIndex = 0;
+            this.newTransactionTabPage.Text = "New Transaction";
+            this.newTransactionTabPage.UseVisualStyleBackColor = true;
+            // 
+            // rentalHistoryTabPage
+            // 
+            this.rentalHistoryTabPage.Location = new System.Drawing.Point(4, 4);
+            this.rentalHistoryTabPage.Name = "rentalHistoryTabPage";
+            this.rentalHistoryTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.rentalHistoryTabPage.Size = new System.Drawing.Size(974, 497);
+            this.rentalHistoryTabPage.TabIndex = 1;
+            this.rentalHistoryTabPage.Text = "Rental History";
+            this.rentalHistoryTabPage.UseVisualStyleBackColor = true;
             // 
             // reportsTabPage
             // 
@@ -429,7 +502,7 @@
             this.report3TabPage.Location = new System.Drawing.Point(4, 4);
             this.report3TabPage.Name = "report3TabPage";
             this.report3TabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.report3TabPage.Size = new System.Drawing.Size(974, 397);
+            this.report3TabPage.Size = new System.Drawing.Size(974, 497);
             this.report3TabPage.TabIndex = 2;
             this.report3TabPage.Text = "Report 3";
             this.report3TabPage.UseVisualStyleBackColor = true;
@@ -439,7 +512,7 @@
             this.report4TabPage.Location = new System.Drawing.Point(4, 4);
             this.report4TabPage.Name = "report4TabPage";
             this.report4TabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.report4TabPage.Size = new System.Drawing.Size(974, 397);
+            this.report4TabPage.Size = new System.Drawing.Size(974, 497);
             this.report4TabPage.TabIndex = 3;
             this.report4TabPage.Text = "Report4";
             this.report4TabPage.UseVisualStyleBackColor = true;
@@ -453,79 +526,6 @@
             this.report5TabPage.TabIndex = 4;
             this.report5TabPage.Text = "Report 5";
             this.report5TabPage.UseVisualStyleBackColor = true;
-            // 
-            // transactionsTabControl
-            // 
-            this.transactionsTabControl.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.transactionsTabControl.Controls.Add(this.newTransactionTabPage);
-            this.transactionsTabControl.Controls.Add(this.rentalHistoryTabPage);
-            this.transactionsTabControl.Location = new System.Drawing.Point(-2, 5);
-            this.transactionsTabControl.Name = "transactionsTabControl";
-            this.transactionsTabControl.SelectedIndex = 0;
-            this.transactionsTabControl.Size = new System.Drawing.Size(982, 525);
-            this.transactionsTabControl.TabIndex = 1;
-            // 
-            // rentalHistoryTabPage
-            // 
-            this.rentalHistoryTabPage.Location = new System.Drawing.Point(4, 4);
-            this.rentalHistoryTabPage.Name = "rentalHistoryTabPage";
-            this.rentalHistoryTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalHistoryTabPage.Size = new System.Drawing.Size(974, 497);
-            this.rentalHistoryTabPage.TabIndex = 1;
-            this.rentalHistoryTabPage.Text = "Rental History";
-            this.rentalHistoryTabPage.UseVisualStyleBackColor = true;
-            // 
-            // newTransactionTabPage
-            // 
-            this.newTransactionTabPage.Location = new System.Drawing.Point(4, 4);
-            this.newTransactionTabPage.Name = "newTransactionTabPage";
-            this.newTransactionTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.newTransactionTabPage.Size = new System.Drawing.Size(974, 497);
-            this.newTransactionTabPage.TabIndex = 0;
-            this.newTransactionTabPage.Text = "New Transaction";
-            this.newTransactionTabPage.UseVisualStyleBackColor = true;
-            // 
-            // transactionsTabPage
-            // 
-            this.transactionsTabPage.Controls.Add(this.transactionsTabControl);
-            this.transactionsTabPage.Location = new System.Drawing.Point(4, 24);
-            this.transactionsTabPage.Name = "transactionsTabPage";
-            this.transactionsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.transactionsTabPage.Size = new System.Drawing.Size(978, 534);
-            this.transactionsTabPage.TabIndex = 4;
-            this.transactionsTabPage.Text = "Transactions";
-            this.transactionsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // customersTabControl
-            // 
-            this.customersTabControl.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.customersTabControl.Controls.Add(this.searchCustomersTabPage);
-            this.customersTabControl.Controls.Add(this.mailingListTabPage);
-            this.customersTabControl.Location = new System.Drawing.Point(-2, 5);
-            this.customersTabControl.Name = "customersTabControl";
-            this.customersTabControl.SelectedIndex = 0;
-            this.customersTabControl.Size = new System.Drawing.Size(982, 525);
-            this.customersTabControl.TabIndex = 2;
-            // 
-            // searchCustomersTabPage
-            // 
-            this.searchCustomersTabPage.Location = new System.Drawing.Point(4, 4);
-            this.searchCustomersTabPage.Name = "searchCustomersTabPage";
-            this.searchCustomersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.searchCustomersTabPage.Size = new System.Drawing.Size(974, 497);
-            this.searchCustomersTabPage.TabIndex = 0;
-            this.searchCustomersTabPage.Text = "Search Customers";
-            this.searchCustomersTabPage.UseVisualStyleBackColor = true;
-            // 
-            // mailingListTabPage
-            // 
-            this.mailingListTabPage.Location = new System.Drawing.Point(4, 4);
-            this.mailingListTabPage.Name = "mailingListTabPage";
-            this.mailingListTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.mailingListTabPage.Size = new System.Drawing.Size(974, 497);
-            this.mailingListTabPage.TabIndex = 1;
-            this.mailingListTabPage.Text = "Mailing List";
-            this.mailingListTabPage.UseVisualStyleBackColor = true;
             // 
             // EmployeeViewForm
             // 
@@ -547,11 +547,11 @@
             this.actorsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.customersTabPage.ResumeLayout(false);
+            this.customersTabControl.ResumeLayout(false);
+            this.transactionsTabPage.ResumeLayout(false);
+            this.transactionsTabControl.ResumeLayout(false);
             this.reportsTabPage.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
-            this.transactionsTabControl.ResumeLayout(false);
-            this.transactionsTabPage.ResumeLayout(false);
-            this.customersTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
