@@ -30,8 +30,22 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.moviesTabPage = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.toYearTextBox = new MoviesApp.ExTextBox();
+            this.fromYearTextBox = new MoviesApp.ExTextBox();
+            this.genreComboBox = new System.Windows.Forms.ComboBox();
+            this.actorsNamesTextBox = new MoviesApp.ExTextBox();
+            this.movieNameTextBox = new MoviesApp.ExTextBox();
+            this.addActorButton = new System.Windows.Forms.Button();
+            this.mostRentedRadioButton = new System.Windows.Forms.RadioButton();
+            this.searchFiltersRadioButton = new System.Windows.Forms.RadioButton();
+            this.allMoviesRadioButton = new System.Windows.Forms.RadioButton();
             this.launchMovieButton = new System.Windows.Forms.Button();
             this.actorsTabPage = new System.Windows.Forms.TabPage();
+            this.launchActorButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.actorBirthdateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.genderComboBox = new System.Windows.Forms.ComboBox();
             this.lastNameTextBox = new MoviesApp.ExTextBox();
@@ -48,11 +62,11 @@
             this.report3TabPage = new System.Windows.Forms.TabPage();
             this.report4TabPage = new System.Windows.Forms.TabPage();
             this.report5TabPage = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.actorsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.reportsTabPage.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +87,17 @@
             // 
             // moviesTabPage
             // 
+            this.moviesTabPage.Controls.Add(this.dataGridView2);
+            this.moviesTabPage.Controls.Add(this.button2);
+            this.moviesTabPage.Controls.Add(this.toYearTextBox);
+            this.moviesTabPage.Controls.Add(this.fromYearTextBox);
+            this.moviesTabPage.Controls.Add(this.genreComboBox);
+            this.moviesTabPage.Controls.Add(this.actorsNamesTextBox);
+            this.moviesTabPage.Controls.Add(this.movieNameTextBox);
+            this.moviesTabPage.Controls.Add(this.addActorButton);
+            this.moviesTabPage.Controls.Add(this.mostRentedRadioButton);
+            this.moviesTabPage.Controls.Add(this.searchFiltersRadioButton);
+            this.moviesTabPage.Controls.Add(this.allMoviesRadioButton);
             this.moviesTabPage.Controls.Add(this.launchMovieButton);
             this.moviesTabPage.Location = new System.Drawing.Point(4, 24);
             this.moviesTabPage.Name = "moviesTabPage";
@@ -82,9 +107,127 @@
             this.moviesTabPage.Text = "Movies";
             this.moviesTabPage.UseVisualStyleBackColor = true;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(17, 165);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(938, 344);
+            this.dataGridView2.TabIndex = 11;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(762, 107);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(193, 30);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // toYearTextBox
+            // 
+            this.toYearTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.toYearTextBox.Hint = "To year";
+            this.toYearTextBox.Location = new System.Drawing.Point(288, 107);
+            this.toYearTextBox.Name = "toYearTextBox";
+            this.toYearTextBox.Size = new System.Drawing.Size(265, 26);
+            this.toYearTextBox.TabIndex = 9;
+            // 
+            // fromYearTextBox
+            // 
+            this.fromYearTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fromYearTextBox.Hint = "From year";
+            this.fromYearTextBox.Location = new System.Drawing.Point(17, 107);
+            this.fromYearTextBox.Name = "fromYearTextBox";
+            this.fromYearTextBox.Size = new System.Drawing.Size(265, 26);
+            this.fromYearTextBox.TabIndex = 8;
+            // 
+            // genreComboBox
+            // 
+            this.genreComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.genreComboBox.FormattingEnabled = true;
+            this.genreComboBox.Items.AddRange(new object[] {
+            "Comedy",
+            "Drama",
+            "Action",
+            "Foreign"});
+            this.genreComboBox.Location = new System.Drawing.Point(762, 43);
+            this.genreComboBox.Name = "genreComboBox";
+            this.genreComboBox.Size = new System.Drawing.Size(193, 26);
+            this.genreComboBox.TabIndex = 7;
+            this.genreComboBox.Text = "Genre";
+            // 
+            // actorsNamesTextBox
+            // 
+            this.actorsNamesTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.actorsNamesTextBox.Hint = "Actor(s) names (comma separated)";
+            this.actorsNamesTextBox.Location = new System.Drawing.Point(17, 75);
+            this.actorsNamesTextBox.Name = "actorsNamesTextBox";
+            this.actorsNamesTextBox.Size = new System.Drawing.Size(938, 26);
+            this.actorsNamesTextBox.TabIndex = 6;
+            // 
+            // movieNameTextBox
+            // 
+            this.movieNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.movieNameTextBox.Hint = "Movie Name";
+            this.movieNameTextBox.Location = new System.Drawing.Point(17, 43);
+            this.movieNameTextBox.Name = "movieNameTextBox";
+            this.movieNameTextBox.Size = new System.Drawing.Size(739, 26);
+            this.movieNameTextBox.TabIndex = 5;
+            // 
+            // addActorButton
+            // 
+            this.addActorButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addActorButton.Location = new System.Drawing.Point(850, 6);
+            this.addActorButton.Name = "addActorButton";
+            this.addActorButton.Size = new System.Drawing.Size(105, 30);
+            this.addActorButton.TabIndex = 4;
+            this.addActorButton.Text = "Add Actor";
+            this.addActorButton.UseVisualStyleBackColor = true;
+            // 
+            // mostRentedRadioButton
+            // 
+            this.mostRentedRadioButton.AutoSize = true;
+            this.mostRentedRadioButton.Checked = true;
+            this.mostRentedRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mostRentedRadioButton.Location = new System.Drawing.Point(249, 6);
+            this.mostRentedRadioButton.Name = "mostRentedRadioButton";
+            this.mostRentedRadioButton.Size = new System.Drawing.Size(170, 22);
+            this.mostRentedRadioButton.TabIndex = 3;
+            this.mostRentedRadioButton.TabStop = true;
+            this.mostRentedRadioButton.Text = "Most Actively Rented";
+            this.mostRentedRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // searchFiltersRadioButton
+            // 
+            this.searchFiltersRadioButton.AutoSize = true;
+            this.searchFiltersRadioButton.Checked = true;
+            this.searchFiltersRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchFiltersRadioButton.Location = new System.Drawing.Point(120, 6);
+            this.searchFiltersRadioButton.Name = "searchFiltersRadioButton";
+            this.searchFiltersRadioButton.Size = new System.Drawing.Size(123, 22);
+            this.searchFiltersRadioButton.TabIndex = 2;
+            this.searchFiltersRadioButton.TabStop = true;
+            this.searchFiltersRadioButton.Text = "Search Filters";
+            this.searchFiltersRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // allMoviesRadioButton
+            // 
+            this.allMoviesRadioButton.AutoSize = true;
+            this.allMoviesRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.allMoviesRadioButton.Location = new System.Drawing.Point(17, 6);
+            this.allMoviesRadioButton.Name = "allMoviesRadioButton";
+            this.allMoviesRadioButton.Size = new System.Drawing.Size(97, 22);
+            this.allMoviesRadioButton.TabIndex = 1;
+            this.allMoviesRadioButton.Text = "All Movies";
+            this.allMoviesRadioButton.UseVisualStyleBackColor = true;
+            this.allMoviesRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // launchMovieButton
             // 
-            this.launchMovieButton.Location = new System.Drawing.Point(232, 215);
+            this.launchMovieButton.Location = new System.Drawing.Point(373, 136);
             this.launchMovieButton.Name = "launchMovieButton";
             this.launchMovieButton.Size = new System.Drawing.Size(232, 23);
             this.launchMovieButton.TabIndex = 0;
@@ -94,7 +237,8 @@
             // 
             // actorsTabPage
             // 
-            this.actorsTabPage.Controls.Add(this.tableLayoutPanel1);
+            this.actorsTabPage.Controls.Add(this.launchActorButton);
+            this.actorsTabPage.Controls.Add(this.dataGridView1);
             this.actorsTabPage.Controls.Add(this.button1);
             this.actorsTabPage.Controls.Add(this.actorBirthdateDateTimePicker);
             this.actorsTabPage.Controls.Add(this.genderComboBox);
@@ -110,13 +254,43 @@
             this.actorsTabPage.Text = "Actors";
             this.actorsTabPage.UseVisualStyleBackColor = true;
             // 
+            // launchActorButton
+            // 
+            this.launchActorButton.Location = new System.Drawing.Point(402, 502);
+            this.launchActorButton.Name = "launchActorButton";
+            this.launchActorButton.Size = new System.Drawing.Size(175, 23);
+            this.launchActorButton.TabIndex = 9;
+            this.launchActorButton.Text = "Temporary launch actor";
+            this.launchActorButton.UseVisualStyleBackColor = true;
+            this.launchActorButton.Click += new System.EventHandler(this.launchActorButton_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(33, 136);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(912, 361);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(858, 102);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 28);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // actorBirthdateDateTimePicker
             // 
             this.actorBirthdateDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.actorBirthdateDateTimePicker.CustomFormat = "MMM dd, yyyy";
             this.actorBirthdateDateTimePicker.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.actorBirthdateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.actorBirthdateDateTimePicker.Location = new System.Drawing.Point(650, 87);
+            this.actorBirthdateDateTimePicker.Location = new System.Drawing.Point(700, 104);
             this.actorBirthdateDateTimePicker.MaxDate = new System.DateTime(2500, 12, 31, 0, 0, 0, 0);
             this.actorBirthdateDateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.actorBirthdateDateTimePicker.Name = "actorBirthdateDateTimePicker";
@@ -130,9 +304,9 @@
             this.genderComboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(568, 87);
+            this.genderComboBox.Location = new System.Drawing.Point(599, 104);
             this.genderComboBox.Name = "genderComboBox";
-            this.genderComboBox.Size = new System.Drawing.Size(76, 26);
+            this.genderComboBox.Size = new System.Drawing.Size(95, 26);
             this.genderComboBox.TabIndex = 5;
             this.genderComboBox.Tag = "";
             this.genderComboBox.Text = "Gender";
@@ -141,24 +315,24 @@
             // 
             this.lastNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lastNameTextBox.Hint = "Last Name";
-            this.lastNameTextBox.Location = new System.Drawing.Point(324, 87);
+            this.lastNameTextBox.Location = new System.Drawing.Point(307, 102);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(238, 26);
+            this.lastNameTextBox.Size = new System.Drawing.Size(286, 26);
             this.lastNameTextBox.TabIndex = 3;
             // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.firstNameTextBox.Hint = "First Name";
-            this.firstNameTextBox.Location = new System.Drawing.Point(81, 87);
+            this.firstNameTextBox.Location = new System.Drawing.Point(33, 102);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(237, 26);
+            this.firstNameTextBox.Size = new System.Drawing.Size(268, 26);
             this.firstNameTextBox.TabIndex = 2;
             // 
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchButton.Location = new System.Drawing.Point(729, 19);
+            this.searchButton.Location = new System.Drawing.Point(791, 18);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(154, 28);
             this.searchButton.TabIndex = 1;
@@ -169,9 +343,9 @@
             // 
             this.exTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.exTextBox1.Hint = "Search Actor";
-            this.exTextBox1.Location = new System.Drawing.Point(81, 20);
+            this.exTextBox1.Location = new System.Drawing.Point(33, 20);
             this.exTextBox1.Name = "exTextBox1";
-            this.exTextBox1.Size = new System.Drawing.Size(642, 26);
+            this.exTextBox1.Size = new System.Drawing.Size(752, 26);
             this.exTextBox1.TabIndex = 0;
             // 
             // customersTabPage
@@ -279,29 +453,6 @@
             this.report5TabPage.Text = "Report 5";
             this.report5TabPage.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(808, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(81, 136);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanel1.TabIndex = 8;
-            // 
             // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -316,8 +467,11 @@
             this.Text = "Employee View";
             this.tabControl1.ResumeLayout(false);
             this.moviesTabPage.ResumeLayout(false);
+            this.moviesTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.actorsTabPage.ResumeLayout(false);
             this.actorsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.reportsTabPage.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -347,6 +501,18 @@
         private Button searchButton;
         private DateTimePicker actorBirthdateDateTimePicker;
         private Button button1;
-        private TableLayoutPanel tableLayoutPanel1;
+        private DataGridView dataGridView1;
+        private Button launchActorButton;
+        private RadioButton allMoviesRadioButton;
+        private Button addActorButton;
+        private RadioButton mostRentedRadioButton;
+        private RadioButton searchFiltersRadioButton;
+        private ExTextBox fromYearTextBox;
+        private ComboBox genreComboBox;
+        private ExTextBox actorsNamesTextBox;
+        private ExTextBox movieNameTextBox;
+        private ExTextBox toYearTextBox;
+        private DataGridView dataGridView2;
+        private Button button2;
     }
 }

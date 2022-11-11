@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace MoviesApp
 {
-    public partial class MovieForm : Form
+    public partial class ActorForm : Form
     {
-        public MovieForm()
+        public ActorForm()
         {
             InitializeComponent();
         }
-
-        private void movieDoneButton_Click(object sender, EventArgs e)
+        private void actorDoneButton_Click(object sender, EventArgs e)
         {
             this.Close();
             //new EmployeeViewForm().Show();
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
