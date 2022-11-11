@@ -108,7 +108,15 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.label45 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label46 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label47 = new System.Windows.Forms.Label();
+            this.jurrassicPark = new System.Windows.Forms.LinkLabel();
+            this.label48 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -132,6 +140,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.jurrassicPark);
+            this.tabPage1.Controls.Add(this.label47);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel5);
+            this.tabPage1.Controls.Add(this.label46);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel4);
+            this.tabPage1.Controls.Add(this.label45);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -142,6 +156,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label48);
             this.tabPage2.Controls.Add(this.label39);
             this.tabPage2.Controls.Add(this.tableLayoutPanel3);
             this.tabPage2.Controls.Add(this.custMovieSearch);
@@ -895,6 +910,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1020, 125);
             this.tableLayoutPanel3.TabIndex = 11;
+            this.tableLayoutPanel3.Visible = false;
             // 
             // label39
             // 
@@ -974,6 +990,7 @@
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Movie Name Example";
+            this.linkLabel1.Visible = false;
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Black;
             // 
             // linkLabel2
@@ -987,6 +1004,7 @@
             this.linkLabel2.TabIndex = 14;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Movie Year Example";
+            this.linkLabel2.Visible = false;
             this.linkLabel2.VisitedLinkColor = System.Drawing.Color.Black;
             // 
             // linkLabel3
@@ -1000,6 +1018,7 @@
             this.linkLabel3.TabIndex = 14;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Movie Genre Example";
+            this.linkLabel3.Visible = false;
             this.linkLabel3.VisitedLinkColor = System.Drawing.Color.Black;
             // 
             // linkLabel4
@@ -1013,6 +1032,7 @@
             this.linkLabel4.TabIndex = 14;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Movie Available Example";
+            this.linkLabel4.Visible = false;
             this.linkLabel4.VisitedLinkColor = System.Drawing.Color.Black;
             // 
             // linkLabel5
@@ -1026,7 +1046,96 @@
             this.linkLabel5.TabIndex = 14;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Movie Format Example";
+            this.linkLabel5.Visible = false;
             this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Black;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label45.Location = new System.Drawing.Point(7, 14);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(223, 24);
+            this.label45.TabIndex = 0;
+            this.label45.Text = "Recommended Movies";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 5;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.98826F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.01174F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(7, 63);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.78049F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.21951F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1082, 240);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label46.Location = new System.Drawing.Point(7, 362);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(193, 24);
+            this.label46.TabIndex = 2;
+            this.label46.Text = "Top 15 Best Sellers";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 5;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.98826F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.01174F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(7, 411);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.78049F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.21951F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1082, 240);
+            this.tableLayoutPanel5.TabIndex = 3;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label47.Location = new System.Drawing.Point(154, 319);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(918, 20);
+            this.label47.TabIndex = 4;
+            this.label47.Text = "both these tabes will all have movie hyperlinks (like the one below) in it so tha" +
+    "t when the user presses one, it leads to a movie form screen";
+            // 
+            // jurrassicPark
+            // 
+            this.jurrassicPark.AutoSize = true;
+            this.jurrassicPark.LinkColor = System.Drawing.Color.Black;
+            this.jurrassicPark.Location = new System.Drawing.Point(523, 362);
+            this.jurrassicPark.Name = "jurrassicPark";
+            this.jurrassicPark.Size = new System.Drawing.Size(94, 20);
+            this.jurrassicPark.TabIndex = 5;
+            this.jurrassicPark.TabStop = true;
+            this.jurrassicPark.Text = "Jurrassic Park";
+            this.jurrassicPark.VisitedLinkColor = System.Drawing.Color.Black;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label48.Location = new System.Drawing.Point(128, 439);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(823, 20);
+            this.label48.TabIndex = 13;
+            this.label48.Text = "I read on the page that these tables( columns/rows) can be adjusted by itself dep" +
+    "ending on the number of movies we put it";
             // 
             // CustomerViewForm
             // 
@@ -1041,6 +1150,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer View";
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -1139,5 +1250,12 @@
         private LinkLabel linkLabel3;
         private LinkLabel linkLabel2;
         private LinkLabel linkLabel1;
+        private LinkLabel jurrassicPark;
+        private Label label47;
+        private TableLayoutPanel tableLayoutPanel5;
+        private Label label46;
+        private TableLayoutPanel tableLayoutPanel4;
+        private Label label45;
+        private Label label48;
     }
 }
