@@ -32,6 +32,12 @@
             this.moviesTabPage = new System.Windows.Forms.TabPage();
             this.launchMovieButton = new System.Windows.Forms.Button();
             this.actorsTabPage = new System.Windows.Forms.TabPage();
+            this.actorBirthdateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.genderComboBox = new System.Windows.Forms.ComboBox();
+            this.lastNameTextBox = new MoviesApp.ExTextBox();
+            this.firstNameTextBox = new MoviesApp.ExTextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.exTextBox1 = new MoviesApp.ExTextBox();
             this.customersTabPage = new System.Windows.Forms.TabPage();
             this.employeesTabPage = new System.Windows.Forms.TabPage();
             this.transactionsTabPage = new System.Windows.Forms.TabPage();
@@ -42,8 +48,11 @@
             this.report3TabPage = new System.Windows.Forms.TabPage();
             this.report4TabPage = new System.Windows.Forms.TabPage();
             this.report5TabPage = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
+            this.actorsTabPage.SuspendLayout();
             this.reportsTabPage.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +94,14 @@
             // 
             // actorsTabPage
             // 
+            this.actorsTabPage.Controls.Add(this.tableLayoutPanel1);
+            this.actorsTabPage.Controls.Add(this.button1);
+            this.actorsTabPage.Controls.Add(this.actorBirthdateDateTimePicker);
+            this.actorsTabPage.Controls.Add(this.genderComboBox);
+            this.actorsTabPage.Controls.Add(this.lastNameTextBox);
+            this.actorsTabPage.Controls.Add(this.firstNameTextBox);
+            this.actorsTabPage.Controls.Add(this.searchButton);
+            this.actorsTabPage.Controls.Add(this.exTextBox1);
             this.actorsTabPage.Location = new System.Drawing.Point(4, 24);
             this.actorsTabPage.Name = "actorsTabPage";
             this.actorsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -92,6 +109,70 @@
             this.actorsTabPage.TabIndex = 1;
             this.actorsTabPage.Text = "Actors";
             this.actorsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // actorBirthdateDateTimePicker
+            // 
+            this.actorBirthdateDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.actorBirthdateDateTimePicker.CustomFormat = "MMM dd, yyyy";
+            this.actorBirthdateDateTimePicker.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.actorBirthdateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.actorBirthdateDateTimePicker.Location = new System.Drawing.Point(650, 87);
+            this.actorBirthdateDateTimePicker.MaxDate = new System.DateTime(2500, 12, 31, 0, 0, 0, 0);
+            this.actorBirthdateDateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.actorBirthdateDateTimePicker.Name = "actorBirthdateDateTimePicker";
+            this.actorBirthdateDateTimePicker.Size = new System.Drawing.Size(152, 26);
+            this.actorBirthdateDateTimePicker.TabIndex = 6;
+            // 
+            // genderComboBox
+            // 
+            this.genderComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.genderComboBox.FormattingEnabled = true;
+            this.genderComboBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.genderComboBox.Location = new System.Drawing.Point(568, 87);
+            this.genderComboBox.Name = "genderComboBox";
+            this.genderComboBox.Size = new System.Drawing.Size(76, 26);
+            this.genderComboBox.TabIndex = 5;
+            this.genderComboBox.Tag = "";
+            this.genderComboBox.Text = "Gender";
+            // 
+            // lastNameTextBox
+            // 
+            this.lastNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastNameTextBox.Hint = "Last Name";
+            this.lastNameTextBox.Location = new System.Drawing.Point(324, 87);
+            this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.Size = new System.Drawing.Size(238, 26);
+            this.lastNameTextBox.TabIndex = 3;
+            // 
+            // firstNameTextBox
+            // 
+            this.firstNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstNameTextBox.Hint = "First Name";
+            this.firstNameTextBox.Location = new System.Drawing.Point(81, 87);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(237, 26);
+            this.firstNameTextBox.TabIndex = 2;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchButton.Location = new System.Drawing.Point(729, 19);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(154, 28);
+            this.searchButton.TabIndex = 1;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
+            // exTextBox1
+            // 
+            this.exTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exTextBox1.Hint = "Search Actor";
+            this.exTextBox1.Location = new System.Drawing.Point(81, 20);
+            this.exTextBox1.Name = "exTextBox1";
+            this.exTextBox1.Size = new System.Drawing.Size(642, 26);
+            this.exTextBox1.TabIndex = 0;
             // 
             // customersTabPage
             // 
@@ -198,6 +279,29 @@
             this.report5TabPage.Text = "Report 5";
             this.report5TabPage.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(808, 85);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 28);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(81, 136);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel1.TabIndex = 8;
+            // 
             // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -212,6 +316,8 @@
             this.Text = "Employee View";
             this.tabControl1.ResumeLayout(false);
             this.moviesTabPage.ResumeLayout(false);
+            this.actorsTabPage.ResumeLayout(false);
+            this.actorsTabPage.PerformLayout();
             this.reportsTabPage.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -234,5 +340,13 @@
         private TabPage report4TabPage;
         private TabPage report5TabPage;
         private Button launchMovieButton;
+        private ExTextBox exTextBox1;
+        private ComboBox genderComboBox;
+        private ExTextBox lastNameTextBox;
+        private ExTextBox firstNameTextBox;
+        private Button searchButton;
+        private DateTimePicker actorBirthdateDateTimePicker;
+        private Button button1;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

@@ -60,10 +60,10 @@
             // 
             // movieActorsTabPage
             // 
-            this.movieActorsTabPage.Location = new System.Drawing.Point(4, 24);
+            this.movieActorsTabPage.Location = new System.Drawing.Point(4, 27);
             this.movieActorsTabPage.Name = "movieActorsTabPage";
             this.movieActorsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.movieActorsTabPage.Size = new System.Drawing.Size(977, 497);
+            this.movieActorsTabPage.Size = new System.Drawing.Size(977, 494);
             this.movieActorsTabPage.TabIndex = 1;
             this.movieActorsTabPage.Text = "Actors";
             this.movieActorsTabPage.UseVisualStyleBackColor = true;
