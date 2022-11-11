@@ -51,17 +51,11 @@
             this.lastNameTextBox = new MoviesApp.ExTextBox();
             this.firstNameTextBox = new MoviesApp.ExTextBox();
             this.searchButton = new System.Windows.Forms.Button();
-            this.searchActorTextBox = new MoviesApp.ExTextBox();
+            this.exTextBox1 = new MoviesApp.ExTextBox();
             this.customersTabPage = new System.Windows.Forms.TabPage();
             this.customersTabControl = new System.Windows.Forms.TabControl();
             this.searchCustomersTabPage = new System.Windows.Forms.TabPage();
-            this.launchCustomerButton = new System.Windows.Forms.Button();
-            this.customerSearchButton = new System.Windows.Forms.Button();
-            this.searchCustomerTextBox = new MoviesApp.ExTextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.mailingListTabPage = new System.Windows.Forms.TabPage();
-            this.mailingListLabel = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.employeesTabPage = new System.Windows.Forms.TabPage();
             this.transactionsTabPage = new System.Windows.Forms.TabPage();
             this.transactionsTabControl = new System.Windows.Forms.TabControl();
@@ -81,10 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.customersTabPage.SuspendLayout();
             this.customersTabControl.SuspendLayout();
-            this.searchCustomersTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.mailingListTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.transactionsTabPage.SuspendLayout();
             this.transactionsTabControl.SuspendLayout();
             this.reportsTabPage.SuspendLayout();
@@ -265,7 +255,7 @@
             this.actorsTabPage.Controls.Add(this.lastNameTextBox);
             this.actorsTabPage.Controls.Add(this.firstNameTextBox);
             this.actorsTabPage.Controls.Add(this.searchButton);
-            this.actorsTabPage.Controls.Add(this.searchActorTextBox);
+            this.actorsTabPage.Controls.Add(this.exTextBox1);
             this.actorsTabPage.Location = new System.Drawing.Point(4, 24);
             this.actorsTabPage.Name = "actorsTabPage";
             this.actorsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -288,16 +278,16 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 108);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 136);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(912, 389);
+            this.dataGridView1.Size = new System.Drawing.Size(912, 361);
             this.dataGridView1.TabIndex = 8;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(858, 73);
+            this.button1.Location = new System.Drawing.Point(858, 102);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 28);
             this.button1.TabIndex = 7;
@@ -310,7 +300,7 @@
             this.actorBirthdateDateTimePicker.CustomFormat = "MMM dd, yyyy";
             this.actorBirthdateDateTimePicker.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.actorBirthdateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.actorBirthdateDateTimePicker.Location = new System.Drawing.Point(700, 74);
+            this.actorBirthdateDateTimePicker.Location = new System.Drawing.Point(700, 104);
             this.actorBirthdateDateTimePicker.MaxDate = new System.DateTime(2500, 12, 31, 0, 0, 0, 0);
             this.actorBirthdateDateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.actorBirthdateDateTimePicker.Name = "actorBirthdateDateTimePicker";
@@ -324,7 +314,7 @@
             this.genderComboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(599, 74);
+            this.genderComboBox.Location = new System.Drawing.Point(599, 104);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(95, 26);
             this.genderComboBox.TabIndex = 5;
@@ -335,7 +325,7 @@
             // 
             this.lastNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lastNameTextBox.Hint = "Last Name";
-            this.lastNameTextBox.Location = new System.Drawing.Point(307, 74);
+            this.lastNameTextBox.Location = new System.Drawing.Point(307, 102);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(286, 26);
             this.lastNameTextBox.TabIndex = 3;
@@ -344,7 +334,7 @@
             // 
             this.firstNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.firstNameTextBox.Hint = "First Name";
-            this.firstNameTextBox.Location = new System.Drawing.Point(33, 74);
+            this.firstNameTextBox.Location = new System.Drawing.Point(33, 102);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(268, 26);
             this.firstNameTextBox.TabIndex = 2;
@@ -359,14 +349,14 @@
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             // 
-            // searchActorTextBox
+            // exTextBox1
             // 
-            this.searchActorTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchActorTextBox.Hint = "Search Actor";
-            this.searchActorTextBox.Location = new System.Drawing.Point(33, 20);
-            this.searchActorTextBox.Name = "searchActorTextBox";
-            this.searchActorTextBox.Size = new System.Drawing.Size(752, 26);
-            this.searchActorTextBox.TabIndex = 0;
+            this.exTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exTextBox1.Hint = "Search Actor";
+            this.exTextBox1.Location = new System.Drawing.Point(33, 20);
+            this.exTextBox1.Name = "exTextBox1";
+            this.exTextBox1.Size = new System.Drawing.Size(752, 26);
+            this.exTextBox1.TabIndex = 0;
             // 
             // customersTabPage
             // 
@@ -392,10 +382,6 @@
             // 
             // searchCustomersTabPage
             // 
-            this.searchCustomersTabPage.Controls.Add(this.launchCustomerButton);
-            this.searchCustomersTabPage.Controls.Add(this.customerSearchButton);
-            this.searchCustomersTabPage.Controls.Add(this.searchCustomerTextBox);
-            this.searchCustomersTabPage.Controls.Add(this.dataGridView3);
             this.searchCustomersTabPage.Location = new System.Drawing.Point(4, 4);
             this.searchCustomersTabPage.Name = "searchCustomersTabPage";
             this.searchCustomersTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -404,49 +390,8 @@
             this.searchCustomersTabPage.Text = "Search Customers";
             this.searchCustomersTabPage.UseVisualStyleBackColor = true;
             // 
-            // launchCustomerButton
-            // 
-            this.launchCustomerButton.Location = new System.Drawing.Point(373, 46);
-            this.launchCustomerButton.Name = "launchCustomerButton";
-            this.launchCustomerButton.Size = new System.Drawing.Size(229, 23);
-            this.launchCustomerButton.TabIndex = 8;
-            this.launchCustomerButton.Text = "temporary launch customer";
-            this.launchCustomerButton.UseVisualStyleBackColor = true;
-            this.launchCustomerButton.Click += new System.EventHandler(this.launchCustomerButton_Click);
-            // 
-            // customerSearchButton
-            // 
-            this.customerSearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerSearchButton.Location = new System.Drawing.Point(789, 12);
-            this.customerSearchButton.Name = "customerSearchButton";
-            this.customerSearchButton.Size = new System.Drawing.Size(154, 28);
-            this.customerSearchButton.TabIndex = 7;
-            this.customerSearchButton.Text = "Search";
-            this.customerSearchButton.UseVisualStyleBackColor = true;
-            // 
-            // searchCustomerTextBox
-            // 
-            this.searchCustomerTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchCustomerTextBox.Hint = "Search Customer";
-            this.searchCustomerTextBox.Location = new System.Drawing.Point(31, 14);
-            this.searchCustomerTextBox.Name = "searchCustomerTextBox";
-            this.searchCustomerTextBox.Size = new System.Drawing.Size(752, 26);
-            this.searchCustomerTextBox.TabIndex = 6;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(31, 59);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(912, 432);
-            this.dataGridView3.TabIndex = 5;
-            // 
             // mailingListTabPage
             // 
-            this.mailingListTabPage.Controls.Add(this.mailingListLabel);
-            this.mailingListTabPage.Controls.Add(this.dataGridView4);
             this.mailingListTabPage.Location = new System.Drawing.Point(4, 4);
             this.mailingListTabPage.Name = "mailingListTabPage";
             this.mailingListTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -454,26 +399,6 @@
             this.mailingListTabPage.TabIndex = 1;
             this.mailingListTabPage.Text = "Mailing List";
             this.mailingListTabPage.UseVisualStyleBackColor = true;
-            // 
-            // mailingListLabel
-            // 
-            this.mailingListLabel.AutoSize = true;
-            this.mailingListLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mailingListLabel.Location = new System.Drawing.Point(31, 18);
-            this.mailingListLabel.Name = "mailingListLabel";
-            this.mailingListLabel.Size = new System.Drawing.Size(87, 18);
-            this.mailingListLabel.TabIndex = 1;
-            this.mailingListLabel.Text = "Mailing List";
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(31, 59);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowTemplate.Height = 25;
-            this.dataGridView4.Size = new System.Drawing.Size(912, 432);
-            this.dataGridView4.TabIndex = 0;
             // 
             // employeesTabPage
             // 
@@ -623,12 +548,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.customersTabPage.ResumeLayout(false);
             this.customersTabControl.ResumeLayout(false);
-            this.searchCustomersTabPage.ResumeLayout(false);
-            this.searchCustomersTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.mailingListTabPage.ResumeLayout(false);
-            this.mailingListTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.transactionsTabPage.ResumeLayout(false);
             this.transactionsTabControl.ResumeLayout(false);
             this.reportsTabPage.ResumeLayout(false);
@@ -652,9 +571,11 @@
         private TabPage report4TabPage;
         private TabPage report5TabPage;
         private Button launchMovieButton;
+        private ExTextBox exTextBox1;
         private ComboBox genderComboBox;
         private ExTextBox lastNameTextBox;
         private ExTextBox firstNameTextBox;
+        private Button searchButton;
         private DateTimePicker actorBirthdateDateTimePicker;
         private Button button1;
         private DataGridView dataGridView1;
@@ -677,13 +598,5 @@
         private TabControl transactionsTabControl;
         private TabPage newTransactionTabPage;
         private TabPage rentalHistoryTabPage;
-        private Button searchButton;
-        private ExTextBox searchActorTextBox;
-        private Button customerSearchButton;
-        private ExTextBox searchCustomerTextBox;
-        private DataGridView dataGridView3;
-        private Label mailingListLabel;
-        private DataGridView dataGridView4;
-        private Button launchCustomerButton;
     }
 }
