@@ -55,6 +55,10 @@
             this.customersTabPage = new System.Windows.Forms.TabPage();
             this.customersTabControl = new System.Windows.Forms.TabControl();
             this.searchCustomersTabPage = new System.Windows.Forms.TabPage();
+            this.launchCustomerButton = new System.Windows.Forms.Button();
+            this.searchCustomersButton = new System.Windows.Forms.Button();
+            this.searchCustomersTextBox = new MoviesApp.ExTextBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.mailingListTabPage = new System.Windows.Forms.TabPage();
             this.employeesTabPage = new System.Windows.Forms.TabPage();
             this.transactionsTabPage = new System.Windows.Forms.TabPage();
@@ -75,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.customersTabPage.SuspendLayout();
             this.customersTabControl.SuspendLayout();
+            this.searchCustomersTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.transactionsTabPage.SuspendLayout();
             this.transactionsTabControl.SuspendLayout();
             this.reportsTabPage.SuspendLayout();
@@ -119,6 +125,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(17, 165);
             this.dataGridView2.Name = "dataGridView2";
@@ -382,6 +389,10 @@
             // 
             // searchCustomersTabPage
             // 
+            this.searchCustomersTabPage.Controls.Add(this.launchCustomerButton);
+            this.searchCustomersTabPage.Controls.Add(this.searchCustomersButton);
+            this.searchCustomersTabPage.Controls.Add(this.searchCustomersTextBox);
+            this.searchCustomersTabPage.Controls.Add(this.dataGridView3);
             this.searchCustomersTabPage.Location = new System.Drawing.Point(4, 4);
             this.searchCustomersTabPage.Name = "searchCustomersTabPage";
             this.searchCustomersTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -389,6 +400,44 @@
             this.searchCustomersTabPage.TabIndex = 0;
             this.searchCustomersTabPage.Text = "Search Customers";
             this.searchCustomersTabPage.UseVisualStyleBackColor = true;
+            // 
+            // launchCustomerButton
+            // 
+            this.launchCustomerButton.Location = new System.Drawing.Point(399, 45);
+            this.launchCustomerButton.Name = "launchCustomerButton";
+            this.launchCustomerButton.Size = new System.Drawing.Size(176, 23);
+            this.launchCustomerButton.TabIndex = 6;
+            this.launchCustomerButton.Text = "temporary launch customer";
+            this.launchCustomerButton.UseVisualStyleBackColor = true;
+            this.launchCustomerButton.Click += new System.EventHandler(this.launchCustomerButton_Click);
+            // 
+            // searchCustomersButton
+            // 
+            this.searchCustomersButton.Location = new System.Drawing.Point(791, 18);
+            this.searchCustomersButton.Name = "searchCustomersButton";
+            this.searchCustomersButton.Size = new System.Drawing.Size(154, 28);
+            this.searchCustomersButton.TabIndex = 5;
+            this.searchCustomersButton.Text = "Search";
+            this.searchCustomersButton.UseVisualStyleBackColor = true;
+            // 
+            // searchCustomersTextBox
+            // 
+            this.searchCustomersTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchCustomersTextBox.Hint = "Search Customer";
+            this.searchCustomersTextBox.Location = new System.Drawing.Point(33, 20);
+            this.searchCustomersTextBox.Name = "searchCustomersTextBox";
+            this.searchCustomersTextBox.Size = new System.Drawing.Size(752, 26);
+            this.searchCustomersTextBox.TabIndex = 4;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(31, 66);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.Size = new System.Drawing.Size(912, 425);
+            this.dataGridView3.TabIndex = 0;
             // 
             // mailingListTabPage
             // 
@@ -548,6 +597,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.customersTabPage.ResumeLayout(false);
             this.customersTabControl.ResumeLayout(false);
+            this.searchCustomersTabPage.ResumeLayout(false);
+            this.searchCustomersTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.transactionsTabPage.ResumeLayout(false);
             this.transactionsTabControl.ResumeLayout(false);
             this.reportsTabPage.ResumeLayout(false);
@@ -598,5 +650,9 @@
         private TabControl transactionsTabControl;
         private TabPage newTransactionTabPage;
         private TabPage rentalHistoryTabPage;
+        private Button launchCustomerButton;
+        private Button searchCustomersButton;
+        private ExTextBox searchCustomersTextBox;
+        private DataGridView dataGridView3;
     }
 }
