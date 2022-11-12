@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.moviesTabPage = new System.Windows.Forms.TabPage();
+            this.moviesAddMovieButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.toYearTextBox = new MoviesApp.ExTextBox();
@@ -91,7 +92,6 @@
             this.report1Button = new System.Windows.Forms.Button();
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.moviesAddMovieButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -149,6 +149,17 @@
             this.moviesTabPage.TabIndex = 0;
             this.moviesTabPage.Text = "Movies";
             this.moviesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // moviesAddMovieButton
+            // 
+            this.moviesAddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.moviesAddMovieButton.Location = new System.Drawing.Point(841, 9);
+            this.moviesAddMovieButton.Name = "moviesAddMovieButton";
+            this.moviesAddMovieButton.Size = new System.Drawing.Size(114, 28);
+            this.moviesAddMovieButton.TabIndex = 12;
+            this.moviesAddMovieButton.Text = "Add Movie";
+            this.moviesAddMovieButton.UseVisualStyleBackColor = true;
+            this.moviesAddMovieButton.Click += new System.EventHandler(this.launchMovieButton_Click);
             // 
             // dataGridView2
             // 
@@ -411,7 +422,7 @@
             // launchCustomerButton
             // 
             this.launchCustomerButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.launchCustomerButton.Location = new System.Drawing.Point(774, 19);
+            this.launchCustomerButton.Location = new System.Drawing.Point(773, 17);
             this.launchCustomerButton.Name = "launchCustomerButton";
             this.launchCustomerButton.Size = new System.Drawing.Size(169, 28);
             this.launchCustomerButton.TabIndex = 6;
@@ -422,7 +433,7 @@
             // searchCustomersButton
             // 
             this.searchCustomersButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchCustomersButton.Location = new System.Drawing.Point(591, 19);
+            this.searchCustomersButton.Location = new System.Drawing.Point(590, 17);
             this.searchCustomersButton.Name = "searchCustomersButton";
             this.searchCustomersButton.Size = new System.Drawing.Size(177, 28);
             this.searchCustomersButton.TabIndex = 5;
@@ -433,7 +444,7 @@
             // 
             this.searchCustomersTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.searchCustomersTextBox.Hint = "Search Customer";
-            this.searchCustomersTextBox.Location = new System.Drawing.Point(33, 20);
+            this.searchCustomersTextBox.Location = new System.Drawing.Point(32, 18);
             this.searchCustomersTextBox.Name = "searchCustomersTextBox";
             this.searchCustomersTextBox.Size = new System.Drawing.Size(552, 26);
             this.searchCustomersTextBox.TabIndex = 4;
@@ -507,7 +518,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(774, 19);
+            this.button4.Location = new System.Drawing.Point(774, 21);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(171, 28);
             this.button4.TabIndex = 2;
@@ -518,7 +529,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(591, 19);
+            this.button3.Location = new System.Drawing.Point(591, 21);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(177, 28);
             this.button3.TabIndex = 1;
@@ -529,7 +540,7 @@
             // 
             this.exTextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.exTextBox2.Hint = "Search Employee";
-            this.exTextBox2.Location = new System.Drawing.Point(33, 20);
+            this.exTextBox2.Location = new System.Drawing.Point(33, 22);
             this.exTextBox2.Name = "exTextBox2";
             this.exTextBox2.Size = new System.Drawing.Size(552, 26);
             this.exTextBox2.TabIndex = 0;
@@ -744,7 +755,7 @@
             this.reportsDataGridView.Location = new System.Drawing.Point(8, 82);
             this.reportsDataGridView.Name = "reportsDataGridView";
             this.reportsDataGridView.RowTemplate.Height = 25;
-            this.reportsDataGridView.Size = new System.Drawing.Size(964, 407);
+            this.reportsDataGridView.Size = new System.Drawing.Size(960, 407);
             this.reportsDataGridView.TabIndex = 9;
             // 
             // report5Button
@@ -799,9 +810,9 @@
             // 
             // reportsDescriptionTextBox
             // 
-            this.reportsDescriptionTextBox.Location = new System.Drawing.Point(59, 24);
+            this.reportsDescriptionTextBox.Location = new System.Drawing.Point(8, 24);
             this.reportsDescriptionTextBox.Name = "reportsDescriptionTextBox";
-            this.reportsDescriptionTextBox.Size = new System.Drawing.Size(860, 23);
+            this.reportsDescriptionTextBox.Size = new System.Drawing.Size(960, 23);
             this.reportsDescriptionTextBox.TabIndex = 3;
             // 
             // label1
@@ -813,17 +824,6 @@
             this.label1.Size = new System.Drawing.Size(139, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Report Description";
-            // 
-            // moviesAddMovieButton
-            // 
-            this.moviesAddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.moviesAddMovieButton.Location = new System.Drawing.Point(841, 9);
-            this.moviesAddMovieButton.Name = "moviesAddMovieButton";
-            this.moviesAddMovieButton.Size = new System.Drawing.Size(114, 28);
-            this.moviesAddMovieButton.TabIndex = 12;
-            this.moviesAddMovieButton.Text = "Add Movie";
-            this.moviesAddMovieButton.UseVisualStyleBackColor = true;
-            this.moviesAddMovieButton.Click += new System.EventHandler(this.launchMovieButton_Click);
             // 
             // EmployeeViewForm
             // 
