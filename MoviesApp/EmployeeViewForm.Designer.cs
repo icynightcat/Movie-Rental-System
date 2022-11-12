@@ -37,20 +37,18 @@
             this.genreComboBox = new System.Windows.Forms.ComboBox();
             this.actorsNamesTextBox = new MoviesApp.ExTextBox();
             this.movieNameTextBox = new MoviesApp.ExTextBox();
-            this.addActorButton = new System.Windows.Forms.Button();
             this.mostRentedRadioButton = new System.Windows.Forms.RadioButton();
             this.searchFiltersRadioButton = new System.Windows.Forms.RadioButton();
             this.allMoviesRadioButton = new System.Windows.Forms.RadioButton();
-            this.launchMovieButton = new System.Windows.Forms.Button();
             this.actorsTabPage = new System.Windows.Forms.TabPage();
             this.launchActorButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.actorsAddButton = new System.Windows.Forms.Button();
             this.actorBirthdateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.genderComboBox = new System.Windows.Forms.ComboBox();
             this.lastNameTextBox = new MoviesApp.ExTextBox();
             this.firstNameTextBox = new MoviesApp.ExTextBox();
-            this.searchButton = new System.Windows.Forms.Button();
+            this.actorsSearchButton = new System.Windows.Forms.Button();
             this.exTextBox1 = new MoviesApp.ExTextBox();
             this.customersTabPage = new System.Windows.Forms.TabPage();
             this.customersTabControl = new System.Windows.Forms.TabControl();
@@ -70,7 +68,20 @@
             this.transactionsTabPage = new System.Windows.Forms.TabPage();
             this.transactionsTabControl = new System.Windows.Forms.TabControl();
             this.newTransactionTabPage = new System.Windows.Forms.TabPage();
+            this.transactionsNewCheckoutButton = new System.Windows.Forms.Button();
+            this.TransactionsNewDataGridView = new System.Windows.Forms.DataGridView();
+            this.transactionsNewSearchButton = new System.Windows.Forms.Button();
+            this.exTextBox3 = new MoviesApp.ExTextBox();
+            this.transactionsCustomerIDTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.rentalHistoryTabPage = new System.Windows.Forms.TabPage();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.transactionsHistorySearchButton = new System.Windows.Forms.Button();
+            this.transactionsHistoryCustomerNameTextBox = new MoviesApp.ExTextBox();
+            this.transactionsHistoryGenreComboBox = new System.Windows.Forms.ComboBox();
+            this.transactionsHistoryMovieNameTextBox = new MoviesApp.ExTextBox();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
             this.reportsDataGridView = new System.Windows.Forms.DataGridView();
             this.report5Button = new System.Windows.Forms.Button();
@@ -80,19 +91,7 @@
             this.report1Button = new System.Windows.Forms.Button();
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.transactionsCustomerIDTextBox = new System.Windows.Forms.TextBox();
-            this.exTextBox3 = new MoviesApp.ExTextBox();
-            this.transactionsNewSearchButton = new System.Windows.Forms.Button();
-            this.TransactionsNewDataGridView = new System.Windows.Forms.DataGridView();
-            this.transactionsNewCheckoutButton = new System.Windows.Forms.Button();
-            this.transactionsHistoryMovieNameTextBox = new MoviesApp.ExTextBox();
-            this.transactionsHistoryGenreComboBox = new System.Windows.Forms.ComboBox();
-            this.transactionsHistoryCustomerNameTextBox = new MoviesApp.ExTextBox();
-            this.transactionsHistorySearchButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.moviesAddMovieButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -109,11 +108,11 @@
             this.transactionsTabPage.SuspendLayout();
             this.transactionsTabControl.SuspendLayout();
             this.newTransactionTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionsNewDataGridView)).BeginInit();
             this.rentalHistoryTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.reportsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TransactionsNewDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -132,6 +131,7 @@
             // 
             // moviesTabPage
             // 
+            this.moviesTabPage.Controls.Add(this.moviesAddMovieButton);
             this.moviesTabPage.Controls.Add(this.dataGridView2);
             this.moviesTabPage.Controls.Add(this.button2);
             this.moviesTabPage.Controls.Add(this.toYearTextBox);
@@ -139,11 +139,9 @@
             this.moviesTabPage.Controls.Add(this.genreComboBox);
             this.moviesTabPage.Controls.Add(this.actorsNamesTextBox);
             this.moviesTabPage.Controls.Add(this.movieNameTextBox);
-            this.moviesTabPage.Controls.Add(this.addActorButton);
             this.moviesTabPage.Controls.Add(this.mostRentedRadioButton);
             this.moviesTabPage.Controls.Add(this.searchFiltersRadioButton);
             this.moviesTabPage.Controls.Add(this.allMoviesRadioButton);
-            this.moviesTabPage.Controls.Add(this.launchMovieButton);
             this.moviesTabPage.Location = new System.Drawing.Point(4, 24);
             this.moviesTabPage.Name = "moviesTabPage";
             this.moviesTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -165,9 +163,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(762, 107);
+            this.button2.Location = new System.Drawing.Point(762, 105);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 30);
+            this.button2.Size = new System.Drawing.Size(193, 28);
             this.button2.TabIndex = 10;
             this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = true;
@@ -223,16 +221,6 @@
             this.movieNameTextBox.Size = new System.Drawing.Size(739, 26);
             this.movieNameTextBox.TabIndex = 5;
             // 
-            // addActorButton
-            // 
-            this.addActorButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addActorButton.Location = new System.Drawing.Point(850, 6);
-            this.addActorButton.Name = "addActorButton";
-            this.addActorButton.Size = new System.Drawing.Size(105, 30);
-            this.addActorButton.TabIndex = 4;
-            this.addActorButton.Text = "Add Actor";
-            this.addActorButton.UseVisualStyleBackColor = true;
-            // 
             // mostRentedRadioButton
             // 
             this.mostRentedRadioButton.AutoSize = true;
@@ -271,26 +259,16 @@
             this.allMoviesRadioButton.UseVisualStyleBackColor = true;
             this.allMoviesRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // launchMovieButton
-            // 
-            this.launchMovieButton.Location = new System.Drawing.Point(373, 136);
-            this.launchMovieButton.Name = "launchMovieButton";
-            this.launchMovieButton.Size = new System.Drawing.Size(232, 23);
-            this.launchMovieButton.TabIndex = 0;
-            this.launchMovieButton.Text = "Temporary Launch Movie";
-            this.launchMovieButton.UseVisualStyleBackColor = true;
-            this.launchMovieButton.Click += new System.EventHandler(this.launchMovieButton_Click);
-            // 
             // actorsTabPage
             // 
             this.actorsTabPage.Controls.Add(this.launchActorButton);
             this.actorsTabPage.Controls.Add(this.dataGridView1);
-            this.actorsTabPage.Controls.Add(this.button1);
+            this.actorsTabPage.Controls.Add(this.actorsAddButton);
             this.actorsTabPage.Controls.Add(this.actorBirthdateDateTimePicker);
             this.actorsTabPage.Controls.Add(this.genderComboBox);
             this.actorsTabPage.Controls.Add(this.lastNameTextBox);
             this.actorsTabPage.Controls.Add(this.firstNameTextBox);
-            this.actorsTabPage.Controls.Add(this.searchButton);
+            this.actorsTabPage.Controls.Add(this.actorsSearchButton);
             this.actorsTabPage.Controls.Add(this.exTextBox1);
             this.actorsTabPage.Location = new System.Drawing.Point(4, 24);
             this.actorsTabPage.Name = "actorsTabPage";
@@ -302,7 +280,7 @@
             // 
             // launchActorButton
             // 
-            this.launchActorButton.Location = new System.Drawing.Point(402, 502);
+            this.launchActorButton.Location = new System.Drawing.Point(402, 63);
             this.launchActorButton.Name = "launchActorButton";
             this.launchActorButton.Size = new System.Drawing.Size(175, 23);
             this.launchActorButton.TabIndex = 9;
@@ -320,15 +298,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(912, 361);
             this.dataGridView1.TabIndex = 8;
             // 
-            // button1
+            // actorsAddButton
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(858, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.actorsAddButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.actorsAddButton.Location = new System.Drawing.Point(858, 101);
+            this.actorsAddButton.Name = "actorsAddButton";
+            this.actorsAddButton.Size = new System.Drawing.Size(87, 28);
+            this.actorsAddButton.TabIndex = 7;
+            this.actorsAddButton.Text = "Add";
+            this.actorsAddButton.UseVisualStyleBackColor = true;
             // 
             // actorBirthdateDateTimePicker
             // 
@@ -336,7 +314,7 @@
             this.actorBirthdateDateTimePicker.CustomFormat = "MMM dd, yyyy";
             this.actorBirthdateDateTimePicker.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.actorBirthdateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.actorBirthdateDateTimePicker.Location = new System.Drawing.Point(700, 104);
+            this.actorBirthdateDateTimePicker.Location = new System.Drawing.Point(700, 102);
             this.actorBirthdateDateTimePicker.MaxDate = new System.DateTime(2500, 12, 31, 0, 0, 0, 0);
             this.actorBirthdateDateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.actorBirthdateDateTimePicker.Name = "actorBirthdateDateTimePicker";
@@ -350,7 +328,7 @@
             this.genderComboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(599, 104);
+            this.genderComboBox.Location = new System.Drawing.Point(599, 102);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(95, 26);
             this.genderComboBox.TabIndex = 5;
@@ -375,15 +353,15 @@
             this.firstNameTextBox.Size = new System.Drawing.Size(268, 26);
             this.firstNameTextBox.TabIndex = 2;
             // 
-            // searchButton
+            // actorsSearchButton
             // 
-            this.searchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchButton.Location = new System.Drawing.Point(791, 18);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(154, 28);
-            this.searchButton.TabIndex = 1;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
+            this.actorsSearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.actorsSearchButton.Location = new System.Drawing.Point(791, 18);
+            this.actorsSearchButton.Name = "actorsSearchButton";
+            this.actorsSearchButton.Size = new System.Drawing.Size(154, 28);
+            this.actorsSearchButton.TabIndex = 1;
+            this.actorsSearchButton.Text = "Search";
+            this.actorsSearchButton.UseVisualStyleBackColor = true;
             // 
             // exTextBox1
             // 
@@ -595,6 +573,73 @@
             this.newTransactionTabPage.Text = "New Transaction";
             this.newTransactionTabPage.UseVisualStyleBackColor = true;
             // 
+            // transactionsNewCheckoutButton
+            // 
+            this.transactionsNewCheckoutButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.transactionsNewCheckoutButton.Location = new System.Drawing.Point(832, 63);
+            this.transactionsNewCheckoutButton.Name = "transactionsNewCheckoutButton";
+            this.transactionsNewCheckoutButton.Size = new System.Drawing.Size(110, 28);
+            this.transactionsNewCheckoutButton.TabIndex = 8;
+            this.transactionsNewCheckoutButton.Text = "Checkout";
+            this.transactionsNewCheckoutButton.UseVisualStyleBackColor = true;
+            // 
+            // TransactionsNewDataGridView
+            // 
+            this.TransactionsNewDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.TransactionsNewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TransactionsNewDataGridView.Location = new System.Drawing.Point(31, 121);
+            this.TransactionsNewDataGridView.Name = "TransactionsNewDataGridView";
+            this.TransactionsNewDataGridView.RowTemplate.Height = 25;
+            this.TransactionsNewDataGridView.Size = new System.Drawing.Size(912, 342);
+            this.TransactionsNewDataGridView.TabIndex = 7;
+            // 
+            // transactionsNewSearchButton
+            // 
+            this.transactionsNewSearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.transactionsNewSearchButton.Location = new System.Drawing.Point(716, 63);
+            this.transactionsNewSearchButton.Name = "transactionsNewSearchButton";
+            this.transactionsNewSearchButton.Size = new System.Drawing.Size(110, 28);
+            this.transactionsNewSearchButton.TabIndex = 6;
+            this.transactionsNewSearchButton.Text = "Search";
+            this.transactionsNewSearchButton.UseVisualStyleBackColor = true;
+            // 
+            // exTextBox3
+            // 
+            this.exTextBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exTextBox3.Hint = "ex. 1234567-001";
+            this.exTextBox3.Location = new System.Drawing.Point(210, 63);
+            this.exTextBox3.Name = "exTextBox3";
+            this.exTextBox3.Size = new System.Drawing.Size(500, 26);
+            this.exTextBox3.TabIndex = 5;
+            // 
+            // transactionsCustomerIDTextBox
+            // 
+            this.transactionsCustomerIDTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.transactionsCustomerIDTextBox.Location = new System.Drawing.Point(210, 26);
+            this.transactionsCustomerIDTextBox.Name = "transactionsCustomerIDTextBox";
+            this.transactionsCustomerIDTextBox.Size = new System.Drawing.Size(500, 26);
+            this.transactionsCustomerIDTextBox.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(96, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 18);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Movie Code";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(94, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Customer ID";
+            // 
             // rentalHistoryTabPage
             // 
             this.rentalHistoryTabPage.Controls.Add(this.dataGridView5);
@@ -610,6 +655,69 @@
             this.rentalHistoryTabPage.TabIndex = 1;
             this.rentalHistoryTabPage.Text = "Rental History";
             this.rentalHistoryTabPage.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(31, 122);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowTemplate.Height = 25;
+            this.dataGridView5.Size = new System.Drawing.Size(912, 342);
+            this.dataGridView5.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(31, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 18);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Search History";
+            // 
+            // transactionsHistorySearchButton
+            // 
+            this.transactionsHistorySearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.transactionsHistorySearchButton.Location = new System.Drawing.Point(739, 84);
+            this.transactionsHistorySearchButton.Name = "transactionsHistorySearchButton";
+            this.transactionsHistorySearchButton.Size = new System.Drawing.Size(207, 28);
+            this.transactionsHistorySearchButton.TabIndex = 3;
+            this.transactionsHistorySearchButton.Text = "Search";
+            this.transactionsHistorySearchButton.UseVisualStyleBackColor = true;
+            // 
+            // transactionsHistoryCustomerNameTextBox
+            // 
+            this.transactionsHistoryCustomerNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.transactionsHistoryCustomerNameTextBox.Hint = "Customer Name";
+            this.transactionsHistoryCustomerNameTextBox.Location = new System.Drawing.Point(260, 85);
+            this.transactionsHistoryCustomerNameTextBox.Name = "transactionsHistoryCustomerNameTextBox";
+            this.transactionsHistoryCustomerNameTextBox.Size = new System.Drawing.Size(473, 26);
+            this.transactionsHistoryCustomerNameTextBox.TabIndex = 2;
+            // 
+            // transactionsHistoryGenreComboBox
+            // 
+            this.transactionsHistoryGenreComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.transactionsHistoryGenreComboBox.FormattingEnabled = true;
+            this.transactionsHistoryGenreComboBox.Items.AddRange(new object[] {
+            "Comedy",
+            "Drama",
+            "Action",
+            "Foreign"});
+            this.transactionsHistoryGenreComboBox.Location = new System.Drawing.Point(31, 85);
+            this.transactionsHistoryGenreComboBox.Name = "transactionsHistoryGenreComboBox";
+            this.transactionsHistoryGenreComboBox.Size = new System.Drawing.Size(223, 26);
+            this.transactionsHistoryGenreComboBox.TabIndex = 1;
+            this.transactionsHistoryGenreComboBox.Text = "Genre";
+            // 
+            // transactionsHistoryMovieNameTextBox
+            // 
+            this.transactionsHistoryMovieNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.transactionsHistoryMovieNameTextBox.Hint = "Movie Name";
+            this.transactionsHistoryMovieNameTextBox.Location = new System.Drawing.Point(31, 53);
+            this.transactionsHistoryMovieNameTextBox.Name = "transactionsHistoryMovieNameTextBox";
+            this.transactionsHistoryMovieNameTextBox.Size = new System.Drawing.Size(915, 26);
+            this.transactionsHistoryMovieNameTextBox.TabIndex = 0;
             // 
             // reportsTabPage
             // 
@@ -706,135 +814,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Report Description";
             // 
-            // label2
+            // moviesAddMovieButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(94, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Customer ID";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(96, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Movie Code";
-            // 
-            // transactionsCustomerIDTextBox
-            // 
-            this.transactionsCustomerIDTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.transactionsCustomerIDTextBox.Location = new System.Drawing.Point(210, 26);
-            this.transactionsCustomerIDTextBox.Name = "transactionsCustomerIDTextBox";
-            this.transactionsCustomerIDTextBox.Size = new System.Drawing.Size(500, 26);
-            this.transactionsCustomerIDTextBox.TabIndex = 4;
-            // 
-            // exTextBox3
-            // 
-            this.exTextBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exTextBox3.Hint = "ex. 1234567-001";
-            this.exTextBox3.Location = new System.Drawing.Point(210, 63);
-            this.exTextBox3.Name = "exTextBox3";
-            this.exTextBox3.Size = new System.Drawing.Size(500, 26);
-            this.exTextBox3.TabIndex = 5;
-            // 
-            // transactionsNewSearchButton
-            // 
-            this.transactionsNewSearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.transactionsNewSearchButton.Location = new System.Drawing.Point(716, 63);
-            this.transactionsNewSearchButton.Name = "transactionsNewSearchButton";
-            this.transactionsNewSearchButton.Size = new System.Drawing.Size(110, 28);
-            this.transactionsNewSearchButton.TabIndex = 6;
-            this.transactionsNewSearchButton.Text = "Search";
-            this.transactionsNewSearchButton.UseVisualStyleBackColor = true;
-            // 
-            // TransactionsNewDataGridView
-            // 
-            this.TransactionsNewDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.TransactionsNewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TransactionsNewDataGridView.Location = new System.Drawing.Point(31, 121);
-            this.TransactionsNewDataGridView.Name = "TransactionsNewDataGridView";
-            this.TransactionsNewDataGridView.RowTemplate.Height = 25;
-            this.TransactionsNewDataGridView.Size = new System.Drawing.Size(912, 342);
-            this.TransactionsNewDataGridView.TabIndex = 7;
-            // 
-            // transactionsNewCheckoutButton
-            // 
-            this.transactionsNewCheckoutButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.transactionsNewCheckoutButton.Location = new System.Drawing.Point(832, 63);
-            this.transactionsNewCheckoutButton.Name = "transactionsNewCheckoutButton";
-            this.transactionsNewCheckoutButton.Size = new System.Drawing.Size(110, 28);
-            this.transactionsNewCheckoutButton.TabIndex = 8;
-            this.transactionsNewCheckoutButton.Text = "Checkout";
-            this.transactionsNewCheckoutButton.UseVisualStyleBackColor = true;
-            // 
-            // transactionsHistoryMovieNameTextBox
-            // 
-            this.transactionsHistoryMovieNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.transactionsHistoryMovieNameTextBox.Hint = "Movie Name";
-            this.transactionsHistoryMovieNameTextBox.Location = new System.Drawing.Point(31, 53);
-            this.transactionsHistoryMovieNameTextBox.Name = "transactionsHistoryMovieNameTextBox";
-            this.transactionsHistoryMovieNameTextBox.Size = new System.Drawing.Size(915, 26);
-            this.transactionsHistoryMovieNameTextBox.TabIndex = 0;
-            // 
-            // transactionsHistoryGenreComboBox
-            // 
-            this.transactionsHistoryGenreComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.transactionsHistoryGenreComboBox.FormattingEnabled = true;
-            this.transactionsHistoryGenreComboBox.Items.AddRange(new object[] {
-            "Comedy",
-            "Drama",
-            "Action",
-            "Foreign"});
-            this.transactionsHistoryGenreComboBox.Location = new System.Drawing.Point(31, 85);
-            this.transactionsHistoryGenreComboBox.Name = "transactionsHistoryGenreComboBox";
-            this.transactionsHistoryGenreComboBox.Size = new System.Drawing.Size(223, 26);
-            this.transactionsHistoryGenreComboBox.TabIndex = 1;
-            this.transactionsHistoryGenreComboBox.Text = "Genre";
-            // 
-            // transactionsHistoryCustomerNameTextBox
-            // 
-            this.transactionsHistoryCustomerNameTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.transactionsHistoryCustomerNameTextBox.Hint = "Customer Name";
-            this.transactionsHistoryCustomerNameTextBox.Location = new System.Drawing.Point(260, 85);
-            this.transactionsHistoryCustomerNameTextBox.Name = "transactionsHistoryCustomerNameTextBox";
-            this.transactionsHistoryCustomerNameTextBox.Size = new System.Drawing.Size(473, 26);
-            this.transactionsHistoryCustomerNameTextBox.TabIndex = 2;
-            // 
-            // transactionsHistorySearchButton
-            // 
-            this.transactionsHistorySearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.transactionsHistorySearchButton.Location = new System.Drawing.Point(739, 84);
-            this.transactionsHistorySearchButton.Name = "transactionsHistorySearchButton";
-            this.transactionsHistorySearchButton.Size = new System.Drawing.Size(207, 28);
-            this.transactionsHistorySearchButton.TabIndex = 3;
-            this.transactionsHistorySearchButton.Text = "Search";
-            this.transactionsHistorySearchButton.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(31, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 18);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Search History";
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(31, 122);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowTemplate.Height = 25;
-            this.dataGridView5.Size = new System.Drawing.Size(912, 342);
-            this.dataGridView5.TabIndex = 8;
+            this.moviesAddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.moviesAddMovieButton.Location = new System.Drawing.Point(841, 9);
+            this.moviesAddMovieButton.Name = "moviesAddMovieButton";
+            this.moviesAddMovieButton.Size = new System.Drawing.Size(114, 28);
+            this.moviesAddMovieButton.TabIndex = 12;
+            this.moviesAddMovieButton.Text = "Add Movie";
+            this.moviesAddMovieButton.UseVisualStyleBackColor = true;
+            this.moviesAddMovieButton.Click += new System.EventHandler(this.launchMovieButton_Click);
             // 
             // EmployeeViewForm
             // 
@@ -870,13 +859,13 @@
             this.transactionsTabControl.ResumeLayout(false);
             this.newTransactionTabPage.ResumeLayout(false);
             this.newTransactionTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionsNewDataGridView)).EndInit();
             this.rentalHistoryTabPage.ResumeLayout(false);
             this.rentalHistoryTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.reportsTabPage.ResumeLayout(false);
             this.reportsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TransactionsNewDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -889,18 +878,16 @@
         private TabPage customersTabPage;
         private TabPage employeesTabPage;
         private TabPage reportsTabPage;
-        private Button launchMovieButton;
         private ExTextBox exTextBox1;
         private ComboBox genderComboBox;
         private ExTextBox lastNameTextBox;
         private ExTextBox firstNameTextBox;
-        private Button searchButton;
+        private Button actorsSearchButton;
         private DateTimePicker actorBirthdateDateTimePicker;
-        private Button button1;
+        private Button actorsAddButton;
         private DataGridView dataGridView1;
         private Button launchActorButton;
         private RadioButton allMoviesRadioButton;
-        private Button addActorButton;
         private RadioButton mostRentedRadioButton;
         private RadioButton searchFiltersRadioButton;
         private ExTextBox fromYearTextBox;
@@ -948,5 +935,6 @@
         private ExTextBox transactionsHistoryCustomerNameTextBox;
         private ComboBox transactionsHistoryGenreComboBox;
         private ExTextBox transactionsHistoryMovieNameTextBox;
+        private Button moviesAddMovieButton;
     }
 }
