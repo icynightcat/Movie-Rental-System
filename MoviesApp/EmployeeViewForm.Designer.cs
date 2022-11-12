@@ -60,7 +60,13 @@
             this.searchCustomersTextBox = new MoviesApp.ExTextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.mailingListTabPage = new System.Windows.Forms.TabPage();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.mailingListLabel = new System.Windows.Forms.Label();
             this.employeesTabPage = new System.Windows.Forms.TabPage();
+            this.searchEmployeesDataGridView = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.exTextBox2 = new MoviesApp.ExTextBox();
             this.transactionsTabPage = new System.Windows.Forms.TabPage();
             this.transactionsTabControl = new System.Windows.Forms.TabControl();
             this.newTransactionTabPage = new System.Windows.Forms.TabPage();
@@ -72,12 +78,6 @@
             this.report3TabPage = new System.Windows.Forms.TabPage();
             this.report4TabPage = new System.Windows.Forms.TabPage();
             this.report5TabPage = new System.Windows.Forms.TabPage();
-            this.mailingListLabel = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.exTextBox2 = new MoviesApp.ExTextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.searchEmployeesDataGridView = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -88,13 +88,13 @@
             this.searchCustomersTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.mailingListTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.employeesTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchEmployeesDataGridView)).BeginInit();
             this.transactionsTabPage.SuspendLayout();
             this.transactionsTabControl.SuspendLayout();
             this.reportsTabPage.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchEmployeesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -461,6 +461,26 @@
             this.mailingListTabPage.Text = "Mailing List";
             this.mailingListTabPage.UseVisualStyleBackColor = true;
             // 
+            // dataGridView4
+            // 
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(31, 65);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowTemplate.Height = 25;
+            this.dataGridView4.Size = new System.Drawing.Size(912, 422);
+            this.dataGridView4.TabIndex = 1;
+            // 
+            // mailingListLabel
+            // 
+            this.mailingListLabel.AutoSize = true;
+            this.mailingListLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mailingListLabel.Location = new System.Drawing.Point(31, 24);
+            this.mailingListLabel.Name = "mailingListLabel";
+            this.mailingListLabel.Size = new System.Drawing.Size(87, 18);
+            this.mailingListLabel.TabIndex = 0;
+            this.mailingListLabel.Text = "Mailing List";
+            // 
             // employeesTabPage
             // 
             this.employeesTabPage.Controls.Add(this.searchEmployeesDataGridView);
@@ -474,6 +494,46 @@
             this.employeesTabPage.TabIndex = 3;
             this.employeesTabPage.Text = "Employees";
             this.employeesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // searchEmployeesDataGridView
+            // 
+            this.searchEmployeesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.searchEmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchEmployeesDataGridView.Location = new System.Drawing.Point(33, 70);
+            this.searchEmployeesDataGridView.Name = "searchEmployeesDataGridView";
+            this.searchEmployeesDataGridView.RowTemplate.Height = 25;
+            this.searchEmployeesDataGridView.Size = new System.Drawing.Size(912, 429);
+            this.searchEmployeesDataGridView.TabIndex = 3;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(774, 19);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(171, 28);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Add New";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.launchEmployeeButton_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(591, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(177, 28);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Search";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // exTextBox2
+            // 
+            this.exTextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exTextBox2.Hint = "Search Employee";
+            this.exTextBox2.Location = new System.Drawing.Point(33, 20);
+            this.exTextBox2.Name = "exTextBox2";
+            this.exTextBox2.Size = new System.Drawing.Size(552, 26);
+            this.exTextBox2.TabIndex = 0;
             // 
             // transactionsTabPage
             // 
@@ -592,65 +652,6 @@
             this.report5TabPage.Text = "Report 5";
             this.report5TabPage.UseVisualStyleBackColor = true;
             // 
-            // mailingListLabel
-            // 
-            this.mailingListLabel.AutoSize = true;
-            this.mailingListLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mailingListLabel.Location = new System.Drawing.Point(31, 24);
-            this.mailingListLabel.Name = "mailingListLabel";
-            this.mailingListLabel.Size = new System.Drawing.Size(87, 18);
-            this.mailingListLabel.TabIndex = 0;
-            this.mailingListLabel.Text = "Mailing List";
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(31, 65);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowTemplate.Height = 25;
-            this.dataGridView4.Size = new System.Drawing.Size(912, 422);
-            this.dataGridView4.TabIndex = 1;
-            // 
-            // exTextBox2
-            // 
-            this.exTextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exTextBox2.Hint = "Search Employee";
-            this.exTextBox2.Location = new System.Drawing.Point(33, 20);
-            this.exTextBox2.Name = "exTextBox2";
-            this.exTextBox2.Size = new System.Drawing.Size(552, 26);
-            this.exTextBox2.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(591, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 28);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(774, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(171, 28);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Add New";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // searchEmployeesDataGridView
-            // 
-            this.searchEmployeesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.searchEmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.searchEmployeesDataGridView.Location = new System.Drawing.Point(33, 70);
-            this.searchEmployeesDataGridView.Name = "searchEmployeesDataGridView";
-            this.searchEmployeesDataGridView.RowTemplate.Height = 25;
-            this.searchEmployeesDataGridView.Size = new System.Drawing.Size(912, 429);
-            this.searchEmployeesDataGridView.TabIndex = 3;
-            // 
             // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -677,14 +678,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.mailingListTabPage.ResumeLayout(false);
             this.mailingListTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.employeesTabPage.ResumeLayout(false);
             this.employeesTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchEmployeesDataGridView)).EndInit();
             this.transactionsTabPage.ResumeLayout(false);
             this.transactionsTabControl.ResumeLayout(false);
             this.reportsTabPage.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchEmployeesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

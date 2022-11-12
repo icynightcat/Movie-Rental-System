@@ -10,15 +10,24 @@ using System.Windows.Forms;
 
 namespace MoviesApp
 {
-    public partial class Employee : Form
+    public partial class EmployeeForm : Form
     {
-        public Employee()
+        public EmployeeForm()
         {
             InitializeComponent();
         }
         private void employeeDoneButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void employeeCancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

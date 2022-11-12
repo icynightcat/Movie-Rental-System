@@ -21,6 +21,11 @@ namespace MoviesApp
             new CustomerForm().ShowDialog();
 
         }
+        private void launchEmployeeButton_Click(object sender, EventArgs e)
+        {
+            new EmployeeForm().ShowDialog();
+
+        }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 

@@ -30,8 +30,9 @@
         {
             this.viewCustomerTabControl = new System.Windows.Forms.TabControl();
             this.accountInfoTabPage = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.customerCreatedTextBox = new System.Windows.Forms.TextBox();
             this.customerNextPaymentLabel2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.customerExpiresLabel = new System.Windows.Forms.Label();
             this.customerNextPaymentLabel1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,39 +46,39 @@
             this.customerFirstNameTextBox = new System.Windows.Forms.TextBox();
             this.customerIDTextBox = new System.Windows.Forms.TextBox();
             this.contactTabPage = new System.Windows.Forms.TabPage();
-            this.currentRentalsTabPage = new System.Windows.Forms.TabPage();
-            this.historyTabPage = new System.Windows.Forms.TabPage();
-            this.suggestTabPage = new System.Windows.Forms.TabPage();
-            this.customerDoneButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.customerCreatedTextBox = new System.Windows.Forms.TextBox();
-            this.customerNameLabel1 = new System.Windows.Forms.Label();
-            this.customerAddressLabel = new System.Windows.Forms.Label();
-            this.customerCityLabel = new System.Windows.Forms.Label();
-            this.customerStateLabel = new System.Windows.Forms.Label();
-            this.customerPhoneLabel = new System.Windows.Forms.Label();
-            this.customerEmailLabel = new System.Windows.Forms.Label();
-            this.customerZipCodeLabel = new System.Windows.Forms.Label();
-            this.customerAddressTextBox = new System.Windows.Forms.TextBox();
-            this.customerCityTextBox = new System.Windows.Forms.TextBox();
-            this.customerStateTextBox = new System.Windows.Forms.TextBox();
-            this.customerZipCodeTextBox = new System.Windows.Forms.TextBox();
-            this.customerPhoneTextBox = new System.Windows.Forms.TextBox();
             this.customerEmailTextBox = new System.Windows.Forms.TextBox();
-            this.customerNameLabel2 = new System.Windows.Forms.Label();
+            this.customerPhoneTextBox = new System.Windows.Forms.TextBox();
+            this.customerZipCodeTextBox = new System.Windows.Forms.TextBox();
+            this.customerStateTextBox = new System.Windows.Forms.TextBox();
+            this.customerCityTextBox = new System.Windows.Forms.TextBox();
+            this.customerAddressTextBox = new System.Windows.Forms.TextBox();
+            this.customerZipCodeLabel = new System.Windows.Forms.Label();
+            this.customerEmailLabel = new System.Windows.Forms.Label();
+            this.customerPhoneLabel = new System.Windows.Forms.Label();
+            this.customerStateLabel = new System.Windows.Forms.Label();
+            this.customerCityLabel = new System.Windows.Forms.Label();
+            this.customerAddressLabel = new System.Windows.Forms.Label();
+            this.customerNameLabel1 = new System.Windows.Forms.Label();
+            this.currentRentalsTabPage = new System.Windows.Forms.TabPage();
             this.customerCurrentRentalsDataGridView = new System.Windows.Forms.DataGridView();
-            this.customerNameLabel3 = new System.Windows.Forms.Label();
+            this.customerNameLabel2 = new System.Windows.Forms.Label();
+            this.historyTabPage = new System.Windows.Forms.TabPage();
             this.customerHistoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
+            this.customerNameLabel3 = new System.Windows.Forms.Label();
+            this.suggestTabPage = new System.Windows.Forms.TabPage();
             this.customerSuggestDataGridView = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.customerDoneButton = new System.Windows.Forms.Button();
+            this.customerCCExpiresYearTextBox = new MoviesApp.ExTextBox();
+            this.customerCCExpiresMonthTextBox = new MoviesApp.ExTextBox();
             this.viewCustomerTabControl.SuspendLayout();
             this.accountInfoTabPage.SuspendLayout();
             this.contactTabPage.SuspendLayout();
             this.currentRentalsTabPage.SuspendLayout();
-            this.historyTabPage.SuspendLayout();
-            this.suggestTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerCurrentRentalsDataGridView)).BeginInit();
+            this.historyTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerHistoryDataGridView)).BeginInit();
+            this.suggestTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerSuggestDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,10 +98,11 @@
             // 
             // accountInfoTabPage
             // 
+            this.accountInfoTabPage.Controls.Add(this.customerCCExpiresMonthTextBox);
+            this.accountInfoTabPage.Controls.Add(this.customerCCExpiresYearTextBox);
             this.accountInfoTabPage.Controls.Add(this.label2);
             this.accountInfoTabPage.Controls.Add(this.customerCreatedTextBox);
             this.accountInfoTabPage.Controls.Add(this.customerNextPaymentLabel2);
-            this.accountInfoTabPage.Controls.Add(this.dateTimePicker1);
             this.accountInfoTabPage.Controls.Add(this.customerExpiresLabel);
             this.accountInfoTabPage.Controls.Add(this.customerNextPaymentLabel1);
             this.accountInfoTabPage.Controls.Add(this.label1);
@@ -122,32 +124,41 @@
             this.accountInfoTabPage.Text = "Account Info";
             this.accountInfoTabPage.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(577, 139);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 18);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Created";
+            // 
+            // customerCreatedTextBox
+            // 
+            this.customerCreatedTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerCreatedTextBox.Location = new System.Drawing.Point(658, 136);
+            this.customerCreatedTextBox.Name = "customerCreatedTextBox";
+            this.customerCreatedTextBox.Size = new System.Drawing.Size(133, 26);
+            this.customerCreatedTextBox.TabIndex = 14;
+            this.customerCreatedTextBox.Text = "yyyy-MM-dd";
+            // 
             // customerNextPaymentLabel2
             // 
             this.customerNextPaymentLabel2.AutoSize = true;
             this.customerNextPaymentLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerNextPaymentLabel2.Location = new System.Drawing.Point(658, 282);
+            this.customerNextPaymentLabel2.Location = new System.Drawing.Point(645, 282);
             this.customerNextPaymentLabel2.Name = "customerNextPaymentLabel2";
             this.customerNextPaymentLabel2.Size = new System.Drawing.Size(105, 18);
             this.customerNextPaymentLabel2.TabIndex = 13;
             this.customerNextPaymentLabel2.Text = "MMM dd, yyyy";
             this.customerNextPaymentLabel2.Click += new System.EventHandler(this.customerNextPaymentLabel2_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "MMM dd, yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(658, 324);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(133, 26);
-            this.dateTimePicker1.TabIndex = 12;
-            // 
             // customerExpiresLabel
             // 
             this.customerExpiresLabel.AutoSize = true;
             this.customerExpiresLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerExpiresLabel.Location = new System.Drawing.Point(581, 327);
+            this.customerExpiresLabel.Location = new System.Drawing.Point(567, 327);
             this.customerExpiresLabel.Name = "customerExpiresLabel";
             this.customerExpiresLabel.Size = new System.Drawing.Size(61, 18);
             this.customerExpiresLabel.TabIndex = 11;
@@ -157,7 +168,7 @@
             // 
             this.customerNextPaymentLabel1.AutoSize = true;
             this.customerNextPaymentLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerNextPaymentLabel1.Location = new System.Drawing.Point(538, 282);
+            this.customerNextPaymentLabel1.Location = new System.Drawing.Point(524, 282);
             this.customerNextPaymentLabel1.Name = "customerNextPaymentLabel1";
             this.customerNextPaymentLabel1.Size = new System.Drawing.Size(104, 18);
             this.customerNextPaymentLabel1.TabIndex = 10;
@@ -285,6 +296,124 @@
             this.contactTabPage.Text = "Contact";
             this.contactTabPage.UseVisualStyleBackColor = true;
             // 
+            // customerEmailTextBox
+            // 
+            this.customerEmailTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerEmailTextBox.Location = new System.Drawing.Point(284, 344);
+            this.customerEmailTextBox.Name = "customerEmailTextBox";
+            this.customerEmailTextBox.Size = new System.Drawing.Size(500, 26);
+            this.customerEmailTextBox.TabIndex = 12;
+            // 
+            // customerPhoneTextBox
+            // 
+            this.customerPhoneTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerPhoneTextBox.Location = new System.Drawing.Point(284, 300);
+            this.customerPhoneTextBox.Name = "customerPhoneTextBox";
+            this.customerPhoneTextBox.Size = new System.Drawing.Size(500, 26);
+            this.customerPhoneTextBox.TabIndex = 11;
+            // 
+            // customerZipCodeTextBox
+            // 
+            this.customerZipCodeTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerZipCodeTextBox.Location = new System.Drawing.Point(665, 257);
+            this.customerZipCodeTextBox.Name = "customerZipCodeTextBox";
+            this.customerZipCodeTextBox.Size = new System.Drawing.Size(119, 26);
+            this.customerZipCodeTextBox.TabIndex = 10;
+            // 
+            // customerStateTextBox
+            // 
+            this.customerStateTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerStateTextBox.Location = new System.Drawing.Point(284, 257);
+            this.customerStateTextBox.Name = "customerStateTextBox";
+            this.customerStateTextBox.Size = new System.Drawing.Size(259, 26);
+            this.customerStateTextBox.TabIndex = 9;
+            // 
+            // customerCityTextBox
+            // 
+            this.customerCityTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerCityTextBox.Location = new System.Drawing.Point(284, 212);
+            this.customerCityTextBox.Name = "customerCityTextBox";
+            this.customerCityTextBox.Size = new System.Drawing.Size(500, 26);
+            this.customerCityTextBox.TabIndex = 8;
+            // 
+            // customerAddressTextBox
+            // 
+            this.customerAddressTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerAddressTextBox.Location = new System.Drawing.Point(284, 165);
+            this.customerAddressTextBox.Name = "customerAddressTextBox";
+            this.customerAddressTextBox.Size = new System.Drawing.Size(500, 26);
+            this.customerAddressTextBox.TabIndex = 7;
+            // 
+            // customerZipCodeLabel
+            // 
+            this.customerZipCodeLabel.AutoSize = true;
+            this.customerZipCodeLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerZipCodeLabel.Location = new System.Drawing.Point(573, 260);
+            this.customerZipCodeLabel.Name = "customerZipCodeLabel";
+            this.customerZipCodeLabel.Size = new System.Drawing.Size(73, 18);
+            this.customerZipCodeLabel.TabIndex = 6;
+            this.customerZipCodeLabel.Text = "Zip Code";
+            // 
+            // customerEmailLabel
+            // 
+            this.customerEmailLabel.AutoSize = true;
+            this.customerEmailLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerEmailLabel.Location = new System.Drawing.Point(212, 347);
+            this.customerEmailLabel.Name = "customerEmailLabel";
+            this.customerEmailLabel.Size = new System.Drawing.Size(48, 18);
+            this.customerEmailLabel.TabIndex = 5;
+            this.customerEmailLabel.Text = "Email";
+            // 
+            // customerPhoneLabel
+            // 
+            this.customerPhoneLabel.AutoSize = true;
+            this.customerPhoneLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerPhoneLabel.Location = new System.Drawing.Point(207, 303);
+            this.customerPhoneLabel.Name = "customerPhoneLabel";
+            this.customerPhoneLabel.Size = new System.Drawing.Size(53, 18);
+            this.customerPhoneLabel.TabIndex = 4;
+            this.customerPhoneLabel.Text = "Phone";
+            // 
+            // customerStateLabel
+            // 
+            this.customerStateLabel.AutoSize = true;
+            this.customerStateLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerStateLabel.Location = new System.Drawing.Point(215, 260);
+            this.customerStateLabel.Name = "customerStateLabel";
+            this.customerStateLabel.Size = new System.Drawing.Size(45, 18);
+            this.customerStateLabel.TabIndex = 3;
+            this.customerStateLabel.Text = "State";
+            // 
+            // customerCityLabel
+            // 
+            this.customerCityLabel.AutoSize = true;
+            this.customerCityLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerCityLabel.Location = new System.Drawing.Point(225, 215);
+            this.customerCityLabel.Name = "customerCityLabel";
+            this.customerCityLabel.Size = new System.Drawing.Size(35, 18);
+            this.customerCityLabel.TabIndex = 2;
+            this.customerCityLabel.Text = "City";
+            // 
+            // customerAddressLabel
+            // 
+            this.customerAddressLabel.AutoSize = true;
+            this.customerAddressLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerAddressLabel.Location = new System.Drawing.Point(193, 168);
+            this.customerAddressLabel.Name = "customerAddressLabel";
+            this.customerAddressLabel.Size = new System.Drawing.Size(67, 18);
+            this.customerAddressLabel.TabIndex = 1;
+            this.customerAddressLabel.Text = "Address";
+            // 
+            // customerNameLabel1
+            // 
+            this.customerNameLabel1.AutoSize = true;
+            this.customerNameLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerNameLabel1.Location = new System.Drawing.Point(24, 24);
+            this.customerNameLabel1.Name = "customerNameLabel1";
+            this.customerNameLabel1.Size = new System.Drawing.Size(152, 18);
+            this.customerNameLabel1.TabIndex = 0;
+            this.customerNameLabel1.Text = "CustomerNameHere";
+            // 
             // currentRentalsTabPage
             // 
             this.currentRentalsTabPage.Controls.Add(this.customerCurrentRentalsDataGridView);
@@ -296,6 +425,26 @@
             this.currentRentalsTabPage.TabIndex = 2;
             this.currentRentalsTabPage.Text = "Current Rentals";
             this.currentRentalsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // customerCurrentRentalsDataGridView
+            // 
+            this.customerCurrentRentalsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.customerCurrentRentalsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerCurrentRentalsDataGridView.Location = new System.Drawing.Point(19, 69);
+            this.customerCurrentRentalsDataGridView.Name = "customerCurrentRentalsDataGridView";
+            this.customerCurrentRentalsDataGridView.RowTemplate.Height = 25;
+            this.customerCurrentRentalsDataGridView.Size = new System.Drawing.Size(938, 412);
+            this.customerCurrentRentalsDataGridView.TabIndex = 1;
+            // 
+            // customerNameLabel2
+            // 
+            this.customerNameLabel2.AutoSize = true;
+            this.customerNameLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerNameLabel2.Location = new System.Drawing.Point(24, 24);
+            this.customerNameLabel2.Name = "customerNameLabel2";
+            this.customerNameLabel2.Size = new System.Drawing.Size(152, 18);
+            this.customerNameLabel2.TabIndex = 0;
+            this.customerNameLabel2.Text = "CustomerNameHere";
             // 
             // historyTabPage
             // 
@@ -309,6 +458,26 @@
             this.historyTabPage.Text = "History";
             this.historyTabPage.UseVisualStyleBackColor = true;
             // 
+            // customerHistoryDataGridView
+            // 
+            this.customerHistoryDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.customerHistoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerHistoryDataGridView.Location = new System.Drawing.Point(19, 69);
+            this.customerHistoryDataGridView.Name = "customerHistoryDataGridView";
+            this.customerHistoryDataGridView.RowTemplate.Height = 25;
+            this.customerHistoryDataGridView.Size = new System.Drawing.Size(938, 412);
+            this.customerHistoryDataGridView.TabIndex = 1;
+            // 
+            // customerNameLabel3
+            // 
+            this.customerNameLabel3.AutoSize = true;
+            this.customerNameLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerNameLabel3.Location = new System.Drawing.Point(24, 24);
+            this.customerNameLabel3.Name = "customerNameLabel3";
+            this.customerNameLabel3.Size = new System.Drawing.Size(152, 18);
+            this.customerNameLabel3.TabIndex = 0;
+            this.customerNameLabel3.Text = "CustomerNameHere";
+            // 
             // suggestTabPage
             // 
             this.suggestTabPage.Controls.Add(this.customerSuggestDataGridView);
@@ -321,192 +490,15 @@
             this.suggestTabPage.Text = "Suggest";
             this.suggestTabPage.UseVisualStyleBackColor = true;
             // 
-            // customerDoneButton
+            // customerSuggestDataGridView
             // 
-            this.customerDoneButton.Location = new System.Drawing.Point(792, 518);
-            this.customerDoneButton.Name = "customerDoneButton";
-            this.customerDoneButton.Size = new System.Drawing.Size(150, 30);
-            this.customerDoneButton.TabIndex = 0;
-            this.customerDoneButton.Text = "Done";
-            this.customerDoneButton.UseVisualStyleBackColor = true;
-            this.customerDoneButton.Click += new System.EventHandler(this.customerDoneButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(577, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 18);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Created";
-            // 
-            // customerCreatedTextBox
-            // 
-            this.customerCreatedTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerCreatedTextBox.Location = new System.Drawing.Point(658, 136);
-            this.customerCreatedTextBox.Name = "customerCreatedTextBox";
-            this.customerCreatedTextBox.Size = new System.Drawing.Size(133, 26);
-            this.customerCreatedTextBox.TabIndex = 14;
-            this.customerCreatedTextBox.Text = "yyyy-MM-dd";
-            // 
-            // customerNameLabel1
-            // 
-            this.customerNameLabel1.AutoSize = true;
-            this.customerNameLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerNameLabel1.Location = new System.Drawing.Point(24, 24);
-            this.customerNameLabel1.Name = "customerNameLabel1";
-            this.customerNameLabel1.Size = new System.Drawing.Size(152, 18);
-            this.customerNameLabel1.TabIndex = 0;
-            this.customerNameLabel1.Text = "CustomerNameHere";
-            // 
-            // customerAddressLabel
-            // 
-            this.customerAddressLabel.AutoSize = true;
-            this.customerAddressLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerAddressLabel.Location = new System.Drawing.Point(193, 168);
-            this.customerAddressLabel.Name = "customerAddressLabel";
-            this.customerAddressLabel.Size = new System.Drawing.Size(67, 18);
-            this.customerAddressLabel.TabIndex = 1;
-            this.customerAddressLabel.Text = "Address";
-            // 
-            // customerCityLabel
-            // 
-            this.customerCityLabel.AutoSize = true;
-            this.customerCityLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerCityLabel.Location = new System.Drawing.Point(225, 215);
-            this.customerCityLabel.Name = "customerCityLabel";
-            this.customerCityLabel.Size = new System.Drawing.Size(35, 18);
-            this.customerCityLabel.TabIndex = 2;
-            this.customerCityLabel.Text = "City";
-            // 
-            // customerStateLabel
-            // 
-            this.customerStateLabel.AutoSize = true;
-            this.customerStateLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerStateLabel.Location = new System.Drawing.Point(215, 260);
-            this.customerStateLabel.Name = "customerStateLabel";
-            this.customerStateLabel.Size = new System.Drawing.Size(45, 18);
-            this.customerStateLabel.TabIndex = 3;
-            this.customerStateLabel.Text = "State";
-            // 
-            // customerPhoneLabel
-            // 
-            this.customerPhoneLabel.AutoSize = true;
-            this.customerPhoneLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerPhoneLabel.Location = new System.Drawing.Point(207, 303);
-            this.customerPhoneLabel.Name = "customerPhoneLabel";
-            this.customerPhoneLabel.Size = new System.Drawing.Size(53, 18);
-            this.customerPhoneLabel.TabIndex = 4;
-            this.customerPhoneLabel.Text = "Phone";
-            // 
-            // customerEmailLabel
-            // 
-            this.customerEmailLabel.AutoSize = true;
-            this.customerEmailLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerEmailLabel.Location = new System.Drawing.Point(212, 347);
-            this.customerEmailLabel.Name = "customerEmailLabel";
-            this.customerEmailLabel.Size = new System.Drawing.Size(48, 18);
-            this.customerEmailLabel.TabIndex = 5;
-            this.customerEmailLabel.Text = "Email";
-            // 
-            // customerZipCodeLabel
-            // 
-            this.customerZipCodeLabel.AutoSize = true;
-            this.customerZipCodeLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerZipCodeLabel.Location = new System.Drawing.Point(573, 260);
-            this.customerZipCodeLabel.Name = "customerZipCodeLabel";
-            this.customerZipCodeLabel.Size = new System.Drawing.Size(73, 18);
-            this.customerZipCodeLabel.TabIndex = 6;
-            this.customerZipCodeLabel.Text = "Zip Code";
-            // 
-            // customerAddressTextBox
-            // 
-            this.customerAddressTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerAddressTextBox.Location = new System.Drawing.Point(284, 165);
-            this.customerAddressTextBox.Name = "customerAddressTextBox";
-            this.customerAddressTextBox.Size = new System.Drawing.Size(500, 26);
-            this.customerAddressTextBox.TabIndex = 7;
-            // 
-            // customerCityTextBox
-            // 
-            this.customerCityTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerCityTextBox.Location = new System.Drawing.Point(284, 212);
-            this.customerCityTextBox.Name = "customerCityTextBox";
-            this.customerCityTextBox.Size = new System.Drawing.Size(500, 26);
-            this.customerCityTextBox.TabIndex = 8;
-            // 
-            // customerStateTextBox
-            // 
-            this.customerStateTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerStateTextBox.Location = new System.Drawing.Point(284, 257);
-            this.customerStateTextBox.Name = "customerStateTextBox";
-            this.customerStateTextBox.Size = new System.Drawing.Size(259, 26);
-            this.customerStateTextBox.TabIndex = 9;
-            // 
-            // customerZipCodeTextBox
-            // 
-            this.customerZipCodeTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerZipCodeTextBox.Location = new System.Drawing.Point(665, 257);
-            this.customerZipCodeTextBox.Name = "customerZipCodeTextBox";
-            this.customerZipCodeTextBox.Size = new System.Drawing.Size(119, 26);
-            this.customerZipCodeTextBox.TabIndex = 10;
-            // 
-            // customerPhoneTextBox
-            // 
-            this.customerPhoneTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerPhoneTextBox.Location = new System.Drawing.Point(284, 300);
-            this.customerPhoneTextBox.Name = "customerPhoneTextBox";
-            this.customerPhoneTextBox.Size = new System.Drawing.Size(500, 26);
-            this.customerPhoneTextBox.TabIndex = 11;
-            // 
-            // customerEmailTextBox
-            // 
-            this.customerEmailTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerEmailTextBox.Location = new System.Drawing.Point(284, 344);
-            this.customerEmailTextBox.Name = "customerEmailTextBox";
-            this.customerEmailTextBox.Size = new System.Drawing.Size(500, 26);
-            this.customerEmailTextBox.TabIndex = 12;
-            // 
-            // customerNameLabel2
-            // 
-            this.customerNameLabel2.AutoSize = true;
-            this.customerNameLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerNameLabel2.Location = new System.Drawing.Point(24, 24);
-            this.customerNameLabel2.Name = "customerNameLabel2";
-            this.customerNameLabel2.Size = new System.Drawing.Size(152, 18);
-            this.customerNameLabel2.TabIndex = 0;
-            this.customerNameLabel2.Text = "CustomerNameHere";
-            // 
-            // customerCurrentRentalsDataGridView
-            // 
-            this.customerCurrentRentalsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.customerCurrentRentalsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerCurrentRentalsDataGridView.Location = new System.Drawing.Point(19, 69);
-            this.customerCurrentRentalsDataGridView.Name = "customerCurrentRentalsDataGridView";
-            this.customerCurrentRentalsDataGridView.RowTemplate.Height = 25;
-            this.customerCurrentRentalsDataGridView.Size = new System.Drawing.Size(938, 412);
-            this.customerCurrentRentalsDataGridView.TabIndex = 1;
-            // 
-            // customerNameLabel3
-            // 
-            this.customerNameLabel3.AutoSize = true;
-            this.customerNameLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerNameLabel3.Location = new System.Drawing.Point(24, 24);
-            this.customerNameLabel3.Name = "customerNameLabel3";
-            this.customerNameLabel3.Size = new System.Drawing.Size(152, 18);
-            this.customerNameLabel3.TabIndex = 0;
-            this.customerNameLabel3.Text = "CustomerNameHere";
-            // 
-            // customerHistoryDataGridView
-            // 
-            this.customerHistoryDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.customerHistoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerHistoryDataGridView.Location = new System.Drawing.Point(19, 69);
-            this.customerHistoryDataGridView.Name = "customerHistoryDataGridView";
-            this.customerHistoryDataGridView.RowTemplate.Height = 25;
-            this.customerHistoryDataGridView.Size = new System.Drawing.Size(938, 412);
-            this.customerHistoryDataGridView.TabIndex = 1;
+            this.customerSuggestDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.customerSuggestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerSuggestDataGridView.Location = new System.Drawing.Point(19, 69);
+            this.customerSuggestDataGridView.Name = "customerSuggestDataGridView";
+            this.customerSuggestDataGridView.RowTemplate.Height = 25;
+            this.customerSuggestDataGridView.Size = new System.Drawing.Size(938, 412);
+            this.customerSuggestDataGridView.TabIndex = 1;
             // 
             // label3
             // 
@@ -518,15 +510,33 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "CustomerNameHere";
             // 
-            // customerSuggestDataGridView
+            // customerDoneButton
             // 
-            this.customerSuggestDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.customerSuggestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerSuggestDataGridView.Location = new System.Drawing.Point(19, 69);
-            this.customerSuggestDataGridView.Name = "customerSuggestDataGridView";
-            this.customerSuggestDataGridView.RowTemplate.Height = 25;
-            this.customerSuggestDataGridView.Size = new System.Drawing.Size(938, 412);
-            this.customerSuggestDataGridView.TabIndex = 1;
+            this.customerDoneButton.Location = new System.Drawing.Point(792, 518);
+            this.customerDoneButton.Name = "customerDoneButton";
+            this.customerDoneButton.Size = new System.Drawing.Size(150, 30);
+            this.customerDoneButton.TabIndex = 0;
+            this.customerDoneButton.Text = "Done";
+            this.customerDoneButton.UseVisualStyleBackColor = true;
+            this.customerDoneButton.Click += new System.EventHandler(this.customerDoneButton_Click);
+            // 
+            // customerCCExpiresYearTextBox
+            // 
+            this.customerCCExpiresYearTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerCCExpiresYearTextBox.Hint = "yyyy";
+            this.customerCCExpiresYearTextBox.Location = new System.Drawing.Point(703, 324);
+            this.customerCCExpiresYearTextBox.Name = "customerCCExpiresYearTextBox";
+            this.customerCCExpiresYearTextBox.Size = new System.Drawing.Size(88, 26);
+            this.customerCCExpiresYearTextBox.TabIndex = 17;
+            // 
+            // customerCCExpiresMonthTextBox
+            // 
+            this.customerCCExpiresMonthTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerCCExpiresMonthTextBox.Hint = "mm";
+            this.customerCCExpiresMonthTextBox.Location = new System.Drawing.Point(634, 324);
+            this.customerCCExpiresMonthTextBox.Name = "customerCCExpiresMonthTextBox";
+            this.customerCCExpiresMonthTextBox.Size = new System.Drawing.Size(53, 26);
+            this.customerCCExpiresMonthTextBox.TabIndex = 18;
             // 
             // CustomerForm
             // 
@@ -548,12 +558,12 @@
             this.contactTabPage.PerformLayout();
             this.currentRentalsTabPage.ResumeLayout(false);
             this.currentRentalsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerCurrentRentalsDataGridView)).EndInit();
             this.historyTabPage.ResumeLayout(false);
             this.historyTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerHistoryDataGridView)).EndInit();
             this.suggestTabPage.ResumeLayout(false);
             this.suggestTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerCurrentRentalsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerHistoryDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerSuggestDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -577,7 +587,6 @@
         private TextBox customerFirstNameTextBox;
         private TextBox customerIDTextBox;
         private Label customerNextPaymentLabel2;
-        private DateTimePicker dateTimePicker1;
         private Label customerExpiresLabel;
         private Label customerNextPaymentLabel1;
         private Label label1;
@@ -603,5 +612,7 @@
         private Label customerNameLabel3;
         private DataGridView customerSuggestDataGridView;
         private Label label3;
+        private ExTextBox customerCCExpiresMonthTextBox;
+        private ExTextBox customerCCExpiresYearTextBox;
     }
 }
