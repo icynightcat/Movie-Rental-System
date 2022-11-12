@@ -16,5 +16,24 @@ namespace MoviesApp
         {
             InitializeComponent();
         }
+        private void customerDoneButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customerNextPaymentLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

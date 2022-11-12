@@ -72,6 +72,8 @@
             this.report3TabPage = new System.Windows.Forms.TabPage();
             this.report4TabPage = new System.Windows.Forms.TabPage();
             this.report5TabPage = new System.Windows.Forms.TabPage();
+            this.mailingListLabel = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -81,10 +83,12 @@
             this.customersTabControl.SuspendLayout();
             this.searchCustomersTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.mailingListTabPage.SuspendLayout();
             this.transactionsTabPage.SuspendLayout();
             this.transactionsTabControl.SuspendLayout();
             this.reportsTabPage.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -441,6 +445,8 @@
             // 
             // mailingListTabPage
             // 
+            this.mailingListTabPage.Controls.Add(this.dataGridView4);
+            this.mailingListTabPage.Controls.Add(this.mailingListLabel);
             this.mailingListTabPage.Location = new System.Drawing.Point(4, 4);
             this.mailingListTabPage.Name = "mailingListTabPage";
             this.mailingListTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -576,6 +582,26 @@
             this.report5TabPage.Text = "Report 5";
             this.report5TabPage.UseVisualStyleBackColor = true;
             // 
+            // mailingListLabel
+            // 
+            this.mailingListLabel.AutoSize = true;
+            this.mailingListLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mailingListLabel.Location = new System.Drawing.Point(31, 24);
+            this.mailingListLabel.Name = "mailingListLabel";
+            this.mailingListLabel.Size = new System.Drawing.Size(87, 18);
+            this.mailingListLabel.TabIndex = 0;
+            this.mailingListLabel.Text = "Mailing List";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(31, 65);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowTemplate.Height = 25;
+            this.dataGridView4.Size = new System.Drawing.Size(912, 422);
+            this.dataGridView4.TabIndex = 1;
+            // 
             // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -600,10 +626,13 @@
             this.searchCustomersTabPage.ResumeLayout(false);
             this.searchCustomersTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.mailingListTabPage.ResumeLayout(false);
+            this.mailingListTabPage.PerformLayout();
             this.transactionsTabPage.ResumeLayout(false);
             this.transactionsTabControl.ResumeLayout(false);
             this.reportsTabPage.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -654,5 +683,7 @@
         private Button searchCustomersButton;
         private ExTextBox searchCustomersTextBox;
         private DataGridView dataGridView3;
+        private DataGridView dataGridView4;
+        private Label mailingListLabel;
     }
 }
