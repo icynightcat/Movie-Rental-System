@@ -137,3 +137,5 @@ insert into Movie_type (movie_id, type_of_movie) values (25, 'Action');
 insert into Movie_type (movie_id, type_of_movie) values (56, 'Animated');
 insert into Movie_type (movie_id, type_of_movie) values (15, 'Historical');
 insert into Movie_type (movie_id, type_of_movie) values (57, 'Sci-Fi');
+
+--hello#--
