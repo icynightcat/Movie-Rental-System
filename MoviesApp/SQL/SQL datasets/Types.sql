@@ -1,3 +1,5 @@
+use movies;
+
 insert into Types (type_of_movie) values ('Action');
 insert into Types (type_of_movie) values ('Adventure');
 insert into Types (type_of_movie) values ('Animated');

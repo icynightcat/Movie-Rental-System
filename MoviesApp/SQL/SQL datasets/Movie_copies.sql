@@ -1,3 +1,5 @@
+use movies;
+
 insert into Movie_copies (copy_id, movie_id, format, resolution) values (1, 27, 'DVD', '1600x900');
 insert into Movie_copies (copy_id, movie_id, format, resolution) values (2, 33, 'USB', '800x500');
 insert into Movie_copies (copy_id, movie_id, format, resolution) values (3, 9, 'Lazer Disk', '2560x1440');
