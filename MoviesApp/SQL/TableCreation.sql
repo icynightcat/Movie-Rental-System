@@ -113,9 +113,10 @@ CREATE TABLE Types (
 --Movie_type(movie_id, type_of_movie)
 --a) type_of_movie, FK references Types
 CREATE TABLE Movie_type (
-	type_id INT NOT NULL,
+	movie_id INT NOT NULL,
 	type_of_movie VARCHAR(50) NOT NULL,
-	PRIMARY KEY (type_id),
+	PRIMARY KEY (movie_id, type_of_movie),
+	FOREIGN KEY (movie_id) REFERENCES Movie(movie_id),
 	FOREIGN KEY (type_of_movie) REFERENCES Types(type_of_movie)
 	);
 
