@@ -344,7 +344,7 @@
             "Fantasy",
             "Historical",
             "Horror",
-            "Science Fiction",
+            "Romance",
             "Thriller",
             "Western",
             "Sci-Fi"});
