@@ -32,7 +32,7 @@ CREATE TABLE Movie_copies (
 	movie_id INT NOT NULL,
 	format VARCHAR(50) NOT NULL,
 	resolution VARCHAR(50) NOT NULL,
-	PRIMARY KEY (copy_id),
+	PRIMARY KEY (copy_id, movie_id),
 	FOREIGN KEY (movie_id) REFERENCES Movie(movie_id)
 	);
 
@@ -78,7 +78,7 @@ CREATE TABLE Acts_in (
 	);
 
 --Customer(account_number, first_name, last_name, address, city, state, zip_code, telephone,
---email, create_cust_date, account_type, credit_card, plan_number, start_date, end_date,
+--email, create_cust_date, credit_card, plan_number, start_date, end_date,
 --customer_rating)
 --a) plan_number FK references Plan
 --b) account_number is the primary key
@@ -93,7 +93,6 @@ CREATE TABLE Customer (
 	telephone VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL,
 	create_cust_date DATE NOT NULL,
-	account_type VARCHAR(50) NOT NULL,
 	credit_card VARCHAR(50) NOT NULL,
 	plan_number INT NOT NULL,
 	start_date DATE NOT NULL,
@@ -143,13 +142,3 @@ create table Orders (
 	foreign key (account_number) references customer(account_number),
 	foreign key (employee_id) references employees(employee_id)
 );
-
---Movie_has_type(movie_id, type_id)
---a) movie_id FK references Movie
---b) type_id FK references Movie_type
-CREATE TABLE Movie_has_type (
-	movie_id INT NOT NULL,
-	type_id INT NOT NULL,
-	FOREIGN KEY (movie_id) REFERENCES Movie(movie_id),
-	FOREIGN KEY (type_id) REFERENCES Movie_type(type_id)
-	);
