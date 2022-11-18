@@ -1,3 +1,5 @@
+use movies;
+
 insert into Movie_type (movie_id, type_of_movie) values (40, 'Adventure');
 insert into Movie_type (movie_id, type_of_movie) values (40, 'Thriller');
 insert into Movie_type (movie_id, type_of_movie) values (47, 'Animated');

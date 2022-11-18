@@ -1,3 +1,5 @@
+use movies;
+
 insert into Actors_in (actor_id, movie_id) values (21, 52);
 insert into Actors_in (actor_id, movie_id) values (5, 21);
 insert into Actors_in (actor_id, movie_id) values (4, 44);

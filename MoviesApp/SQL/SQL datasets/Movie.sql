@@ -1,3 +1,5 @@
+use movies;
+
 insert into Movie (movie_id, movie_name, distribution_fee) values (1, 'Graceland', 1295.64);
 insert into Movie (movie_id, movie_name, distribution_fee) values (2, 'Born to Be Bad', 492594.0);
 insert into Movie (movie_id, movie_name, distribution_fee) values (3, 'Wyatt Earp', 885262.89);
