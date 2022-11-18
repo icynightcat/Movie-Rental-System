@@ -36,7 +36,6 @@ insert into Movie_type (movie_id, type_of_movie) values (32, 'Sci-Fi');
 insert into Movie_type (movie_id, type_of_movie) values (4, 'Western');
 insert into Movie_type (movie_id, type_of_movie) values (35, 'Thriller');
 insert into Movie_type (movie_id, type_of_movie) values (62, 'Action');
-
 insert into Movie_type (movie_id, type_of_movie) values (65, 'Horror');
 insert into Movie_type (movie_id, type_of_movie) values (57, 'Thriller');
 insert into Movie_type (movie_id, type_of_movie) values (28, 'Comedy');
