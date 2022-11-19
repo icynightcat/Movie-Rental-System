@@ -1,3 +1,6 @@
+using MoviesApp.SQL;
+using System.Transactions;
+
 namespace MoviesApp
 {
     internal static class Program
@@ -12,7 +15,7 @@ namespace MoviesApp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             new Login().Show();
-            Application.Run();
+            Application.Run();          
         }
     }
 }
