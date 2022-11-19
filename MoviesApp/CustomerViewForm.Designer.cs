@@ -336,10 +336,18 @@
             this.movieGenre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.movieGenre.FormattingEnabled = true;
             this.movieGenre.Items.AddRange(new object[] {
+            "Action",
+            "Adventure",
+            "Animated",
             "Comedy",
             "Drama",
-            "Action",
-            "Foreign"});
+            "Fantasy",
+            "Historical",
+            "Horror",
+            "Romance",
+            "Thriller",
+            "Western",
+            "Sci-Fi"});
             this.movieGenre.Location = new System.Drawing.Point(101, 125);
             this.movieGenre.Name = "movieGenre";
             this.movieGenre.Size = new System.Drawing.Size(182, 31);

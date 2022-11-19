@@ -1,3 +1,5 @@
+use movies;
+
 insert into Actors (actor_id, first_name, last_name, gender, age) values (1, 'Chloris', 'Flack', 'Female', 100);
 insert into Actors (actor_id, first_name, last_name, gender, age) values (2, 'Cy', 'King', 'Male', 79);
 insert into Actors (actor_id, first_name, last_name, gender, age) values (3, 'Wain', 'Redhead', 'Male', 42);

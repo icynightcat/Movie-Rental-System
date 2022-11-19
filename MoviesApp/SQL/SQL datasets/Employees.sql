@@ -1,3 +1,5 @@
+use movies;
+
 insert into Employees (employee_id, social_insurance_number, first_name, last_name, address, city, state, zip_code, telephone, start_date, hourly_rate) values (1, '658-61-3868', 'Margette', 'Veryan', '87 Debs Junction', 'Virginia Beach', 'Virginia', '23464', '757-634-9319', '05/08/2022', 47.55);
 insert into Employees (employee_id, social_insurance_number, first_name, last_name, address, city, state, zip_code, telephone, start_date, hourly_rate) values (2, '202-74-8298', 'Micky', 'Bemwell', '15406 Kingsford Drive', 'Boston', 'Massachusetts', '02283', '978-631-1207', '15/12/2021', 60.74);
 insert into Employees (employee_id, social_insurance_number, first_name, last_name, address, city, state, zip_code, telephone, start_date, hourly_rate) values (3, '356-31-0547', 'Burr', 'Cardinal', '34 Starling Court', 'New York City', 'New York', '10115', '212-379-0748', '02/11/2022', 78.48);
