@@ -138,8 +138,7 @@ create table Orders (
 	movie_rating varchar(5) not null,
 	employee_id int not null,
 	primary key (order_id),
-	foreign key (movie_id) references movie(movie_id),
-	foreign key (copy_id) references movie_copies(copy_id),
+	foreign key (copy_id, movie_id) references movie_copies(copy_id, movie_id),
 	foreign key (account_number) references customer(account_number),
 	foreign key (employee_id) references employees(employee_id)
 );
