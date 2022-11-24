@@ -908,7 +908,6 @@ insert into Acts_in (actor_id, movie_id) values (39, 37);
 insert into Acts_in (actor_id, movie_id) values (20, 8);
 insert into Acts_in (actor_id, movie_id) values (31, 60);
 insert into Acts_in (actor_id, movie_id) values (29, 66);
-insert into Acts_in (actor_id, movie_id) values (24, 65);
 insert into Acts_in (actor_id, movie_id) values (31, 16);
 insert into Acts_in (actor_id, movie_id) values (22, 30);
 insert into Acts_in (actor_id, movie_id) values (24, 65);
