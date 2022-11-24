@@ -61,7 +61,7 @@ namespace MoviesApp
                     custdata.Close();                //closes the reader after the data is read in
                     connection.CloseConnection();//closes the database connection not the DBconnection.cs file
                     this.Close();
-                    new CustomerViewForm().Show();
+                    new CustomerViewForm(ID).Show();
 
                 }
 
