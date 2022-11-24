@@ -28,7 +28,7 @@ namespace MoviesApp
                 //myCommand = new SqlCommand(); //lets you send commands
                 //myCommand.Connection = myConnection; //lets you send commands
                 string fileName = "TableCreation.sql";
-                string path = Path.Combine(Environment.CurrentDirectory, @"\SQL\TableCreation.sql");
+                string path = Path.Join(Environment.CurrentDirectory, @"SQL\", fileName); //TODO giving error back
                 Console.Write(path);
                 string script = File.ReadAllText(path);
                 SqlCommand command = new SqlCommand(script, myConnection);
