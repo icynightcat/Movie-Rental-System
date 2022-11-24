@@ -27,36 +27,35 @@ namespace MoviesApp
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-
-
-
-            if (accountTextInput.Text.StartsWith("E"))
+            
+            while(true)
             {
-                
-                string account_ID = accountTextInput.Text.Substring(1);
-                string query = "select employee_id from Employee where employee_id = {account_ID}";
-                SqlDataReader? empdata = connection.GetDataReader(query); //get data reader must be initalized like line 9
-
-                if (empdata.Read() == null)
+                if (accountTextInput.Text.StartsWith("E"))
                 {
-                    Console.WriteLine("it was null nothing returned, get bent");
-                }
-                Console.Write(empdata.Read());
-                
-                empdata.Close();                //closes the reader after the data is read in
-                
+                    string account_ID = accountTextInput.Text.Substring(1);
+                    string query = $"select employee_id from Employees where employee_id = {account_ID}";
+                    SqlDataReader? empdata = connection.GetDataReader(query); //get data reader must be initalized like line 9
 
-                connection.CloseConnection();//closes the database connection not the DBconnection.cs file
-                this.Close();
-                new EmployeeViewForm().Show();
-            }
-            else 
-            {
-                connection.CloseConnection();//closes the database connection not the DBconnection.cs file
-                this.Close();
-                
-                new CustomerViewForm().Show();
+                    if (empdata != null && empdata["employee_id"].ToString() != null)
+                    {
+                        string ID = empdata["employee_id"].ToString();      //passing ID
+                        empdata.Close();                //closes the reader after the data is read in
+                        connection.CloseConnection();//closes the database connection not the DBconnection.cs file
+                        this.Close();
+                        new EmployeeViewForm().Show();
+                    }
+                    
+                    //Console.WriteLine(empdata["employee_id"].ToString()); //call to the table, [col name]. ToString so its reable, can be looped with while for the empdata
+                   
+                }
+                else
+                {
+                    connection.CloseConnection();//closes the database connection not the DBconnection.cs file
+                    this.Close();
+
+                    new CustomerViewForm().Show();
+                }
+                }
             }
         }
-    }
 }
