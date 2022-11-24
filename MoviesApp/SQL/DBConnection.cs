@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace MoviesApp.SQL
 {
-    abstract class DBConnection
+    public class DBConnection
     {
         readonly String connectionString = "Server = localhost; Database = Movies; Trusted_Connection = yes;";
         SqlConnection connection;
@@ -29,12 +29,9 @@ namespace MoviesApp.SQL
             connection.Close();
         }
 
-        // override this, use "GetDataReader(query)" and populate with data handler
-        public abstract void Query();
-
 
         //execute a query from a string NOTE: Close the reader when done reading, then call CloseConnection()
-        private SqlDataReader? GetDataReader(String query) {
+        public SqlDataReader? GetDataReader(String query) {
             SqlDataReader? reader = null;
             try
             {

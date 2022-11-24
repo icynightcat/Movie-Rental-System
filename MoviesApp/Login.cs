@@ -1,7 +1,14 @@
+using MoviesApp.SQL;
+using System.Reflection.Metadata;
+using System.Data.SqlClient;
+
 namespace MoviesApp
 {
     public partial class Login : Form
     {
+        //allows us to call dbconnections to make sql calls faster
+        private DBConnection connection = new DBConnection();
+
         public Login()
         {
             InitializeComponent();
@@ -17,16 +24,37 @@ namespace MoviesApp
 
         }
 
+
         private void loginButton_Click(object sender, EventArgs e)
         {
+
+
+
             if (accountTextInput.Text.StartsWith("E"))
             {
+                
+                string account_ID = accountTextInput.Text.Substring(1);
+                string query = "select employee_id from Employee where employee_id = {account_ID}";
+                SqlDataReader? empdata = connection.GetDataReader(query); //get data reader must be initalized like line 9
+
+                if (empdata.Read() == null)
+                {
+                    Console.WriteLine("it was null nothing returned, get bent");
+                }
+                Console.Write(empdata.Read());
+                
+                empdata.Close();                //closes the reader after the data is read in
+                
+
+                connection.CloseConnection();//closes the database connection not the DBconnection.cs file
                 this.Close();
                 new EmployeeViewForm().Show();
             }
             else 
             {
+                connection.CloseConnection();//closes the database connection not the DBconnection.cs file
                 this.Close();
+                
                 new CustomerViewForm().Show();
             }
         }
