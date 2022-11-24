@@ -9,9 +9,9 @@ namespace MoviesApp.SQL
 {
     abstract class DBConnection
     {
-        readonly String connectionString = "Server = localhost; Database = movies; Trusted_Connection = yes;";
+        readonly String connectionString = "Server = localhost; Database = Movies; Trusted_Connection = yes;";
         SqlConnection connection;
-            
+
         public DBConnection()
         {
             // Constructor
@@ -22,7 +22,7 @@ namespace MoviesApp.SQL
             // Destructor
             connection.Close();
         }
-        
+
         //used to close the connection from other modules
         public void CloseConnection()
         {
@@ -31,8 +31,7 @@ namespace MoviesApp.SQL
 
         // override this, use "GetDataReader(query)" and populate with data handler
         public abstract void Query();
-        
-            
+
 
         //execute a query from a string NOTE: Close the reader when done reading, then call CloseConnection()
         private SqlDataReader? GetDataReader(String query) {
