@@ -92,6 +92,8 @@
             this.report1Button = new System.Windows.Forms.Button();
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Movie_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Movie_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -131,8 +133,8 @@
             // 
             // moviesTabPage
             // 
-            this.moviesTabPage.Controls.Add(this.moviesAddMovieButton);
             this.moviesTabPage.Controls.Add(this.dataGridView2);
+            this.moviesTabPage.Controls.Add(this.moviesAddMovieButton);
             this.moviesTabPage.Controls.Add(this.button2);
             this.moviesTabPage.Controls.Add(this.toYearTextBox);
             this.moviesTabPage.Controls.Add(this.fromYearTextBox);
@@ -165,11 +167,15 @@
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Movie_ID,
+            this.Movie_name});
             this.dataGridView2.Location = new System.Drawing.Point(17, 165);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(938, 344);
             this.dataGridView2.TabIndex = 11;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // button2
             // 
@@ -825,6 +831,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Report Description";
             // 
+            // Movie_ID
+            // 
+            this.Movie_ID.HeaderText = "Movie ID";
+            this.Movie_ID.Name = "Movie_ID";
+            // 
+            // Movie_name
+            // 
+            this.Movie_name.HeaderText = "Movie Title";
+            this.Movie_name.Name = "Movie_name";
+            // 
             // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -936,5 +952,7 @@
         private ComboBox transactionsHistoryGenreComboBox;
         private ExTextBox transactionsHistoryMovieNameTextBox;
         private Button moviesAddMovieButton;
+        private DataGridViewTextBoxColumn Movie_ID;
+        private DataGridViewTextBoxColumn Movie_name;
     }
 }
