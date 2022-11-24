@@ -36,13 +36,15 @@ namespace MoviesApp
                     string query = $"select employee_id from Employees where employee_id = {account_ID}";
                     SqlDataReader? empdata = connection.GetDataReader(query); //get data reader must be initalized like line 9
 
-                    if (empdata != null && empdata["employee_id"].ToString() != null)
+                    if (empdata != null && empdata.HasRows)
                     {
+                        empdata.Read();
                         string ID = empdata["employee_id"].ToString();      //passing ID
                         empdata.Close();                //closes the reader after the data is read in
                         connection.CloseConnection();//closes the database connection not the DBconnection.cs file
                         this.Close();
                         new EmployeeViewForm().Show();
+                        break;
                     }
                     
                     //Console.WriteLine(empdata["employee_id"].ToString()); //call to the table, [col name]. ToString so its reable, can be looped with while for the empdata
