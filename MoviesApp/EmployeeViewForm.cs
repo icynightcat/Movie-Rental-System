@@ -2,8 +2,11 @@ namespace MoviesApp
 {
     public partial class EmployeeViewForm : Form
     {
-        public EmployeeViewForm()
+        private string ID = ""; //id initalized to use
+
+        public EmployeeViewForm(string input) //takes the id in
         {
+            ID = input; //call this ID to get the current id, needs to be sent to others as well when tranfering
             InitializeComponent();
         }
 

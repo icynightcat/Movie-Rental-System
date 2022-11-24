@@ -41,7 +41,7 @@ namespace MoviesApp
                     empdata.Close();                //closes the reader after the data is read in
                     connection.CloseConnection();//closes the database connection not the DBconnection.cs file
                     this.Close();
-                    new EmployeeViewForm().Show();
+                    new EmployeeViewForm(ID).Show();
 
                 }
 
