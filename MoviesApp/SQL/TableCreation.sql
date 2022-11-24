@@ -1,6 +1,6 @@
 ﻿--Table creation script for 291 project.
---	Database contains tables that represent a fictional "Blockbuster" style movie rental service. 
--- Assumes that database is called "movies"
+--Database contains tables that represent a fictional "Blockbuster" style movie rental service. 
+--Assumes that database is called "movies"
 use movies;
 
 
@@ -104,7 +104,7 @@ CREATE TABLE Customer (
 
 	--Types(type_of_movie)
 --a) type_of_movie is the primary key
-CREATE TABLE Types (
+CREATE TABLE Genre (
 	type_of_movie VARCHAR(50) NOT NULL,
 	PRIMARY KEY (type_of_movie)
 	);
@@ -117,7 +117,7 @@ CREATE TABLE Movie_type (
 	type_of_movie VARCHAR(50) NOT NULL,
 	PRIMARY KEY (movie_id, type_of_movie),
 	FOREIGN KEY (movie_id) REFERENCES Movie(movie_id),
-	FOREIGN KEY (type_of_movie) REFERENCES Types(type_of_movie)
+	FOREIGN KEY (type_of_movie) REFERENCES Genre(type_of_movie)
 	);
 
 --Order(order_id, movie_id, copy_id, order_placed_time, start_datetime, end_datetime,
