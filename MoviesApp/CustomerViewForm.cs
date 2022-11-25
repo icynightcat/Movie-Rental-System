@@ -110,8 +110,11 @@ namespace MoviesApp
         private void cust_movie_search(object sender, EventArgs e)
         {
             string title = movieTitleSearch.Text;
-            string query = $"select * from Movie m, Movie_copies c" +
-                $" where m.movie_id = c.movie_id and m.movie_name like '%{title}%' order by m.movie_name";
+            string query = $"select  m.movie_name, " +
+                $"STRING_AGG(t.type_of_movie, ', ') as 'genres' " +
+                $"from movie m, Movie_type t " +
+                $"where m.movie_id = t.movie_id and " +
+                $"m.movie_name like '%{title}%' group by m.movie_name";
             
             SqlDataReader? searchData = connection.GetDataReader(query);
 
@@ -120,11 +123,9 @@ namespace MoviesApp
                 while (searchData.Read())
                 {
                     searchResults.Rows.Add(
-                        searchData["movie_name"].ToString(), 
-                        "tempType", 
-                        "tempAvailable",
-                        searchData["format"].ToString());
-
+                        searchData["movie_name"].ToString(),
+                        searchData["genres"].ToString()
+                        ); ;
                 }
             }
             if(searchData != null)
@@ -230,7 +231,12 @@ namespace MoviesApp
 
         private void searchResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //searchResults.Rows.GetRowCount(searchResults.SelectedRows)
+            //Int32 selectedRowCount =
+            //dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            //DataGridViewRow r = searchResults.SelectedRows[0];
 
+            //MessageBox.Show(r.Cells[1].ToString());
         }
 
         private void label17_Click(object sender, EventArgs e)
@@ -256,6 +262,18 @@ namespace MoviesApp
         private void label33_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void searchResults_CellContentClick(object sender, EventArgs e)
+        {
+            // DataGridViewRow r = searchResults.SelectedRows[0];
+
+            //MessageBox.Show(r.Cells[0].Value.ToString());
+
+            DataGridViewRow r = searchResults.Rows[searchResults.SelectedCells[0].RowIndex]; //clickable row
+            //MessageBox.Show(r.Cells[0].Value.ToString());
+            CustomerMovieForm f2 = new CustomerMovieForm (r); // creating the 2nd form from first
+            f2.ShowDialog(); //showing form after creation
         }
     }
 }
