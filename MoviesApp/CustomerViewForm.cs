@@ -123,7 +123,6 @@ namespace MoviesApp
                 {
                     searchResults.Rows.Add(
                         searchData["movie_name"].ToString(), 
-                        "tempYear", 
                         "tempType", 
                         "tempAvailable",
                         searchData["format"].ToString());
@@ -133,11 +132,6 @@ namespace MoviesApp
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
@@ -228,6 +222,11 @@ namespace MoviesApp
         }
 
         private void custExpiryDate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -36,13 +36,6 @@
             this.label45 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.searchResults = new System.Windows.Forms.DataGridView();
-            this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movieYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movieAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movieFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearFromSearch = new MoviesApp.ExTextBox();
-            this.yearToSearch = new MoviesApp.ExTextBox();
             this.actorSearch = new MoviesApp.ExTextBox();
             this.movieTitleSearch = new MoviesApp.ExTextBox();
             this.label39 = new System.Windows.Forms.Label();
@@ -107,6 +100,10 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieFormat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -202,8 +199,6 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.searchResults);
-            this.tabPage2.Controls.Add(this.yearFromSearch);
-            this.tabPage2.Controls.Add(this.yearToSearch);
             this.tabPage2.Controls.Add(this.actorSearch);
             this.tabPage2.Controls.Add(this.movieTitleSearch);
             this.tabPage2.Controls.Add(this.label39);
@@ -218,7 +213,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // searchResults
             // 
@@ -226,72 +220,17 @@
             this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.movieTitle,
-            this.movieYear,
             this.dataGridViewTextBoxColumn1,
             this.movieAvailable,
             this.movieFormat});
-            this.searchResults.Location = new System.Drawing.Point(32, 446);
+            this.searchResults.Location = new System.Drawing.Point(32, 346);
             this.searchResults.Margin = new System.Windows.Forms.Padding(5);
             this.searchResults.Name = "searchResults";
             this.searchResults.RowHeadersWidth = 51;
             this.searchResults.RowTemplate.Height = 29;
             this.searchResults.Size = new System.Drawing.Size(1638, 472);
             this.searchResults.TabIndex = 17;
-            // 
-            // movieTitle
-            // 
-            this.movieTitle.HeaderText = "Title";
-            this.movieTitle.MinimumWidth = 6;
-            this.movieTitle.Name = "movieTitle";
-            this.movieTitle.Width = 350;
-            // 
-            // movieYear
-            // 
-            this.movieYear.HeaderText = "Year";
-            this.movieYear.MinimumWidth = 6;
-            this.movieYear.Name = "movieYear";
-            this.movieYear.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Genre";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // movieAvailable
-            // 
-            this.movieAvailable.HeaderText = "Available";
-            this.movieAvailable.MinimumWidth = 6;
-            this.movieAvailable.Name = "movieAvailable";
-            this.movieAvailable.Width = 150;
-            // 
-            // movieFormat
-            // 
-            this.movieFormat.HeaderText = "Format";
-            this.movieFormat.MinimumWidth = 6;
-            this.movieFormat.Name = "movieFormat";
-            this.movieFormat.Width = 155;
-            // 
-            // yearFromSearch
-            // 
-            this.yearFromSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.yearFromSearch.Hint = "Year From";
-            this.yearFromSearch.Location = new System.Drawing.Point(682, 283);
-            this.yearFromSearch.Margin = new System.Windows.Forms.Padding(5);
-            this.yearFromSearch.Name = "yearFromSearch";
-            this.yearFromSearch.Size = new System.Drawing.Size(610, 44);
-            this.yearFromSearch.TabIndex = 16;
-            // 
-            // yearToSearch
-            // 
-            this.yearToSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.yearToSearch.Hint = "Year To";
-            this.yearToSearch.Location = new System.Drawing.Point(32, 283);
-            this.yearToSearch.Margin = new System.Windows.Forms.Padding(5);
-            this.yearToSearch.Name = "yearToSearch";
-            this.yearToSearch.Size = new System.Drawing.Size(610, 44);
-            this.yearToSearch.TabIndex = 15;
+            this.searchResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.searchResults_CellContentClick);
             // 
             // actorSearch
             // 
@@ -317,7 +256,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label39.Location = new System.Drawing.Point(32, 371);
+            this.label39.Location = new System.Drawing.Point(32, 274);
             this.label39.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(249, 37);
@@ -1048,6 +987,34 @@
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(200, 100);
             this.tabPage6.TabIndex = 0;
+            // 
+            // movieTitle
+            // 
+            this.movieTitle.HeaderText = "Title";
+            this.movieTitle.MinimumWidth = 6;
+            this.movieTitle.Name = "movieTitle";
+            this.movieTitle.Width = 350;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Genre";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // movieAvailable
+            // 
+            this.movieAvailable.HeaderText = "Available";
+            this.movieAvailable.MinimumWidth = 6;
+            this.movieAvailable.Name = "movieAvailable";
+            this.movieAvailable.Width = 150;
+            // 
+            // movieFormat
+            // 
+            this.movieFormat.HeaderText = "Format";
+            this.movieFormat.MinimumWidth = 6;
+            this.movieFormat.Name = "movieFormat";
+            this.movieFormat.Width = 155;
             // 
             // CustomerViewForm
             // 
