@@ -108,6 +108,30 @@ namespace MoviesApp
             }
             
         }
+
+        private void cust_movie_search(object sender, EventArgs e)
+        {
+            string title = movieTitleSearch.Text;
+            string query = $"select * from Movie m, Movie_copies c" +
+                $" where m.movie_id = c.movie_id and m.movie_name like '%{title}%' order by m.movie_name";
+            
+            SqlDataReader? searchData = connection.GetDataReader(query);
+
+            if (searchData != null && searchData.HasRows) {
+                searchResults.Rows.Clear();
+                while (searchData.Read())
+                {
+                    searchResults.Rows.Add(
+                        searchData["movie_name"].ToString(), 
+                        "tempYear", 
+                        "tempType", 
+                        "tempAvailable",
+                        searchData["format"].ToString());
+
+                }
+            }
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

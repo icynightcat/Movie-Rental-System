@@ -336,6 +336,7 @@
             this.custMovieSearch.TabIndex = 10;
             this.custMovieSearch.Text = "Search";
             this.custMovieSearch.UseVisualStyleBackColor = false;
+            this.custMovieSearch.Click += new System.EventHandler(this.cust_movie_search);
             // 
             // label36
             // 
