@@ -12,6 +12,7 @@ namespace MoviesApp
         public Login()
         {
             InitializeComponent();
+            connection.OpenConnection();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,9 +40,8 @@ namespace MoviesApp
                     empdata.Read();                                     //to see the data you must read() first
                     string ID = empdata["employee_id"].ToString();      //passing ID
                     empdata.Close();                //closes the reader after the data is read in
-                    connection.CloseConnection();//closes the database connection not the DBconnection.cs file
-                    this.Close();
-                    new EmployeeViewForm(ID).Show();
+                    
+                    new EmployeeViewForm(ID, connection).Show();
 
                 }
 
@@ -59,12 +59,10 @@ namespace MoviesApp
                     custdata.Read();                                     //to see the data you must read() first
                     string ID = custdata["account_number"].ToString();      //passing ID
                     custdata.Close();                //closes the reader after the data is read in
-                    connection.CloseConnection();//closes the database connection not the DBconnection.cs file
-                    this.Close();
-                    new CustomerViewForm(ID).Show();
+                    
+                    new CustomerViewForm(ID, connection).Show();
 
                 }
-
             }
         } 
             

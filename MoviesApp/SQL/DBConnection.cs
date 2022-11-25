@@ -23,6 +23,11 @@ namespace MoviesApp.SQL
             connection.Close();
         }
 
+        public void OpenConnection()
+        {
+            connection.Open();
+        }
+
         //used to close the connection from other modules
         public void CloseConnection()
         {
@@ -35,7 +40,6 @@ namespace MoviesApp.SQL
             SqlDataReader? reader = null;
             try
             {
-                connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 reader = command.ExecuteReader();
             }
@@ -52,7 +56,6 @@ namespace MoviesApp.SQL
             int rowsAffected = 0;
             try
             {
-                connection.Open();
                 SqlCommand command = new SqlCommand(mutation, connection);
                 rowsAffected =  command.ExecuteNonQuery();
             }
@@ -60,7 +63,6 @@ namespace MoviesApp.SQL
             {
                 System.Diagnostics.Debug.WriteLine(e.ToString());
             }
-            connection.Close();
             return rowsAffected;
         }
     }

@@ -5,14 +5,13 @@ namespace MoviesApp
 {
     public partial class CustomerViewForm : Form
     {
-        private DBConnection connection = new DBConnection();
-        
         string id;
-        public CustomerViewForm(string input)
+        DBConnection connection;
+        public CustomerViewForm(string input, DBConnection input_connection)
         {
             InitializeComponent();
             id = input;
-
+            connection = input_connection;
             populate_customer_data();
 
             populate_genre_selecter();
