@@ -5,15 +5,14 @@ namespace MoviesApp
 {
     public partial class EmployeeViewForm : Form
     {
-        private DBConnection connection = new DBConnection();
-
         private string ID = ""; //id initalized to use
 
-        public EmployeeViewForm(string input) //takes the id in
+        private DBConnection connection;
+        public EmployeeViewForm(string input, DBConnection input_connection) //takes the id in
         {
 
             InitializeComponent(); //create the forms
-
+            connection = input_connection;
             ID = input; //call this ID to get the current id, needs to be sent to others as well when tranfering
 
             string query = $"select * from movie";
@@ -25,8 +24,7 @@ namespace MoviesApp
             }
 
             empdata.Close();                //closes the reader after the data is read in
-            connection.CloseConnection();//closes the database connection not the DBconnection.cs file
-           
+            
         }
 
         //dataGridView2

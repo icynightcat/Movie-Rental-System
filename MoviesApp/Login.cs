@@ -6,12 +6,12 @@ namespace MoviesApp
 {
     public partial class Login : Form
     {
-        //allows us to call dbconnections to make sql calls faster
-        private DBConnection connection = new DBConnection();
 
-        public Login()
+        DBConnection connection;
+        public Login(DBConnection input_connection)
         {
             InitializeComponent();
+            connection = input_connection;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,9 +39,9 @@ namespace MoviesApp
                     empdata.Read();                                     //to see the data you must read() first
                     string ID = empdata["employee_id"].ToString();      //passing ID
                     empdata.Close();                //closes the reader after the data is read in
-                    connection.CloseConnection();//closes the database connection not the DBconnection.cs file
+                    
+                    new EmployeeViewForm(ID, connection).Show();
                     this.Close();
-                    new EmployeeViewForm(ID).Show();
 
                 }
 
@@ -59,12 +59,11 @@ namespace MoviesApp
                     custdata.Read();                                     //to see the data you must read() first
                     string ID = custdata["account_number"].ToString();      //passing ID
                     custdata.Close();                //closes the reader after the data is read in
-                    connection.CloseConnection();//closes the database connection not the DBconnection.cs file
+                    
+                    new CustomerViewForm(ID, connection).Show();
                     this.Close();
-                    new CustomerViewForm(ID).Show();
 
                 }
-
             }
         } 
             
