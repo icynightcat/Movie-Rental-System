@@ -5,19 +5,17 @@ namespace MoviesApp
 {
     public partial class CustomerViewForm : Form
     {
-        private DBConnection connection = new DBConnection();
-        
         string id;
-        public CustomerViewForm(string input)
+        protected DBConnection connection;
+        public CustomerViewForm(string input, DBConnection input_connection)
         {
             InitializeComponent();
             id = input;
-
+            connection = input_connection;
             populate_customer_data();
 
             populate_genre_selecter();
-            connection.CloseConnection();//closes the database connection not the DBconnection.cs file
-
+            
         }
 
         private void populate_customer_data()
@@ -123,21 +121,19 @@ namespace MoviesApp
                 {
                     searchResults.Rows.Add(
                         searchData["movie_name"].ToString(), 
-                        "tempYear", 
                         "tempType", 
                         "tempAvailable",
                         searchData["format"].ToString());
 
                 }
             }
+            if(searchData != null)
+            {
+                searchData.Close();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
@@ -228,6 +224,36 @@ namespace MoviesApp
         }
 
         private void custExpiryDate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label33_Click(object sender, EventArgs e)
         {
 
         }

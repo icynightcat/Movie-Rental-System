@@ -5,41 +5,15 @@ namespace MoviesApp
 {
     public partial class EmployeeViewForm : Form
     {
-        private DBConnection connection = new DBConnection();
-
         private string ID = ""; //id initalized to use
 
-        public EmployeeViewForm(string input) //takes the id in
+        private DBConnection connection;
+        public EmployeeViewForm(string input, DBConnection input_connection) //takes the id in
         {
 
             InitializeComponent(); //create the forms
+            connection = input_connection;
             ID = input; //call this ID to get the current id, needs to be sent to others as well when tranfering
-
-        }
-
-        //dataGridView2
-        private void hideSearchElements()
-        {
-            movieNameTextBox.Visible = false;
-            genreComboBox.Visible = false;
-            actorsNamesTextBox.Visible = false;
-            fromYearTextBox.Visible = false;
-            toYearTextBox.Visible = false;
-            moviesSearchButton.Visible = false;
-        }
-        private void showSearchElements(object sender, EventArgs e)
-        {
-            movieNameTextBox.Visible = true;
-            genreComboBox.Visible = true;
-            actorsNamesTextBox.Visible = true;
-            fromYearTextBox.Visible = true;
-            toYearTextBox.Visible = true;
-            moviesSearchButton.Visible = true;
-        }
-
-        private void searchAll(Object sender, EventArgs e)
-        {
-            hideSearchElements();
 
             string query = $"select * from movie order by movie_name";
             SqlDataReader? empdata = connection.GetDataReader(query);
@@ -50,14 +24,7 @@ namespace MoviesApp
             }
 
             empdata.Close();                //closes the reader after the data is read in
-            connection.CloseConnection();//closes the database connection not the DBconnection.cs file
-
-        }
-
-        private void newSearchFilters(Object sender, EventArgs e)
-        {
-            hideSearchElements();
-            dataGridView2.Rows.Clear();
+            
         }
 
         private void mostActivelyRented(object sender, EventArgs e)
