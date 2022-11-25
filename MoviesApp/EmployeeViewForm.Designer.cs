@@ -30,9 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.moviesTabPage = new System.Windows.Forms.TabPage();
-            this.moviesAddMovieButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.moviesAddMovieButton = new System.Windows.Forms.Button();
+            this.moviesSearchButton = new System.Windows.Forms.Button();
             this.toYearTextBox = new MoviesApp.ExTextBox();
             this.fromYearTextBox = new MoviesApp.ExTextBox();
             this.genreComboBox = new System.Windows.Forms.ComboBox();
@@ -135,7 +135,7 @@
             // 
             this.moviesTabPage.Controls.Add(this.dataGridView2);
             this.moviesTabPage.Controls.Add(this.moviesAddMovieButton);
-            this.moviesTabPage.Controls.Add(this.button2);
+            this.moviesTabPage.Controls.Add(this.moviesSearchButton);
             this.moviesTabPage.Controls.Add(this.toYearTextBox);
             this.moviesTabPage.Controls.Add(this.fromYearTextBox);
             this.moviesTabPage.Controls.Add(this.genreComboBox);
@@ -152,17 +152,6 @@
             this.moviesTabPage.Text = "Movies";
             this.moviesTabPage.UseVisualStyleBackColor = true;
             // 
-            // moviesAddMovieButton
-            // 
-            this.moviesAddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.moviesAddMovieButton.Location = new System.Drawing.Point(841, 9);
-            this.moviesAddMovieButton.Name = "moviesAddMovieButton";
-            this.moviesAddMovieButton.Size = new System.Drawing.Size(114, 28);
-            this.moviesAddMovieButton.TabIndex = 12;
-            this.moviesAddMovieButton.Text = "Add Movie";
-            this.moviesAddMovieButton.UseVisualStyleBackColor = true;
-            this.moviesAddMovieButton.Click += new System.EventHandler(this.launchMovieButton_Click);
-            // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -177,15 +166,26 @@
             this.dataGridView2.TabIndex = 11;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // button2
+            // moviesAddMovieButton
             // 
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(762, 105);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 28);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
+            this.moviesAddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.moviesAddMovieButton.Location = new System.Drawing.Point(841, 9);
+            this.moviesAddMovieButton.Name = "moviesAddMovieButton";
+            this.moviesAddMovieButton.Size = new System.Drawing.Size(114, 28);
+            this.moviesAddMovieButton.TabIndex = 12;
+            this.moviesAddMovieButton.Text = "Add Movie";
+            this.moviesAddMovieButton.UseVisualStyleBackColor = true;
+            this.moviesAddMovieButton.Click += new System.EventHandler(this.launchMovieButton_Click);
+            // 
+            // moviesSearchButton
+            // 
+            this.moviesSearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.moviesSearchButton.Location = new System.Drawing.Point(762, 105);
+            this.moviesSearchButton.Name = "moviesSearchButton";
+            this.moviesSearchButton.Size = new System.Drawing.Size(193, 28);
+            this.moviesSearchButton.TabIndex = 10;
+            this.moviesSearchButton.Text = "Search";
+            this.moviesSearchButton.UseVisualStyleBackColor = true;
             // 
             // toYearTextBox
             // 
@@ -250,6 +250,7 @@
             this.mostRentedRadioButton.TabStop = true;
             this.mostRentedRadioButton.Text = "Most Actively Rented";
             this.mostRentedRadioButton.UseVisualStyleBackColor = true;
+            this.mostRentedRadioButton.Click += new System.EventHandler(this.mostActivelyRented);
             // 
             // searchFiltersRadioButton
             // 
@@ -263,6 +264,7 @@
             this.searchFiltersRadioButton.TabStop = true;
             this.searchFiltersRadioButton.Text = "Search Filters";
             this.searchFiltersRadioButton.UseVisualStyleBackColor = true;
+            this.searchFiltersRadioButton.Click += new System.EventHandler(this.newSearchFilters);
             // 
             // allMoviesRadioButton
             // 
@@ -275,6 +277,7 @@
             this.allMoviesRadioButton.Text = "All Movies";
             this.allMoviesRadioButton.UseVisualStyleBackColor = true;
             this.allMoviesRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.allMoviesRadioButton.Click += new System.EventHandler(this.searchAll);
             // 
             // actorsTabPage
             // 
@@ -834,12 +837,16 @@
             // Movie_ID
             // 
             this.Movie_ID.HeaderText = "Movie ID";
+            this.Movie_ID.MinimumWidth = 150;
             this.Movie_ID.Name = "Movie_ID";
+            this.Movie_ID.Width = 150;
             // 
             // Movie_name
             // 
             this.Movie_name.HeaderText = "Movie Title";
+            this.Movie_name.MinimumWidth = 550;
             this.Movie_name.Name = "Movie_name";
+            this.Movie_name.Width = 550;
             // 
             // EmployeeViewForm
             // 
@@ -952,6 +959,7 @@
         private ComboBox transactionsHistoryGenreComboBox;
         private ExTextBox transactionsHistoryMovieNameTextBox;
         private Button moviesAddMovieButton;
+        private Button moviesSearchButton;
         private DataGridViewTextBoxColumn Movie_ID;
         private DataGridViewTextBoxColumn Movie_name;
     }
