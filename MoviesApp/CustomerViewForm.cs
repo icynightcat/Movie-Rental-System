@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using MoviesApp.SQL;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MoviesApp.SQL;
 
 namespace MoviesApp
 {
@@ -21,14 +12,23 @@ namespace MoviesApp
         {
             InitializeComponent();
             id = input;
-            
+
+            populate_customer_data();
+
+            populate_genre_selecter();
+            connection.CloseConnection();//closes the database connection not the DBconnection.cs file
+
+        }
+
+        private void populate_customer_data()
+        {
             string query = $"select * from Customer where account_number = {id}";
             SqlDataReader? custdata = connection.GetDataReader(query); //get data reader must be initalized like line 9
 
             if (custdata != null && custdata.HasRows) //checks if there is data in the table as well as a table
             {
                 custdata.Read();                                     //to see the data you must read() first
-                
+
 
                 // set all data
                 accountNumber.Text = custdata["account_number"].ToString();
@@ -44,10 +44,8 @@ namespace MoviesApp
                 custExpiryDate.Text = custdata["end_date"].ToString();
 
                 custdata.Close();                //closes the reader after the data is read in
-                connection.CloseConnection();//closes the database connection not the DBconnection.cs file
-                
+
             }
-                
         }
         private void toggle_cust_edit(object sender, EventArgs e)
         {
@@ -60,6 +58,19 @@ namespace MoviesApp
             custState.ReadOnly = !custState.ReadOnly;
             custCreditCardNumber.ReadOnly = !custCreditCardNumber.ReadOnly;
             custExpiryDate.ReadOnly = !custExpiryDate.ReadOnly;
+        }
+
+        private void lock_cust_edit(object sender, EventArgs e)
+        {
+            custFirstName.ReadOnly = false;
+            custLastName.ReadOnly = false;
+            custAddress.ReadOnly = false;
+            custCity.ReadOnly = false;     
+            custZipCode.ReadOnly = false;
+            custPhoneNumber.ReadOnly = false;
+            custState.ReadOnly = false;
+            custCreditCardNumber.ReadOnly = false;
+            custExpiryDate.ReadOnly = false;
         }
 
         private void save_cust_edit(object sender, EventArgs e)
@@ -77,10 +88,26 @@ namespace MoviesApp
             
             connection.ExecuteMutation(query);
 
-            toggle_cust_edit(sender, e);
+            lock_cust_edit(sender, e);
             MessageBox.Show("Customer Information Updated");
         }
 
+        private void populate_genre_selecter()
+        {
+            string query = "Select * from Genre";
+            SqlDataReader? genreData = connection.GetDataReader(query);
+
+            if (genreData != null && genreData.HasRows)
+            {
+                while (genreData.Read())
+                {
+                    movieGenre.Items.Add(genreData["type_of_movie"].ToString());
+                }
+
+                genreData.Close();
+            }
+            
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
