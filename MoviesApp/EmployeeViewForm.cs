@@ -35,7 +35,7 @@ namespace MoviesApp
             moviesSearchButton.Visible = true;
         }
 
-        private void searchAll(Object sender, EventArgs e)
+        private void searchAllMovies(Object sender, EventArgs e)
         {
             hideSearchElements();
 
@@ -56,7 +56,20 @@ namespace MoviesApp
             showSearchElements();
             dataGridView2.Rows.Clear();
         }
-        //test
+        
+        private void searchMoviesWithFilters(Object sender, EventArgs e)
+        {
+            string query = $"select * from movie where movie_name like '%{movieNameTextBox.Text}%' order by movie_name";
+            SqlDataReader? empdata = connection.GetDataReader(query);
+
+            while (empdata.Read())
+            {
+                dataGridView2.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString());
+            }
+
+            empdata.Close();                //closes the reader after the data is read in
+        }
+
         private void mostActivelyRented(object sender, EventArgs e)
         {
             hideSearchElements();

@@ -31,6 +31,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.moviesTabPage = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Movie_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Movie_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moviesAddMovieButton = new System.Windows.Forms.Button();
             this.moviesSearchButton = new System.Windows.Forms.Button();
             this.toYearTextBox = new MoviesApp.ExTextBox();
@@ -92,8 +94,6 @@
             this.report1Button = new System.Windows.Forms.Button();
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Movie_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Movie_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -166,6 +166,20 @@
             this.dataGridView2.TabIndex = 11;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // Movie_ID
+            // 
+            this.Movie_ID.HeaderText = "Movie ID";
+            this.Movie_ID.MinimumWidth = 150;
+            this.Movie_ID.Name = "Movie_ID";
+            this.Movie_ID.Width = 150;
+            // 
+            // Movie_name
+            // 
+            this.Movie_name.HeaderText = "Movie Title";
+            this.Movie_name.MinimumWidth = 550;
+            this.Movie_name.Name = "Movie_name";
+            this.Movie_name.Width = 550;
+            // 
             // moviesAddMovieButton
             // 
             this.moviesAddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -186,6 +200,7 @@
             this.moviesSearchButton.TabIndex = 10;
             this.moviesSearchButton.Text = "Search";
             this.moviesSearchButton.UseVisualStyleBackColor = true;
+            this.moviesSearchButton.Click += new System.EventHandler(this.searchMoviesWithFilters);
             // 
             // toYearTextBox
             // 
@@ -276,8 +291,7 @@
             this.allMoviesRadioButton.TabIndex = 1;
             this.allMoviesRadioButton.Text = "All Movies";
             this.allMoviesRadioButton.UseVisualStyleBackColor = true;
-            this.allMoviesRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            this.allMoviesRadioButton.Click += new System.EventHandler(this.searchAll);
+            this.allMoviesRadioButton.Click += new System.EventHandler(this.searchAllMovies);
             // 
             // actorsTabPage
             // 
@@ -833,20 +847,6 @@
             this.label1.Size = new System.Drawing.Size(139, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Report Description";
-            // 
-            // Movie_ID
-            // 
-            this.Movie_ID.HeaderText = "Movie ID";
-            this.Movie_ID.MinimumWidth = 150;
-            this.Movie_ID.Name = "Movie_ID";
-            this.Movie_ID.Width = 150;
-            // 
-            // Movie_name
-            // 
-            this.Movie_name.HeaderText = "Movie Title";
-            this.Movie_name.MinimumWidth = 550;
-            this.Movie_name.Name = "Movie_name";
-            this.Movie_name.Width = 550;
             // 
             // EmployeeViewForm
             // 
