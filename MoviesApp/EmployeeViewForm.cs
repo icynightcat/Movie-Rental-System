@@ -56,7 +56,7 @@ namespace MoviesApp
             showSearchElements();
             dataGridView2.Rows.Clear();
         }
-
+        //test
         private void mostActivelyRented(object sender, EventArgs e)
         {
             hideSearchElements();
