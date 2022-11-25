@@ -50,6 +50,7 @@
             this.label36 = new System.Windows.Forms.Label();
             this.movieGenre = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.custEdit = new System.Windows.Forms.Button();
             this.custExpiryDate = new MoviesApp.ExTextBox();
             this.custCreditCardNumber = new MoviesApp.ExTextBox();
             this.custPhoneNumber = new MoviesApp.ExTextBox();
@@ -372,6 +373,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.custEdit);
             this.tabPage3.Controls.Add(this.custExpiryDate);
             this.tabPage3.Controls.Add(this.custCreditCardNumber);
             this.tabPage3.Controls.Add(this.custPhoneNumber);
@@ -400,6 +402,19 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click_1);
             // 
+            // custEdit
+            // 
+            this.custEdit.BackColor = System.Drawing.Color.LightGray;
+            this.custEdit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custEdit.Location = new System.Drawing.Point(795, 1016);
+            this.custEdit.Margin = new System.Windows.Forms.Padding(5);
+            this.custEdit.Name = "custEdit";
+            this.custEdit.Size = new System.Drawing.Size(408, 72);
+            this.custEdit.TabIndex = 37;
+            this.custEdit.Text = "Edit\r\n";
+            this.custEdit.UseVisualStyleBackColor = false;
+            this.custEdit.Click += new System.EventHandler(this.toggle_cust_edit);
+            // 
             // custExpiryDate
             // 
             this.custExpiryDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -407,8 +422,10 @@
             this.custExpiryDate.Location = new System.Drawing.Point(16, 960);
             this.custExpiryDate.Margin = new System.Windows.Forms.Padding(5);
             this.custExpiryDate.Name = "custExpiryDate";
+            this.custExpiryDate.ReadOnly = true;
             this.custExpiryDate.Size = new System.Drawing.Size(737, 44);
             this.custExpiryDate.TabIndex = 36;
+            this.custExpiryDate.TextChanged += new System.EventHandler(this.custExpiryDate_TextChanged);
             // 
             // custCreditCardNumber
             // 
@@ -417,8 +434,10 @@
             this.custCreditCardNumber.Location = new System.Drawing.Point(16, 888);
             this.custCreditCardNumber.Margin = new System.Windows.Forms.Padding(5);
             this.custCreditCardNumber.Name = "custCreditCardNumber";
+            this.custCreditCardNumber.ReadOnly = true;
             this.custCreditCardNumber.Size = new System.Drawing.Size(1515, 44);
             this.custCreditCardNumber.TabIndex = 35;
+            this.custCreditCardNumber.TextChanged += new System.EventHandler(this.custCreditCardNumber_TextChanged);
             // 
             // custPhoneNumber
             // 
@@ -427,8 +446,10 @@
             this.custPhoneNumber.Location = new System.Drawing.Point(795, 739);
             this.custPhoneNumber.Margin = new System.Windows.Forms.Padding(5);
             this.custPhoneNumber.Name = "custPhoneNumber";
+            this.custPhoneNumber.ReadOnly = true;
             this.custPhoneNumber.Size = new System.Drawing.Size(737, 44);
             this.custPhoneNumber.TabIndex = 34;
+            this.custPhoneNumber.TextChanged += new System.EventHandler(this.custPhoneNumber_TextChanged);
             // 
             // custZipCode
             // 
@@ -437,8 +458,10 @@
             this.custZipCode.Location = new System.Drawing.Point(16, 739);
             this.custZipCode.Margin = new System.Windows.Forms.Padding(5);
             this.custZipCode.Name = "custZipCode";
+            this.custZipCode.ReadOnly = true;
             this.custZipCode.Size = new System.Drawing.Size(737, 44);
             this.custZipCode.TabIndex = 33;
+            this.custZipCode.TextChanged += new System.EventHandler(this.custZipCode_TextChanged);
             // 
             // custState
             // 
@@ -447,8 +470,10 @@
             this.custState.Location = new System.Drawing.Point(795, 661);
             this.custState.Margin = new System.Windows.Forms.Padding(5);
             this.custState.Name = "custState";
+            this.custState.ReadOnly = true;
             this.custState.Size = new System.Drawing.Size(737, 44);
             this.custState.TabIndex = 32;
+            this.custState.TextChanged += new System.EventHandler(this.custState_TextChanged);
             // 
             // custCity
             // 
@@ -457,8 +482,10 @@
             this.custCity.Location = new System.Drawing.Point(16, 661);
             this.custCity.Margin = new System.Windows.Forms.Padding(5);
             this.custCity.Name = "custCity";
+            this.custCity.ReadOnly = true;
             this.custCity.Size = new System.Drawing.Size(737, 44);
             this.custCity.TabIndex = 31;
+            this.custCity.TextChanged += new System.EventHandler(this.custCity_TextChanged);
             // 
             // custAddress
             // 
@@ -467,8 +494,10 @@
             this.custAddress.Location = new System.Drawing.Point(16, 584);
             this.custAddress.Margin = new System.Windows.Forms.Padding(5);
             this.custAddress.Name = "custAddress";
+            this.custAddress.ReadOnly = true;
             this.custAddress.Size = new System.Drawing.Size(1515, 44);
             this.custAddress.TabIndex = 30;
+            this.custAddress.TextChanged += new System.EventHandler(this.custAddress_TextChanged);
             // 
             // custLastName
             // 
@@ -477,8 +506,10 @@
             this.custLastName.Location = new System.Drawing.Point(795, 443);
             this.custLastName.Margin = new System.Windows.Forms.Padding(5);
             this.custLastName.Name = "custLastName";
+            this.custLastName.ReadOnly = true;
             this.custLastName.Size = new System.Drawing.Size(737, 44);
             this.custLastName.TabIndex = 29;
+            this.custLastName.TextChanged += new System.EventHandler(this.custLastName_TextChanged);
             // 
             // custFirstName
             // 
@@ -487,8 +518,10 @@
             this.custFirstName.Location = new System.Drawing.Point(16, 443);
             this.custFirstName.Margin = new System.Windows.Forms.Padding(5);
             this.custFirstName.Name = "custFirstName";
+            this.custFirstName.ReadOnly = true;
             this.custFirstName.Size = new System.Drawing.Size(737, 44);
             this.custFirstName.TabIndex = 28;
+            this.custFirstName.TextChanged += new System.EventHandler(this.custFirstName_TextChanged);
             // 
             // saveChanges
             // 
@@ -501,6 +534,7 @@
             this.saveChanges.TabIndex = 27;
             this.saveChanges.Text = "Save Changes";
             this.saveChanges.UseVisualStyleBackColor = false;
+            this.saveChanges.Click += new System.EventHandler(this.save_cust_edit);
             // 
             // label31
             // 
@@ -1130,5 +1164,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridView dataGridView4;
         private DataGridView dataGridView3;
+        private Button custEdit;
     }
 }
