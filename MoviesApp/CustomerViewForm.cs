@@ -110,8 +110,11 @@ namespace MoviesApp
         private void cust_movie_search(object sender, EventArgs e)
         {
             string title = movieTitleSearch.Text;
-            string query = $"select * from Movie m, Movie_copies c" +
-                $" where m.movie_id = c.movie_id and m.movie_name like '%{title}%' order by m.movie_name";
+            string query = $"select  m.movie_name, " +
+                $"STRING_AGG(t.type_of_movie, ', ') as 'genres' " +
+                $"from movie m, Movie_type t " +
+                $"where m.movie_id = t.movie_id and " +
+                $"m.movie_name like '%{title}%' group by m.movie_name";
             
             SqlDataReader? searchData = connection.GetDataReader(query);
 
@@ -120,11 +123,9 @@ namespace MoviesApp
                 while (searchData.Read())
                 {
                     searchResults.Rows.Add(
-                        searchData["movie_name"].ToString(), 
-                        "tempType", 
-                        "tempAvailable",
-                        searchData["format"].ToString());
-
+                        searchData["movie_name"].ToString(),
+                        searchData["genres"].ToString()
+                        ); ;
                 }
             }
             if(searchData != null)
