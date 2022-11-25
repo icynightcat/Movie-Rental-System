@@ -6,13 +6,12 @@ namespace MoviesApp
 {
     public partial class Login : Form
     {
-        //allows us to call dbconnections to make sql calls faster
-        private DBConnection connection = new DBConnection();
 
-        public Login()
+        DBConnection connection;
+        public Login(DBConnection input_connection)
         {
             InitializeComponent();
-            connection.OpenConnection();
+            connection = input_connection;
         }
 
         private void label1_Click(object sender, EventArgs e)

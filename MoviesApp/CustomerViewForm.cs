@@ -6,7 +6,7 @@ namespace MoviesApp
     public partial class CustomerViewForm : Form
     {
         string id;
-        DBConnection connection;
+        protected DBConnection connection;
         public CustomerViewForm(string input, DBConnection input_connection)
         {
             InitializeComponent();
@@ -15,8 +15,7 @@ namespace MoviesApp
             populate_customer_data();
 
             populate_genre_selecter();
-            connection.CloseConnection();//closes the database connection not the DBconnection.cs file
-
+            
         }
 
         private void populate_customer_data()
@@ -127,6 +126,10 @@ namespace MoviesApp
                         searchData["format"].ToString());
 
                 }
+            }
+            if(searchData != null)
+            {
+                searchData.Close();
             }
         }
 
