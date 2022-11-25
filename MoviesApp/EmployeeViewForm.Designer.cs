@@ -35,8 +35,6 @@
             this.Movie_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moviesAddMovieButton = new System.Windows.Forms.Button();
             this.moviesSearchButton = new System.Windows.Forms.Button();
-            this.toYearTextBox = new MoviesApp.ExTextBox();
-            this.fromYearTextBox = new MoviesApp.ExTextBox();
             this.genreComboBox = new System.Windows.Forms.ComboBox();
             this.actorsNamesTextBox = new MoviesApp.ExTextBox();
             this.movieNameTextBox = new MoviesApp.ExTextBox();
@@ -94,6 +92,7 @@
             this.report1Button = new System.Windows.Forms.Button();
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.moviesSearchClearButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -133,11 +132,10 @@
             // 
             // moviesTabPage
             // 
+            this.moviesTabPage.Controls.Add(this.moviesSearchClearButton);
             this.moviesTabPage.Controls.Add(this.dataGridView2);
             this.moviesTabPage.Controls.Add(this.moviesAddMovieButton);
             this.moviesTabPage.Controls.Add(this.moviesSearchButton);
-            this.moviesTabPage.Controls.Add(this.toYearTextBox);
-            this.moviesTabPage.Controls.Add(this.fromYearTextBox);
             this.moviesTabPage.Controls.Add(this.genreComboBox);
             this.moviesTabPage.Controls.Add(this.actorsNamesTextBox);
             this.moviesTabPage.Controls.Add(this.movieNameTextBox);
@@ -194,31 +192,13 @@
             // moviesSearchButton
             // 
             this.moviesSearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.moviesSearchButton.Location = new System.Drawing.Point(762, 105);
+            this.moviesSearchButton.Location = new System.Drawing.Point(841, 75);
             this.moviesSearchButton.Name = "moviesSearchButton";
-            this.moviesSearchButton.Size = new System.Drawing.Size(193, 28);
+            this.moviesSearchButton.Size = new System.Drawing.Size(114, 28);
             this.moviesSearchButton.TabIndex = 10;
             this.moviesSearchButton.Text = "Search";
             this.moviesSearchButton.UseVisualStyleBackColor = true;
             this.moviesSearchButton.Click += new System.EventHandler(this.searchMoviesWithFilters);
-            // 
-            // toYearTextBox
-            // 
-            this.toYearTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toYearTextBox.Hint = "To year";
-            this.toYearTextBox.Location = new System.Drawing.Point(288, 107);
-            this.toYearTextBox.Name = "toYearTextBox";
-            this.toYearTextBox.Size = new System.Drawing.Size(265, 26);
-            this.toYearTextBox.TabIndex = 9;
-            // 
-            // fromYearTextBox
-            // 
-            this.fromYearTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fromYearTextBox.Hint = "From year";
-            this.fromYearTextBox.Location = new System.Drawing.Point(17, 107);
-            this.fromYearTextBox.Name = "fromYearTextBox";
-            this.fromYearTextBox.Size = new System.Drawing.Size(265, 26);
-            this.fromYearTextBox.TabIndex = 8;
             // 
             // genreComboBox
             // 
@@ -241,7 +221,7 @@
             this.actorsNamesTextBox.Hint = "Actor(s) names (comma separated)";
             this.actorsNamesTextBox.Location = new System.Drawing.Point(17, 75);
             this.actorsNamesTextBox.Name = "actorsNamesTextBox";
-            this.actorsNamesTextBox.Size = new System.Drawing.Size(938, 26);
+            this.actorsNamesTextBox.Size = new System.Drawing.Size(701, 26);
             this.actorsNamesTextBox.TabIndex = 6;
             // 
             // movieNameTextBox
@@ -848,6 +828,17 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Report Description";
             // 
+            // moviesSearchClearButton
+            // 
+            this.moviesSearchClearButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.moviesSearchClearButton.Location = new System.Drawing.Point(724, 75);
+            this.moviesSearchClearButton.Name = "moviesSearchClearButton";
+            this.moviesSearchClearButton.Size = new System.Drawing.Size(114, 28);
+            this.moviesSearchClearButton.TabIndex = 13;
+            this.moviesSearchClearButton.Text = "Clear";
+            this.moviesSearchClearButton.UseVisualStyleBackColor = true;
+            this.moviesSearchClearButton.Click += new System.EventHandler(this.clearMoviesSearchForm);
+            // 
             // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -913,11 +904,9 @@
         private RadioButton allMoviesRadioButton;
         private RadioButton mostRentedRadioButton;
         private RadioButton searchFiltersRadioButton;
-        private ExTextBox fromYearTextBox;
         private ComboBox genreComboBox;
         private ExTextBox actorsNamesTextBox;
         private ExTextBox movieNameTextBox;
-        private ExTextBox toYearTextBox;
         private DataGridView dataGridView2;
         private Button button2;
         private TabControl customersTabControl;
@@ -962,5 +951,6 @@
         private Button moviesSearchButton;
         private DataGridViewTextBoxColumn Movie_ID;
         private DataGridViewTextBoxColumn Movie_name;
+        private Button moviesSearchClearButton;
     }
 }

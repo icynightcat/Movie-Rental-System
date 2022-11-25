@@ -21,8 +21,6 @@ namespace MoviesApp
             movieNameTextBox.Visible = false;
             genreComboBox.Visible = false;
             actorsNamesTextBox.Visible = false;
-            fromYearTextBox.Visible = false;
-            toYearTextBox.Visible = false;
             moviesSearchButton.Visible = false;
         }
         private void showSearchElements()
@@ -30,8 +28,6 @@ namespace MoviesApp
             movieNameTextBox.Visible = true;
             genreComboBox.Visible = true;
             actorsNamesTextBox.Visible = true;
-            fromYearTextBox.Visible = true;
-            toYearTextBox.Visible = true;
             moviesSearchButton.Visible = true;
         }
 
@@ -51,6 +47,13 @@ namespace MoviesApp
 
         }
 
+        private void clearMoviesSearchForm(Object sender, EventArgs e)
+        {
+            movieNameTextBox.Clear();
+            actorsNamesTextBox.Clear();
+            genreComboBox.Text = "";
+        }
+
         private void newSearchFilters(Object sender, EventArgs e)
         {
             showSearchElements();
@@ -59,6 +62,7 @@ namespace MoviesApp
         
         private void searchMoviesWithFilters(Object sender, EventArgs e)
         {
+            dataGridView2.Rows.Clear();
             string query = $"select * from movie where movie_name like '%{movieNameTextBox.Text}%' order by movie_name";
             SqlDataReader? empdata = connection.GetDataReader(query);
 
