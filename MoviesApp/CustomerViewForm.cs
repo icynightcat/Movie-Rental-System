@@ -228,7 +228,12 @@ namespace MoviesApp
 
         private void searchResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //searchResults.Rows.GetRowCount(searchResults.SelectedRows)
+            //Int32 selectedRowCount =
+            //dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            //DataGridViewRow r = searchResults.SelectedRows[0];
 
+            //MessageBox.Show(r.Cells[1].ToString());
         }
 
         private void label17_Click(object sender, EventArgs e)
@@ -254,6 +259,16 @@ namespace MoviesApp
         private void label33_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void searchResults_CellContentClick(object sender, EventArgs e)
+        {
+            //searchResults.Rows.GetRowCount(searchResults.SelectedRows)
+            //Int32 selectedRowCount =
+            //dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            DataGridViewRow r = searchResults.SelectedRows[0];
+
+            MessageBox.Show(r.Cells[1].ToString());
         }
     }
 }
