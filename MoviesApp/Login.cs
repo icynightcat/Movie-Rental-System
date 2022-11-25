@@ -42,6 +42,7 @@ namespace MoviesApp
                     empdata.Close();                //closes the reader after the data is read in
                     
                     new EmployeeViewForm(ID, connection).Show();
+                    this.Close();
 
                 }
 
@@ -61,6 +62,7 @@ namespace MoviesApp
                     custdata.Close();                //closes the reader after the data is read in
                     
                     new CustomerViewForm(ID, connection).Show();
+                    this.Close();
 
                 }
             }
