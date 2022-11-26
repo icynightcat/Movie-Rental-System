@@ -30,9 +30,11 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.moviesTabPage = new System.Windows.Forms.TabPage();
+            this.moviesSearchClearButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Movie_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Movie_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type_of_movie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moviesAddMovieButton = new System.Windows.Forms.Button();
             this.moviesSearchButton = new System.Windows.Forms.Button();
             this.genreComboBox = new System.Windows.Forms.ComboBox();
@@ -64,7 +66,7 @@
             this.employeesTabPage = new System.Windows.Forms.TabPage();
             this.searchEmployeesDataGridView = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.searchEmployeesButton = new System.Windows.Forms.Button();
             this.exTextBox2 = new MoviesApp.ExTextBox();
             this.transactionsTabPage = new System.Windows.Forms.TabPage();
             this.transactionsTabControl = new System.Windows.Forms.TabControl();
@@ -84,6 +86,7 @@
             this.transactionsHistoryGenreComboBox = new System.Windows.Forms.ComboBox();
             this.transactionsHistoryMovieNameTextBox = new MoviesApp.ExTextBox();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
+            this.reportsGenerateButton = new System.Windows.Forms.Button();
             this.reportsDataGridView = new System.Windows.Forms.DataGridView();
             this.report5Button = new System.Windows.Forms.Button();
             this.report4Button = new System.Windows.Forms.Button();
@@ -92,7 +95,6 @@
             this.report1Button = new System.Windows.Forms.Button();
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.moviesSearchClearButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -129,6 +131,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(986, 562);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // moviesTabPage
             // 
@@ -150,13 +153,25 @@
             this.moviesTabPage.Text = "Movies";
             this.moviesTabPage.UseVisualStyleBackColor = true;
             // 
+            // moviesSearchClearButton
+            // 
+            this.moviesSearchClearButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.moviesSearchClearButton.Location = new System.Drawing.Point(721, 105);
+            this.moviesSearchClearButton.Name = "moviesSearchClearButton";
+            this.moviesSearchClearButton.Size = new System.Drawing.Size(114, 28);
+            this.moviesSearchClearButton.TabIndex = 13;
+            this.moviesSearchClearButton.Text = "Clear";
+            this.moviesSearchClearButton.UseVisualStyleBackColor = true;
+            this.moviesSearchClearButton.Click += new System.EventHandler(this.clearMoviesSearchForm);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Movie_ID,
-            this.Movie_name});
+            this.Movie_name,
+            this.type_of_movie});
             this.dataGridView2.Location = new System.Drawing.Point(17, 165);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
@@ -167,16 +182,22 @@
             // Movie_ID
             // 
             this.Movie_ID.HeaderText = "Movie ID";
-            this.Movie_ID.MinimumWidth = 150;
+            this.Movie_ID.MinimumWidth = 100;
             this.Movie_ID.Name = "Movie_ID";
-            this.Movie_ID.Width = 150;
             // 
             // Movie_name
             // 
             this.Movie_name.HeaderText = "Movie Title";
-            this.Movie_name.MinimumWidth = 550;
+            this.Movie_name.MinimumWidth = 500;
             this.Movie_name.Name = "Movie_name";
-            this.Movie_name.Width = 550;
+            this.Movie_name.Width = 500;
+            // 
+            // type_of_movie
+            // 
+            this.type_of_movie.HeaderText = "Genre";
+            this.type_of_movie.MinimumWidth = 350;
+            this.type_of_movie.Name = "type_of_movie";
+            this.type_of_movie.Width = 350;
             // 
             // moviesAddMovieButton
             // 
@@ -192,7 +213,7 @@
             // moviesSearchButton
             // 
             this.moviesSearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.moviesSearchButton.Location = new System.Drawing.Point(841, 75);
+            this.moviesSearchButton.Location = new System.Drawing.Point(841, 105);
             this.moviesSearchButton.Name = "moviesSearchButton";
             this.moviesSearchButton.Size = new System.Drawing.Size(114, 28);
             this.moviesSearchButton.TabIndex = 10;
@@ -209,9 +230,9 @@
             "Drama",
             "Action",
             "Foreign"});
-            this.genreComboBox.Location = new System.Drawing.Point(762, 43);
+            this.genreComboBox.Location = new System.Drawing.Point(17, 107);
             this.genreComboBox.Name = "genreComboBox";
-            this.genreComboBox.Size = new System.Drawing.Size(193, 26);
+            this.genreComboBox.Size = new System.Drawing.Size(419, 26);
             this.genreComboBox.TabIndex = 7;
             this.genreComboBox.Text = "Genre";
             // 
@@ -221,7 +242,7 @@
             this.actorsNamesTextBox.Hint = "Actor(s) names (comma separated)";
             this.actorsNamesTextBox.Location = new System.Drawing.Point(17, 75);
             this.actorsNamesTextBox.Name = "actorsNamesTextBox";
-            this.actorsNamesTextBox.Size = new System.Drawing.Size(701, 26);
+            this.actorsNamesTextBox.Size = new System.Drawing.Size(938, 26);
             this.actorsNamesTextBox.TabIndex = 6;
             // 
             // movieNameTextBox
@@ -230,7 +251,7 @@
             this.movieNameTextBox.Hint = "Movie Name";
             this.movieNameTextBox.Location = new System.Drawing.Point(17, 43);
             this.movieNameTextBox.Name = "movieNameTextBox";
-            this.movieNameTextBox.Size = new System.Drawing.Size(739, 26);
+            this.movieNameTextBox.Size = new System.Drawing.Size(938, 26);
             this.movieNameTextBox.TabIndex = 5;
             // 
             // mostRentedRadioButton
@@ -498,7 +519,7 @@
             // 
             this.employeesTabPage.Controls.Add(this.searchEmployeesDataGridView);
             this.employeesTabPage.Controls.Add(this.button4);
-            this.employeesTabPage.Controls.Add(this.button3);
+            this.employeesTabPage.Controls.Add(this.searchEmployeesButton);
             this.employeesTabPage.Controls.Add(this.exTextBox2);
             this.employeesTabPage.Location = new System.Drawing.Point(4, 24);
             this.employeesTabPage.Name = "employeesTabPage";
@@ -529,15 +550,15 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.launchEmployeeButton_Click);
             // 
-            // button3
+            // searchEmployeesButton
             // 
-            this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(591, 21);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 28);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
+            this.searchEmployeesButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchEmployeesButton.Location = new System.Drawing.Point(591, 21);
+            this.searchEmployeesButton.Name = "searchEmployeesButton";
+            this.searchEmployeesButton.Size = new System.Drawing.Size(177, 28);
+            this.searchEmployeesButton.TabIndex = 1;
+            this.searchEmployeesButton.Text = "Search";
+            this.searchEmployeesButton.UseVisualStyleBackColor = true;
             // 
             // exTextBox2
             // 
@@ -735,6 +756,7 @@
             // 
             // reportsTabPage
             // 
+            this.reportsTabPage.Controls.Add(this.reportsGenerateButton);
             this.reportsTabPage.Controls.Add(this.reportsDataGridView);
             this.reportsTabPage.Controls.Add(this.report5Button);
             this.reportsTabPage.Controls.Add(this.report4Button);
@@ -750,6 +772,16 @@
             this.reportsTabPage.TabIndex = 5;
             this.reportsTabPage.Text = "Reports";
             this.reportsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // reportsGenerateButton
+            // 
+            this.reportsGenerateButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.reportsGenerateButton.Location = new System.Drawing.Point(818, 50);
+            this.reportsGenerateButton.Name = "reportsGenerateButton";
+            this.reportsGenerateButton.Size = new System.Drawing.Size(150, 28);
+            this.reportsGenerateButton.TabIndex = 10;
+            this.reportsGenerateButton.Text = "Generate Report";
+            this.reportsGenerateButton.UseVisualStyleBackColor = true;
             // 
             // reportsDataGridView
             // 
@@ -828,17 +860,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Report Description";
             // 
-            // moviesSearchClearButton
-            // 
-            this.moviesSearchClearButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.moviesSearchClearButton.Location = new System.Drawing.Point(724, 75);
-            this.moviesSearchClearButton.Name = "moviesSearchClearButton";
-            this.moviesSearchClearButton.Size = new System.Drawing.Size(114, 28);
-            this.moviesSearchClearButton.TabIndex = 13;
-            this.moviesSearchClearButton.Text = "Clear";
-            this.moviesSearchClearButton.UseVisualStyleBackColor = true;
-            this.moviesSearchClearButton.Click += new System.EventHandler(this.clearMoviesSearchForm);
-            // 
             // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -851,6 +872,7 @@
             this.Name = "EmployeeViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee View";
+            this.Load += new System.EventHandler(this.EmployeeViewForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.moviesTabPage.ResumeLayout(false);
             this.moviesTabPage.PerformLayout();
@@ -924,7 +946,7 @@
         private Label mailingListLabel;
         private DataGridView searchEmployeesDataGridView;
         private Button button4;
-        private Button button3;
+        private Button searchEmployeesButton;
         private ExTextBox exTextBox2;
         private DataGridView reportsDataGridView;
         private Button report5Button;
@@ -949,8 +971,10 @@
         private ExTextBox transactionsHistoryMovieNameTextBox;
         private Button moviesAddMovieButton;
         private Button moviesSearchButton;
+        private Button moviesSearchClearButton;
         private DataGridViewTextBoxColumn Movie_ID;
         private DataGridViewTextBoxColumn Movie_name;
-        private Button moviesSearchClearButton;
+        private DataGridViewTextBoxColumn type_of_movie;
+        private Button reportsGenerateButton;
     }
 }
