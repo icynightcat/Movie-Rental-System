@@ -48,6 +48,11 @@
             this.movieCopiesMovieNameLabel = new System.Windows.Forms.Label();
             this.movieDoneButton = new System.Windows.Forms.Button();
             this.deleteMovieButton = new System.Windows.Forms.Button();
+            this.actor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.movieAboutTabPage.SuspendLayout();
             this.movieActorsTabPage.SuspendLayout();
@@ -203,6 +208,12 @@
             // 
             this.movieActorsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.movieActorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.movieActorsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.actor_id,
+            this.first_name,
+            this.last_name,
+            this.gender,
+            this.age});
             this.movieActorsDataGridView.Location = new System.Drawing.Point(24, 114);
             this.movieActorsDataGridView.Name = "movieActorsDataGridView";
             this.movieActorsDataGridView.RowTemplate.Height = 25;
@@ -270,6 +281,35 @@
             this.deleteMovieButton.Text = "Delete Movie";
             this.deleteMovieButton.UseVisualStyleBackColor = true;
             // 
+            // actor_id
+            // 
+            this.actor_id.HeaderText = "Actor Id";
+            this.actor_id.Name = "actor_id";
+            // 
+            // first_name
+            // 
+            this.first_name.HeaderText = "First Name";
+            this.first_name.MinimumWidth = 250;
+            this.first_name.Name = "first_name";
+            this.first_name.Width = 250;
+            // 
+            // last_name
+            // 
+            this.last_name.HeaderText = "Last Name";
+            this.last_name.MinimumWidth = 250;
+            this.last_name.Name = "last_name";
+            this.last_name.Width = 250;
+            // 
+            // gender
+            // 
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            // 
+            // age
+            // 
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            // 
             // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -283,6 +323,7 @@
             this.Name = "MovieForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee View - Movie";
+            this.Load += new System.EventHandler(this.MovieForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.movieAboutTabPage.ResumeLayout(false);
             this.movieAboutTabPage.PerformLayout();
@@ -318,5 +359,10 @@
         private DataGridView movieActorsDataGridView;
         private DataGridView movieCopiesDataGridView;
         private Label movieCopiesMovieNameLabel;
+        private DataGridViewTextBoxColumn actor_id;
+        private DataGridViewTextBoxColumn first_name;
+        private DataGridViewTextBoxColumn last_name;
+        private DataGridViewTextBoxColumn gender;
+        private DataGridViewTextBoxColumn age;
     }
 }

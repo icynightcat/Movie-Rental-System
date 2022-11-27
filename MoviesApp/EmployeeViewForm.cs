@@ -1,4 +1,5 @@
 using System.Data.SqlClient;
+using System.DirectoryServices;
 using MoviesApp.SQL;
 
 namespace MoviesApp
@@ -6,6 +7,9 @@ namespace MoviesApp
     public partial class EmployeeViewForm : Form
     {
         private string ID = ""; //id initalized to use
+
+        // Used on Movies tab to keep track of search results
+        private List<int> movieResultsList = new List<int>();
 
         private DBConnection connection;
         public EmployeeViewForm(string input, DBConnection input_connection) //takes the id in
@@ -36,7 +40,7 @@ namespace MoviesApp
         private void searchAllMovies(Object sender, EventArgs e)
         {
             hideSearchElements();
-            dataGridView2.Rows.Clear();
+            empMoviesDataGridView.Rows.Clear();
 
             string query = $"select temp.movie_id, temp.movie_name, temp.genres from " +
                 $"(select M.movie_id, M.movie_name, STRING_AGG(T.type_of_movie, ', ') as 'genres' " +
@@ -45,9 +49,14 @@ namespace MoviesApp
 
             SqlDataReader? empdata = connection.GetDataReader(query);
 
+            // Empty the movieResultsList
+            movieResultsList.Clear();
+
             while (empdata.Read())
             {
-                dataGridView2.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString(), empdata["genres"].ToString());
+                int movie_id = Int32.Parse(empdata["movie_id"].ToString());
+                movieResultsList.Add(movie_id);
+                empMoviesDataGridView.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString(), empdata["genres"].ToString());
             }
 
             empdata.Close();                //closes the reader after the data is read in
@@ -64,12 +73,12 @@ namespace MoviesApp
         private void newSearchFilters(Object sender, EventArgs e)
         {
             showSearchElements();
-            dataGridView2.Rows.Clear();
+            empMoviesDataGridView.Rows.Clear();
         }
         
         private void searchMoviesWithFilters(Object sender, EventArgs e)
         {
-            dataGridView2.Rows.Clear();
+            empMoviesDataGridView.Rows.Clear();
 
             // If actors are specified in the search bar then get a comma-separated list
             string[] actors = actorsNamesTextBox.Text.Split(',');
@@ -93,7 +102,7 @@ namespace MoviesApp
 
             while (empdata.Read())
             {
-                dataGridView2.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString(), empdata["genres"].ToString());
+                empMoviesDataGridView.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString(), empdata["genres"].ToString());
             }
 
             empdata.Close();                //closes the reader after the data is read in
@@ -102,12 +111,12 @@ namespace MoviesApp
         private void mostActivelyRented(object sender, EventArgs e)
         {
             hideSearchElements();
-            dataGridView2.Rows.Clear();
+            empMoviesDataGridView.Rows.Clear();
         }
 
         private void launchMovieButton_Click(object sender, EventArgs e)
         {
-            new MovieForm().ShowDialog();
+            new MovieForm(ID, connection, -1).ShowDialog();
         }
         private void launchActorButton_Click(object sender, EventArgs e)
         {
@@ -165,6 +174,18 @@ namespace MoviesApp
 
             // Close the reader after data is read in
             empdata.Close();
+        }
+
+        private void empMovies_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Get clicked row number
+            int r = empMoviesDataGridView.SelectedCells[0].RowIndex; //clickable row
+            //MessageBox.Show(r.ToString() +" " + movieResultsList[r]);
+            // Pass movie id of clicked-on row into MovieForm
+            MovieForm f2 = new MovieForm(ID, connection, movieResultsList[r]);
+
+            // Open the window
+            f2.ShowDialog(); //showing form after creation
         }
     }
 }

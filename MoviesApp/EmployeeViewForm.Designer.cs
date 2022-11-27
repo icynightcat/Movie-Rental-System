@@ -31,7 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.moviesTabPage = new System.Windows.Forms.TabPage();
             this.moviesSearchClearButton = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.empMoviesDataGridView = new System.Windows.Forms.DataGridView();
             this.Movie_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Movie_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type_of_movie = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,7 +97,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empMoviesDataGridView)).BeginInit();
             this.actorsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.customersTabPage.SuspendLayout();
@@ -136,7 +136,7 @@
             // moviesTabPage
             // 
             this.moviesTabPage.Controls.Add(this.moviesSearchClearButton);
-            this.moviesTabPage.Controls.Add(this.dataGridView2);
+            this.moviesTabPage.Controls.Add(this.empMoviesDataGridView);
             this.moviesTabPage.Controls.Add(this.moviesAddMovieButton);
             this.moviesTabPage.Controls.Add(this.moviesSearchButton);
             this.moviesTabPage.Controls.Add(this.genreComboBox);
@@ -164,20 +164,20 @@
             this.moviesSearchClearButton.UseVisualStyleBackColor = true;
             this.moviesSearchClearButton.Click += new System.EventHandler(this.clearMoviesSearchForm);
             // 
-            // dataGridView2
+            // empMoviesDataGridView
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.empMoviesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.empMoviesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.empMoviesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Movie_ID,
             this.Movie_name,
             this.type_of_movie});
-            this.dataGridView2.Location = new System.Drawing.Point(17, 165);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(938, 344);
-            this.dataGridView2.TabIndex = 11;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.empMoviesDataGridView.Location = new System.Drawing.Point(17, 165);
+            this.empMoviesDataGridView.Name = "empMoviesDataGridView";
+            this.empMoviesDataGridView.RowTemplate.Height = 25;
+            this.empMoviesDataGridView.Size = new System.Drawing.Size(938, 344);
+            this.empMoviesDataGridView.TabIndex = 11;
+            this.empMoviesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.empMovies_CellContentClick);
             // 
             // Movie_ID
             // 
@@ -871,7 +871,7 @@
             this.tabControl1.ResumeLayout(false);
             this.moviesTabPage.ResumeLayout(false);
             this.moviesTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empMoviesDataGridView)).EndInit();
             this.actorsTabPage.ResumeLayout(false);
             this.actorsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -924,7 +924,7 @@
         private ComboBox genreComboBox;
         private ExTextBox actorsNamesTextBox;
         private ExTextBox movieNameTextBox;
-        private DataGridView dataGridView2;
+        private DataGridView empMoviesDataGridView;
         private Button button2;
         private TabControl customersTabControl;
         private TabPage searchCustomersTabPage;
