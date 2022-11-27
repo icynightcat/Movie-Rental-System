@@ -33,26 +33,24 @@
             this.movieAboutLabel = new System.Windows.Forms.Label();
             this.genreComboBox = new System.Windows.Forms.ComboBox();
             this.distrFeeTextBox = new System.Windows.Forms.TextBox();
-            this.yearTextBox = new System.Windows.Forms.TextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.distrFeeLabel = new System.Windows.Forms.Label();
             this.genreLabel = new System.Windows.Forms.Label();
-            this.yearLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.movieActorsTabPage = new System.Windows.Forms.TabPage();
             this.movieActorsDataGridView = new System.Windows.Forms.DataGridView();
+            this.actor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.movieActorsMovieNameLabel = new System.Windows.Forms.Label();
             this.movieCopiesTabPage = new System.Windows.Forms.TabPage();
             this.movieCopiesDataGridView = new System.Windows.Forms.DataGridView();
             this.movieCopiesMovieNameLabel = new System.Windows.Forms.Label();
             this.movieDoneButton = new System.Windows.Forms.Button();
             this.deleteMovieButton = new System.Windows.Forms.Button();
-            this.actor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.movieAboutTabPage.SuspendLayout();
             this.movieActorsTabPage.SuspendLayout();
@@ -78,11 +76,9 @@
             this.movieAboutTabPage.Controls.Add(this.movieAboutLabel);
             this.movieAboutTabPage.Controls.Add(this.genreComboBox);
             this.movieAboutTabPage.Controls.Add(this.distrFeeTextBox);
-            this.movieAboutTabPage.Controls.Add(this.yearTextBox);
             this.movieAboutTabPage.Controls.Add(this.titleTextBox);
             this.movieAboutTabPage.Controls.Add(this.distrFeeLabel);
             this.movieAboutTabPage.Controls.Add(this.genreLabel);
-            this.movieAboutTabPage.Controls.Add(this.yearLabel);
             this.movieAboutTabPage.Controls.Add(this.titleLabel);
             this.movieAboutTabPage.Controls.Add(this.idLabel);
             this.movieAboutTabPage.Location = new System.Drawing.Point(4, 24);
@@ -112,7 +108,7 @@
             "Drama",
             "Action",
             "Foreign"});
-            this.genreComboBox.Location = new System.Drawing.Point(257, 203);
+            this.genreComboBox.Location = new System.Drawing.Point(257, 165);
             this.genreComboBox.Name = "genreComboBox";
             this.genreComboBox.Size = new System.Drawing.Size(463, 26);
             this.genreComboBox.TabIndex = 10;
@@ -121,18 +117,10 @@
             // distrFeeTextBox
             // 
             this.distrFeeTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.distrFeeTextBox.Location = new System.Drawing.Point(257, 239);
+            this.distrFeeTextBox.Location = new System.Drawing.Point(257, 201);
             this.distrFeeTextBox.Name = "distrFeeTextBox";
             this.distrFeeTextBox.Size = new System.Drawing.Size(463, 26);
             this.distrFeeTextBox.TabIndex = 9;
-            // 
-            // yearTextBox
-            // 
-            this.yearTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.yearTextBox.Location = new System.Drawing.Point(257, 168);
-            this.yearTextBox.Name = "yearTextBox";
-            this.yearTextBox.Size = new System.Drawing.Size(463, 26);
-            this.yearTextBox.TabIndex = 8;
             // 
             // titleTextBox
             // 
@@ -146,7 +134,7 @@
             // 
             this.distrFeeLabel.AutoSize = true;
             this.distrFeeLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.distrFeeLabel.Location = new System.Drawing.Point(166, 242);
+            this.distrFeeLabel.Location = new System.Drawing.Point(166, 204);
             this.distrFeeLabel.Name = "distrFeeLabel";
             this.distrFeeLabel.Size = new System.Drawing.Size(76, 18);
             this.distrFeeLabel.TabIndex = 5;
@@ -156,21 +144,11 @@
             // 
             this.genreLabel.AutoSize = true;
             this.genreLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.genreLabel.Location = new System.Drawing.Point(191, 206);
+            this.genreLabel.Location = new System.Drawing.Point(191, 168);
             this.genreLabel.Name = "genreLabel";
             this.genreLabel.Size = new System.Drawing.Size(51, 18);
             this.genreLabel.TabIndex = 4;
             this.genreLabel.Text = "Genre";
-            // 
-            // yearLabel
-            // 
-            this.yearLabel.AutoSize = true;
-            this.yearLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.yearLabel.Location = new System.Drawing.Point(203, 171);
-            this.yearLabel.Name = "yearLabel";
-            this.yearLabel.Size = new System.Drawing.Size(39, 18);
-            this.yearLabel.TabIndex = 3;
-            this.yearLabel.Text = "Year";
             // 
             // titleLabel
             // 
@@ -219,6 +197,35 @@
             this.movieActorsDataGridView.RowTemplate.Height = 25;
             this.movieActorsDataGridView.Size = new System.Drawing.Size(928, 338);
             this.movieActorsDataGridView.TabIndex = 1;
+            // 
+            // actor_id
+            // 
+            this.actor_id.HeaderText = "Actor Id";
+            this.actor_id.Name = "actor_id";
+            // 
+            // first_name
+            // 
+            this.first_name.HeaderText = "First Name";
+            this.first_name.MinimumWidth = 250;
+            this.first_name.Name = "first_name";
+            this.first_name.Width = 250;
+            // 
+            // last_name
+            // 
+            this.last_name.HeaderText = "Last Name";
+            this.last_name.MinimumWidth = 250;
+            this.last_name.Name = "last_name";
+            this.last_name.Width = 250;
+            // 
+            // gender
+            // 
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            // 
+            // age
+            // 
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
             // 
             // movieActorsMovieNameLabel
             // 
@@ -281,35 +288,6 @@
             this.deleteMovieButton.Text = "Delete Movie";
             this.deleteMovieButton.UseVisualStyleBackColor = true;
             // 
-            // actor_id
-            // 
-            this.actor_id.HeaderText = "Actor Id";
-            this.actor_id.Name = "actor_id";
-            // 
-            // first_name
-            // 
-            this.first_name.HeaderText = "First Name";
-            this.first_name.MinimumWidth = 250;
-            this.first_name.Name = "first_name";
-            this.first_name.Width = 250;
-            // 
-            // last_name
-            // 
-            this.last_name.HeaderText = "Last Name";
-            this.last_name.MinimumWidth = 250;
-            this.last_name.Name = "last_name";
-            this.last_name.Width = 250;
-            // 
-            // gender
-            // 
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            // 
-            // age
-            // 
-            this.age.HeaderText = "Age";
-            this.age.Name = "age";
-            // 
             // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -346,11 +324,9 @@
         private Button movieDoneButton;
         private ComboBox genreComboBox;
         private TextBox distrFeeTextBox;
-        private TextBox yearTextBox;
         private TextBox titleTextBox;
         private Label distrFeeLabel;
         private Label genreLabel;
-        private Label yearLabel;
         private Label titleLabel;
         private Label idLabel;
         private Button deleteMovieButton;

@@ -32,8 +32,7 @@ namespace MoviesApp
         private void MovieForm_Load(object sender, EventArgs e)
         {
             // Populate combo box on movies page
-            string query = $"select temp.movie_id, temp.movie_name, STRING_AGG(temp.type_of_movie, ', ') as 'genres' " +
-                $"from Movie where movie_id = {whichMovie}";
+            string query = $"select movie_id, movie_name, distribution_fee from Movie where movie_id = {whichMovie}";
             SqlDataReader? empdata = connection.GetDataReader(query);
 
             while (empdata != null && empdata.Read())
@@ -54,7 +53,7 @@ namespace MoviesApp
 
             while (empdata != null && empdata.Read())
             {
-                movieGenres.Add(empdata["type_of_movie"].ToString());
+                movieGenres.Add(empdata["type_of_movie"].ToString()!);
             }
 
             // Close the reader after data is read in

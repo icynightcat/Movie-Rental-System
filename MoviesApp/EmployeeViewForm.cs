@@ -100,8 +100,13 @@ namespace MoviesApp
 
             SqlDataReader? empdata = connection.GetDataReader(query);
 
-            while (empdata.Read())
+            // Empty the movieResultsList
+            movieResultsList.Clear();
+
+            while (empdata != null && empdata.Read())
             {
+                int movie_id = Int32.Parse(empdata["movie_id"].ToString()!);
+                movieResultsList.Add(movie_id);
                 empMoviesDataGridView.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString(), empdata["genres"].ToString());
             }
 
