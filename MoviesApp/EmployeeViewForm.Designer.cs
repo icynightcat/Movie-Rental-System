@@ -225,11 +225,6 @@
             // 
             this.genreComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.genreComboBox.FormattingEnabled = true;
-            this.genreComboBox.Items.AddRange(new object[] {
-            "Comedy",
-            "Drama",
-            "Action",
-            "Foreign"});
             this.genreComboBox.Location = new System.Drawing.Point(17, 107);
             this.genreComboBox.Name = "genreComboBox";
             this.genreComboBox.Size = new System.Drawing.Size(419, 26);

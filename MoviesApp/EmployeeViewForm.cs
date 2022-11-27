@@ -74,21 +74,20 @@ namespace MoviesApp
             // If actors are specified in the search bar then get a comma-separated list
             string[] actors = actorsNamesTextBox.Text.Split(',');
 
-            string query = $"select distinct temp.movie_id, temp.movie_name, temp.genres from " +
-                $"(select distinct M.movie_id, M.movie_name, STRING_AGG(T.type_of_movie, ', ') as 'genres', " +
+            string query = $"select temp.movie_id, temp.movie_name, STRING_AGG(temp.type_of_movie, ', ') as 'genres' from " +
+                $"(select M.movie_id, M.movie_name, T.type_of_movie, " +
                 $"STRING_AGG(A.first_name + ' ' + A.last_name, ', ') as 'actors' " +
                 $"from Movie M, Movie_type T, Acts_in AI, Actors A where " +
                 $"AI.movie_id = M.movie_id and A.actor_id = AI.actor_id " +
                 $"and movie_name like '%{movieNameTextBox.Text}%' and M.movie_id = T.movie_id " +
-                $"group by M.movie_name, M.movie_id) temp ";
-
-            query += $"where ('{genreComboBox.Text}' = 'Genre' or temp.genres like '%{genreComboBox.Text}%') ";
+                $"group by M.movie_name, M.movie_id, T.type_of_movie) temp ";
 
             if (actors.Length > 0)
-                query += $"and temp.actors like '%" + String.Join("%' and temp.actors like '%", actors) + "%' ";
+                query += $"where temp.actors like '%" + String.Join("%' and temp.actors like '%", actors) + "%' ";
 
-
-            query += $"order by temp.movie_name";
+            query += $"group by temp.movie_id, temp.movie_name " +
+                $"having ('{genreComboBox.Text}' = 'Genre' or STRING_AGG(temp.type_of_movie, ', ') like '%{genreComboBox.Text}%') " +
+                $"order by temp.movie_name";
 
             SqlDataReader? empdata = connection.GetDataReader(query);
 
@@ -151,8 +150,21 @@ namespace MoviesApp
 
         private void EmployeeViewForm_Load(object sender, EventArgs e)
         {
+            // Set default search button on page load
             tabControl1.TabIndex = 0;
             this.AcceptButton = moviesSearchButton;
+
+            // Populate combo box on movies page
+            string query = $"select * from Genre order by type_of_movie";
+            SqlDataReader? empdata = connection.GetDataReader(query);
+
+            while (empdata.Read())
+            {
+                genreComboBox.Items.Add(empdata["type_of_movie"].ToString());
+            }
+
+            // Close the reader after data is read in
+            empdata.Close();
         }
     }
 }
