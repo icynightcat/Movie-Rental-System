@@ -72,6 +72,7 @@
             this.passwordTextInput.MaximumSize = new System.Drawing.Size(250, 30);
             this.passwordTextInput.MinimumSize = new System.Drawing.Size(250, 30);
             this.passwordTextInput.Name = "passwordTextInput";
+            this.passwordTextInput.PasswordChar = '*';
             this.passwordTextInput.Size = new System.Drawing.Size(250, 30);
             this.passwordTextInput.TabIndex = 2;
             // 

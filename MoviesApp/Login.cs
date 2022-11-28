@@ -41,6 +41,7 @@ namespace MoviesApp
                     empdata.Close();                //closes the reader after the data is read in
 
                     accountTextInput.Text = "";
+                    passwordTextInput.Text = "";
                     new EmployeeViewForm(ID, connection).ShowDialog();
 
                 }
@@ -61,6 +62,7 @@ namespace MoviesApp
                     custdata.Close();                //closes the reader after the data is read in
 
                     accountTextInput.Text = "";
+                    passwordTextInput.Text = "";
                     new CustomerViewForm(ID, connection).ShowDialog();
 
                 }
