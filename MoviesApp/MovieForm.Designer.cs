@@ -37,17 +37,28 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.movieActorsDataGridView = new System.Windows.Forms.DataGridView();
-            this.actor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.actorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.movieCopiesDataGridView = new System.Windows.Forms.DataGridView();
+            this.selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.movieDoneButton = new System.Windows.Forms.Button();
             this.deleteMovieButton = new System.Windows.Forms.Button();
             this.movieCopiesLabel = new System.Windows.Forms.Label();
             this.movieActorsLabel = new System.Windows.Forms.Label();
-            this.empMoviesEditButton = new System.Windows.Forms.Button();
+            this.empMovieEditButton = new System.Windows.Forms.Button();
+            this.removeCopyButton = new System.Windows.Forms.Button();
+            this.removeActorButton = new System.Windows.Forms.Button();
+            this.addCopyComboBox = new System.Windows.Forms.ComboBox();
+            this.addCopyButton = new System.Windows.Forms.Button();
+            this.addCopyResComboBox = new System.Windows.Forms.ComboBox();
+            this.actorSearchTextBox = new MoviesApp.ExTextBox();
+            this.actorSearchListBox = new System.Windows.Forms.ListBox();
+            this.clearActorSearchButton = new System.Windows.Forms.Button();
+            this.addActorButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.movieActorsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieCopiesDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -140,7 +151,8 @@
             this.movieActorsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.movieActorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.movieActorsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.actor_id,
+            this.dataGridViewCheckBoxColumn1,
+            this.actorId,
             this.first_name,
             this.last_name,
             this.gender,
@@ -151,10 +163,17 @@
             this.movieActorsDataGridView.Size = new System.Drawing.Size(928, 150);
             this.movieActorsDataGridView.TabIndex = 1;
             // 
-            // actor_id
+            // dataGridViewCheckBoxColumn1
             // 
-            this.actor_id.HeaderText = "Actor Id";
-            this.actor_id.Name = "actor_id";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Selected";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Visible = false;
+            // 
+            // actorId
+            // 
+            this.actorId.HeaderText = "Actor Id";
+            this.actorId.Name = "actorId";
+            this.actorId.Visible = false;
             // 
             // first_name
             // 
@@ -184,11 +203,19 @@
             // 
             this.movieCopiesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.movieCopiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.movieCopiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.selected});
             this.movieCopiesDataGridView.Location = new System.Drawing.Point(28, 156);
             this.movieCopiesDataGridView.Name = "movieCopiesDataGridView";
             this.movieCopiesDataGridView.RowTemplate.Height = 25;
             this.movieCopiesDataGridView.Size = new System.Drawing.Size(928, 138);
             this.movieCopiesDataGridView.TabIndex = 2;
+            // 
+            // selected
+            // 
+            this.selected.HeaderText = "Selected";
+            this.selected.Name = "selected";
+            this.selected.Visible = false;
             // 
             // movieDoneButton
             // 
@@ -229,23 +256,136 @@
             this.movieActorsLabel.TabIndex = 13;
             this.movieActorsLabel.Text = "Actors";
             // 
-            // empMoviesEditButton
+            // empMovieEditButton
             // 
-            this.empMoviesEditButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.empMoviesEditButton.Location = new System.Drawing.Point(650, 517);
-            this.empMoviesEditButton.Name = "empMoviesEditButton";
-            this.empMoviesEditButton.Size = new System.Drawing.Size(150, 28);
-            this.empMoviesEditButton.TabIndex = 14;
-            this.empMoviesEditButton.Text = "Edit";
-            this.empMoviesEditButton.UseVisualStyleBackColor = true;
-            this.empMoviesEditButton.Click += new System.EventHandler(this.empMovieEditButton_click);
+            this.empMovieEditButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.empMovieEditButton.Location = new System.Drawing.Point(650, 517);
+            this.empMovieEditButton.Name = "empMovieEditButton";
+            this.empMovieEditButton.Size = new System.Drawing.Size(150, 28);
+            this.empMovieEditButton.TabIndex = 14;
+            this.empMovieEditButton.Text = "Edit";
+            this.empMovieEditButton.UseVisualStyleBackColor = true;
+            this.empMovieEditButton.Click += new System.EventHandler(this.empMovieEditButton_click);
+            // 
+            // removeCopyButton
+            // 
+            this.removeCopyButton.Location = new System.Drawing.Point(103, 130);
+            this.removeCopyButton.Name = "removeCopyButton";
+            this.removeCopyButton.Size = new System.Drawing.Size(150, 23);
+            this.removeCopyButton.TabIndex = 15;
+            this.removeCopyButton.Text = "Remove Selected";
+            this.removeCopyButton.UseVisualStyleBackColor = true;
+            this.removeCopyButton.Visible = false;
+            this.removeCopyButton.Click += new System.EventHandler(this.removeCopyButton_click);
+            // 
+            // removeActorButton
+            // 
+            this.removeActorButton.Location = new System.Drawing.Point(104, 327);
+            this.removeActorButton.Name = "removeActorButton";
+            this.removeActorButton.Size = new System.Drawing.Size(150, 23);
+            this.removeActorButton.TabIndex = 16;
+            this.removeActorButton.Text = "Remove Selected";
+            this.removeActorButton.UseVisualStyleBackColor = true;
+            this.removeActorButton.Visible = false;
+            this.removeActorButton.Click += new System.EventHandler(this.removeActorButton_click);
+            // 
+            // addCopyComboBox
+            // 
+            this.addCopyComboBox.FormattingEnabled = true;
+            this.addCopyComboBox.Items.AddRange(new object[] {
+            "Movie Type",
+            "DVD",
+            "Blue Ray",
+            "Lazer Disk",
+            "USB",
+            "VHS"});
+            this.addCopyComboBox.Location = new System.Drawing.Point(344, 128);
+            this.addCopyComboBox.Name = "addCopyComboBox";
+            this.addCopyComboBox.Size = new System.Drawing.Size(225, 23);
+            this.addCopyComboBox.TabIndex = 17;
+            this.addCopyComboBox.Text = "Movie Type";
+            // 
+            // addCopyButton
+            // 
+            this.addCopyButton.Location = new System.Drawing.Point(806, 127);
+            this.addCopyButton.Name = "addCopyButton";
+            this.addCopyButton.Size = new System.Drawing.Size(150, 23);
+            this.addCopyButton.TabIndex = 18;
+            this.addCopyButton.Text = "Add";
+            this.addCopyButton.UseVisualStyleBackColor = true;
+            // 
+            // addCopyResComboBox
+            // 
+            this.addCopyResComboBox.FormattingEnabled = true;
+            this.addCopyResComboBox.Items.AddRange(new object[] {
+            "Resolution",
+            "800x500",
+            "1600x900",
+            "19020x1080",
+            "2560x1440"});
+            this.addCopyResComboBox.Location = new System.Drawing.Point(575, 128);
+            this.addCopyResComboBox.Name = "addCopyResComboBox";
+            this.addCopyResComboBox.Size = new System.Drawing.Size(225, 23);
+            this.addCopyResComboBox.TabIndex = 19;
+            this.addCopyResComboBox.Text = "Resolution";
+            // 
+            // actorSearchTextBox
+            // 
+            this.actorSearchTextBox.Hint = "Type Actor Name";
+            this.actorSearchTextBox.Location = new System.Drawing.Point(398, 330);
+            this.actorSearchTextBox.Name = "actorSearchTextBox";
+            this.actorSearchTextBox.Size = new System.Drawing.Size(342, 23);
+            this.actorSearchTextBox.TabIndex = 20;
+            this.actorSearchTextBox.Visible = false;
+            this.actorSearchTextBox.TextChanged += new System.EventHandler(this.actorSearchTextBox_TextChanged);
+            this.actorSearchTextBox.Leave += new System.EventHandler(this.actorSearchTextBox_Leave);
+            this.actorSearchTextBox.MouseCaptureChanged += new System.EventHandler(this.actorSearchTextBox_Leave);
+            // 
+            // actorSearchListBox
+            // 
+            this.actorSearchListBox.FormattingEnabled = true;
+            this.actorSearchListBox.ItemHeight = 15;
+            this.actorSearchListBox.Location = new System.Drawing.Point(398, 352);
+            this.actorSearchListBox.Name = "actorSearchListBox";
+            this.actorSearchListBox.Size = new System.Drawing.Size(342, 94);
+            this.actorSearchListBox.TabIndex = 21;
+            this.actorSearchListBox.Visible = false;
+            // 
+            // clearActorSearchButton
+            // 
+            this.clearActorSearchButton.Location = new System.Drawing.Point(744, 330);
+            this.clearActorSearchButton.Name = "clearActorSearchButton";
+            this.clearActorSearchButton.Size = new System.Drawing.Size(105, 23);
+            this.clearActorSearchButton.TabIndex = 22;
+            this.clearActorSearchButton.Text = "Clear";
+            this.clearActorSearchButton.UseVisualStyleBackColor = true;
+            this.clearActorSearchButton.Click += new System.EventHandler(this.clearActorSearchButton_Click);
+            // 
+            // addActorButton
+            // 
+            this.addActorButton.Location = new System.Drawing.Point(852, 330);
+            this.addActorButton.Name = "addActorButton";
+            this.addActorButton.Size = new System.Drawing.Size(105, 23);
+            this.addActorButton.TabIndex = 23;
+            this.addActorButton.Text = "Add";
+            this.addActorButton.UseVisualStyleBackColor = true;
+            this.addActorButton.Click += new System.EventHandler(this.addActorButton_Click);
             // 
             // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.empMoviesEditButton);
+            this.Controls.Add(this.addActorButton);
+            this.Controls.Add(this.clearActorSearchButton);
+            this.Controls.Add(this.actorSearchListBox);
+            this.Controls.Add(this.actorSearchTextBox);
+            this.Controls.Add(this.addCopyResComboBox);
+            this.Controls.Add(this.addCopyButton);
+            this.Controls.Add(this.addCopyComboBox);
+            this.Controls.Add(this.removeActorButton);
+            this.Controls.Add(this.removeCopyButton);
+            this.Controls.Add(this.empMovieEditButton);
             this.Controls.Add(this.movieActorsLabel);
             this.Controls.Add(this.movieCopiesLabel);
             this.Controls.Add(this.movieCopiesDataGridView);
@@ -266,6 +406,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee View - Movie";
             this.Load += new System.EventHandler(this.MovieForm_Load);
+            this.Click += new System.EventHandler(this.actorSearchTextBox_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.movieActorsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieCopiesDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -286,13 +427,24 @@
         private Label movieAboutLabel;
         private DataGridView movieActorsDataGridView;
         private DataGridView movieCopiesDataGridView;
-        private DataGridViewTextBoxColumn actor_id;
+        private Label movieCopiesLabel;
+        private Label movieActorsLabel;
+        private Button empMovieEditButton;
+        private DataGridViewCheckBoxColumn selected;
+        private Button removeCopyButton;
+        private Button removeActorButton;
+        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private DataGridViewTextBoxColumn actorId;
         private DataGridViewTextBoxColumn first_name;
         private DataGridViewTextBoxColumn last_name;
         private DataGridViewTextBoxColumn gender;
         private DataGridViewTextBoxColumn age;
-        private Label movieCopiesLabel;
-        private Label movieActorsLabel;
-        private Button empMoviesEditButton;
+        private ComboBox addCopyComboBox;
+        private Button addCopyButton;
+        private ComboBox addCopyResComboBox;
+        private ExTextBox actorSearchTextBox;
+        private ListBox actorSearchListBox;
+        private Button clearActorSearchButton;
+        private Button addActorButton;
     }
 }
