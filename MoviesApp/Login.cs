@@ -39,9 +39,9 @@ namespace MoviesApp
                     empdata.Read();                                     //to see the data you must read() first
                     string ID = empdata["employee_id"].ToString();      //passing ID
                     empdata.Close();                //closes the reader after the data is read in
-                    
-                    new EmployeeViewForm(ID, connection).Show();
-                    this.Close();
+
+                    accountTextInput.Text = "";
+                    new EmployeeViewForm(ID, connection).ShowDialog();
 
                 }
 
@@ -59,9 +59,9 @@ namespace MoviesApp
                     custdata.Read();                                     //to see the data you must read() first
                     string ID = custdata["account_number"].ToString();      //passing ID
                     custdata.Close();                //closes the reader after the data is read in
-                    
-                    new CustomerViewForm(ID, connection).Show();
-                    this.Close();
+
+                    accountTextInput.Text = "";
+                    new CustomerViewForm(ID, connection).ShowDialog();
 
                 }
             }

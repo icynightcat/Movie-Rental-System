@@ -95,6 +95,7 @@
             this.report1Button = new System.Windows.Forms.Button();
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.empLogoutButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empMoviesDataGridView)).BeginInit();
@@ -174,6 +175,7 @@
             this.type_of_movie});
             this.empMoviesDataGridView.Location = new System.Drawing.Point(17, 165);
             this.empMoviesDataGridView.Name = "empMoviesDataGridView";
+            this.empMoviesDataGridView.RowHeadersWidth = 51;
             this.empMoviesDataGridView.RowTemplate.Height = 25;
             this.empMoviesDataGridView.Size = new System.Drawing.Size(938, 344);
             this.empMoviesDataGridView.TabIndex = 11;
@@ -184,6 +186,7 @@
             this.Movie_ID.HeaderText = "Movie ID";
             this.Movie_ID.MinimumWidth = 100;
             this.Movie_ID.Name = "Movie_ID";
+            this.Movie_ID.Width = 125;
             // 
             // Movie_name
             // 
@@ -324,6 +327,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(33, 136);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(912, 361);
             this.dataGridView1.TabIndex = 8;
@@ -474,6 +478,7 @@
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(31, 66);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 25;
             this.dataGridView3.Size = new System.Drawing.Size(912, 425);
             this.dataGridView3.TabIndex = 0;
@@ -496,6 +501,7 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(31, 65);
             this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.RowTemplate.Height = 25;
             this.dataGridView4.Size = new System.Drawing.Size(912, 422);
             this.dataGridView4.TabIndex = 1;
@@ -530,6 +536,7 @@
             this.searchEmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchEmployeesDataGridView.Location = new System.Drawing.Point(33, 70);
             this.searchEmployeesDataGridView.Name = "searchEmployeesDataGridView";
+            this.searchEmployeesDataGridView.RowHeadersWidth = 51;
             this.searchEmployeesDataGridView.RowTemplate.Height = 25;
             this.searchEmployeesDataGridView.Size = new System.Drawing.Size(912, 429);
             this.searchEmployeesDataGridView.TabIndex = 3;
@@ -619,6 +626,7 @@
             this.TransactionsNewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TransactionsNewDataGridView.Location = new System.Drawing.Point(31, 121);
             this.TransactionsNewDataGridView.Name = "TransactionsNewDataGridView";
+            this.TransactionsNewDataGridView.RowHeadersWidth = 51;
             this.TransactionsNewDataGridView.RowTemplate.Height = 25;
             this.TransactionsNewDataGridView.Size = new System.Drawing.Size(912, 342);
             this.TransactionsNewDataGridView.TabIndex = 7;
@@ -692,6 +700,7 @@
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(31, 122);
             this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersWidth = 51;
             this.dataGridView5.RowTemplate.Height = 25;
             this.dataGridView5.Size = new System.Drawing.Size(912, 342);
             this.dataGridView5.TabIndex = 8;
@@ -784,6 +793,7 @@
             this.reportsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reportsDataGridView.Location = new System.Drawing.Point(8, 82);
             this.reportsDataGridView.Name = "reportsDataGridView";
+            this.reportsDataGridView.RowHeadersWidth = 51;
             this.reportsDataGridView.RowTemplate.Height = 25;
             this.reportsDataGridView.Size = new System.Drawing.Size(960, 407);
             this.reportsDataGridView.TabIndex = 9;
@@ -855,15 +865,27 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Report Description";
             // 
+            // empLogoutButton
+            // 
+            this.empLogoutButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.empLogoutButton.Location = new System.Drawing.Point(907, 0);
+            this.empLogoutButton.Name = "empLogoutButton";
+            this.empLogoutButton.Size = new System.Drawing.Size(75, 21);
+            this.empLogoutButton.TabIndex = 1;
+            this.empLogoutButton.Text = "Logout";
+            this.empLogoutButton.UseVisualStyleBackColor = true;
+            this.empLogoutButton.Click += new System.EventHandler(this.empLogoutButton_Click);
+            // 
             // EmployeeViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(984, 559);
+            this.Controls.Add(this.empLogoutButton);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MaximumSize = new System.Drawing.Size(1000, 600);
-            this.MinimumSize = new System.Drawing.Size(1000, 600);
+            this.MaximumSize = new System.Drawing.Size(1000, 598);
+            this.MinimumSize = new System.Drawing.Size(1000, 598);
             this.Name = "EmployeeViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee View";
@@ -971,5 +993,6 @@
         private DataGridViewTextBoxColumn Movie_name;
         private DataGridViewTextBoxColumn type_of_movie;
         private Button reportsGenerateButton;
+        private Button empLogoutButton;
     }
 }

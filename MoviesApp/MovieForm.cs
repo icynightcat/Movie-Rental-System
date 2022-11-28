@@ -20,6 +20,7 @@ namespace MoviesApp
         private int whichMovie;
         private List<string> movieGenres = new List<string>();
         private List<int> movieActors = new List<int>();
+        private bool editMode = false;
 
         public MovieForm(string empId, DBConnection input_connection, int whichMovie)
         {
@@ -27,6 +28,13 @@ namespace MoviesApp
             this.empId = empId;
             this.whichMovie = whichMovie;
             InitializeComponent();
+        }
+
+        private void empMovieEditButton_click(object sender, EventArgs e)
+        {
+            editMode = !editMode;
+            titleTextBox.ReadOnly = editMode;
+            distrFeeTextBox.ReadOnly = editMode;
         }
 
         private void MovieForm_Load(object sender, EventArgs e)

@@ -109,6 +109,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.customerLogoutButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -1078,11 +1079,23 @@
             this.tabPage6.Size = new System.Drawing.Size(200, 100);
             this.tabPage6.TabIndex = 0;
             // 
+            // customerLogoutButton
+            // 
+            this.customerLogoutButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerLogoutButton.Location = new System.Drawing.Point(903, -1);
+            this.customerLogoutButton.Name = "customerLogoutButton";
+            this.customerLogoutButton.Size = new System.Drawing.Size(75, 21);
+            this.customerLogoutButton.TabIndex = 2;
+            this.customerLogoutButton.Text = "Logout";
+            this.customerLogoutButton.UseVisualStyleBackColor = true;
+            this.customerLogoutButton.Click += new System.EventHandler(this.customerLogoutButton_Click);
+            // 
             // CustomerViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.customerLogoutButton);
             this.Controls.Add(this.tabControl1);
             this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
@@ -1203,5 +1216,6 @@
         private Label label33;
         private Label label32;
         private Label label30;
+        private Button customerLogoutButton;
     }
 }

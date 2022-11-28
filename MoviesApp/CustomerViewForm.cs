@@ -45,6 +45,10 @@ namespace MoviesApp
 
             }
         }
+        private void customerLogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void toggle_cust_edit(object sender, EventArgs e)
         {
             custFirstName.ReadOnly = !custFirstName.ReadOnly; 

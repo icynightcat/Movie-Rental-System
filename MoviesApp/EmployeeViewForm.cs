@@ -118,8 +118,11 @@ namespace MoviesApp
             hideSearchElements();
             empMoviesDataGridView.Rows.Clear();
         }
-
-        private void launchMovieButton_Click(object sender, EventArgs e)
+        private void empLogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+            private void launchMovieButton_Click(object sender, EventArgs e)
         {
             new MovieForm(ID, connection, -1).ShowDialog();
         }
