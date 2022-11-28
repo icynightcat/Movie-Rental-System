@@ -45,6 +45,10 @@ namespace MoviesApp
                     new EmployeeViewForm(ID, connection).ShowDialog();
 
                 }
+                else
+                {
+                    MessageBox.Show("Invalid username or password");
+                }
 
                 //Console.WriteLine(empdata["employee_id"].ToString()); //call to the table, [col name]. ToString so its reable, can be looped with while for the empdata
 
@@ -66,8 +70,13 @@ namespace MoviesApp
                     new CustomerViewForm(ID, connection).ShowDialog();
 
                 }
+                else
+                {
+                    MessageBox.Show("Invalid username or password");
+                }
             }
-        } 
             
+        }
+
     }
 }
