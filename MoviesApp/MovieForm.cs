@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.DirectoryServices;
 using MoviesApp.SQL;
 using System.Collections;
+using System.Reflection.Metadata;
 
 namespace MoviesApp
 {
@@ -102,8 +103,10 @@ namespace MoviesApp
         }
         private void actorSearchTextBox_Leave(object sender, EventArgs e)
         {
-            actorSearchListBox.Items.Clear();
-            actorSearchListBox.Visible = false;
+            if (actorSearchListBox.ContainsFocus == false) {
+                actorSearchListBox.Items.Clear();
+                actorSearchListBox.Visible = false;
+            }
         }
 
         private void clearActorSearchButton_Click(object sender, EventArgs e)
@@ -112,7 +115,15 @@ namespace MoviesApp
             actorSearchListBox.Items.Clear();
             actorSearchListBox.Visible = false;
         }
-        private void addActorButton_Click(object sender, EventArgs e)
+        private void actorSearchListBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            // Get the currently selected item in the ListBox.
+            actorSearchTextBox.Text = actorSearchListBox.SelectedItem.ToString();
+            actorSearchListBox.Items.Clear();
+            actorSearchListBox.Visible=false;
+        }
+
+            private void addActorButton_Click(object sender, EventArgs e)
         {
             int actorAddId;
 
@@ -131,12 +142,7 @@ namespace MoviesApp
 
             // An actor was found. Get ID
             if (empdata.Read())
-            {
                 actorAddId = Int32.Parse(empdata["actor_id"].ToString());
-                string message2 = $"Adding actor id {actorAddId}";
-                string title2 = "Info";
-                MessageBox.Show(message2, title2);
-            }
             else
                 return;
 
@@ -148,10 +154,15 @@ namespace MoviesApp
             String mutation = $"insert into Acts_in(actor_id, movie_id) values({actorAddId}, {whichMovie})";
             int result = connection.ExecuteMutation(mutation);
 
-            string message3 = $"Result of insert: {result}";
-            string title3 = "Info";
-            MessageBox.Show(message3, title3);
+            if (result == 0)
+            {
+                string message3 = $"Could not insert";
+                string title3 = "Info";
+                MessageBox.Show(message3, title3);
+            }
 
+            actorSearchTextBox.Text = "";
+            actorSearchListBox.Visible = false;
             movieActorsDataGridView.Rows.Clear();
             populateMovieActors();
         }
@@ -162,10 +173,10 @@ namespace MoviesApp
             String[] actorSearch = actorSearchTextBox.Text.Split(' ');
 
             // Get the movie actors
-            String query = $"select * from Actors where " +
-                $"first_name like '%" + String.Join("%' or first_name like '%", actorSearch) + "%' " +
-                $"or last_name like '%" + String.Join("%' or last_name like '%", actorSearch) + "%' " +
-                $"order by first_name";
+            String query = $"select * from Actors A " +
+                $"where A.first_name like '%" + String.Join("%' or A.first_name like '%", actorSearch) + "%' " +
+                $"or A.last_name like '%" + String.Join("%' or A.last_name like '%", actorSearch) + "%' " +
+                $"order by A.first_name";
 
             SqlDataReader? empdata = connection.GetDataReader(query);
 
@@ -222,7 +233,7 @@ namespace MoviesApp
                 String mutation = $"delete from Acts_in where movie_id = {whichMovie} and actor_id in ({String.Join(',', selectedActors)})";
                 connection.ExecuteMutation(mutation);
                 movieActorsDataGridView.Rows.Clear();
-                populateMovieCopies();
+                populateMovieActors();
             }
         }
         private void empMovieEditButton_click(object sender, EventArgs e)
@@ -235,6 +246,11 @@ namespace MoviesApp
             removeCopyButton.Visible = !readOnlyMode;
             removeActorButton.Visible = !readOnlyMode;
             actorSearchTextBox.Visible = !readOnlyMode;
+            addCopyComboBox.Visible = !readOnlyMode;
+            addCopyResComboBox.Visible = !readOnlyMode;
+            addCopyButton.Visible = !readOnlyMode;
+            clearActorSearchButton.Visible = !readOnlyMode;
+            addActorButton.Visible = !readOnlyMode;
 
             if (readOnlyMode)
                 empMovieEditButton.Text = "Edit";
@@ -249,11 +265,6 @@ namespace MoviesApp
             string title = titleTextBox.Text; //all that is needed to get the info once someone clicks it
 
             this.Close();
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

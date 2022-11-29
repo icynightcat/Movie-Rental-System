@@ -304,6 +304,7 @@
             this.addCopyComboBox.Size = new System.Drawing.Size(225, 23);
             this.addCopyComboBox.TabIndex = 17;
             this.addCopyComboBox.Text = "Movie Type";
+            this.addCopyComboBox.Visible = false;
             // 
             // addCopyButton
             // 
@@ -313,6 +314,7 @@
             this.addCopyButton.TabIndex = 18;
             this.addCopyButton.Text = "Add";
             this.addCopyButton.UseVisualStyleBackColor = true;
+            this.addCopyButton.Visible = false;
             // 
             // addCopyResComboBox
             // 
@@ -328,6 +330,7 @@
             this.addCopyResComboBox.Size = new System.Drawing.Size(225, 23);
             this.addCopyResComboBox.TabIndex = 19;
             this.addCopyResComboBox.Text = "Resolution";
+            this.addCopyResComboBox.Visible = false;
             // 
             // actorSearchTextBox
             // 
@@ -350,6 +353,7 @@
             this.actorSearchListBox.Size = new System.Drawing.Size(342, 94);
             this.actorSearchListBox.TabIndex = 21;
             this.actorSearchListBox.Visible = false;
+            this.actorSearchListBox.Click += new System.EventHandler(this.actorSearchListBox_SelectedIndexChanged);
             // 
             // clearActorSearchButton
             // 
@@ -359,6 +363,7 @@
             this.clearActorSearchButton.TabIndex = 22;
             this.clearActorSearchButton.Text = "Clear";
             this.clearActorSearchButton.UseVisualStyleBackColor = true;
+            this.clearActorSearchButton.Visible = false;
             this.clearActorSearchButton.Click += new System.EventHandler(this.clearActorSearchButton_Click);
             // 
             // addActorButton
@@ -369,6 +374,7 @@
             this.addActorButton.TabIndex = 23;
             this.addActorButton.Text = "Add";
             this.addActorButton.UseVisualStyleBackColor = true;
+            this.addActorButton.Visible = false;
             this.addActorButton.Click += new System.EventHandler(this.addActorButton_Click);
             // 
             // MovieForm
@@ -406,7 +412,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee View - Movie";
             this.Load += new System.EventHandler(this.MovieForm_Load);
-            this.Click += new System.EventHandler(this.actorSearchTextBox_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.movieActorsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieCopiesDataGridView)).EndInit();
             this.ResumeLayout(false);
