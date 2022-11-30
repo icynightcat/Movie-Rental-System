@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.movieAboutLabel = new System.Windows.Forms.Label();
-            this.genreComboBox = new System.Windows.Forms.ComboBox();
+            this.movieWhichIdLabel = new System.Windows.Forms.Label();
             this.distrFeeTextBox = new System.Windows.Forms.TextBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.distrFeeLabel = new System.Windows.Forms.Label();
@@ -45,6 +44,11 @@
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.movieCopiesDataGridView = new System.Windows.Forms.DataGridView();
             this.selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.copyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.copyType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resolution = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.movieDoneButton = new System.Windows.Forms.Button();
             this.deleteMovieButton = new System.Windows.Forms.Button();
             this.movieCopiesLabel = new System.Windows.Forms.Label();
@@ -59,39 +63,29 @@
             this.actorSearchListBox = new System.Windows.Forms.ListBox();
             this.clearActorSearchButton = new System.Windows.Forms.Button();
             this.addActorButton = new System.Windows.Forms.Button();
+            this.addGenreButton = new System.Windows.Forms.Button();
+            this.removeGenreButton = new System.Windows.Forms.Button();
+            this.genresTextBox = new System.Windows.Forms.TextBox();
+            this.genresComboBox = new System.Windows.Forms.ComboBox();
+            this.movieCancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.movieActorsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieCopiesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // movieAboutLabel
+            // movieWhichIdLabel
             // 
-            this.movieAboutLabel.AutoSize = true;
-            this.movieAboutLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.movieAboutLabel.Location = new System.Drawing.Point(60, 15);
-            this.movieAboutLabel.Name = "movieAboutLabel";
-            this.movieAboutLabel.Size = new System.Drawing.Size(44, 18);
-            this.movieAboutLabel.TabIndex = 11;
-            this.movieAboutLabel.Text = "####";
-            // 
-            // genreComboBox
-            // 
-            this.genreComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.genreComboBox.FormattingEnabled = true;
-            this.genreComboBox.Items.AddRange(new object[] {
-            "Comedy",
-            "Drama",
-            "Action",
-            "Foreign"});
-            this.genreComboBox.Location = new System.Drawing.Point(186, 46);
-            this.genreComboBox.Name = "genreComboBox";
-            this.genreComboBox.Size = new System.Drawing.Size(554, 26);
-            this.genreComboBox.TabIndex = 10;
-            this.genreComboBox.Text = "Genre";
+            this.movieWhichIdLabel.AutoSize = true;
+            this.movieWhichIdLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.movieWhichIdLabel.Location = new System.Drawing.Point(45, 15);
+            this.movieWhichIdLabel.Name = "movieWhichIdLabel";
+            this.movieWhichIdLabel.Size = new System.Drawing.Size(44, 18);
+            this.movieWhichIdLabel.TabIndex = 11;
+            this.movieWhichIdLabel.Text = "####";
             // 
             // distrFeeTextBox
             // 
             this.distrFeeTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.distrFeeTextBox.Location = new System.Drawing.Point(186, 82);
+            this.distrFeeTextBox.Location = new System.Drawing.Point(152, 82);
             this.distrFeeTextBox.Name = "distrFeeTextBox";
             this.distrFeeTextBox.ReadOnly = true;
             this.distrFeeTextBox.Size = new System.Drawing.Size(554, 26);
@@ -100,7 +94,7 @@
             // titleTextBox
             // 
             this.titleTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.titleTextBox.Location = new System.Drawing.Point(186, 12);
+            this.titleTextBox.Location = new System.Drawing.Point(152, 12);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.ReadOnly = true;
             this.titleTextBox.Size = new System.Drawing.Size(554, 26);
@@ -110,7 +104,7 @@
             // 
             this.distrFeeLabel.AutoSize = true;
             this.distrFeeLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.distrFeeLabel.Location = new System.Drawing.Point(104, 85);
+            this.distrFeeLabel.Location = new System.Drawing.Point(70, 85);
             this.distrFeeLabel.Name = "distrFeeLabel";
             this.distrFeeLabel.Size = new System.Drawing.Size(76, 18);
             this.distrFeeLabel.TabIndex = 5;
@@ -120,17 +114,17 @@
             // 
             this.genreLabel.AutoSize = true;
             this.genreLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.genreLabel.Location = new System.Drawing.Point(129, 49);
+            this.genreLabel.Location = new System.Drawing.Point(87, 49);
             this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(51, 18);
+            this.genreLabel.Size = new System.Drawing.Size(59, 18);
             this.genreLabel.TabIndex = 4;
-            this.genreLabel.Text = "Genre";
+            this.genreLabel.Text = "Genres";
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.titleLabel.Location = new System.Drawing.Point(144, 15);
+            this.titleLabel.Location = new System.Drawing.Point(110, 15);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(36, 18);
             this.titleLabel.TabIndex = 2;
@@ -204,7 +198,12 @@
             this.movieCopiesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.movieCopiesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.movieCopiesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.selected});
+            this.selected,
+            this.copyId,
+            this.copyType,
+            this.resolution,
+            this.status,
+            this.action});
             this.movieCopiesDataGridView.Location = new System.Drawing.Point(28, 156);
             this.movieCopiesDataGridView.Name = "movieCopiesDataGridView";
             this.movieCopiesDataGridView.RowTemplate.Height = 25;
@@ -217,13 +216,42 @@
             this.selected.Name = "selected";
             this.selected.Visible = false;
             // 
+            // copyId
+            // 
+            this.copyId.HeaderText = "Copy Id";
+            this.copyId.Name = "copyId";
+            // 
+            // copyType
+            // 
+            this.copyType.HeaderText = "Movie Format";
+            this.copyType.MinimumWidth = 200;
+            this.copyType.Name = "copyType";
+            this.copyType.Width = 200;
+            // 
+            // resolution
+            // 
+            this.resolution.HeaderText = "Resolution";
+            this.resolution.MinimumWidth = 200;
+            this.resolution.Name = "resolution";
+            this.resolution.Width = 200;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            // 
+            // action
+            // 
+            this.action.HeaderText = "Action";
+            this.action.Name = "action";
+            // 
             // movieDoneButton
             // 
             this.movieDoneButton.Location = new System.Drawing.Point(806, 518);
             this.movieDoneButton.Name = "movieDoneButton";
             this.movieDoneButton.Size = new System.Drawing.Size(150, 28);
             this.movieDoneButton.TabIndex = 0;
-            this.movieDoneButton.Text = "Done";
+            this.movieDoneButton.Text = "Save";
             this.movieDoneButton.UseVisualStyleBackColor = true;
             this.movieDoneButton.Click += new System.EventHandler(this.movieDoneButton_Click);
             // 
@@ -235,6 +263,7 @@
             this.deleteMovieButton.TabIndex = 1;
             this.deleteMovieButton.Text = "Delete Movie";
             this.deleteMovieButton.UseVisualStyleBackColor = true;
+            this.deleteMovieButton.Click += new System.EventHandler(this.movieDeleteButton_Click);
             // 
             // movieCopiesLabel
             // 
@@ -259,7 +288,7 @@
             // empMovieEditButton
             // 
             this.empMovieEditButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.empMovieEditButton.Location = new System.Drawing.Point(650, 517);
+            this.empMovieEditButton.Location = new System.Drawing.Point(494, 518);
             this.empMovieEditButton.Name = "empMovieEditButton";
             this.empMovieEditButton.Size = new System.Drawing.Size(150, 28);
             this.empMovieEditButton.TabIndex = 14;
@@ -303,7 +332,7 @@
             this.addCopyComboBox.Name = "addCopyComboBox";
             this.addCopyComboBox.Size = new System.Drawing.Size(225, 23);
             this.addCopyComboBox.TabIndex = 17;
-            this.addCopyComboBox.Text = "Movie Type";
+            this.addCopyComboBox.Text = "Movie Format";
             this.addCopyComboBox.Visible = false;
             // 
             // addCopyButton
@@ -315,6 +344,7 @@
             this.addCopyButton.Text = "Add";
             this.addCopyButton.UseVisualStyleBackColor = true;
             this.addCopyButton.Visible = false;
+            this.addCopyButton.Click += new System.EventHandler(this.addCopyButton_Click);
             // 
             // addCopyResComboBox
             // 
@@ -323,7 +353,7 @@
             "Resolution",
             "800x500",
             "1600x900",
-            "19020x1080",
+            "1920x1080",
             "2560x1440"});
             this.addCopyResComboBox.Location = new System.Drawing.Point(575, 128);
             this.addCopyResComboBox.Name = "addCopyResComboBox";
@@ -377,11 +407,68 @@
             this.addActorButton.Visible = false;
             this.addActorButton.Click += new System.EventHandler(this.addActorButton_Click);
             // 
+            // addGenreButton
+            // 
+            this.addGenreButton.Location = new System.Drawing.Point(837, 46);
+            this.addGenreButton.Name = "addGenreButton";
+            this.addGenreButton.Size = new System.Drawing.Size(45, 26);
+            this.addGenreButton.TabIndex = 24;
+            this.addGenreButton.Text = "Add";
+            this.addGenreButton.UseVisualStyleBackColor = true;
+            this.addGenreButton.Visible = false;
+            this.addGenreButton.Click += new System.EventHandler(this.addGenreButton_Click);
+            // 
+            // removeGenreButton
+            // 
+            this.removeGenreButton.Location = new System.Drawing.Point(886, 46);
+            this.removeGenreButton.Name = "removeGenreButton";
+            this.removeGenreButton.Size = new System.Drawing.Size(70, 26);
+            this.removeGenreButton.TabIndex = 25;
+            this.removeGenreButton.Text = "Remove";
+            this.removeGenreButton.UseVisualStyleBackColor = true;
+            this.removeGenreButton.Visible = false;
+            this.removeGenreButton.Click += new System.EventHandler(this.removeGenreButton_Click);
+            // 
+            // genresTextBox
+            // 
+            this.genresTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.genresTextBox.Location = new System.Drawing.Point(152, 46);
+            this.genresTextBox.Name = "genresTextBox";
+            this.genresTextBox.ReadOnly = true;
+            this.genresTextBox.Size = new System.Drawing.Size(554, 26);
+            this.genresTextBox.TabIndex = 26;
+            // 
+            // genresComboBox
+            // 
+            this.genresComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.genresComboBox.FormattingEnabled = true;
+            this.genresComboBox.Location = new System.Drawing.Point(711, 46);
+            this.genresComboBox.Name = "genresComboBox";
+            this.genresComboBox.Size = new System.Drawing.Size(121, 26);
+            this.genresComboBox.TabIndex = 27;
+            this.genresComboBox.Text = "Genres";
+            this.genresComboBox.Visible = false;
+            // 
+            // movieCancelButton
+            // 
+            this.movieCancelButton.Location = new System.Drawing.Point(650, 518);
+            this.movieCancelButton.Name = "movieCancelButton";
+            this.movieCancelButton.Size = new System.Drawing.Size(150, 28);
+            this.movieCancelButton.TabIndex = 28;
+            this.movieCancelButton.Text = "Cancel";
+            this.movieCancelButton.UseVisualStyleBackColor = true;
+            this.movieCancelButton.Click += new System.EventHandler(this.movieCancelButton_Click);
+            // 
             // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.movieCancelButton);
+            this.Controls.Add(this.genresComboBox);
+            this.Controls.Add(this.genresTextBox);
+            this.Controls.Add(this.removeGenreButton);
+            this.Controls.Add(this.addGenreButton);
             this.Controls.Add(this.addActorButton);
             this.Controls.Add(this.clearActorSearchButton);
             this.Controls.Add(this.actorSearchListBox);
@@ -396,9 +483,8 @@
             this.Controls.Add(this.movieCopiesLabel);
             this.Controls.Add(this.movieCopiesDataGridView);
             this.Controls.Add(this.movieActorsDataGridView);
-            this.Controls.Add(this.movieAboutLabel);
+            this.Controls.Add(this.movieWhichIdLabel);
             this.Controls.Add(this.deleteMovieButton);
-            this.Controls.Add(this.genreComboBox);
             this.Controls.Add(this.movieDoneButton);
             this.Controls.Add(this.distrFeeTextBox);
             this.Controls.Add(this.titleTextBox);
@@ -421,7 +507,6 @@
 
         #endregion
         private Button movieDoneButton;
-        private ComboBox genreComboBox;
         private TextBox distrFeeTextBox;
         private TextBox titleTextBox;
         private Label distrFeeLabel;
@@ -451,5 +536,16 @@
         private ListBox actorSearchListBox;
         private Button clearActorSearchButton;
         private Button addActorButton;
+        private DataGridViewTextBoxColumn copyId;
+        private DataGridViewTextBoxColumn copyType;
+        private DataGridViewTextBoxColumn resolution;
+        private Button addGenreButton;
+        private Button removeGenreButton;
+        private TextBox genresTextBox;
+        private ComboBox genresComboBox;
+        private DataGridViewTextBoxColumn status;
+        private DataGridViewButtonColumn action;
+        private Label movieWhichIdLabel;
+        private Button movieCancelButton;
     }
 }

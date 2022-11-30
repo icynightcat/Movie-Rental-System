@@ -23,17 +23,49 @@ namespace MoviesApp
         private List<string> movieGenres = new List<string>();
         private List<int> movieActors = new List<int>();
         private bool readOnlyMode = true;
+        private EmployeeViewForm returnForm;
+        private Boolean newMovie = false;
 
-        public MovieForm(string empId, DBConnection input_connection, int whichMovie)
+        public MovieForm(string empId, DBConnection input_connection, int whichMovie, EmployeeViewForm returnForm)
         {
             this.connection = input_connection;
             this.empId = empId;
             this.whichMovie = whichMovie;
+            this.returnForm = returnForm;
             InitializeComponent();
         }
 
         private void MovieForm_Load(object sender, EventArgs e)
         {
+            // If new movie, generate movie id
+            if (whichMovie == -1)
+            {
+                // If a new movie is being made, then generate an id
+                string insertQuery = $"insert into Movie(movie_name, distribution_fee) output Inserted.movie_id values('', 0)";
+                SqlDataReader? empdata1 = connection.GetDataReader(insertQuery);
+
+                // Populate movie info on movies page
+                if (empdata1 != null && empdata1.Read())
+                {
+                    whichMovie = Int32.Parse(empdata1["movie_id"].ToString());
+                    // Display the new id
+                    movieWhichIdLabel.Text = whichMovie.ToString();
+
+                }
+
+                // Close the reader after data is read in
+                if (empdata1 != null)
+                    empdata1.Close();
+
+
+                // Remember that we're making a new movie
+                newMovie = true;
+
+                // Fields should be editable
+                toggleFieldsEditable();
+                return;
+            }
+
             // Populate combo box on movies page
             string query = $"select movie_id, movie_name, distribution_fee from Movie where movie_id = {whichMovie}";
             SqlDataReader? empdata = connection.GetDataReader(query);
@@ -41,7 +73,7 @@ namespace MoviesApp
             // Populate movie info on movies page
             while (empdata != null && empdata.Read())
             {
-                movieAboutLabel.Text = empdata["movie_id"].ToString();
+                movieWhichIdLabel.Text = empdata["movie_id"].ToString();
                 titleTextBox.Text = empdata["movie_name"].ToString();
                 distrFeeTextBox.Text = empdata["distribution_fee"].ToString();
             }
@@ -50,21 +82,77 @@ namespace MoviesApp
             if (empdata != null)
                 empdata.Close();
 
+
+            movieCopiesDataGridView.AllowUserToAddRows = false;
+            movieActorsDataGridView.AllowUserToAddRows = false;
+
             populateMovieCopies();
             populateMovieActors();
+            populateGenresTextBox();
+            populateGenresComboBox();
 
+        }
+
+        private void populateGenresComboBox()
+        {
+            // Get the movie genres
+            String query = $"select type_of_movie from Genre order by type_of_movie";
+
+            SqlDataReader? empdata = connection.GetDataReader(query);
+
+            genresComboBox.Items.Add("Genres");
+
+            while (empdata != null && empdata.Read())
+            {
+                genresComboBox.Items.Add(empdata["type_of_movie"].ToString());
+            }
+
+            // Close the reader after data is read in
+            if (empdata != null)
+                empdata.Close();
+        }
+
+        private void populateGenresTextBox()
+        {
+
+            movieGenres.Clear();
+
+            // Get the movie genres
+            String query = $"select type_of_movie from Movie_type where movie_id = {whichMovie} order by type_of_movie";
+
+            SqlDataReader? empdata = connection.GetDataReader(query);
+
+            while (empdata != null && empdata.Read())
+            {
+                movieGenres.Add(empdata["type_of_movie"].ToString());
+            }
+
+            genresTextBox.Text = String.Join(", ", movieGenres);
+
+            // Close the reader after data is read in
+            if (empdata != null)
+                empdata.Close();
         }
 
         private void populateMovieCopies()
         {
             // Get the movie genres
-            String query = $"select type_of_movie from Movie_types " +
-                $"where movie_id = {whichMovie}";
+            String query = $"select MC.copy_id, MC.format, MC.resolution, " +
+                $"case when exists(select * from Orders O where O.movie_id = {whichMovie} and O.copy_id = MC.copy_id and end_datetime > GETDATE()) " +
+                $"then 'Rented' else 'Available' end as status " +
+                $"from Movie_copies MC where MC.movie_id = {whichMovie} order by format";
             SqlDataReader? empdata = connection.GetDataReader(query);
 
             while (empdata != null && empdata.Read())
             {
-                movieGenres.Add(empdata["type_of_movie"].ToString()!);
+                String buttonText = "";
+
+                if (empdata["status"].ToString() == "Available")
+                    buttonText = "Rent It";
+                else
+                    buttonText = "Return";
+
+                movieCopiesDataGridView.Rows.Add(false, empdata["copy_id"].ToString(), empdata["format"].ToString(), empdata["resolution"].ToString(), empdata["status"].ToString(), buttonText);
             }
 
             // Close the reader after data is read in
@@ -90,16 +178,50 @@ namespace MoviesApp
                 empdata.Close();
         }
 
-        private void addCopyButton_click(object sender, EventArgs e)
+        /* Capture button clicks on movie copies buttons */
+        private void movieCopiesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(addCopyComboBox.Text != "Movie Type" && addCopyResComboBox.Text != "Resolution")
-            {
-                String mutation = $"insert into Movie_copies(movie_id, format, resolution) values({whichMovie}, {addCopyComboBox.Text}, {addCopyResComboBox.Text})";
+            var senderGrid = (DataGridView)sender;
 
-                connection.ExecuteMutation(mutation);
-                movieCopiesDataGridView.Rows.Clear();
-                populateMovieCopies();
+            // Check if a valid non-header button is clicked
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                returnForm.changeTabs(4);
             }
+        }
+
+        private void addCopyButton_Click(object sender, EventArgs e)
+        {
+            string message;
+            string title;
+
+            // If no format or resolution selected, set invalid message and don't proceed
+            if (addCopyComboBox.Text == "Movie Format") {
+                message = "Please select a Movie Format";
+                title = "Invalid";
+                MessageBox.Show(message, title);
+                return;
+            }
+
+            if (addCopyResComboBox.Text == "Resolution")
+            {
+                message = "Please select a Resolution";
+                title = "Invalid";
+                MessageBox.Show(message, title);
+                return;
+            }
+
+            // All good. Update database
+            String mutation = $"insert into Movie_copies(movie_id, format, resolution) values({whichMovie}, '{addCopyComboBox.Text}', '{addCopyResComboBox.Text}')";
+
+            int result = connection.ExecuteMutation(mutation);
+            message = $"Result of insert: {result}";
+            title = "Outcome";
+            MessageBox.Show(message, title);
+            movieCopiesDataGridView.Rows.Clear();
+            populateMovieCopies();
+            
         }
         private void actorSearchTextBox_Leave(object sender, EventArgs e)
         {
@@ -236,7 +358,8 @@ namespace MoviesApp
                 populateMovieActors();
             }
         }
-        private void empMovieEditButton_click(object sender, EventArgs e)
+
+        private void toggleFieldsEditable()
         {
             readOnlyMode = !readOnlyMode;
             titleTextBox.ReadOnly = readOnlyMode;
@@ -250,7 +373,10 @@ namespace MoviesApp
             addCopyResComboBox.Visible = !readOnlyMode;
             addCopyButton.Visible = !readOnlyMode;
             clearActorSearchButton.Visible = !readOnlyMode;
+            genresComboBox.Visible = !readOnlyMode;
             addActorButton.Visible = !readOnlyMode;
+            addGenreButton.Visible = !readOnlyMode;
+            removeGenreButton.Visible = !readOnlyMode;
 
             if (readOnlyMode)
                 empMovieEditButton.Text = "Edit";
@@ -259,12 +385,143 @@ namespace MoviesApp
                 empMovieEditButton.Text = "Done Editing";
             }
         }
+
+
+        /* Makes fields editable */
+        private void empMovieEditButton_click(object sender, EventArgs e)
+        {
+            toggleFieldsEditable();
+        }
+
+
+        /* When clicking the add button, adds the genre selected in the combo box to the movie */
+        private void addGenreButton_Click(object sender, EventArgs e)
+        {
+            // If nothing is selected then return
+            if (genresComboBox.Text == "Genres" || movieGenres.Contains(genresComboBox.Text))
+                return;
+
+            // Add genre to the list
+            movieGenres.Add(genresComboBox.Text);
+
+            // Regenerate the string in the textbox
+            genresTextBox.Text = String.Join(", ", movieGenres);
+            genresComboBox.Text = "";
+        }
+
+        /* When clicking the remove button, removes the genre selected in the combo box from the movie */
+        private void removeGenreButton_Click(object sender, EventArgs e)
+        {
+            // If nothing selected then return
+            if (genresComboBox.Text == "Genres" || !movieGenres.Contains(genresComboBox.Text))
+                return;
+
+            // Remove genre from the list
+            movieGenres.Remove(genresComboBox.Text);
+
+            // Regenerate the string in the textbox
+            genresTextBox.Text = String.Join(", ", movieGenres);
+            genresComboBox.Text = "";
+        }
+
+        private void movieCancelButton_Click(object sender, EventArgs e)
+        {
+            // Ensure, if a new movie was added, that it is deleted
+            if (newMovie)
+            {
+                String message = "Changes will be lost. Click yes to discard changes or no to stay on this page.";
+                String title = "Caution";
+
+                DialogResult dialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo);
+
+                // Delete changes and leave form
+                if (dialogResult == DialogResult.Yes)
+                {
+                    String mutation = $"delete from Movie where movie_id = {whichMovie}";
+                    connection.ExecuteMutation(mutation);
+                    this.Close();
+                }
+
+                // Stay on page
+                else if (dialogResult == DialogResult.No)
+                    return;
+            }
+        }
+
         private void movieDoneButton_Click(object sender, EventArgs e)
         {
-            //verifiy if it is not a real movie already then do it and close or dont close and do a popup that says no
-            string title = titleTextBox.Text; //all that is needed to get the info once someone clicks it
+            // Ensure, if a new movie is being added, that a title is provided
+            if (newMovie && titleTextBox.Text == "")
+            {
+                String message = "No movie title was entered. Click yes to discard changes or no to stay on this page.";
+                String title = "Caution";
+
+                DialogResult dialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo);
+
+                // Delete changes and leave form
+                if (dialogResult == DialogResult.Yes)
+                {
+                    String mutation = $"delete from Movie where movie_id = {whichMovie}";
+                    connection.ExecuteMutation(mutation);
+                    this.Close();
+                }
+
+                // Stay on page
+                else if (dialogResult == DialogResult.No)
+                    return;
+
+            }
+            else
+            {
+                saveChanges();
+            }
 
             this.Close();
         }
+
+        /* Function does a confirmation message and then deletes the movie from the database */
+        private void movieDeleteButton_Click(object sender, EventArgs e)
+        {
+            
+            String message = "Are you sure you want to delete this movie? Click yes to proceed or no to stay on this page.";
+            String title = "Caution";
+
+            DialogResult dialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo);
+
+            // Delete changes and leave form
+            if (dialogResult == DialogResult.Yes)
+            {
+                String mutation = $"delete from Movie where movie_id = {whichMovie}";
+                connection.ExecuteMutation(mutation);
+                this.Close();
+            }
+
+            // Stay on page
+            else if (dialogResult == DialogResult.No)
+                return;
+
+
+            this.Close();
+        }
+
+        private void saveChanges()
+        {
+            // Save movie details
+            String mutation = $"update Movie set movie_name = '{titleTextBox.Text}', distribution_fee = '{distrFeeTextBox.Text}' where movie_id = {whichMovie}";
+            connection.ExecuteMutation(mutation);
+
+            // Clear all genres listed
+            mutation = $"delete from Movie_type where movie_id = {whichMovie}";
+            connection.ExecuteMutation(mutation);
+
+            // Add new specified genres
+            if (movieGenres.Count > 0) {
+                mutation = $"insert into Movie_type(movie_id, type_of_movie) values('" +
+                    $"{String.Join("'),('", movieGenres)}')";
+            }
+
+        }
+
+
     }
 }

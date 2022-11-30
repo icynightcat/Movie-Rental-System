@@ -124,7 +124,7 @@ namespace MoviesApp
         }
             private void launchMovieButton_Click(object sender, EventArgs e)
         {
-            new MovieForm(ID, connection, -1).ShowDialog();
+            new MovieForm(ID, connection, -1, this).ShowDialog();
         }
         private void launchActorButton_Click(object sender, EventArgs e)
         {
@@ -165,6 +165,11 @@ namespace MoviesApp
             }
         }
 
+        public void changeTabs(int whichTab)
+        {
+            tabControl1.SelectedIndex = whichTab;
+        }
+
         private void EmployeeViewForm_Load(object sender, EventArgs e)
         {
             // Set default search button on page load
@@ -186,11 +191,14 @@ namespace MoviesApp
 
         private void empMovies_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+                return;
+
             // Get clicked row number
             int r = empMoviesDataGridView.SelectedCells[0].RowIndex; //clickable row
             //MessageBox.Show(r.ToString() +" " + movieResultsList[r]);
             // Pass movie id of clicked-on row into MovieForm
-            MovieForm f2 = new MovieForm(ID, connection, movieResultsList[r]);
+            MovieForm f2 = new MovieForm(ID, connection, movieResultsList[r], this);
 
             // Open the window
             f2.ShowDialog(); //showing form after creation

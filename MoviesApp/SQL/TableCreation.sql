@@ -7,7 +7,7 @@ use movies;
 --Actors(actor_id, first_name, last_name, gender, age)
 --a) actor_id is the primary key
 CREATE TABLE Actors (
-	actor_id INT NOT NULL,
+	actor_id INT NOT NULL IDENTITY(1, 1),
 	first_name VARCHAR(50) NOT NULL,
 	last_name VARCHAR(50) NOT NULL,
 	gender VARCHAR(10) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE Actors (
 --Movie(movie_id, movie_name, distribution_fee)
 --a) movie_id is the primary key
 CREATE TABLE Movie (
-	movie_id INT NOT NULL,
+	movie_id INT NOT NULL IDENTITY(1, 1),
 	movie_name VARCHAR(50) NOT NULL,
 	distribution_fee DECIMAL(10,2) NOT NULL,
 	PRIMARY KEY (movie_id)
@@ -28,7 +28,7 @@ CREATE TABLE Movie (
 --a) movie_id FK references Movie
 --b) copy_id is the primary key
 CREATE TABLE Movie_copies (
-	copy_id INT NOT NULL,
+	copy_id INT NOT NULL IDENTITY(1, 1),
 	movie_id INT NOT NULL,
 	format VARCHAR(50) NOT NULL,
 	resolution VARCHAR(50) NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE Plans (
 --a) employee_id is the primary key
 --b) social_insurance_number is unique
 CREATE TABLE Employees (
-	employee_id INT NOT NULL,
+	employee_id INT NOT NULL IDENTITY(1, 1),
 	social_insurance_number VARCHAR(50) NOT NULL,
 	first_name VARCHAR(50) NOT NULL,
 	last_name VARCHAR(50) NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE Acts_in (
 --a) plan_number FK references Plan
 --b) account_number is the primary key
 CREATE TABLE Customer (
-	account_number INT NOT NULL,
+	account_number INT NOT NULL IDENTITY(1, 1),
 	first_name VARCHAR(50) NOT NULL,
 	last_name VARCHAR(50) NOT NULL,
 	address VARCHAR(50) NOT NULL,
@@ -128,7 +128,7 @@ CREATE TABLE Movie_type (
 --d) Employee_id FK references Employees
 
 create table Orders (
-	order_id int not null,
+	order_id int not null IDENTITY(1, 1),
 	movie_id int not null,
 	copy_id int not null,
 	order_placed_time datetime not null,

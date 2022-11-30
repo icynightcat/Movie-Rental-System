@@ -65,5 +65,8 @@ namespace MoviesApp.SQL
             }
             return rowsAffected;
         }
+
+        // returns the insertion id
+
     }
 }
