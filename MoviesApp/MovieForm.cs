@@ -63,7 +63,7 @@ namespace MoviesApp
 
                 // Fields should be editable
                 toggleFieldsEditable();
-                return;
+                
             }
 
             // Populate combo box on movies page
@@ -88,8 +88,8 @@ namespace MoviesApp
 
             populateMovieCopies();
             populateMovieActors();
-            populateGenresTextBox();
             populateGenresComboBox();
+            populateGenresTextBox();
 
         }
 
@@ -446,6 +446,8 @@ namespace MoviesApp
                 else if (dialogResult == DialogResult.No)
                     return;
             }
+
+            this.Close();
         }
 
         private void movieDoneButton_Click(object sender, EventArgs e)
@@ -453,7 +455,7 @@ namespace MoviesApp
             // Ensure, if a new movie is being added, that a title is provided
             if (newMovie && titleTextBox.Text == "")
             {
-                String message = "No movie title was entered. Click yes to discard changes or no to stay on this page.";
+                String message = "No movie title was entered.\nClick yes to discard changes or no to stay on this page.";
                 String title = "Caution";
 
                 DialogResult dialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo);
@@ -461,8 +463,7 @@ namespace MoviesApp
                 // Delete changes and leave form
                 if (dialogResult == DialogResult.Yes)
                 {
-                    String mutation = $"delete from Movie where movie_id = {whichMovie}";
-                    connection.ExecuteMutation(mutation);
+                    deleteMovie();
                     this.Close();
                 }
 
@@ -483,7 +484,7 @@ namespace MoviesApp
         private void movieDeleteButton_Click(object sender, EventArgs e)
         {
             
-            String message = "Are you sure you want to delete this movie? Click yes to proceed or no to stay on this page.";
+            String message = "Are you sure you want to delete this movie?\nClick yes to proceed or no to stay on this page.";
             String title = "Caution";
 
             DialogResult dialogResult = MessageBox.Show(message, title, MessageBoxButtons.YesNo);
@@ -491,8 +492,7 @@ namespace MoviesApp
             // Delete changes and leave form
             if (dialogResult == DialogResult.Yes)
             {
-                String mutation = $"delete from Movie where movie_id = {whichMovie}";
-                connection.ExecuteMutation(mutation);
+                deleteMovie();
                 this.Close();
             }
 
@@ -504,10 +504,34 @@ namespace MoviesApp
             this.Close();
         }
 
+        private void deleteMovie()
+        {
+
+            // Remove all genres for this movie
+            string mutation = $"delete from Movie_type where movie_id = {whichMovie}";
+            connection.ExecuteMutation(mutation);
+
+            // Remove all actors for this movie
+            mutation = $"delete from Acts_in where movie_id = {whichMovie}";
+            connection.ExecuteMutation(mutation);
+
+            // Delete this movie record
+            mutation = $"delete from Movie where movie_id = {whichMovie}";
+            connection.ExecuteMutation(mutation);
+        }
+
         private void saveChanges()
         {
             // Save movie details
-            String mutation = $"update Movie set movie_name = '{titleTextBox.Text}', distribution_fee = '{distrFeeTextBox.Text}' where movie_id = {whichMovie}";
+            Decimal dFee;
+
+            // ensure a digits-only value is present in the distribution fee textbox
+            if (distrFeeTextBox.Text != "" && distrFeeTextBox.Text.All(char.IsDigit))
+                dFee = Decimal.Parse(distrFeeTextBox.Text);
+            else
+                dFee = Decimal.Parse("0.00");
+
+            String mutation = $"update Movie set movie_name = '{titleTextBox.Text}', distribution_fee = {dFee} where movie_id = {whichMovie}";
             connection.ExecuteMutation(mutation);
 
             // Clear all genres listed
@@ -516,9 +540,14 @@ namespace MoviesApp
 
             // Add new specified genres
             if (movieGenres.Count > 0) {
-                mutation = $"insert into Movie_type(movie_id, type_of_movie) values('" +
-                    $"{String.Join("'),('", movieGenres)}')";
+                string genresJoined = String.Join("'),("+whichMovie+",'", movieGenres);
+                mutation = $"insert into Movie_type(movie_id, type_of_movie) values({whichMovie},'{genresJoined}')";
+                connection.ExecuteMutation(mutation);
             }
+
+            string message = $"Movie details saved";
+            string title = "notice";
+            MessageBox.Show(message, title);
 
         }
 

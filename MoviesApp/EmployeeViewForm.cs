@@ -8,9 +8,6 @@ namespace MoviesApp
     {
         private string ID = ""; //id initalized to use
 
-        // Used on Movies tab to keep track of search results
-        private List<int> movieResultsList = new List<int>();
-
         private DBConnection connection;
         public EmployeeViewForm(string input, DBConnection input_connection) //takes the id in
         {
@@ -42,20 +39,20 @@ namespace MoviesApp
             hideSearchElements();
             empMoviesDataGridView.Rows.Clear();
 
-            string query = $"select temp.movie_id, temp.movie_name, temp.genres from " +
-                $"(select M.movie_id, M.movie_name, STRING_AGG(T.type_of_movie, ', ') as 'genres' " +
-                $"from Movie M, Movie_type T where M.movie_id = T.movie_id group by M.movie_name, M.movie_id) temp " +
-                $"order by temp.movie_name";
+            string query = $"select M.movie_id, M.movie_name, " +
+
+                $"case when exists (select * from Movie_type T2 where T2.movie_id = M.movie_id) " +
+                $"then temp.genres else '' end as genres " +
+
+                $"from Movie M left join (select M2.movie_id, STRING_AGG(T.type_of_movie, ', ') as genres " +
+                $"from Movie M2, Movie_type T where M2.movie_id = T.movie_id group by M2.movie_id) temp on temp.movie_id = M.movie_id " +
+                $"order by M.movie_name";
 
             SqlDataReader? empdata = connection.GetDataReader(query);
-
-            // Empty the movieResultsList
-            movieResultsList.Clear();
 
             while (empdata.Read())
             {
                 int movie_id = Int32.Parse(empdata["movie_id"].ToString());
-                movieResultsList.Add(movie_id);
                 empMoviesDataGridView.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString(), empdata["genres"].ToString());
             }
 
@@ -83,34 +80,41 @@ namespace MoviesApp
             // If actors are specified in the search bar then get a comma-separated list
             string[] actors = actorsNamesTextBox.Text.Split(',');
 
-            string query = $"select temp.movie_id, temp.movie_name, STRING_AGG(temp.type_of_movie, ', ') as 'genres' from " +
-                $"(select M.movie_id, M.movie_name, T.type_of_movie, " +
-                $"STRING_AGG(A.first_name + ' ' + A.last_name, ', ') as 'actors' " +
-                $"from Movie M, Movie_type T, Acts_in AI, Actors A where " +
-                $"AI.movie_id = M.movie_id and A.actor_id = AI.actor_id " +
-                $"and movie_name like '%{movieNameTextBox.Text}%' and M.movie_id = T.movie_id " +
-                $"group by M.movie_name, M.movie_id, T.type_of_movie) temp ";
+            string query = $"select distinct M.movie_id, M.movie_name, " +
+
+                $"case when exists (select * from Movie_type T2 where T2.movie_id = M.movie_id) " +
+                $"then temp.genres else '' end as genres, " +
+
+                $"case when exists (select * from Acts_in AI2 where AI2.movie_id = M.movie_id) " +
+                $"then temp2.actors else '' end as actors " +
+
+                $"from Movie_type T2, Movie M " +
+
+                $"left join (select M2.movie_id, STRING_AGG(T.type_of_movie, ', ') as genres " +
+                $"from Movie M2, Movie_type T where M2.movie_id = T.movie_id group by M2.movie_id) temp on temp.movie_id = M.movie_id " +
+
+                $"left join (select M3.movie_id, STRING_AGG(A2.first_name + ' ' + A2.last_name, ', ') as actors " +
+                $"from Movie M3, Acts_in AI, Actors A2 where M3.movie_id = AI.movie_id and A2.actor_id = AI.actor_id " +
+                $"group by M3.movie_id) temp2 on temp2.movie_id = M.movie_id " +
+
+                $"where M.movie_name like '%{movieNameTextBox.Text}%' ";
 
             if (actors.Length > 0)
-                query += $"where temp.actors like '%" + String.Join("%' and temp.actors like '%", actors) + "%' ";
+                query += $"and temp2.actors like '%" + String.Join("%' and temp2.actors like '%", actors) + "%' ";
 
-            query += $"group by temp.movie_id, temp.movie_name " +
-                $"having ('{genreComboBox.Text}' = 'Genre' or STRING_AGG(temp.type_of_movie, ', ') like '%{genreComboBox.Text}%') " +
-                $"order by temp.movie_name";
+            query += $"and ('{genreComboBox.Text}' = 'Genre' or genres like '%{genreComboBox.Text}%') " +
+                $"order by M.movie_name";
 
             SqlDataReader? empdata = connection.GetDataReader(query);
-
-            // Empty the movieResultsList
-            movieResultsList.Clear();
 
             while (empdata != null && empdata.Read())
             {
                 int movie_id = Int32.Parse(empdata["movie_id"].ToString()!);
-                movieResultsList.Add(movie_id);
                 empMoviesDataGridView.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString(), empdata["genres"].ToString());
             }
 
-            empdata.Close();                //closes the reader after the data is read in
+            if (empdata != null)
+                empdata.Close();                //closes the reader after the data is read in
         }
 
         private void mostActivelyRented(object sender, EventArgs e)
@@ -172,6 +176,8 @@ namespace MoviesApp
 
         private void EmployeeViewForm_Load(object sender, EventArgs e)
         {
+            empMoviesDataGridView.AllowUserToAddRows = false;
+
             // Set default search button on page load
             tabControl1.TabIndex = 0;
             this.AcceptButton = moviesSearchButton;
@@ -194,14 +200,15 @@ namespace MoviesApp
             if (e.RowIndex < 0)
                 return;
 
-            // Get clicked row number
-            int r = empMoviesDataGridView.SelectedCells[0].RowIndex; //clickable row
-            //MessageBox.Show(r.ToString() +" " + movieResultsList[r]);
+            // Get clicked movie id
+            int clickedMovieId = Int32.Parse(empMoviesDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            
             // Pass movie id of clicked-on row into MovieForm
-            MovieForm f2 = new MovieForm(ID, connection, movieResultsList[r], this);
+            MovieForm f2 = new MovieForm(ID, connection, clickedMovieId, this);
 
             // Open the window
             f2.ShowDialog(); //showing form after creation
+
         }
     }
 }
