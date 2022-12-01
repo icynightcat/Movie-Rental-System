@@ -183,7 +183,6 @@
         #endregion
 
         private Label label4;
-        private Label label3;
         private Label label2;
         private Label label1;
         private Button backButtonOnCustMovForm;
