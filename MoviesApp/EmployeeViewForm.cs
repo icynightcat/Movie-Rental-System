@@ -50,13 +50,14 @@ namespace MoviesApp
 
             SqlDataReader? empdata = connection.GetDataReader(query);
 
-            while (empdata.Read())
+            while (empdata != null && empdata.Read())
             {
                 int movie_id = Int32.Parse(empdata["movie_id"].ToString());
                 empMoviesDataGridView.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString(), empdata["genres"].ToString());
             }
 
-            empdata.Close();                //closes the reader after the data is read in
+            if (empdata != null)
+                empdata.Close();                //closes the reader after the data is read in
 
         }
 
@@ -121,6 +122,31 @@ namespace MoviesApp
         {
             hideSearchElements();
             empMoviesDataGridView.Rows.Clear();
+
+            string query = $"select M.movie_id, M.movie_name, " +
+
+                $"case when exists (select * from Movie_type T2 where T2.movie_id = M.movie_id) " +
+                $"then temp.genres else '' end as genres, " +
+
+                $"isnull(temp2.count, 0) as count " +
+
+                $"from Movie M left join (select M2.movie_id, STRING_AGG(T.type_of_movie, ', ') as genres from Movie M2, Movie_type T " +
+                $"where M2.movie_id = T.movie_id group by M2.movie_id) temp on temp.movie_id = M.movie_id " +
+
+                $"left join (select O.movie_id, count(*) as count from Orders O group by O.movie_id) temp2 on temp2.movie_id = M.movie_id " +
+
+                $"order by temp2.count desc, M.movie_name asc";
+
+            SqlDataReader? empdata = connection.GetDataReader(query);
+
+            while (empdata != null && empdata.Read())
+            {
+                empMoviesDataGridView.Rows.Add(empdata["movie_id"].ToString(), empdata["movie_name"].ToString(), empdata["genres"].ToString());
+            }
+
+            if (empdata != null)
+                empdata.Close();
+
         }
         private void empLogoutButton_Click(object sender, EventArgs e)
         {

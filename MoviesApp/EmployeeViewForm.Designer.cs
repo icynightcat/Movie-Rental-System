@@ -255,13 +255,11 @@
             // mostRentedRadioButton
             // 
             this.mostRentedRadioButton.AutoSize = true;
-            this.mostRentedRadioButton.Checked = true;
             this.mostRentedRadioButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mostRentedRadioButton.Location = new System.Drawing.Point(249, 6);
             this.mostRentedRadioButton.Name = "mostRentedRadioButton";
             this.mostRentedRadioButton.Size = new System.Drawing.Size(170, 22);
             this.mostRentedRadioButton.TabIndex = 3;
-            this.mostRentedRadioButton.TabStop = true;
             this.mostRentedRadioButton.Text = "Most Actively Rented";
             this.mostRentedRadioButton.UseVisualStyleBackColor = true;
             this.mostRentedRadioButton.Click += new System.EventHandler(this.mostActivelyRented);
@@ -275,7 +273,6 @@
             this.searchFiltersRadioButton.Name = "searchFiltersRadioButton";
             this.searchFiltersRadioButton.Size = new System.Drawing.Size(123, 22);
             this.searchFiltersRadioButton.TabIndex = 2;
-            this.searchFiltersRadioButton.TabStop = true;
             this.searchFiltersRadioButton.Text = "Search Filters";
             this.searchFiltersRadioButton.UseVisualStyleBackColor = true;
             this.searchFiltersRadioButton.Click += new System.EventHandler(this.newSearchFilters);
