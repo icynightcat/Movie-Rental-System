@@ -1333,3 +1333,23 @@ insert into Movie_type (movie_id, type_of_movie) values (25, 'Action');
 insert into Movie_type (movie_id, type_of_movie) values (56, 'Animated');
 insert into Movie_type (movie_id, type_of_movie) values (15, 'Historical');
 insert into Movie_type (movie_id, type_of_movie) values (57, 'Sci-Fi');
+
+
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (27, 1, '2022-11-30', '2022-12-01', '2022-12-10', 1);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (5, 5, '2022-11-30', '2022-12-01', '2022-12-10', 1);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (33, 2, '2022-11-30', '2022-12-01', '2022-12-09', 2);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (12, 6, '2022-11-30', '2022-12-01', '2022-12-09', 2);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (6, 7, '2022-11-30', '2022-12-01', '2022-12-10', 2);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (65, 8, '2022-11-30', '2022-12-09', '2022-12-15', 2);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (9, 3, '2022-11-30', '2022-12-01', '2022-12-04', 9);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (46, 4, '2022-11-30', '2022-12-04', '2022-12-07', 9);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (9, 3, '2022-11-30', '2022-12-09', '2022-12-15', 2);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (46, 4, '2022-11-30', '2022-12-10', '2022-12-15', 2);
+insert into Orders (movie_id, copy_id, order_placed_time, start_datetime, end_datetime, account_number) values (27, 10, '2022-11-30', '2022-12-01', '2022-12-31', 3);
+
+
+--1 is at the limit for any movies from 1-10 dec (two total at any time)
+--2 is at the limit for any movies from 1-9 dec, two are placed right after 2 expire on the 9th (3 at any time), one expires on the 10th, then they will have 3 till the 15th
+--3 is at the limit for any movies for 1-31 dec, one is placed, and he got it for 30 days, he did a max take out
+--9 cant have anymore movies for the month (dec)
+--2 takes out movies that 9 did eariler on
