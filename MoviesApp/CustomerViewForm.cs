@@ -13,9 +13,10 @@ namespace MoviesApp
             id = input;
             connection = input_connection;
             populate_customer_data();
+            cust_orders();
 
             populate_genre_selecter();
-            
+
         }
 
         private void populate_customer_data()
@@ -147,6 +148,33 @@ namespace MoviesApp
             }
         }
 
+        private void cust_orders()
+        {
+            string query1 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
+                $" from Movie M, Movie_copies MC, Orders O" +
+                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = '%{id}%'";
+
+            SqlDataReader? orderData = connection.GetDataReader(query1);
+            if (orderData != null && orderData.HasRows)
+            {
+                dataGridView1.Rows.Clear();
+                while (orderData.Read())
+                {
+                    dataGridView1.Rows.Add(
+                        orderData["start_datetime"].ToString(),
+                        orderData["end_datetime"].ToString(),
+                        orderData["movie_name"].ToString(),
+                        orderData["format"].ToString(),
+                        ""
+                        );
+                }
+
+            }
+    
+                orderData.Close();
+           
+
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
