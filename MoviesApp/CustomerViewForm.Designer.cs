@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.searchRecommended = new System.Windows.Forms.Button();
+            this.searchAll = new System.Windows.Forms.Button();
+            this.label34 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label46 = new System.Windows.Forms.Label();
@@ -114,10 +118,6 @@
             this.customerLogoutButton = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.searchAll = new System.Windows.Forms.Button();
-            this.searchRecommended = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -165,6 +165,44 @@
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // searchRecommended
+            // 
+            this.searchRecommended.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchRecommended.Location = new System.Drawing.Point(701, 322);
+            this.searchRecommended.Name = "searchRecommended";
+            this.searchRecommended.Size = new System.Drawing.Size(225, 40);
+            this.searchRecommended.TabIndex = 8;
+            this.searchRecommended.Text = "Search Recommended";
+            this.searchRecommended.UseVisualStyleBackColor = true;
+            // 
+            // searchAll
+            // 
+            this.searchAll.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchAll.Location = new System.Drawing.Point(944, 322);
+            this.searchAll.Name = "searchAll";
+            this.searchAll.Size = new System.Drawing.Size(139, 40);
+            this.searchAll.TabIndex = 7;
+            this.searchAll.Text = "Search All";
+            this.searchAll.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label34.Location = new System.Drawing.Point(810, 18);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(116, 23);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Filter genre:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(932, 18);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 5;
+            // 
             // dataGridView4
             // 
             this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -183,7 +221,7 @@
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn5});
-            this.dataGridView3.Location = new System.Drawing.Point(16, 59);
+            this.dataGridView3.Location = new System.Drawing.Point(16, 52);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 29;
@@ -197,9 +235,9 @@
             this.label46.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.label46.Location = new System.Drawing.Point(7, 361);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(193, 24);
+            this.label46.Size = new System.Drawing.Size(281, 24);
             this.label46.TabIndex = 2;
-            this.label46.Text = "Top 15 Best Sellers";
+            this.label46.Text = "Top 15 Available Best Sellers";
             // 
             // label45
             // 
@@ -1100,54 +1138,16 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Movie Title";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 550;
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 700;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 550;
+            this.dataGridViewTextBoxColumn1.Width = 700;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Genre";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 300;
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 310;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 300;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(932, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label34.Location = new System.Drawing.Point(810, 18);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(116, 23);
-            this.label34.TabIndex = 6;
-            this.label34.Text = "Filter genre:";
-            // 
-            // searchAll
-            // 
-            this.searchAll.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchAll.Location = new System.Drawing.Point(944, 322);
-            this.searchAll.Name = "searchAll";
-            this.searchAll.Size = new System.Drawing.Size(139, 40);
-            this.searchAll.TabIndex = 7;
-            this.searchAll.Text = "Search All";
-            this.searchAll.UseVisualStyleBackColor = true;
-            // 
-            // searchRecommended
-            // 
-            this.searchRecommended.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchRecommended.Location = new System.Drawing.Point(701, 322);
-            this.searchRecommended.Name = "searchRecommended";
-            this.searchRecommended.Size = new System.Drawing.Size(225, 40);
-            this.searchRecommended.TabIndex = 8;
-            this.searchRecommended.Text = "Search Recommended";
-            this.searchRecommended.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn5.Width = 310;
             // 
             // CustomerViewForm
             // 

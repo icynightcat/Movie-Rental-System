@@ -1,4 +1,5 @@
-﻿using MoviesApp.SQL;
+﻿using Microsoft.VisualBasic.Devices;
+using MoviesApp.SQL;
 using System.Data.SqlClient;
 
 namespace MoviesApp
@@ -14,6 +15,7 @@ namespace MoviesApp
             connection = input_connection;
             populate_customer_data();
             cust_orders();
+            recommendation();
 
             populate_genre_selecter();
 
@@ -173,6 +175,33 @@ namespace MoviesApp
             {
                 orderData.Close();
             }
+        }
+
+        private void recommendation()
+        {
+            string query2 = $"select t.movie_name, t.genres from" +
+            $"(select m.movie_name, STRING_AGG(t.type_of_movie, ', ') as 'genres'" +
+            $" from movie m, Movie_type t where m.movie_id = t.movie_id " +
+            $"group by m.movie_name) t";
+
+            SqlDataReader? allData = connection.GetDataReader(query2);
+            if (allData != null && allData.HasRows)
+            {
+                dataGridView3.Rows.Clear();
+                while (allData.Read())
+                {
+                    dataGridView3.Rows.Add(
+                        allData["movie_name"].ToString(),
+                        allData["genres"].ToString()
+                        );
+                }
+            }
+            if (allData != null)
+            {
+                allData.Close();
+            }
+
+
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
