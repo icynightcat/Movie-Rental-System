@@ -168,8 +168,6 @@ namespace MoviesApp
                         ""
                         );
                 }
-
-
             }
     
                 orderData.Close();
