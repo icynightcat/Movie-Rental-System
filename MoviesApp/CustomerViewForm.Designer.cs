@@ -36,6 +36,8 @@
             this.label45 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.searchResults = new System.Windows.Forms.DataGridView();
+            this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actorSearch = new MoviesApp.ExTextBox();
             this.movieTitleSearch = new MoviesApp.ExTextBox();
             this.label39 = new System.Windows.Forms.Label();
@@ -110,8 +112,12 @@
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.customerLogoutButton = new System.Windows.Forms.Button();
-            this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.searchAll = new System.Windows.Forms.Button();
+            this.searchRecommended = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -143,6 +149,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.searchRecommended);
+            this.tabPage1.Controls.Add(this.searchAll);
+            this.tabPage1.Controls.Add(this.label34);
+            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.dataGridView4);
             this.tabPage1.Controls.Add(this.dataGridView3);
             this.tabPage1.Controls.Add(this.label46);
@@ -170,11 +180,14 @@
             // 
             this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn5});
             this.dataGridView3.Location = new System.Drawing.Point(16, 59);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 29;
-            this.dataGridView3.Size = new System.Drawing.Size(1067, 291);
+            this.dataGridView3.Size = new System.Drawing.Size(1067, 247);
             this.dataGridView3.TabIndex = 3;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
@@ -230,6 +243,20 @@
             this.searchResults.Size = new System.Drawing.Size(1008, 295);
             this.searchResults.TabIndex = 17;
             this.searchResults.Click += new System.EventHandler(this.searchResults_CellContentClick);
+            // 
+            // movieTitle
+            // 
+            this.movieTitle.HeaderText = "Movie Title";
+            this.movieTitle.MinimumWidth = 500;
+            this.movieTitle.Name = "movieTitle";
+            this.movieTitle.Width = 500;
+            // 
+            // genres
+            // 
+            this.genres.HeaderText = "Genre";
+            this.genres.MinimumWidth = 300;
+            this.genres.Name = "genres";
+            this.genres.Width = 300;
             // 
             // actorSearch
             // 
@@ -844,6 +871,7 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(1045, 307);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // rentalDate
             // 
@@ -1069,19 +1097,57 @@
             this.customerLogoutButton.UseVisualStyleBackColor = true;
             this.customerLogoutButton.Click += new System.EventHandler(this.customerLogoutButton_Click);
             // 
-            // movieTitle
+            // dataGridViewTextBoxColumn1
             // 
-            this.movieTitle.HeaderText = "Movie Title";
-            this.movieTitle.MinimumWidth = 500;
-            this.movieTitle.Name = "movieTitle";
-            this.movieTitle.Width = 500;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Movie Title";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 550;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 550;
             // 
-            // genres
+            // dataGridViewTextBoxColumn5
             // 
-            this.genres.HeaderText = "Genre";
-            this.genres.MinimumWidth = 300;
-            this.genres.Name = "genres";
-            this.genres.Width = 300;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Genre";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 300;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 300;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(932, 18);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label34.Location = new System.Drawing.Point(810, 18);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(116, 23);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Filter genre:";
+            // 
+            // searchAll
+            // 
+            this.searchAll.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchAll.Location = new System.Drawing.Point(944, 322);
+            this.searchAll.Name = "searchAll";
+            this.searchAll.Size = new System.Drawing.Size(139, 40);
+            this.searchAll.TabIndex = 7;
+            this.searchAll.Text = "Search All";
+            this.searchAll.UseVisualStyleBackColor = true;
+            // 
+            // searchRecommended
+            // 
+            this.searchRecommended.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchRecommended.Location = new System.Drawing.Point(701, 322);
+            this.searchRecommended.Name = "searchRecommended";
+            this.searchRecommended.Size = new System.Drawing.Size(225, 40);
+            this.searchRecommended.TabIndex = 8;
+            this.searchRecommended.Text = "Search Recommended";
+            this.searchRecommended.UseVisualStyleBackColor = true;
             // 
             // CustomerViewForm
             // 
@@ -1206,5 +1272,11 @@
         private Button customerLogoutButton;
         private DataGridViewTextBoxColumn movieTitle;
         private DataGridViewTextBoxColumn genres;
+        private Button searchRecommended;
+        private Button searchAll;
+        private Label label34;
+        private ComboBox comboBox1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }

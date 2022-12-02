@@ -152,7 +152,7 @@ namespace MoviesApp
         {
             string query1 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
                 $" from Movie M, Movie_copies MC, Orders O" +
-                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = '%{id}%'";
+                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id}";
 
             SqlDataReader? orderData = connection.GetDataReader(query1);
             if (orderData != null && orderData.HasRows)
@@ -169,10 +169,10 @@ namespace MoviesApp
                         );
                 }
             }
-    
+            if (orderData != null)
+            {
                 orderData.Close();
-           
-
+            }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -314,6 +314,11 @@ namespace MoviesApp
             //MessageBox.Show(r.Cells[0].Value.ToString());
             CustomerMovieForm f2 = new CustomerMovieForm (r); // creating the 2nd form from first
             f2.ShowDialog(); //showing form after creation
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
