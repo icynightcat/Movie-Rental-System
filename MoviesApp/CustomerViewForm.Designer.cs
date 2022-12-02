@@ -35,7 +35,6 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cstMovieDataGridView = new System.Windows.Forms.DataGridView();
             this.searchResults = new System.Windows.Forms.DataGridView();
             this.actorSearch = new MoviesApp.ExTextBox();
             this.movieTitleSearch = new MoviesApp.ExTextBox();
@@ -111,15 +110,13 @@
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.customerLogoutButton = new System.Windows.Forms.Button();
-            this.movieID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cstMovieDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -203,7 +200,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.cstMovieDataGridView);
             this.tabPage2.Controls.Add(this.searchResults);
             this.tabPage2.Controls.Add(this.actorSearch);
             this.tabPage2.Controls.Add(this.movieTitleSearch);
@@ -219,26 +215,14 @@
             this.tabPage2.Text = "Search";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // cstMovieDataGridView
-            // 
-            this.cstMovieDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.cstMovieDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cstMovieDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.movieID,
-            this.movieTitle,
-            this.dataGridViewTextBoxColumn1});
-            this.cstMovieDataGridView.Location = new System.Drawing.Point(19, 216);
-            this.cstMovieDataGridView.Name = "cstMovieDataGridView";
-            this.cstMovieDataGridView.RowHeadersWidth = 51;
-            this.cstMovieDataGridView.RowTemplate.Height = 29;
-            this.cstMovieDataGridView.Size = new System.Drawing.Size(1028, 295);
-            this.cstMovieDataGridView.TabIndex = 18;
-            // 
             // searchResults
             // 
             this.searchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.searchResults.BackgroundColor = System.Drawing.SystemColors.Window;
             this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.movieTitle,
+            this.genres});
             this.searchResults.Location = new System.Drawing.Point(19, 216);
             this.searchResults.Name = "searchResults";
             this.searchResults.RowHeadersWidth = 51;
@@ -1085,13 +1069,6 @@
             this.customerLogoutButton.UseVisualStyleBackColor = true;
             this.customerLogoutButton.Click += new System.EventHandler(this.customerLogoutButton_Click);
             // 
-            // movieID
-            // 
-            this.movieID.HeaderText = "Movie ID";
-            this.movieID.MinimumWidth = 100;
-            this.movieID.Name = "movieID";
-            this.movieID.Width = 125;
-            // 
             // movieTitle
             // 
             this.movieTitle.HeaderText = "Movie Title";
@@ -1099,12 +1076,12 @@
             this.movieTitle.Name = "movieTitle";
             this.movieTitle.Width = 500;
             // 
-            // dataGridViewTextBoxColumn1
+            // genres
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Genre";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 350;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 350;
+            this.genres.HeaderText = "Genre";
+            this.genres.MinimumWidth = 300;
+            this.genres.Name = "genres";
+            this.genres.Width = 300;
             // 
             // CustomerViewForm
             // 
@@ -1126,7 +1103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cstMovieDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchResults)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -1228,9 +1204,7 @@
         private Label label32;
         private Label label30;
         private Button customerLogoutButton;
-        private DataGridView cstMovieDataGridView;
-        private DataGridViewTextBoxColumn movieID;
         private DataGridViewTextBoxColumn movieTitle;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn genres;
     }
 }
