@@ -74,6 +74,42 @@ namespace MoviesApp
             empMoviesDataGridView.Rows.Clear();
         }
         
+        private void searchActors(Object sender, EventArgs e)
+        {
+            empActorsDataGridView.Rows.Clear();
+
+            string[] actorsSearchParams = empActorSearchTextBox.Text.Split(' ');
+
+            string query = $"select distinct actor_id, first_name, last_name, gender, age " +
+                $"from Actors ";
+
+
+            if (actorsSearchParams.Count() > 0) {
+
+                query += "where ";
+
+                for (int i = 0; i < actorsSearchParams.Count(); i++) {
+                    query += $"(first_name like '%{actorsSearchParams[i]}%' or last_name like '%{actorsSearchParams[i]}%') ";
+
+                    if (i < actorsSearchParams.Count() - 1)
+                        query += "and ";
+                }
+            }
+
+            query += "order by first_name";
+
+            SqlDataReader? empdata = connection.GetDataReader(query);
+
+            while (empdata != null && empdata.Read())
+            {
+                int actor_id = Int32.Parse(empdata["actor_id"].ToString()!);
+                empActorsDataGridView.Rows.Add(empdata["actor_id"].ToString(), empdata["first_name"].ToString(), empdata["last_name"].ToString(), empdata["gender"].ToString(), empdata["age"].ToString());
+            }
+
+            if (empdata != null)
+                empdata.Close();                //closes the reader after the data is read in
+        }
+
         private void searchMoviesWithFilters(Object sender, EventArgs e)
         {
             empMoviesDataGridView.Rows.Clear();
@@ -156,9 +192,9 @@ namespace MoviesApp
         {
             new MovieForm(ID, connection, -1, this).ShowDialog();
         }
-        private void launchActorButton_Click(object sender, EventArgs e)
+        private void actorsAddButton_Click(object sender, EventArgs e)
         {
-            new ActorForm().ShowDialog();
+            new ActorForm(ID, connection, -1).ShowDialog();
 
         }
         private void launchCustomerButton_Click(object sender, EventArgs e)
@@ -203,6 +239,7 @@ namespace MoviesApp
         private void EmployeeViewForm_Load(object sender, EventArgs e)
         {
             empMoviesDataGridView.AllowUserToAddRows = false;
+            empActorsDataGridView.AllowUserToAddRows = false;
 
             // Set default search button on page load
             tabControl1.TabIndex = 0;
@@ -231,6 +268,23 @@ namespace MoviesApp
             
             // Pass movie id of clicked-on row into MovieForm
             MovieForm f2 = new MovieForm(ID, connection, clickedMovieId, this);
+
+            // Open the window
+            f2.ShowDialog(); //showing form after creation
+
+        }
+
+        private void empActors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            if (e.RowIndex < 0)
+                return;
+
+            // Get clicked movie id
+            int clickedActorId = Int32.Parse(empActorsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            // Pass movie id of clicked-on row into MovieForm
+            ActorForm f2 = new ActorForm(ID, connection, clickedActorId);
 
             // Open the window
             f2.ShowDialog(); //showing form after creation

@@ -66,7 +66,6 @@ namespace MoviesApp
                 
             }
 
-            // Populate combo box on movies page
             string query = $"select movie_id, movie_name, distribution_fee from Movie where movie_id = {whichMovie}";
             SqlDataReader? empdata = connection.GetDataReader(query);
 
@@ -245,7 +244,7 @@ namespace MoviesApp
             actorSearchListBox.Visible=false;
         }
 
-            private void addActorButton_Click(object sender, EventArgs e)
+        private void addActorButton_Click(object sender, EventArgs e)
         {
             int actorAddId;
 
