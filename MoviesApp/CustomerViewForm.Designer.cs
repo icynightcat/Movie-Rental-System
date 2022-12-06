@@ -115,14 +115,14 @@
             this.movieGenre = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.bestSellerGridView = new System.Windows.Forms.DataGridView();
+            this.custMovieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custMovieGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recommendedGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.custMovieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.custMovieGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -1121,6 +1121,21 @@
             this.bestSellerGridView.RowTemplate.Height = 29;
             this.bestSellerGridView.Size = new System.Drawing.Size(1067, 291);
             this.bestSellerGridView.TabIndex = 4;
+            this.bestSellerGridView.Click += new System.EventHandler(this.bestSellerGridView_CellContentClick);
+            // 
+            // custMovieTitle
+            // 
+            this.custMovieTitle.HeaderText = "Movie Title";
+            this.custMovieTitle.MinimumWidth = 700;
+            this.custMovieTitle.Name = "custMovieTitle";
+            this.custMovieTitle.Width = 700;
+            // 
+            // custMovieGenre
+            // 
+            this.custMovieGenre.HeaderText = "Genre";
+            this.custMovieGenre.MinimumWidth = 310;
+            this.custMovieGenre.Name = "custMovieGenre";
+            this.custMovieGenre.Width = 310;
             // 
             // recommendedGridView
             // 
@@ -1135,7 +1150,7 @@
             this.recommendedGridView.RowTemplate.Height = 29;
             this.recommendedGridView.Size = new System.Drawing.Size(1067, 247);
             this.recommendedGridView.TabIndex = 3;
-            this.recommendedGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            this.recommendedGridView.Click += new System.EventHandler(this.dataGridView3_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1184,20 +1199,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1120, 741);
             this.tabControl1.TabIndex = 0;
-            // 
-            // custMovieTitle
-            // 
-            this.custMovieTitle.HeaderText = "Movie Title";
-            this.custMovieTitle.MinimumWidth = 700;
-            this.custMovieTitle.Name = "custMovieTitle";
-            this.custMovieTitle.Width = 700;
-            // 
-            // custMovieGenre
-            // 
-            this.custMovieGenre.HeaderText = "Genre";
-            this.custMovieGenre.MinimumWidth = 310;
-            this.custMovieGenre.Name = "custMovieGenre";
-            this.custMovieGenre.Width = 310;
             // 
             // CustomerViewForm
             // 

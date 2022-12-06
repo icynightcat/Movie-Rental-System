@@ -19,7 +19,7 @@ namespace MoviesApp
             cust_wishlists();
             cust_orders();
             
-
+            bestSelllers();
             recommendation();
 
             populate_genre_selecter();
@@ -161,7 +161,7 @@ namespace MoviesApp
                 $" from Movie M, Movie_copies MC, Orders O" +
                 $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime < '2022-12-09' order by start_datetime desc";
 
-            // have to add todays's date from c# and parse n change the query
+            // have to add todays's date from c# and into the query
 
             SqlDataReader? orderData = connection.GetDataReader(query1);
             if (orderData != null && orderData.HasRows)
@@ -188,10 +188,10 @@ namespace MoviesApp
         {
 
             string query2 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
-                $"from Movie M, Movie_copies MC, Orders O" +
-                $"where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime >= '2022-12-09' order by start_datetime desc";
+                $" from Movie M, Movie_copies MC, Orders O" +
+                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime >= '2022-12-09' order by start_datetime desc";
 
-            // have to add todays's date from c# and parse n change the query
+            // have to add todays's date from c# into the query
 
             SqlDataReader? wishData = connection.GetDataReader(query2);
             if (wishData != null && wishData.HasRows)
@@ -218,13 +218,13 @@ namespace MoviesApp
         private void recommendation()
         {
             string query3 = $"select t.movie_name, STRING_AGG(t.type_of_movie, ', ') as 'genres'" +
-            $"from(select M.movie_name, Mt2.type_of_movie from Movie_type MT2, Movie M," +
-            $"(select Top 3 type_of_movie, count(*) as fav" +
-            $"from Movie_type MT, Orders O" +
-            $"where MT.movie_id = O.movie_id and O.account_number = {id}" +
-            $"group by type_of_movie" +
-            $"order by fav desc) T1 where MT2.movie_id = M.movie_id and MT2.type_of_movie in (T1.type_of_movie)) t" +
-            $"group by t.movie_name";
+            $" from(select M.movie_name, Mt2.type_of_movie from Movie_type MT2, Movie M," +
+            $" (select Top 3 type_of_movie, count(*) as fav" +
+            $" from Movie_type MT, Orders O" +
+            $" where MT.movie_id = O.movie_id and O.account_number = {id}" +
+            $" group by type_of_movie" +
+            $" order by fav desc) T1 where MT2.movie_id = M.movie_id and MT2.type_of_movie in (T1.type_of_movie)) t" +
+            $" group by t.movie_name";
 
 
             SqlDataReader? allData = connection.GetDataReader(query3);
@@ -234,7 +234,7 @@ namespace MoviesApp
                 while (allData.Read())
                 {
                     recommendedGridView.Rows.Add(
-                        allData["t.movie_name"].ToString(),
+                        allData["movie_name"].ToString(),
                         allData["genres"].ToString()
                         );
                 }
@@ -246,10 +246,56 @@ namespace MoviesApp
 
         }
 
+        private void bestSelllers()
+        {
+
+            string query5 = $"select al.movie_name, al.genres from" +
+            $" (select Top 15 M.movie_name, count(*) as cnt" +
+            $" from Orders O, Movie M" +
+            $" where M.movie_id = O.movie_id" +
+            $" group by movie_name" +
+            $" order by cnt desc) pop, (select t.movie_name, t.genres from" +
+            $" (select m.movie_name, STRING_AGG(Mt.type_of_movie, ', ') as 'genres'" +
+            $" from movie m, Movie_type Mt where m.movie_id = Mt.movie_id" +
+            $" group by m.movie_name) t ) al" +
+            $" where al.movie_name = pop.movie_name";
+
+            SqlDataReader? bsData = connection.GetDataReader(query5);
+            if (bsData != null && bsData.HasRows)
+            {
+                bestSellerGridView.Rows.Clear();
+                while (bsData.Read())
+                {
+
+                    bestSellerGridView.Rows.Add(
+                        bsData["movie_name"].ToString(),
+                        bsData["genres"].ToString());
+
+                }
+            }
+            if (bsData != null)
+            {
+                bsData.Close();
+            }
+        }
         private void searchResults_CellContentClick(object sender, EventArgs e)
         {
 
             DataGridViewRow r = searchResults.Rows[searchResults.SelectedCells[0].RowIndex]; //clickable row
+            CustomerMovieForm f2 = new CustomerMovieForm(r, connection); // creating the 2nd form from first
+            f2.ShowDialog(); //showing form after creation
+        }
+
+        private void dataGridView3_CellContentClick(object sender, EventArgs e)
+        {
+            DataGridViewRow r = recommendedGridView.Rows[recommendedGridView.SelectedCells[0].RowIndex]; //clickable row
+            CustomerMovieForm f2 = new CustomerMovieForm(r, connection); // creating the 2nd form from first
+            f2.ShowDialog(); //showing form after creation
+        }
+
+        private void bestSellerGridView_CellContentClick(object sender, EventArgs e)
+        {
+            DataGridViewRow r = bestSellerGridView.Rows[bestSellerGridView.SelectedCells[0].RowIndex]; //clickable row
             CustomerMovieForm f2 = new CustomerMovieForm(r, connection); // creating the 2nd form from first
             f2.ShowDialog(); //showing form after creation
         }
@@ -260,6 +306,7 @@ namespace MoviesApp
             wishGridView.AllowUserToAddRows = false;
             pastOrderGridView.AllowUserToAddRows = false;
             searchResults.AllowUserToAddRows = false;
+            bestSellerGridView.AllowUserToAddRows = false;
         }
         private void CustomerViewForm_Load(object sender, EventArgs e)
         {
@@ -308,11 +355,6 @@ namespace MoviesApp
         }
 
         private void label44_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -405,6 +447,5 @@ namespace MoviesApp
         {
 
         }
-
     }
 }

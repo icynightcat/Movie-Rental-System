@@ -26,11 +26,22 @@ namespace MoviesApp
             movieGenre.Text = r.Cells[1].Value.ToString(); // intialize genre
         }
 
-        /*private void Format()
+        private void rentButtonCustMovie(object sender, EventArgs e)
         {
+            string format = movieFormat.Text;
+            string title = movieName.Text;
+
+            MessageBox.Show(title);
+
+        }
+
+        private void Format()
+        {
+            // populating combo box on page
+            /*string title = movieName.Text;
             string query3 = $"select t.movie_name, t.formats from" +
-            "(select  m.movie_name, STRING_AGG(MC.format, ', ') as 'formats'" +
-            "from movie m, Movie_copies MC where m.movie_id = MC.movie_id group by m.movie_name) t";
+            $"(select  m.movie_name, STRING_AGG(MC.format, ', ') as 'formats'" +
+            $"from movie m, Movie_copies MC where m.movie_id = MC.movie_id group by m.movie_name) t where t.movie_name = {title}";
 
             SqlDataReader? sData = connection.GetDataReader(query3);
 
@@ -38,9 +49,15 @@ namespace MoviesApp
             {
                 while (sData.Read())
                 {
+                    movieFormat.Items.Add(sData.GetString(0));
+                }*/
 
-                }
-        }*/
+        }
+
+        private void backButtonCustMovie(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void movieName_Click(object sender, EventArgs e)
         {
@@ -54,16 +71,10 @@ namespace MoviesApp
 
         private void CustomerMovieForm_Load(object sender, EventArgs e)
         {
-
+            
         }
-        private void backButtonCustMovie(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void rentButtonCustMovie(object sender, EventArgs e)
-        {
-
-        }
+        
+        
 
         private void movieGenre_Click(object sender, EventArgs e)
         {

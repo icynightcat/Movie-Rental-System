@@ -144,11 +144,15 @@
             // 
             // movieFormat
             // 
+            this.movieFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.movieFormat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.movieFormat.FormattingEnabled = true;
             this.movieFormat.Items.AddRange(new object[] {
-            "Blu-Ray",
-            "DVD"});
+            "Blue Ray",
+            "DVD",
+            "USB",
+            "VHS",
+            "Lazer Disk"});
             this.movieFormat.Location = new System.Drawing.Point(124, 131);
             this.movieFormat.Name = "movieFormat";
             this.movieFormat.Size = new System.Drawing.Size(182, 31);
