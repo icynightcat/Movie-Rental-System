@@ -28,26 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.searchRecommended = new System.Windows.Forms.Button();
-            this.searchAll = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.customerLogoutButton = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.movieAvailableDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wishreturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pastOrderGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.searchResults = new System.Windows.Forms.DataGridView();
-            this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actorSearch = new MoviesApp.ExTextBox();
-            this.movieTitleSearch = new MoviesApp.ExTextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.custMovieSearch = new System.Windows.Forms.Button();
-            this.label36 = new System.Windows.Forms.Label();
-            this.movieGenre = new System.Windows.Forms.ComboBox();
+            this.wishGridView = new System.Windows.Forms.DataGridView();
+            this.wishlistrental = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wishlistreturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wishlistTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wishlistformat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wishlistrated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -90,284 +103,362 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rentalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.returnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movieTitleYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Format = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.movieAvailableDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.customerLogoutButton = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.searchResults = new System.Windows.Forms.DataGridView();
+            this.movieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actorSearch = new MoviesApp.ExTextBox();
+            this.movieTitleSearch = new MoviesApp.ExTextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.custMovieSearch = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.movieGenre = new System.Windows.Forms.ComboBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bestSellerGridView = new System.Windows.Forms.DataGridView();
+            this.recommendedGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.custMovieTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custMovieGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pastOrderGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wishGridView)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bestSellerGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedGridView)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // textBox2
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(1, -1);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1120, 741);
-            this.tabControl1.TabIndex = 0;
+            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(105, 357);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(839, 30);
+            this.textBox2.TabIndex = 13;
             // 
-            // tabPage1
+            // label21
             // 
-            this.tabPage1.Controls.Add(this.searchRecommended);
-            this.tabPage1.Controls.Add(this.searchAll);
-            this.tabPage1.Controls.Add(this.label34);
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.dataGridView4);
-            this.tabPage1.Controls.Add(this.dataGridView3);
-            this.tabPage1.Controls.Add(this.label46);
-            this.tabPage1.Controls.Add(this.label45);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabPage1.Size = new System.Drawing.Size(1112, 708);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Home";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(10, 360);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(89, 23);
+            this.label21.TabIndex = 12;
+            this.label21.Text = "Address:";
             // 
-            // searchRecommended
+            // label22
             // 
-            this.searchRecommended.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchRecommended.Location = new System.Drawing.Point(701, 322);
-            this.searchRecommended.Name = "searchRecommended";
-            this.searchRecommended.Size = new System.Drawing.Size(225, 40);
-            this.searchRecommended.TabIndex = 8;
-            this.searchRecommended.Text = "Search Recommended";
-            this.searchRecommended.UseVisualStyleBackColor = true;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label22.Location = new System.Drawing.Point(7, 322);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(233, 27);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "Contact Information";
+            this.label22.Click += new System.EventHandler(this.label19_Click);
             // 
-            // searchAll
+            // textBox3
             // 
-            this.searchAll.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchAll.Location = new System.Drawing.Point(944, 322);
-            this.searchAll.Name = "searchAll";
-            this.searchAll.Size = new System.Drawing.Size(139, 40);
-            this.searchAll.TabIndex = 7;
-            this.searchAll.Text = "Search All";
-            this.searchAll.UseVisualStyleBackColor = true;
+            this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.Location = new System.Drawing.Point(627, 274);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(317, 30);
+            this.textBox3.TabIndex = 10;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox4.Location = new System.Drawing.Point(135, 274);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(317, 30);
+            this.textBox4.TabIndex = 9;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label23.Location = new System.Drawing.Point(489, 277);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(111, 23);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "Last Name:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label24.Location = new System.Drawing.Point(7, 277);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(112, 23);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "First Name:";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.68226F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.31774F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 266F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 245F));
+            this.tableLayoutPanel2.Controls.Add(this.label25, 3, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(-41, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(74, 23);
+            this.label25.TabIndex = 10;
+            this.label25.Text = "No limit";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label26.Location = new System.Drawing.Point(-307, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(74, 23);
+            this.label26.TabIndex = 11;
+            this.label26.Text = "No limit";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.textBox2);
+            this.tabPage6.Controls.Add(this.label21);
+            this.tabPage6.Controls.Add(this.label22);
+            this.tabPage6.Controls.Add(this.textBox3);
+            this.tabPage6.Controls.Add(this.textBox4);
+            this.tabPage6.Controls.Add(this.label23);
+            this.tabPage6.Controls.Add(this.label24);
+            this.tabPage6.Location = new System.Drawing.Point(0, 0);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(200, 100);
+            this.tabPage6.TabIndex = 0;
+            // 
+            // customerLogoutButton
+            // 
+            this.customerLogoutButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customerLogoutButton.Location = new System.Drawing.Point(1032, -1);
+            this.customerLogoutButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customerLogoutButton.Name = "customerLogoutButton";
+            this.customerLogoutButton.Size = new System.Drawing.Size(86, 28);
+            this.customerLogoutButton.TabIndex = 2;
+            this.customerLogoutButton.Text = "Logout";
+            this.customerLogoutButton.UseVisualStyleBackColor = true;
+            this.customerLogoutButton.Click += new System.EventHandler(this.customerLogoutButton_Click);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.dataGridView2);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1112, 708);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Wishlist";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.movieAvailableDate,
+            this.wishreturn,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView2.Location = new System.Drawing.Point(22, 21);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 29;
+            this.dataGridView2.Size = new System.Drawing.Size(1058, 188);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // movieAvailableDate
+            // 
+            this.movieAvailableDate.HeaderText = "Rental Date";
+            this.movieAvailableDate.MinimumWidth = 6;
+            this.movieAvailableDate.Name = "movieAvailableDate";
+            this.movieAvailableDate.Width = 160;
+            // 
+            // wishreturn
+            // 
+            this.wishreturn.HeaderText = "Return Date";
+            this.wishreturn.MinimumWidth = 6;
+            this.wishreturn.Name = "wishreturn";
+            this.wishreturn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 350;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Format";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 175;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.pastOrderGridView);
+            this.tabPage4.Controls.Add(this.label35);
+            this.tabPage4.Controls.Add(this.label34);
+            this.tabPage4.Controls.Add(this.wishGridView);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1112, 708);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Order";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pastOrderGridView
+            // 
+            this.pastOrderGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.pastOrderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pastOrderGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.pastOrderGridView.Location = new System.Drawing.Point(23, 309);
+            this.pastOrderGridView.Name = "pastOrderGridView";
+            this.pastOrderGridView.RowHeadersWidth = 51;
+            this.pastOrderGridView.RowTemplate.Height = 29;
+            this.pastOrderGridView.Size = new System.Drawing.Size(1045, 190);
+            this.pastOrderGridView.TabIndex = 3;
+            this.pastOrderGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Rental date";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Return Date";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Title (Year)";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 350;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Format";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Rated";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 160;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label35.Location = new System.Drawing.Point(23, 266);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(135, 26);
+            this.label35.TabIndex = 2;
+            this.label35.Text = "Past Orders";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label34.Location = new System.Drawing.Point(810, 18);
+            this.label34.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label34.Location = new System.Drawing.Point(23, 25);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(116, 23);
-            this.label34.TabIndex = 6;
-            this.label34.Text = "Filter genre:";
+            this.label34.Size = new System.Drawing.Size(91, 26);
+            this.label34.TabIndex = 1;
+            this.label34.Text = "Wishlist";
+            this.label34.Click += new System.EventHandler(this.label34_Click);
             // 
-            // comboBox1
+            // wishGridView
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(932, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 5;
+            this.wishGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.wishGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.wishGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.wishlistrental,
+            this.wishlistreturn,
+            this.wishlistTitle,
+            this.wishlistformat,
+            this.wishlistrated});
+            this.wishGridView.Location = new System.Drawing.Point(23, 54);
+            this.wishGridView.Name = "wishGridView";
+            this.wishGridView.RowHeadersWidth = 51;
+            this.wishGridView.RowTemplate.Height = 29;
+            this.wishGridView.Size = new System.Drawing.Size(1045, 190);
+            this.wishGridView.TabIndex = 0;
             // 
-            // dataGridView4
+            // wishlistrental
             // 
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(16, 407);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.RowTemplate.Height = 29;
-            this.dataGridView4.Size = new System.Drawing.Size(1067, 291);
-            this.dataGridView4.TabIndex = 4;
+            this.wishlistrental.HeaderText = "Rental date";
+            this.wishlistrental.MinimumWidth = 6;
+            this.wishlistrental.Name = "wishlistrental";
+            this.wishlistrental.Width = 160;
             // 
-            // dataGridView3
+            // wishlistreturn
             // 
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn5});
-            this.dataGridView3.Location = new System.Drawing.Point(16, 52);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 29;
-            this.dataGridView3.Size = new System.Drawing.Size(1067, 247);
-            this.dataGridView3.TabIndex = 3;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            this.wishlistreturn.HeaderText = "Return Date";
+            this.wishlistreturn.MinimumWidth = 6;
+            this.wishlistreturn.Name = "wishlistreturn";
+            this.wishlistreturn.Width = 160;
             // 
-            // label46
+            // wishlistTitle
             // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label46.Location = new System.Drawing.Point(7, 361);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(281, 24);
-            this.label46.TabIndex = 2;
-            this.label46.Text = "Top 15 Available Best Sellers";
+            this.wishlistTitle.HeaderText = "Title (Year)";
+            this.wishlistTitle.MinimumWidth = 6;
+            this.wishlistTitle.Name = "wishlistTitle";
+            this.wishlistTitle.Width = 350;
             // 
-            // label45
+            // wishlistformat
             // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label45.Location = new System.Drawing.Point(7, 13);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(223, 24);
-            this.label45.TabIndex = 0;
-            this.label45.Text = "Recommended Movies";
+            this.wishlistformat.HeaderText = "Format";
+            this.wishlistformat.MinimumWidth = 6;
+            this.wishlistformat.Name = "wishlistformat";
+            this.wishlistformat.Width = 160;
             // 
-            // tabPage2
+            // wishlistrated
             // 
-            this.tabPage2.Controls.Add(this.searchResults);
-            this.tabPage2.Controls.Add(this.actorSearch);
-            this.tabPage2.Controls.Add(this.movieTitleSearch);
-            this.tabPage2.Controls.Add(this.label39);
-            this.tabPage2.Controls.Add(this.custMovieSearch);
-            this.tabPage2.Controls.Add(this.label36);
-            this.tabPage2.Controls.Add(this.movieGenre);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabPage2.Size = new System.Drawing.Size(1112, 708);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Search";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // searchResults
-            // 
-            this.searchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.searchResults.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.searchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.movieTitle,
-            this.genres});
-            this.searchResults.Location = new System.Drawing.Point(19, 216);
-            this.searchResults.Name = "searchResults";
-            this.searchResults.RowHeadersWidth = 51;
-            this.searchResults.RowTemplate.Height = 29;
-            this.searchResults.Size = new System.Drawing.Size(1008, 295);
-            this.searchResults.TabIndex = 17;
-            this.searchResults.Click += new System.EventHandler(this.searchResults_CellContentClick);
-            // 
-            // movieTitle
-            // 
-            this.movieTitle.HeaderText = "Movie Title";
-            this.movieTitle.MinimumWidth = 500;
-            this.movieTitle.Name = "movieTitle";
-            this.movieTitle.Width = 500;
-            // 
-            // genres
-            // 
-            this.genres.HeaderText = "Genre";
-            this.genres.MinimumWidth = 300;
-            this.genres.Name = "genres";
-            this.genres.Width = 300;
-            // 
-            // actorSearch
-            // 
-            this.actorSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.actorSearch.Hint = "Actor#1, Actor#2, etc.";
-            this.actorSearch.Location = new System.Drawing.Point(19, 80);
-            this.actorSearch.Name = "actorSearch";
-            this.actorSearch.Size = new System.Drawing.Size(777, 30);
-            this.actorSearch.TabIndex = 14;
-            // 
-            // movieTitleSearch
-            // 
-            this.movieTitleSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.movieTitleSearch.Hint = "Title";
-            this.movieTitleSearch.Location = new System.Drawing.Point(19, 29);
-            this.movieTitleSearch.Name = "movieTitleSearch";
-            this.movieTitleSearch.Size = new System.Drawing.Size(777, 30);
-            this.movieTitleSearch.TabIndex = 13;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label39.Location = new System.Drawing.Point(19, 171);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(153, 24);
-            this.label39.TabIndex = 12;
-            this.label39.Text = "Search Results";
-            this.label39.Visible = false;
-            // 
-            // custMovieSearch
-            // 
-            this.custMovieSearch.BackColor = System.Drawing.Color.LightGray;
-            this.custMovieSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custMovieSearch.Location = new System.Drawing.Point(871, 77);
-            this.custMovieSearch.Name = "custMovieSearch";
-            this.custMovieSearch.Size = new System.Drawing.Size(176, 57);
-            this.custMovieSearch.TabIndex = 10;
-            this.custMovieSearch.Text = "Search";
-            this.custMovieSearch.UseVisualStyleBackColor = false;
-            this.custMovieSearch.Click += new System.EventHandler(this.cust_movie_search);
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label36.Location = new System.Drawing.Point(19, 125);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(75, 24);
-            this.label36.TabIndex = 5;
-            this.label36.Text = "Genre:";
-            // 
-            // movieGenre
-            // 
-            this.movieGenre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.movieGenre.FormattingEnabled = true;
-            this.movieGenre.Items.AddRange(new object[] {
-            "Action",
-            "Adventure",
-            "Animated",
-            "Comedy",
-            "Drama",
-            "Fantasy",
-            "Historical",
-            "Horror",
-            "Romance",
-            "Thriller",
-            "Western",
-            "Sci-Fi"});
-            this.movieGenre.Location = new System.Drawing.Point(101, 125);
-            this.movieGenre.Name = "movieGenre";
-            this.movieGenre.Size = new System.Drawing.Size(182, 31);
-            this.movieGenre.TabIndex = 4;
+            this.wishlistrated.HeaderText = "Rated";
+            this.wishlistrated.MinimumWidth = 6;
+            this.wishlistrated.Name = "wishlistrated";
+            this.wishlistrated.Width = 160;
             // 
             // tabPage3
             // 
@@ -883,257 +974,168 @@
             this.label1.Text = "Account Information";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // tabPage4
+            // tabPage2
             // 
-            this.tabPage4.Controls.Add(this.dataGridView1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1112, 708);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Order";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.searchResults);
+            this.tabPage2.Controls.Add(this.actorSearch);
+            this.tabPage2.Controls.Add(this.movieTitleSearch);
+            this.tabPage2.Controls.Add(this.label39);
+            this.tabPage2.Controls.Add(this.custMovieSearch);
+            this.tabPage2.Controls.Add(this.label36);
+            this.tabPage2.Controls.Add(this.movieGenre);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tabPage2.Size = new System.Drawing.Size(1112, 708);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Search";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // searchResults
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rentalDate,
-            this.returnDate,
-            this.movieTitleYear,
-            this.Format,
-            this.Rated});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1045, 307);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.searchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.searchResults.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.searchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.movieTitle,
+            this.genres});
+            this.searchResults.Location = new System.Drawing.Point(19, 216);
+            this.searchResults.Name = "searchResults";
+            this.searchResults.RowHeadersWidth = 51;
+            this.searchResults.RowTemplate.Height = 29;
+            this.searchResults.Size = new System.Drawing.Size(1008, 295);
+            this.searchResults.TabIndex = 17;
+            this.searchResults.Click += new System.EventHandler(this.searchResults_CellContentClick);
             // 
-            // rentalDate
+            // movieTitle
             // 
-            this.rentalDate.HeaderText = "Rental date";
-            this.rentalDate.MinimumWidth = 6;
-            this.rentalDate.Name = "rentalDate";
-            this.rentalDate.Width = 160;
+            this.movieTitle.HeaderText = "Movie Title";
+            this.movieTitle.MinimumWidth = 500;
+            this.movieTitle.Name = "movieTitle";
+            this.movieTitle.Width = 500;
             // 
-            // returnDate
+            // genres
             // 
-            this.returnDate.HeaderText = "Return Date";
-            this.returnDate.MinimumWidth = 6;
-            this.returnDate.Name = "returnDate";
-            this.returnDate.Width = 160;
+            this.genres.HeaderText = "Genre";
+            this.genres.MinimumWidth = 300;
+            this.genres.Name = "genres";
+            this.genres.Width = 300;
             // 
-            // movieTitleYear
+            // actorSearch
             // 
-            this.movieTitleYear.HeaderText = "Title (Year)";
-            this.movieTitleYear.MinimumWidth = 6;
-            this.movieTitleYear.Name = "movieTitleYear";
-            this.movieTitleYear.Width = 350;
+            this.actorSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.actorSearch.Hint = "Actor#1, Actor#2, etc.";
+            this.actorSearch.Location = new System.Drawing.Point(19, 80);
+            this.actorSearch.Name = "actorSearch";
+            this.actorSearch.Size = new System.Drawing.Size(777, 30);
+            this.actorSearch.TabIndex = 14;
             // 
-            // Format
+            // movieTitleSearch
             // 
-            this.Format.HeaderText = "Format";
-            this.Format.MinimumWidth = 6;
-            this.Format.Name = "Format";
-            this.Format.Width = 160;
+            this.movieTitleSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.movieTitleSearch.Hint = "Title";
+            this.movieTitleSearch.Location = new System.Drawing.Point(19, 29);
+            this.movieTitleSearch.Name = "movieTitleSearch";
+            this.movieTitleSearch.Size = new System.Drawing.Size(777, 30);
+            this.movieTitleSearch.TabIndex = 13;
             // 
-            // Rated
+            // label39
             // 
-            this.Rated.HeaderText = "Rated";
-            this.Rated.MinimumWidth = 6;
-            this.Rated.Name = "Rated";
-            this.Rated.Width = 160;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label39.Location = new System.Drawing.Point(19, 171);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(153, 24);
+            this.label39.TabIndex = 12;
+            this.label39.Text = "Search Results";
+            this.label39.Visible = false;
             // 
-            // tabPage5
+            // custMovieSearch
             // 
-            this.tabPage5.Controls.Add(this.dataGridView2);
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1112, 708);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Wishlist";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.custMovieSearch.BackColor = System.Drawing.Color.LightGray;
+            this.custMovieSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custMovieSearch.Location = new System.Drawing.Point(871, 77);
+            this.custMovieSearch.Name = "custMovieSearch";
+            this.custMovieSearch.Size = new System.Drawing.Size(176, 57);
+            this.custMovieSearch.TabIndex = 10;
+            this.custMovieSearch.Text = "Search";
+            this.custMovieSearch.UseVisualStyleBackColor = false;
+            this.custMovieSearch.Click += new System.EventHandler(this.cust_movie_search);
             // 
-            // dataGridView2
+            // label36
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.movieAvailableDate,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.genre,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView2.Location = new System.Drawing.Point(22, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(1058, 188);
-            this.dataGridView2.TabIndex = 0;
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label36.Location = new System.Drawing.Point(19, 125);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(75, 24);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Genre:";
             // 
-            // movieAvailableDate
+            // movieGenre
             // 
-            this.movieAvailableDate.HeaderText = "Date Available";
-            this.movieAvailableDate.MinimumWidth = 6;
-            this.movieAvailableDate.Name = "movieAvailableDate";
-            this.movieAvailableDate.Width = 160;
+            this.movieGenre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.movieGenre.FormattingEnabled = true;
+            this.movieGenre.Items.AddRange(new object[] {
+            "Action",
+            "Adventure",
+            "Animated",
+            "Comedy",
+            "Drama",
+            "Fantasy",
+            "Historical",
+            "Horror",
+            "Romance",
+            "Thriller",
+            "Western",
+            "Sci-Fi"});
+            this.movieGenre.Location = new System.Drawing.Point(101, 125);
+            this.movieGenre.Name = "movieGenre";
+            this.movieGenre.Size = new System.Drawing.Size(182, 31);
+            this.movieGenre.TabIndex = 4;
             // 
-            // dataGridViewTextBoxColumn2
+            // tabPage1
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 350;
+            this.tabPage1.Controls.Add(this.bestSellerGridView);
+            this.tabPage1.Controls.Add(this.recommendedGridView);
+            this.tabPage1.Controls.Add(this.label46);
+            this.tabPage1.Controls.Add(this.label45);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tabPage1.Size = new System.Drawing.Size(1112, 708);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Home";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // bestSellerGridView
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Year";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 160;
+            this.bestSellerGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.bestSellerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bestSellerGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.custMovieTitle,
+            this.custMovieGenre});
+            this.bestSellerGridView.Location = new System.Drawing.Point(16, 407);
+            this.bestSellerGridView.Name = "bestSellerGridView";
+            this.bestSellerGridView.RowHeadersWidth = 51;
+            this.bestSellerGridView.RowTemplate.Height = 29;
+            this.bestSellerGridView.Size = new System.Drawing.Size(1067, 291);
+            this.bestSellerGridView.TabIndex = 4;
             // 
-            // genre
+            // recommendedGridView
             // 
-            this.genre.HeaderText = "Genre";
-            this.genre.MinimumWidth = 6;
-            this.genre.Name = "genre";
-            this.genre.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Format";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 175;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(105, 357);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(839, 30);
-            this.textBox2.TabIndex = 13;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(10, 360);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(89, 23);
-            this.label21.TabIndex = 12;
-            this.label21.Text = "Address:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Arial", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(7, 322);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(233, 27);
-            this.label22.TabIndex = 11;
-            this.label22.Text = "Contact Information";
-            this.label22.Click += new System.EventHandler(this.label19_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(627, 274);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(317, 30);
-            this.textBox3.TabIndex = 10;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(135, 274);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(317, 30);
-            this.textBox4.TabIndex = 9;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(489, 277);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(111, 23);
-            this.label23.TabIndex = 8;
-            this.label23.Text = "Last Name:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(7, 277);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(112, 23);
-            this.label24.TabIndex = 7;
-            this.label24.Text = "First Name:";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.68226F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.31774F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 266F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 245F));
-            this.tableLayoutPanel2.Controls.Add(this.label25, 3, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(-41, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(74, 23);
-            this.label25.TabIndex = 10;
-            this.label25.Text = "No limit";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(-307, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(74, 23);
-            this.label26.TabIndex = 11;
-            this.label26.Text = "No limit";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.textBox2);
-            this.tabPage6.Controls.Add(this.label21);
-            this.tabPage6.Controls.Add(this.label22);
-            this.tabPage6.Controls.Add(this.textBox3);
-            this.tabPage6.Controls.Add(this.textBox4);
-            this.tabPage6.Controls.Add(this.label23);
-            this.tabPage6.Controls.Add(this.label24);
-            this.tabPage6.Location = new System.Drawing.Point(0, 0);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(200, 100);
-            this.tabPage6.TabIndex = 0;
-            // 
-            // customerLogoutButton
-            // 
-            this.customerLogoutButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerLogoutButton.Location = new System.Drawing.Point(1032, -1);
-            this.customerLogoutButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customerLogoutButton.Name = "customerLogoutButton";
-            this.customerLogoutButton.Size = new System.Drawing.Size(86, 28);
-            this.customerLogoutButton.TabIndex = 2;
-            this.customerLogoutButton.Text = "Logout";
-            this.customerLogoutButton.UseVisualStyleBackColor = true;
-            this.customerLogoutButton.Click += new System.EventHandler(this.customerLogoutButton_Click);
+            this.recommendedGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.recommendedGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.recommendedGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn5});
+            this.recommendedGridView.Location = new System.Drawing.Point(16, 52);
+            this.recommendedGridView.Name = "recommendedGridView";
+            this.recommendedGridView.RowHeadersWidth = 51;
+            this.recommendedGridView.RowTemplate.Height = 29;
+            this.recommendedGridView.Size = new System.Drawing.Size(1067, 247);
+            this.recommendedGridView.TabIndex = 3;
+            this.recommendedGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1149,6 +1151,54 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 310;
             // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label46.Location = new System.Drawing.Point(7, 361);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(193, 24);
+            this.label46.TabIndex = 2;
+            this.label46.Text = "Top 15 Best Sellers";
+            this.label46.Click += new System.EventHandler(this.label46_Click);
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label45.Location = new System.Drawing.Point(7, 13);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(223, 24);
+            this.label45.TabIndex = 0;
+            this.label45.Text = "Recommended Movies";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(1, -1);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1120, 741);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // custMovieTitle
+            // 
+            this.custMovieTitle.HeaderText = "Movie Title";
+            this.custMovieTitle.MinimumWidth = 700;
+            this.custMovieTitle.Name = "custMovieTitle";
+            this.custMovieTitle.Width = 700;
+            // 
+            // custMovieGenre
+            // 
+            this.custMovieGenre.HeaderText = "Genre";
+            this.custMovieGenre.MinimumWidth = 310;
+            this.custMovieGenre.Name = "custMovieGenre";
+            this.custMovieGenre.Width = 310;
+            // 
             // CustomerViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1162,60 +1212,34 @@
             this.Name = "CustomerViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer View";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.CustomerViewForm_Load_1);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pastOrderGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wishGridView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchResults)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bestSellerGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recommendedGridView)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private TabPage tabPage4;
-        private TabPage tabPage5;
-        private Label label1;
-        private Label planType;
-        private Label accountNumber;
-        private Label label3;
-        private Label label2;
-        private Label label4;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Label label5;
-        private Label label14;
-        private Label label13;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label15;
-        private Label label16;
-        private Label label19;
-        private Button saveChanges;
-        private Label label31;
         private TextBox textBox2;
         private Label label21;
         private Label label22;
@@ -1227,14 +1251,30 @@
         private Label label25;
         private Label label26;
         private TabPage tabPage6;
-        private Label label36;
-        private ComboBox movieGenre;
-        private Label label39;
-        private Button custMovieSearch;
-        private Label label46;
-        private Label label45;
-        private ExTextBox actorSearch;
-        private ExTextBox movieTitleSearch;
+        private Button customerLogoutButton;
+        private TabPage tabPage5;
+        private DataGridView dataGridView2;
+        private TabPage tabPage4;
+        private DataGridView pastOrderGridView;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private Label label35;
+        private Label label34;
+        private DataGridView wishGridView;
+        private TabPage tabPage3;
+        private Label label33;
+        private Label label32;
+        private Label label30;
+        private Label label29;
+        private Label label28;
+        private Label label27;
+        private Label label20;
+        private Label label18;
+        private Label label17;
+        private Button custEdit;
         private ExTextBox custExpiryDate;
         private ExTextBox custCreditCardNumber;
         private ExTextBox custPhoneNumber;
@@ -1244,39 +1284,56 @@
         private ExTextBox custAddress;
         private ExTextBox custLastName;
         private ExTextBox custFirstName;
+        private Button saveChanges;
+        private Label label31;
+        private Label label19;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label15;
+        private Label label16;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label5;
+        private Label label4;
+        private Label planType;
+        private Label accountNumber;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private TabPage tabPage2;
         private DataGridView searchResults;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn rentalDate;
-        private DataGridViewTextBoxColumn returnDate;
-        private DataGridViewTextBoxColumn movieTitleYear;
-        private DataGridViewTextBoxColumn Format;
-        private DataGridViewTextBoxColumn Rated;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn movieAvailableDate;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn genre;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridView dataGridView4;
-        private DataGridView dataGridView3;
-        private Button custEdit;
-        private Label label17;
-        private Label label20;
-        private Label label18;
-        private Label label27;
-        private Label label29;
-        private Label label28;
-        private Label label33;
-        private Label label32;
-        private Label label30;
-        private Button customerLogoutButton;
         private DataGridViewTextBoxColumn movieTitle;
         private DataGridViewTextBoxColumn genres;
-        private Button searchRecommended;
-        private Button searchAll;
-        private Label label34;
-        private ComboBox comboBox1;
+        private ExTextBox actorSearch;
+        private ExTextBox movieTitleSearch;
+        private Label label39;
+        private Button custMovieSearch;
+        private Label label36;
+        private ComboBox movieGenre;
+        private TabPage tabPage1;
+        private DataGridView bestSellerGridView;
+        private DataGridView recommendedGridView;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private Label label46;
+        private Label label45;
+        private TabControl tabControl1;
+        private DataGridViewTextBoxColumn wishlistrental;
+        private DataGridViewTextBoxColumn wishlistreturn;
+        private DataGridViewTextBoxColumn wishlistTitle;
+        private DataGridViewTextBoxColumn wishlistformat;
+        private DataGridViewTextBoxColumn wishlistrated;
+        private DataGridViewTextBoxColumn movieAvailableDate;
+        private DataGridViewTextBoxColumn wishreturn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn custMovieTitle;
+        private DataGridViewTextBoxColumn custMovieGenre;
     }
 }

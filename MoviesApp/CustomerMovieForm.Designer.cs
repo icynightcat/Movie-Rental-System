@@ -132,6 +132,7 @@
             this.movieGenre.Size = new System.Drawing.Size(158, 23);
             this.movieGenre.TabIndex = 9;
             this.movieGenre.Text = "movieGenreHere";
+            this.movieGenre.Click += new System.EventHandler(this.movieGenre_Click);
             // 
             // monthCalendar1
             // 

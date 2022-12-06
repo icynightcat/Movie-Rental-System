@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.Devices;
 using MoviesApp.SQL;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace MoviesApp
 {
@@ -14,7 +15,11 @@ namespace MoviesApp
             id = input;
             connection = input_connection;
             populate_customer_data();
+
+            cust_wishlists();
             cust_orders();
+            
+
             recommendation();
 
             populate_genre_selecter();
@@ -154,15 +159,17 @@ namespace MoviesApp
         {
             string query1 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
                 $" from Movie M, Movie_copies MC, Orders O" +
-                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id}";
+                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime < '2022-12-09' order by start_datetime desc";
+
+            // have to add todays's date from c# and parse n change the query
 
             SqlDataReader? orderData = connection.GetDataReader(query1);
             if (orderData != null && orderData.HasRows)
             {
-                dataGridView1.Rows.Clear();
+                pastOrderGridView.Rows.Clear();
                 while (orderData.Read())
                 {
-                    dataGridView1.Rows.Add(
+                    pastOrderGridView.Rows.Add(
                         orderData["start_datetime"].ToString(),
                         orderData["end_datetime"].ToString(),
                         orderData["movie_name"].ToString(),
@@ -177,21 +184,57 @@ namespace MoviesApp
             }
         }
 
+        private void cust_wishlists()
+        {
+
+            string query2 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
+                $"from Movie M, Movie_copies MC, Orders O" +
+                $"where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime >= '2022-12-09' order by start_datetime desc";
+
+            // have to add todays's date from c# and parse n change the query
+
+            SqlDataReader? wishData = connection.GetDataReader(query2);
+            if (wishData != null && wishData.HasRows)
+            {
+                wishGridView.Rows.Clear();
+                while (wishData.Read())
+                {
+                    wishGridView.Rows.Add(
+                        wishData["start_datetime"].ToString(),
+                        wishData["end_datetime"].ToString(),
+                        wishData["movie_name"].ToString(),
+                        wishData["format"].ToString(),
+                        ""
+                        );
+                }
+            }
+ 
+            if (wishData != null)
+            {
+                wishData.Close();
+            }
+        }
+
         private void recommendation()
         {
-            string query2 = $"select t.movie_name, t.genres from" +
-            $"(select m.movie_name, STRING_AGG(t.type_of_movie, ', ') as 'genres'" +
-            $" from movie m, Movie_type t where m.movie_id = t.movie_id " +
-            $"group by m.movie_name) t";
+            string query3 = $"select t.movie_name, STRING_AGG(t.type_of_movie, ', ') as 'genres'" +
+            $"from(select M.movie_name, Mt2.type_of_movie from Movie_type MT2, Movie M," +
+            $"(select Top 3 type_of_movie, count(*) as fav" +
+            $"from Movie_type MT, Orders O" +
+            $"where MT.movie_id = O.movie_id and O.account_number = {id}" +
+            $"group by type_of_movie" +
+            $"order by fav desc) T1 where MT2.movie_id = M.movie_id and MT2.type_of_movie in (T1.type_of_movie)) t" +
+            $"group by t.movie_name";
 
-            SqlDataReader? allData = connection.GetDataReader(query2);
+
+            SqlDataReader? allData = connection.GetDataReader(query3);
             if (allData != null && allData.HasRows)
             {
-                dataGridView3.Rows.Clear();
+                recommendedGridView.Rows.Clear();
                 while (allData.Read())
                 {
-                    dataGridView3.Rows.Add(
-                        allData["movie_name"].ToString(),
+                    recommendedGridView.Rows.Add(
+                        allData["t.movie_name"].ToString(),
                         allData["genres"].ToString()
                         );
                 }
@@ -201,8 +244,29 @@ namespace MoviesApp
                 allData.Close();
             }
 
+        }
+
+        private void searchResults_CellContentClick(object sender, EventArgs e)
+        {
+
+            DataGridViewRow r = searchResults.Rows[searchResults.SelectedCells[0].RowIndex]; //clickable row
+            CustomerMovieForm f2 = new CustomerMovieForm(r, connection); // creating the 2nd form from first
+            f2.ShowDialog(); //showing form after creation
+        }
+
+        private void CustomerViewForm_Load_1(object sender, EventArgs e)
+        {
+            recommendedGridView.AllowUserToAddRows = false;
+            wishGridView.AllowUserToAddRows = false;
+            pastOrderGridView.AllowUserToAddRows = false;
+            searchResults.AllowUserToAddRows = false;
+        }
+        private void CustomerViewForm_Load(object sender, EventArgs e)
+        {
+            
 
         }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -300,12 +364,6 @@ namespace MoviesApp
 
         private void searchResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //searchResults.Rows.GetRowCount(searchResults.SelectedRows)
-            //Int32 selectedRowCount =
-            //dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            //DataGridViewRow r = searchResults.SelectedRows[0];
-
-            //MessageBox.Show(r.Cells[1].ToString());
         }
 
         private void label17_Click(object sender, EventArgs e)
@@ -333,21 +391,20 @@ namespace MoviesApp
 
         }
 
-        private void searchResults_CellContentClick(object sender, EventArgs e)
-        {
-            // DataGridViewRow r = searchResults.SelectedRows[0];
-
-            //MessageBox.Show(r.Cells[0].Value.ToString());
-
-            DataGridViewRow r = searchResults.Rows[searchResults.SelectedCells[0].RowIndex]; //clickable row
-            //MessageBox.Show(r.Cells[0].Value.ToString());
-            CustomerMovieForm f2 = new CustomerMovieForm (r); // creating the 2nd form from first
-            f2.ShowDialog(); //showing form after creation
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void label46_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void label34_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }
