@@ -33,6 +33,21 @@ namespace MoviesApp
 
             MessageBox.Show(title);
 
+            //WORK IN PROGRESS
+
+            /*if a customer order is avaiable
+            select TOP 1 M1.movie_id, M1.movie_name, MT1.copy_id, MT1.format
+            from Movie_copies MT1, Movie M1
+            where M1.movie_name = 'Graceland' and MT1.format = 'DVD' and
+            exists
+            (select M2.movie_id, MT.copy_id, M2.movie_name, Mt.format
+            from Movie_copies MT, Movie M2
+            where M2.movie_id = Mt.movie_id and
+            not exists
+            (select * from Orders O
+            where O.movie_id = MT.movie_id and O.copy_id = MT.copy_id
+            ));*/
+
         }
 
         private void Format()

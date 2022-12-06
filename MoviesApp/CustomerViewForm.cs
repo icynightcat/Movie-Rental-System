@@ -186,6 +186,14 @@ namespace MoviesApp
 
         private void cust_wishlists()
         {
+            //DateTime now = DateTime.Now;
+            //Console.WriteLine("{0}", now.Date);
+            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd");
+
+            //MessageBox.Show(DateTime.Now.ToString("dd"));
+
+            //MessageBox.Show(date); 
+            //2022-12-06
 
             string query2 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
                 $" from Movie M, Movie_copies MC, Orders O" +
