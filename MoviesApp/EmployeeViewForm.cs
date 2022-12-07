@@ -190,7 +190,7 @@ namespace MoviesApp
         }
             private void launchMovieButton_Click(object sender, EventArgs e)
         {
-            new MovieForm(ID, connection, -1, this).ShowDialog();
+            new MovieForm(ID, connection, -1).ShowDialog();
         }
         private void actorsAddButton_Click(object sender, EventArgs e)
         {
@@ -225,15 +225,10 @@ namespace MoviesApp
                 case 1: this.AcceptButton = actorsSearchButton;break;
                 case 2: this.AcceptButton = searchCustomersButton;break;
                 case 3: this.AcceptButton = searchEmployeesButton;break;
-                case 4: this.AcceptButton = transactionsNewSearchButton;break;
+                case 4: this.AcceptButton = transactionsSearchButton; break;
                 case 5: this.AcceptButton = reportsGenerateButton;break;
                 default: this.AcceptButton = moviesSearchButton;break;
             }
-        }
-
-        public void changeTabs(int whichTab)
-        {
-            tabControl1.SelectedIndex = whichTab;
         }
 
         private void EmployeeViewForm_Load(object sender, EventArgs e)
@@ -267,7 +262,7 @@ namespace MoviesApp
             int clickedMovieId = Int32.Parse(empMoviesDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
             
             // Pass movie id of clicked-on row into MovieForm
-            MovieForm f2 = new MovieForm(ID, connection, clickedMovieId, this);
+            MovieForm f2 = new MovieForm(ID, connection, clickedMovieId);
 
             // Open the window
             f2.ShowDialog(); //showing form after creation
@@ -289,6 +284,21 @@ namespace MoviesApp
             // Open the window
             f2.ShowDialog(); //showing form after creation
 
+        }
+
+
+
+
+
+        /************** Transactions Page ********************/
+
+        private void empNewTransactionButton_Click(object sender, EventArgs e)
+        {
+            // Pass movie id of clicked-on row into MovieForm
+            TransactionForm f = new TransactionForm(ID, connection);
+
+            // Open the window
+            f.ShowDialog(); //showing form after creation
         }
     }
 }

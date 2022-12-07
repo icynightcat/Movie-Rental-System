@@ -23,15 +23,13 @@ namespace MoviesApp
         private List<string> movieGenres = new List<string>();
         private List<int> movieActors = new List<int>();
         private bool readOnlyMode = true;
-        private EmployeeViewForm returnForm;
         private Boolean newMovie = false;
 
-        public MovieForm(string empId, DBConnection input_connection, int whichMovie, EmployeeViewForm returnForm)
+        public MovieForm(string empId, DBConnection input_connection, int whichMovie)
         {
             this.connection = input_connection;
             this.empId = empId;
             this.whichMovie = whichMovie;
-            this.returnForm = returnForm;
             InitializeComponent();
         }
 
@@ -186,7 +184,14 @@ namespace MoviesApp
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                returnForm.changeTabs(4);
+
+                int clickedCopyId = Int32.Parse(movieCopiesDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+                // Pass movie id of clicked-on row into MovieForm
+                TransactionForm f = new TransactionForm(empId, connection, whichMovie, clickedCopyId);
+
+                // Open the window
+                f.ShowDialog(); //showing form after creation
             }
         }
 

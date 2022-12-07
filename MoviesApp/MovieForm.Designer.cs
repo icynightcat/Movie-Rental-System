@@ -209,6 +209,7 @@
             this.movieCopiesDataGridView.RowTemplate.Height = 25;
             this.movieCopiesDataGridView.Size = new System.Drawing.Size(928, 138);
             this.movieCopiesDataGridView.TabIndex = 2;
+            this.movieCopiesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.movieCopiesDataGridView_CellContentClick);
             // 
             // selected
             // 
