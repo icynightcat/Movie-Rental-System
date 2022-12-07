@@ -300,5 +300,64 @@ namespace MoviesApp
             // Open the window
             f.ShowDialog(); //showing form after creation
         }
+
+        
+        /******************* reports **************************/
+
+        //when clicking a button, on of the grid views will display
+        private void report2Button_Click_1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = false;
+            dataGridView2.Visible = true;
+            dataGridView3.Visible = false;
+            dataGridView4.Visible = false;
+            dataGridView5.Visible = false;
+            reportsDescriptionTextBox.Text = "Report 2: Best Movie Genre";
+            dataGridView2.BringToFront();
+        }
+        private void report3Button_Click_1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = false;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = true;
+            dataGridView4.Visible = false;
+            dataGridView5.Visible = false;
+            reportsDescriptionTextBox.Text = "Report 3: top 5 movies per genre";
+            dataGridView3.BringToFront();
+        }
+        private void report4Button_Click_1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = false;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
+            dataGridView6.Visible = true;
+            dataGridView5.Visible = false;
+            reportsDescriptionTextBox.Text = "Report 4: profit earnings";
+            dataGridView6.BringToFront();
+        }
+        private void report5Button_Click_1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = false;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
+            dataGridView4.Visible = false;
+            dataGridView5.Visible = true;
+            reportsDescriptionTextBox.Text = "Report 5: people to recomend to upgrade based on usage";
+            dataGridView5.BringToFront();
+        }
+
+        private void report1Button_Click1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = true;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
+            dataGridView4.Visible = false;
+            dataGridView5.Visible = false;
+            reportsDescriptionTextBox.Text = "Report 1: profit per month";
+            reportsDataGridView.BringToFront();
+
+        }
+
+        
     }
 }
