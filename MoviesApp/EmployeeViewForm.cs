@@ -303,6 +303,9 @@ namespace MoviesApp
 
         
         /******************* reports **************************/
+        public int RBCN = 1; //report button click number, picks the report to generate when a report button is chosen
+        public string Month_picked = "January"; //basic starting month chosen
+        public int Year_picked = 2022; //starting year
 
         //when clicking a button, on of the grid views will display
         private void report2Button_Click_1(object sender, EventArgs e)
@@ -358,6 +361,21 @@ namespace MoviesApp
 
         }
 
-        
+        private void QuarterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MonthComboBox.Text = "Month";
+            MonthComboBox.Refresh();
+        }
+
+        private void MonthComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QuarterComboBox.Text = "Quarter";
+            QuarterComboBox.Refresh();
+        }
+
+        private void reportsGenerateButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

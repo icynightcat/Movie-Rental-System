@@ -77,6 +77,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.exTextBox4 = new MoviesApp.ExTextBox();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
+            this.MonthComboBox = new System.Windows.Forms.ComboBox();
+            this.QuarterComboBox = new System.Windows.Forms.ComboBox();
+            this.YearComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportsGenerateButton = new System.Windows.Forms.Button();
@@ -642,6 +645,9 @@
             // 
             // reportsTabPage
             // 
+            this.reportsTabPage.Controls.Add(this.MonthComboBox);
+            this.reportsTabPage.Controls.Add(this.QuarterComboBox);
+            this.reportsTabPage.Controls.Add(this.YearComboBox);
             this.reportsTabPage.Controls.Add(this.dataGridView6);
             this.reportsTabPage.Controls.Add(this.reportsGenerateButton);
             this.reportsTabPage.Controls.Add(this.report5Button);
@@ -662,6 +668,68 @@
             this.reportsTabPage.TabIndex = 5;
             this.reportsTabPage.Text = "Reports";
             this.reportsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // MonthComboBox
+            // 
+            this.MonthComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MonthComboBox.FormattingEnabled = true;
+            this.MonthComboBox.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.MonthComboBox.Location = new System.Drawing.Point(338, 50);
+            this.MonthComboBox.Name = "MonthComboBox";
+            this.MonthComboBox.Size = new System.Drawing.Size(165, 26);
+            this.MonthComboBox.TabIndex = 17;
+            this.MonthComboBox.Text = "Month";
+            this.MonthComboBox.SelectedIndexChanged += new System.EventHandler(this.MonthComboBox_SelectedIndexChanged);
+            // 
+            // QuarterComboBox
+            // 
+            this.QuarterComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.QuarterComboBox.FormattingEnabled = true;
+            this.QuarterComboBox.Items.AddRange(new object[] {
+            "First Quarter",
+            "Second Quarter",
+            "Third Quarter",
+            "Forth Quarter",
+            "Full Year"});
+            this.QuarterComboBox.Location = new System.Drawing.Point(167, 50);
+            this.QuarterComboBox.Name = "QuarterComboBox";
+            this.QuarterComboBox.Size = new System.Drawing.Size(165, 26);
+            this.QuarterComboBox.TabIndex = 16;
+            this.QuarterComboBox.Text = "Quarter";
+            this.QuarterComboBox.SelectedIndexChanged += new System.EventHandler(this.QuarterComboBox_SelectedIndexChanged);
+            // 
+            // YearComboBox
+            // 
+            this.YearComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.YearComboBox.FormattingEnabled = true;
+            this.YearComboBox.Items.AddRange(new object[] {
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"});
+            this.YearComboBox.Location = new System.Drawing.Point(8, 50);
+            this.YearComboBox.Name = "YearComboBox";
+            this.YearComboBox.Size = new System.Drawing.Size(153, 26);
+            this.YearComboBox.TabIndex = 15;
+            this.YearComboBox.Text = "Year";
             // 
             // dataGridView6
             // 
@@ -691,6 +759,7 @@
             this.reportsGenerateButton.TabIndex = 10;
             this.reportsGenerateButton.Text = "Generate Report";
             this.reportsGenerateButton.UseVisualStyleBackColor = true;
+            this.reportsGenerateButton.Click += new System.EventHandler(this.reportsGenerateButton_Click);
             // 
             // report5Button
             // 
@@ -761,9 +830,9 @@
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(8, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 18);
+            this.label1.Size = new System.Drawing.Size(63, 18);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Report Description";
+            this.label1.Text = "Reports";
             // 
             // dataGridView2
             // 
@@ -969,5 +1038,8 @@
         private DataGridView dataGridView6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         public TextBox reportsDescriptionTextBox;
+        private ComboBox MonthComboBox;
+        private ComboBox QuarterComboBox;
+        private ComboBox YearComboBox;
     }
 }
