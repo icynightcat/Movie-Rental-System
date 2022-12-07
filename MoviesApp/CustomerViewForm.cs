@@ -157,9 +157,10 @@ namespace MoviesApp
 
         private void cust_orders()
         {
+            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd");
             string query1 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
                 $" from Movie M, Movie_copies MC, Orders O" +
-                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime < '2022-12-09' order by start_datetime desc";
+                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime < '{date}' order by start_datetime desc";
 
             // have to add todays's date from c# and into the query
 
@@ -195,9 +196,11 @@ namespace MoviesApp
             //MessageBox.Show(date); 
             //2022-12-06
 
+
+
             string query2 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
                 $" from Movie M, Movie_copies MC, Orders O" +
-                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime >= '2022-12-09' order by start_datetime desc";
+                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime >= '{date}' order by start_datetime desc";
 
             // have to add todays's date from c# into the query
 
@@ -290,21 +293,21 @@ namespace MoviesApp
         {
 
             DataGridViewRow r = searchResults.Rows[searchResults.SelectedCells[0].RowIndex]; //clickable row
-            CustomerMovieForm f2 = new CustomerMovieForm(r, connection); // creating the 2nd form from first
+            CustomerMovieForm f2 = new CustomerMovieForm(r, connection,id); // creating the 2nd form from first
             f2.ShowDialog(); //showing form after creation
         }
 
         private void dataGridView3_CellContentClick(object sender, EventArgs e)
         {
             DataGridViewRow r = recommendedGridView.Rows[recommendedGridView.SelectedCells[0].RowIndex]; //clickable row
-            CustomerMovieForm f2 = new CustomerMovieForm(r, connection); // creating the 2nd form from first
+            CustomerMovieForm f2 = new CustomerMovieForm(r, connection,id); // creating the 2nd form from first
             f2.ShowDialog(); //showing form after creation
         }
 
         private void bestSellerGridView_CellContentClick(object sender, EventArgs e)
         {
             DataGridViewRow r = bestSellerGridView.Rows[bestSellerGridView.SelectedCells[0].RowIndex]; //clickable row
-            CustomerMovieForm f2 = new CustomerMovieForm(r, connection); // creating the 2nd form from first
+            CustomerMovieForm f2 = new CustomerMovieForm(r, connection,id); // creating the 2nd form from first
             f2.ShowDialog(); //showing form after creation
         }
 

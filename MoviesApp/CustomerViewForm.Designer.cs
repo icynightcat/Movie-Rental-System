@@ -927,7 +927,7 @@
             // 
             this.planType.AutoSize = true;
             this.planType.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.planType.Location = new System.Drawing.Point(602, 59);
+            this.planType.Location = new System.Drawing.Point(602, 55);
             this.planType.Name = "planType";
             this.planType.Size = new System.Drawing.Size(62, 24);
             this.planType.TabIndex = 5;
@@ -937,7 +937,7 @@
             // 
             this.accountNumber.AutoSize = true;
             this.accountNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.accountNumber.Location = new System.Drawing.Point(205, 57);
+            this.accountNumber.Location = new System.Drawing.Point(208, 55);
             this.accountNumber.Name = "accountNumber";
             this.accountNumber.Size = new System.Drawing.Size(99, 24);
             this.accountNumber.TabIndex = 4;

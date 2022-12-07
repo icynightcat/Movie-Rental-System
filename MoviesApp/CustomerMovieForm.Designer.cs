@@ -37,17 +37,22 @@
             this.movieName = new System.Windows.Forms.Label();
             this.movieYear = new System.Windows.Forms.Label();
             this.movieGenre = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.movieFormat = new System.Windows.Forms.ComboBox();
+            this.dateToRent = new System.Windows.Forms.DateTimePicker();
+            this.dateToReturn = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.textBox23 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(36, 52);
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(114, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 23);
+            this.label4.Size = new System.Drawing.Size(70, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "Name:";
             this.label4.Click += new System.EventHandler(this.movieName_Click);
@@ -55,22 +60,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(32, 88);
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(109, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 23);
+            this.label2.Size = new System.Drawing.Size(75, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Genre:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(24, 131);
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(32, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 23);
+            this.label1.Size = new System.Drawing.Size(157, 24);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Format:";
+            this.label1.Text = "Choose format:";
             // 
             // backButtonOnCustMovForm
             // 
@@ -108,7 +113,7 @@
             // 
             this.movieName.AutoSize = true;
             this.movieName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.movieName.Location = new System.Drawing.Point(124, 52);
+            this.movieName.Location = new System.Drawing.Point(199, 52);
             this.movieName.Name = "movieName";
             this.movieName.Size = new System.Drawing.Size(154, 23);
             this.movieName.TabIndex = 7;
@@ -127,20 +132,12 @@
             // 
             this.movieGenre.AutoSize = true;
             this.movieGenre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.movieGenre.Location = new System.Drawing.Point(124, 88);
+            this.movieGenre.Location = new System.Drawing.Point(199, 88);
             this.movieGenre.Name = "movieGenre";
             this.movieGenre.Size = new System.Drawing.Size(158, 23);
             this.movieGenre.TabIndex = 9;
             this.movieGenre.Text = "movieGenreHere";
             this.movieGenre.Click += new System.EventHandler(this.movieGenre_Click);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
-            this.monthCalendar1.Location = new System.Drawing.Point(807, 40);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 10;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // movieFormat
             // 
@@ -153,18 +150,70 @@
             "USB",
             "VHS",
             "Lazer Disk"});
-            this.movieFormat.Location = new System.Drawing.Point(124, 131);
+            this.movieFormat.Location = new System.Drawing.Point(199, 131);
             this.movieFormat.Name = "movieFormat";
             this.movieFormat.Size = new System.Drawing.Size(182, 31);
             this.movieFormat.TabIndex = 11;
+            // 
+            // dateToRent
+            // 
+            this.dateToRent.Location = new System.Drawing.Point(771, 50);
+            this.dateToRent.Name = "dateToRent";
+            this.dateToRent.Size = new System.Drawing.Size(273, 27);
+            this.dateToRent.TabIndex = 12;
+            // 
+            // dateToReturn
+            // 
+            this.dateToReturn.Location = new System.Drawing.Point(771, 136);
+            this.dateToReturn.Name = "dateToReturn";
+            this.dateToReturn.Size = new System.Drawing.Size(273, 27);
+            this.dateToReturn.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(579, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(175, 24);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Enter rental date:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(579, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(179, 24);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Enter return date:";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(91, 212);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 16;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(613, 205);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(125, 27);
+            this.textBox23.TabIndex = 17;
             // 
             // CustomerMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 659);
-            this.Controls.Add(this.movieFormat);
+            this.Controls.Add(this.textBox23);
             this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dateToReturn);
+            this.Controls.Add(this.dateToRent);
+            this.Controls.Add(this.movieFormat);
             this.Controls.Add(this.movieGenre);
             this.Controls.Add(this.movieYear);
             this.Controls.Add(this.movieName);
@@ -196,7 +245,12 @@
         private Label movieName;
         private Label movieYear;
         private Label movieGenre;
-        private MonthCalendar monthCalendar1;
         private ComboBox movieFormat;
+        private DateTimePicker dateToRent;
+        private DateTimePicker dateToReturn;
+        private Label label3;
+        private Label label6;
+        private MonthCalendar monthCalendar1;
+        private TextBox textBox23;
     }
 }
