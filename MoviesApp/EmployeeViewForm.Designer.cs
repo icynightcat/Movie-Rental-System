@@ -88,6 +88,9 @@
             this.report1Button = new System.Windows.Forms.Button();
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportsDataGridView = new System.Windows.Forms.DataGridView();
             this.Revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total_Movie_Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,9 +101,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formats = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empLogoutButton = new System.Windows.Forms.Button();
             this.Plan_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Plan_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,11 +122,11 @@
             this.transactionsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.reportsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -158,7 +158,7 @@
             this.moviesTabPage.Controls.Add(this.allMoviesRadioButton);
             this.moviesTabPage.Location = new System.Drawing.Point(4, 24);
             this.moviesTabPage.Name = "moviesTabPage";
-            this.moviesTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.moviesTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.moviesTabPage.Size = new System.Drawing.Size(978, 534);
             this.moviesTabPage.TabIndex = 0;
             this.moviesTabPage.Text = "Movies";
@@ -308,7 +308,7 @@
             this.actorsTabPage.Controls.Add(this.empActorSearchTextBox);
             this.actorsTabPage.Location = new System.Drawing.Point(4, 24);
             this.actorsTabPage.Name = "actorsTabPage";
-            this.actorsTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.actorsTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.actorsTabPage.Size = new System.Drawing.Size(978, 534);
             this.actorsTabPage.TabIndex = 1;
             this.actorsTabPage.Text = "Actors";
@@ -404,7 +404,7 @@
             this.customersTabPage.Controls.Add(this.customersTabControl);
             this.customersTabPage.Location = new System.Drawing.Point(4, 24);
             this.customersTabPage.Name = "customersTabPage";
-            this.customersTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.customersTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.customersTabPage.Size = new System.Drawing.Size(978, 534);
             this.customersTabPage.TabIndex = 2;
             this.customersTabPage.Text = "Customers";
@@ -429,7 +429,7 @@
             this.searchCustomersTabPage.Controls.Add(this.empCustomerGridView);
             this.searchCustomersTabPage.Location = new System.Drawing.Point(4, 4);
             this.searchCustomersTabPage.Name = "searchCustomersTabPage";
-            this.searchCustomersTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.searchCustomersTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.searchCustomersTabPage.Size = new System.Drawing.Size(974, 497);
             this.searchCustomersTabPage.TabIndex = 0;
             this.searchCustomersTabPage.Text = "Search Customers";
@@ -482,7 +482,7 @@
             this.mailingListTabPage.Controls.Add(this.mailingListLabel);
             this.mailingListTabPage.Location = new System.Drawing.Point(4, 4);
             this.mailingListTabPage.Name = "mailingListTabPage";
-            this.mailingListTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.mailingListTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.mailingListTabPage.Size = new System.Drawing.Size(974, 497);
             this.mailingListTabPage.TabIndex = 1;
             this.mailingListTabPage.Text = "Mailing List";
@@ -517,7 +517,7 @@
             this.employeesTabPage.Controls.Add(this.exTextBox2);
             this.employeesTabPage.Location = new System.Drawing.Point(4, 24);
             this.employeesTabPage.Name = "employeesTabPage";
-            this.employeesTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.employeesTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.employeesTabPage.Size = new System.Drawing.Size(978, 534);
             this.employeesTabPage.TabIndex = 3;
             this.employeesTabPage.Text = "Employees";
@@ -575,7 +575,7 @@
             this.transactionsTabPage.Controls.Add(this.exTextBox4);
             this.transactionsTabPage.Location = new System.Drawing.Point(4, 24);
             this.transactionsTabPage.Name = "transactionsTabPage";
-            this.transactionsTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.transactionsTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.transactionsTabPage.Size = new System.Drawing.Size(978, 534);
             this.transactionsTabPage.TabIndex = 4;
             this.transactionsTabPage.Text = "Transactions";
@@ -676,7 +676,7 @@
             this.reportsTabPage.Controls.Add(this.dataGridView3);
             this.reportsTabPage.Location = new System.Drawing.Point(4, 24);
             this.reportsTabPage.Name = "reportsTabPage";
-            this.reportsTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.reportsTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.reportsTabPage.Size = new System.Drawing.Size(978, 534);
             this.reportsTabPage.TabIndex = 5;
             this.reportsTabPage.Text = "Reports";
@@ -829,6 +829,43 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Reports";
             // 
+            // dataGridView6
+            // 
+            this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Plan_number,
+            this.Plan_count,
+            this.cost,
+            this.total_revenue});
+            this.dataGridView6.Location = new System.Drawing.Point(8, 82);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowHeadersWidth = 51;
+            this.dataGridView6.RowTemplate.Height = 25;
+            this.dataGridView6.Size = new System.Drawing.Size(960, 407);
+            this.dataGridView6.TabIndex = 14;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1});
+            this.dataGridView2.Location = new System.Drawing.Point(8, 82);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(960, 407);
+            this.dataGridView2.TabIndex = 11;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "report2_grid";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
             // reportsDataGridView
             // 
             this.reportsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -932,43 +969,6 @@
             this.formats.ReadOnly = true;
             this.formats.Width = 200;
             // 
-            // dataGridView6
-            // 
-            this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Plan_number,
-            this.Plan_count,
-            this.cost,
-            this.total_revenue});
-            this.dataGridView6.Location = new System.Drawing.Point(8, 82);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowHeadersWidth = 51;
-            this.dataGridView6.RowTemplate.Height = 25;
-            this.dataGridView6.Size = new System.Drawing.Size(960, 407);
-            this.dataGridView6.TabIndex = 14;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
-            this.dataGridView2.Location = new System.Drawing.Point(8, 82);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(960, 407);
-            this.dataGridView2.TabIndex = 11;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "report2_grid";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
             // empLogoutButton
             // 
             this.empLogoutButton.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -994,7 +994,7 @@
             // 
             // cost
             // 
-            this.cost.HeaderText = "Income";
+            this.cost.HeaderText = "Price";
             this.cost.Name = "cost";
             this.cost.ReadOnly = true;
             // 
@@ -1041,11 +1041,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.reportsTabPage.ResumeLayout(false);
             this.reportsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

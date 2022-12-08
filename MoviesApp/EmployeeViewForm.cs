@@ -758,7 +758,7 @@ on m.movie_id = top_5.movie_id
                     
                     while (revdata8 != null && revdata8.Read())
                     {
-                        reportsDataGridView.Rows.Add(revdata8["plan_number"].ToString(), revdata8["plan_count"].ToString(), revdata8["cost"].ToString(), revdata8["revenue"].ToString());
+                        dataGridView6.Rows.Add(revdata8["plan_number"].ToString(), revdata8["plan_count"].ToString(), revdata8["cost"].ToString(), revdata8["revenue"].ToString());
                     }
 
                     if(revdata8 != null)
