@@ -40,12 +40,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.customerLogoutButton = new System.Windows.Forms.Button();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.movieAvailableDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wishreturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pastOrderGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,8 +119,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pastOrderGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishGridView)).BeginInit();
@@ -266,60 +258,6 @@
             this.customerLogoutButton.Text = "Logout";
             this.customerLogoutButton.UseVisualStyleBackColor = true;
             this.customerLogoutButton.Click += new System.EventHandler(this.customerLogoutButton_Click);
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.dataGridView2);
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1112, 708);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Wishlist";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.movieAvailableDate,
-            this.wishreturn,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView2.Location = new System.Drawing.Point(22, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(1058, 188);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // movieAvailableDate
-            // 
-            this.movieAvailableDate.HeaderText = "Rental Date";
-            this.movieAvailableDate.MinimumWidth = 6;
-            this.movieAvailableDate.Name = "movieAvailableDate";
-            this.movieAvailableDate.Width = 160;
-            // 
-            // wishreturn
-            // 
-            this.wishreturn.HeaderText = "Return Date";
-            this.wishreturn.MinimumWidth = 6;
-            this.wishreturn.Name = "wishreturn";
-            this.wishreturn.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 350;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Format";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 175;
             // 
             // tabPage4
             // 
@@ -1193,7 +1131,6 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(1, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1218,8 +1155,6 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pastOrderGridView)).EndInit();
@@ -1253,8 +1188,6 @@
         private Label label26;
         private TabPage tabPage6;
         private Button customerLogoutButton;
-        private TabPage tabPage5;
-        private DataGridView dataGridView2;
         private TabPage tabPage4;
         private DataGridView pastOrderGridView;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -1330,10 +1263,6 @@
         private DataGridViewTextBoxColumn wishlistTitle;
         private DataGridViewTextBoxColumn wishlistformat;
         private DataGridViewTextBoxColumn wishlistrated;
-        private DataGridViewTextBoxColumn movieAvailableDate;
-        private DataGridViewTextBoxColumn wishreturn;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn custMovieTitle;
         private DataGridViewTextBoxColumn custMovieGenre;
     }
