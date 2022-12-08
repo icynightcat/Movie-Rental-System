@@ -801,11 +801,6 @@ on m.movie_id = top_5.movie_id
                     break;
 
                 case 5:
-                    int plan1 = 2;
-                    int plan2 = 30;
-                    int plan3 = 60;
-                    int plan4 = 90;
-                    int months = 3;
 
                     int year = Year_picked;
                     string month = (MonthComboBox.SelectedIndex  + 1).ToString();
@@ -892,6 +887,12 @@ on m.movie_id = top_5.movie_id
             YearComboBox.Text = Year_picked.ToString();
         }
 
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            
+        }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
