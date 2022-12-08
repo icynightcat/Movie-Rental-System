@@ -747,37 +747,14 @@ on m.movie_id = top_5.movie_id
                 case 4:
                     // string full_date;
                     dataGridView6.Rows.Clear();
-                    if (Quarter_picked == 0) //short, just the month
-                    {
+                    
+                    full_date = Year_picked.ToString() + Month_picked + "01";
+                    reportsDescriptionTextBox.Text = full_date;
 
-                    }
-                    else
-                    {
 
-                        switch (Quarter_picked)
-                        {
-                            case 1:
 
-                                return;
-
-                            case 2:
-
-                                return;
-
-                            case 3:
-
-                                return;
-
-                            case 4:
-
-                                return;
-
-                            case 5:
-
-                                return;
-                        }
-
-                    }
+                    
+                    
                     break;
 
                 case 5:
