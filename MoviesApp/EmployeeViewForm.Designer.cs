@@ -730,6 +730,7 @@
             this.YearComboBox.Size = new System.Drawing.Size(153, 26);
             this.YearComboBox.TabIndex = 15;
             this.YearComboBox.Text = "Year";
+            this.YearComboBox.SelectedIndexChanged += new System.EventHandler(this.YearComboBox_SelectedIndexChanged);
             // 
             // dataGridView6
             // 

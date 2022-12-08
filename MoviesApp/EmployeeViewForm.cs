@@ -1,5 +1,6 @@
 using System.Data.SqlClient;
 using System.DirectoryServices;
+using System.Runtime.InteropServices;
 using MoviesApp.SQL;
 
 namespace MoviesApp
@@ -304,8 +305,9 @@ namespace MoviesApp
         
         /******************* reports **************************/
         public int RBCN = 1; //report button click number, picks the report to generate when a report button is chosen
-        public string Month_picked = "January"; //basic starting month chosen
+        public string Month_picked = "NONE"; //basic starting month chosen, full names
         public int Year_picked = 2022; //starting year
+        public string Quarter_picked = "NONE"; //quarter picked, First Quarter, Second Quarter, Third Quarter, Forth Quarter
 
         //when clicking a button, on of the grid views will display
         private void report2Button_Click_1(object sender, EventArgs e)
@@ -313,20 +315,22 @@ namespace MoviesApp
             reportsDataGridView.Visible = false;
             dataGridView2.Visible = true;
             dataGridView3.Visible = false;
-            dataGridView4.Visible = false;
+            dataGridView6.Visible = false;
             dataGridView5.Visible = false;
             reportsDescriptionTextBox.Text = "Report 2: Best Movie Genre";
             dataGridView2.BringToFront();
+            RBCN = 2;
         }
         private void report3Button_Click_1(object sender, EventArgs e)
         {
             reportsDataGridView.Visible = false;
             dataGridView2.Visible = false;
             dataGridView3.Visible = true;
-            dataGridView4.Visible = false;
+            dataGridView6.Visible = false;
             dataGridView5.Visible = false;
             reportsDescriptionTextBox.Text = "Report 3: top 5 movies per genre";
             dataGridView3.BringToFront();
+            RBCN = 3;
         }
         private void report4Button_Click_1(object sender, EventArgs e)
         {
@@ -337,16 +341,18 @@ namespace MoviesApp
             dataGridView5.Visible = false;
             reportsDescriptionTextBox.Text = "Report 4: profit earnings";
             dataGridView6.BringToFront();
+            RBCN = 4;
         }
         private void report5Button_Click_1(object sender, EventArgs e)
         {
             reportsDataGridView.Visible = false;
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
-            dataGridView4.Visible = false;
+            dataGridView6.Visible = false;
             dataGridView5.Visible = true;
             reportsDescriptionTextBox.Text = "Report 5: people to recomend to upgrade based on usage";
             dataGridView5.BringToFront();
+            RBCN = 5;
         }
 
         private void report1Button_Click1(object sender, EventArgs e)
@@ -354,28 +360,40 @@ namespace MoviesApp
             reportsDataGridView.Visible = true;
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
-            dataGridView4.Visible = false;
+            dataGridView6.Visible = false;
             dataGridView5.Visible = false;
             reportsDescriptionTextBox.Text = "Report 1: profit per month";
             reportsDataGridView.BringToFront();
-
+            RBCN = 1;
         }
 
         private void QuarterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MonthComboBox.Text = "Month";
+            Month_picked = "NONE";
             MonthComboBox.Refresh();
+            Quarter_picked = QuarterComboBox.Text;
+            
         }
 
         private void MonthComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             QuarterComboBox.Text = "Quarter";
+            Quarter_picked = "NONE";
             QuarterComboBox.Refresh();
+            Month_picked = MonthComboBox.Text;
         }
 
         private void reportsGenerateButton_Click(object sender, EventArgs e)
         {
+            //needs to know all the info from each value to call functions and send over info
 
+        }
+
+        private void YearComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Year_picked = Int32.Parse(YearComboBox.Text);
+            YearComboBox.Text = Year_picked.ToString();
         }
     }
 }
