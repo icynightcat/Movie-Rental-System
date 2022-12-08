@@ -891,7 +891,7 @@ on m.movie_id = top_5.movie_id
         {
             if (e.RowIndex < 0)
                 return;
-            
+            //TODO link to a customer
         }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
