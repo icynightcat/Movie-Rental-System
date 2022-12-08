@@ -314,6 +314,9 @@ namespace MoviesApp
         //when clicking a button, on of the grid views will display
         private void report2Button_Click_1(object sender, EventArgs e)
         {
+            YearComboBox.Visible = true;
+            QuarterComboBox.Visible = true;
+            MonthComboBox.Visible = true;
             reportsDataGridView.Visible = false;
             dataGridView2.Visible = true;
             dataGridView3.Visible = false;
@@ -325,6 +328,10 @@ namespace MoviesApp
         }
         private void report3Button_Click_1(object sender, EventArgs e)
         {
+
+            YearComboBox.Visible = false;
+            QuarterComboBox.Visible = false; ;
+            MonthComboBox.Visible = false;
             reportsDataGridView.Visible = false;
             dataGridView2.Visible = false;
             dataGridView3.Visible = true;
@@ -336,6 +343,10 @@ namespace MoviesApp
         }
         private void report4Button_Click_1(object sender, EventArgs e)
         {
+
+            YearComboBox.Visible = true;
+            QuarterComboBox.Visible = true;
+            MonthComboBox.Visible = true;
             reportsDataGridView.Visible = false;
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
@@ -347,6 +358,9 @@ namespace MoviesApp
         }
         private void report5Button_Click_1(object sender, EventArgs e)
         {
+            YearComboBox.Visible = true;
+            QuarterComboBox.Visible = true;
+            MonthComboBox.Visible = true;
             reportsDataGridView.Visible = false;
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
@@ -359,6 +373,9 @@ namespace MoviesApp
 
         private void report1Button_Click1(object sender, EventArgs e)
         {
+            YearComboBox.Visible = true;
+            QuarterComboBox.Visible = true;
+            MonthComboBox.Visible = true;
             reportsDataGridView.Visible = true;
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
