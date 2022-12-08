@@ -530,5 +530,20 @@ on m.movie_id = top_5.movie_id
             Year_picked = Int32.Parse(YearComboBox.Text);
             YearComboBox.Text = Year_picked.ToString();
         }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            // Get clicked movie id
+            int clickedMovieId = Int32.Parse(dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            // Pass movie id of clicked-on row into MovieForm
+            MovieForm f2 = new MovieForm(ID, connection, clickedMovieId);
+            
+            // Open the window
+            f2.ShowDialog(); //showing form after creation
+        }
     }
 }
