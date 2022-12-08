@@ -77,8 +77,12 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.exTextBox4 = new MoviesApp.ExTextBox();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
+            this.MonthComboBox = new System.Windows.Forms.ComboBox();
+            this.QuarterComboBox = new System.Windows.Forms.ComboBox();
+            this.YearComboBox = new System.Windows.Forms.ComboBox();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportsGenerateButton = new System.Windows.Forms.Button();
-            this.reportsDataGridView = new System.Windows.Forms.DataGridView();
             this.report5Button = new System.Windows.Forms.Button();
             this.report4Button = new System.Windows.Forms.Button();
             this.report3Button = new System.Windows.Forms.Button();
@@ -86,6 +90,14 @@
             this.report1Button = new System.Windows.Forms.Button();
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportsDataGridView = new System.Windows.Forms.DataGridView();
+            this.test_report1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empLogoutButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
@@ -103,7 +115,11 @@
             this.transactionsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.reportsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -629,8 +645,11 @@
             // 
             // reportsTabPage
             // 
+            this.reportsTabPage.Controls.Add(this.MonthComboBox);
+            this.reportsTabPage.Controls.Add(this.QuarterComboBox);
+            this.reportsTabPage.Controls.Add(this.YearComboBox);
+            this.reportsTabPage.Controls.Add(this.dataGridView6);
             this.reportsTabPage.Controls.Add(this.reportsGenerateButton);
-            this.reportsTabPage.Controls.Add(this.reportsDataGridView);
             this.reportsTabPage.Controls.Add(this.report5Button);
             this.reportsTabPage.Controls.Add(this.report4Button);
             this.reportsTabPage.Controls.Add(this.report3Button);
@@ -638,6 +657,10 @@
             this.reportsTabPage.Controls.Add(this.report1Button);
             this.reportsTabPage.Controls.Add(this.reportsDescriptionTextBox);
             this.reportsTabPage.Controls.Add(this.label1);
+            this.reportsTabPage.Controls.Add(this.dataGridView2);
+            this.reportsTabPage.Controls.Add(this.reportsDataGridView);
+            this.reportsTabPage.Controls.Add(this.dataGridView5);
+            this.reportsTabPage.Controls.Add(this.dataGridView3);
             this.reportsTabPage.Location = new System.Drawing.Point(4, 24);
             this.reportsTabPage.Name = "reportsTabPage";
             this.reportsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -645,6 +668,88 @@
             this.reportsTabPage.TabIndex = 5;
             this.reportsTabPage.Text = "Reports";
             this.reportsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // MonthComboBox
+            // 
+            this.MonthComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MonthComboBox.FormattingEnabled = true;
+            this.MonthComboBox.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.MonthComboBox.Location = new System.Drawing.Point(338, 50);
+            this.MonthComboBox.Name = "MonthComboBox";
+            this.MonthComboBox.Size = new System.Drawing.Size(165, 26);
+            this.MonthComboBox.TabIndex = 17;
+            this.MonthComboBox.Text = "Month";
+            this.MonthComboBox.SelectedIndexChanged += new System.EventHandler(this.MonthComboBox_SelectedIndexChanged);
+            // 
+            // QuarterComboBox
+            // 
+            this.QuarterComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.QuarterComboBox.FormattingEnabled = true;
+            this.QuarterComboBox.Items.AddRange(new object[] {
+            "First Quarter",
+            "Second Quarter",
+            "Third Quarter",
+            "Forth Quarter",
+            "Full Year"});
+            this.QuarterComboBox.Location = new System.Drawing.Point(167, 50);
+            this.QuarterComboBox.Name = "QuarterComboBox";
+            this.QuarterComboBox.Size = new System.Drawing.Size(165, 26);
+            this.QuarterComboBox.TabIndex = 16;
+            this.QuarterComboBox.Text = "Quarter";
+            this.QuarterComboBox.SelectedIndexChanged += new System.EventHandler(this.QuarterComboBox_SelectedIndexChanged);
+            // 
+            // YearComboBox
+            // 
+            this.YearComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.YearComboBox.FormattingEnabled = true;
+            this.YearComboBox.Items.AddRange(new object[] {
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"});
+            this.YearComboBox.Location = new System.Drawing.Point(8, 50);
+            this.YearComboBox.Name = "YearComboBox";
+            this.YearComboBox.Size = new System.Drawing.Size(153, 26);
+            this.YearComboBox.TabIndex = 15;
+            this.YearComboBox.Text = "Year";
+            this.YearComboBox.SelectedIndexChanged += new System.EventHandler(this.YearComboBox_SelectedIndexChanged);
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView6.Location = new System.Drawing.Point(8, 82);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowHeadersWidth = 51;
+            this.dataGridView6.RowTemplate.Height = 25;
+            this.dataGridView6.Size = new System.Drawing.Size(960, 407);
+            this.dataGridView6.TabIndex = 14;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "report4_grid";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // reportsGenerateButton
             // 
@@ -655,17 +760,7 @@
             this.reportsGenerateButton.TabIndex = 10;
             this.reportsGenerateButton.Text = "Generate Report";
             this.reportsGenerateButton.UseVisualStyleBackColor = true;
-            // 
-            // reportsDataGridView
-            // 
-            this.reportsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.reportsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reportsDataGridView.Location = new System.Drawing.Point(8, 82);
-            this.reportsDataGridView.Name = "reportsDataGridView";
-            this.reportsDataGridView.RowHeadersWidth = 51;
-            this.reportsDataGridView.RowTemplate.Height = 25;
-            this.reportsDataGridView.Size = new System.Drawing.Size(960, 407);
-            this.reportsDataGridView.TabIndex = 9;
+            this.reportsGenerateButton.Click += new System.EventHandler(this.reportsGenerateButton_Click);
             // 
             // report5Button
             // 
@@ -676,6 +771,7 @@
             this.report5Button.TabIndex = 8;
             this.report5Button.Text = "Report 5";
             this.report5Button.UseVisualStyleBackColor = true;
+            this.report5Button.Click += new System.EventHandler(this.report5Button_Click_1);
             // 
             // report4Button
             // 
@@ -686,6 +782,7 @@
             this.report4Button.TabIndex = 7;
             this.report4Button.Text = "Report 4";
             this.report4Button.UseVisualStyleBackColor = true;
+            this.report4Button.Click += new System.EventHandler(this.report4Button_Click_1);
             // 
             // report3Button
             // 
@@ -696,6 +793,7 @@
             this.report3Button.TabIndex = 6;
             this.report3Button.Text = "Report 3";
             this.report3Button.UseVisualStyleBackColor = true;
+            this.report3Button.Click += new System.EventHandler(this.report3Button_Click_1);
             // 
             // report2Button
             // 
@@ -706,6 +804,7 @@
             this.report2Button.TabIndex = 5;
             this.report2Button.Text = "Report 2";
             this.report2Button.UseVisualStyleBackColor = true;
+            this.report2Button.Click += new System.EventHandler(this.report2Button_Click_1);
             // 
             // report1Button
             // 
@@ -716,11 +815,13 @@
             this.report1Button.TabIndex = 4;
             this.report1Button.Text = "Report 1";
             this.report1Button.UseVisualStyleBackColor = true;
+            this.report1Button.Click += new System.EventHandler(this.report1Button_Click1);
             // 
             // reportsDescriptionTextBox
             // 
             this.reportsDescriptionTextBox.Location = new System.Drawing.Point(8, 24);
             this.reportsDescriptionTextBox.Name = "reportsDescriptionTextBox";
+            this.reportsDescriptionTextBox.ReadOnly = true;
             this.reportsDescriptionTextBox.Size = new System.Drawing.Size(960, 23);
             this.reportsDescriptionTextBox.TabIndex = 3;
             // 
@@ -730,9 +831,85 @@
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(8, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 18);
+            this.label1.Size = new System.Drawing.Size(63, 18);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Report Description";
+            this.label1.Text = "Reports";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1});
+            this.dataGridView2.Location = new System.Drawing.Point(8, 82);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(960, 407);
+            this.dataGridView2.TabIndex = 11;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "report2_grid";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // reportsDataGridView
+            // 
+            this.reportsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.reportsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reportsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.test_report1});
+            this.reportsDataGridView.Location = new System.Drawing.Point(8, 82);
+            this.reportsDataGridView.Name = "reportsDataGridView";
+            this.reportsDataGridView.RowHeadersWidth = 51;
+            this.reportsDataGridView.RowTemplate.Height = 25;
+            this.reportsDataGridView.Size = new System.Drawing.Size(960, 407);
+            this.reportsDataGridView.TabIndex = 9;
+            // 
+            // test_report1
+            // 
+            this.test_report1.HeaderText = "report1_test";
+            this.test_report1.Name = "test_report1";
+            this.test_report1.ReadOnly = true;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridView5.Location = new System.Drawing.Point(8, 82);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersWidth = 51;
+            this.dataGridView5.RowTemplate.Height = 25;
+            this.dataGridView5.Size = new System.Drawing.Size(960, 407);
+            this.dataGridView5.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "report5_grid";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridView3.Location = new System.Drawing.Point(8, 82);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.Size = new System.Drawing.Size(960, 407);
+            this.dataGridView3.TabIndex = 12;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "report3_grid";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // empLogoutButton
             // 
@@ -782,7 +959,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.reportsTabPage.ResumeLayout(false);
             this.reportsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -827,7 +1008,6 @@
         private Button report3Button;
         private Button report2Button;
         private Button report1Button;
-        private TextBox reportsDescriptionTextBox;
         private Label label1;
         private Button moviesAddMovieButton;
         private Button moviesSearchButton;
@@ -849,5 +1029,18 @@
         private ExTextBox exTextBox1;
         private ComboBox comboBox1;
         private ExTextBox exTextBox4;
+        private DataGridViewTextBoxColumn test_report1;
+        private DataGridView dataGridView5;
+        private DataGridView dataGridView3;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridView dataGridView6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        public TextBox reportsDescriptionTextBox;
+        private ComboBox MonthComboBox;
+        private ComboBox QuarterComboBox;
+        private ComboBox YearComboBox;
     }
 }

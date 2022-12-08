@@ -1,5 +1,7 @@
 using System.Data.SqlClient;
 using System.DirectoryServices;
+using System.Globalization;
+using System.Runtime.InteropServices;
 using MoviesApp.SQL;
 
 namespace MoviesApp
@@ -299,6 +301,145 @@ namespace MoviesApp
 
             // Open the window
             f.ShowDialog(); //showing form after creation
+        }
+
+        
+        /******************* reports **************************/
+        public int RBCN = 1; //report button click number, picks the report to generate when a report button is chosen
+        public int Month_picked = 0; //basic starting month chosen, full names
+        public int Year_picked = 2022; //starting year
+        public int Quarter_picked = 0; //quarter picked, First Quarter, Second Quarter, Third Quarter, Forth Quarter, full year is 5
+
+        //when clicking a button, on of the grid views will display
+        private void report2Button_Click_1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = false;
+            dataGridView2.Visible = true;
+            dataGridView3.Visible = false;
+            dataGridView6.Visible = false;
+            dataGridView5.Visible = false;
+            reportsDescriptionTextBox.Text = "Report 2: Best Movie Genre";
+            dataGridView2.BringToFront();
+            RBCN = 2;
+        }
+        private void report3Button_Click_1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = false;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = true;
+            dataGridView6.Visible = false;
+            dataGridView5.Visible = false;
+            reportsDescriptionTextBox.Text = "Report 3: top 5 movies per genre";
+            dataGridView3.BringToFront();
+            RBCN = 3;
+        }
+        private void report4Button_Click_1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = false;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
+            dataGridView6.Visible = true;
+            dataGridView5.Visible = false;
+            reportsDescriptionTextBox.Text = "Report 4: profit earnings";
+            dataGridView6.BringToFront();
+            RBCN = 4;
+        }
+        private void report5Button_Click_1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = false;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
+            dataGridView6.Visible = false;
+            dataGridView5.Visible = true;
+            reportsDescriptionTextBox.Text = "Report 5: people to recomend to upgrade based on usage";
+            dataGridView5.BringToFront();
+            RBCN = 5;
+        }
+
+        private void report1Button_Click1(object sender, EventArgs e)
+        {
+            reportsDataGridView.Visible = true;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
+            dataGridView6.Visible = false;
+            dataGridView5.Visible = false;
+            reportsDescriptionTextBox.Text = "Report 1: profit per month";
+            reportsDataGridView.BringToFront();
+            RBCN = 1;
+        }
+
+        private void QuarterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MonthComboBox.Text = "Month";
+            Month_picked = 0;
+            MonthComboBox.Refresh();
+            string Quarter_picked_str = QuarterComboBox.Text;
+            switch (Quarter_picked_str)
+            {
+                case "First Quarter":
+                    Quarter_picked = 1;
+                    break;
+                case "Second Quarter":
+                    Quarter_picked = 2;
+                    break;
+                case "Third Quarter":
+                    Quarter_picked = 3;
+                    break;
+                case "Forth Quarter":
+                    Quarter_picked = 4;
+                    break;
+                case "Full Year":
+                    Quarter_picked = 5;
+                    break;
+                
+            }
+        }
+
+        private void MonthComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QuarterComboBox.Text = "Quarter";
+            Quarter_picked = 0;
+            QuarterComboBox.Refresh();
+            string Month_picked_str = MonthComboBox.Text;
+            Month_picked = DateTime.ParseExact(Month_picked_str, "MMMM", CultureInfo.CreateSpecificCulture("en-GB")).Month;
+            if (Month_picked < 10)
+            {
+                int b = 0;
+                Month_picked = int.Parse(b.ToString() + Month_picked.ToString());
+            }
+        }
+
+        private void reportsGenerateButton_Click(object sender, EventArgs e)
+        {
+            //needs to know all the info from each value to call functions and send over info
+            switch (RBCN) //based on the value of RBCN it will display the info of the report
+            {
+                case 1: 
+                    
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+
+                case 5:
+
+                    break;
+
+            }
+        }
+
+        private void YearComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Year_picked = Int32.Parse(YearComboBox.Text);
+            YearComboBox.Text = Year_picked.ToString();
         }
     }
 }
