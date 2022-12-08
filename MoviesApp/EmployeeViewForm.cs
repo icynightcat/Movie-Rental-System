@@ -707,8 +707,36 @@ namespace MoviesApp
                     break;
 
                 case 2:
+                    string start_date;
+                    string end_date;
+                    dataGridView2.Rows.Clear();
+                    if (Quarter_picked == 0) //short, just the month
+                    {
+                        
+                        start_date = Year_picked.ToString() + Month_picked + "01";
+                        end_date = Year_picked.ToString() + Month_picked + "31";
 
+                        string query = $"select temp.type_of_movie, count(*) as number_of_rentals "+
+                            $"from ( "+
+                            $"select Orders.order_id, Movie_type.movie_id, Movie_type.type_of_movie "+
+                            $"from Orders, Movie_type "+
+                            $"where Orders.movie_id = Movie_type.movie_id and Orders.start_datetime >= '20221201' and Orders.end_datetime <= '20221231') as temp "+
+                            $"group by temp.type_of_movie "+
+                            $"order by count(*) DESC; ";
+
+                        SqlDataReader? gendata = connection.GetDataReader(query);
+                        
+                        while (gendata != null && gendata.Read())
+                        {
+                            dataGridView2.Rows.Add(gendata["type_of_movie"].ToString(), gendata["number_of_rentals"].ToString());
+                        }
+                        if (gendata != null)
+                        {
+                            gendata.Close();
+                        }
+                    }
                     break;
+
 
                 case 3:
                     string top_5_query = @"
