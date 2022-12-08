@@ -441,8 +441,6 @@ namespace MoviesApp
                         string costs = "0";
                         full_date = Year_picked.ToString() + Month_picked + "01";
 
-                        reportsDescriptionTextBox.Text = full_date;
-
                         string query = $"select sum(temp2.revenue) as total_revenue " +
                                        $"from(select count(*) as plan_count, temp.cost, (count(*) * temp.cost) as revenue " +
                                        $"from(select P.plan_number, C.account_number, P.cost " +
@@ -749,12 +747,29 @@ on m.movie_id = top_5.movie_id
                     dataGridView6.Rows.Clear();
                     
                     full_date = Year_picked.ToString() + Month_picked + "01";
-                    reportsDescriptionTextBox.Text = full_date;
 
+                    string query8 = $"select temp.plan_number, count(*) as plan_count, temp.cost, (count(*) * temp.cost) as revenue " +
+                                    $"from(select P.plan_number, C.account_number, P.cost " +
+                                    $"from Customer C, Plans P " +
+                                    $"where P.plan_number = C.plan_number and C.start_date < '20221001' and C.end_date >= '20221001') as temp " +
+                                    $"group by temp.plan_number, temp.cost;";
 
-
+                    SqlDataReader? revdata8 = connection.GetDataReader(query8);
                     
-                    
+                    while (revdata8 != null && revdata8.Read())
+                    {
+                        reportsDataGridView.Rows.Add(revdata8["plan_number"].ToString(), revdata8["plan_count"].ToString(), revdata8["cost"].ToString(), revdata8["revenue"].ToString());
+                    }
+
+                    if(revdata8 != null)
+                    {
+                        revdata8.Close();
+                    }
+
+
+
+
+
                     break;
 
                 case 5:
