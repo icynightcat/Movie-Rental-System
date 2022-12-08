@@ -315,7 +315,7 @@ namespace MoviesApp
         private void report2Button_Click_1(object sender, EventArgs e)
         {
             YearComboBox.Visible = true;
-            QuarterComboBox.Visible = true;
+            QuarterComboBox.Visible = false;
             MonthComboBox.Visible = true;
             reportsDataGridView.Visible = false;
             dataGridView2.Visible = true;
