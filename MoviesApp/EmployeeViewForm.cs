@@ -743,8 +743,10 @@ on m.movie_id = top_5.movie_id
                         top_5_data.Close();
                     }
                     break;
+                
                 case 4:
 
+                    
                     break;
 
                 case 5:
