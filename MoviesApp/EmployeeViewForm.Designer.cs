@@ -89,8 +89,11 @@
             this.reportsDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.Plan_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Plan_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportsDataGridView = new System.Windows.Forms.DataGridView();
             this.Revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total_Movie_Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,10 +105,8 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empLogoutButton = new System.Windows.Forms.Button();
-            this.Plan_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Plan_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count_of_genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empMoviesDataGridView)).BeginInit();
@@ -669,11 +670,11 @@
             this.reportsTabPage.Controls.Add(this.report1Button);
             this.reportsTabPage.Controls.Add(this.reportsDescriptionTextBox);
             this.reportsTabPage.Controls.Add(this.label1);
-            this.reportsTabPage.Controls.Add(this.dataGridView6);
             this.reportsTabPage.Controls.Add(this.dataGridView2);
             this.reportsTabPage.Controls.Add(this.reportsDataGridView);
             this.reportsTabPage.Controls.Add(this.dataGridView5);
             this.reportsTabPage.Controls.Add(this.dataGridView3);
+            this.reportsTabPage.Controls.Add(this.dataGridView6);
             this.reportsTabPage.Location = new System.Drawing.Point(4, 24);
             this.reportsTabPage.Name = "reportsTabPage";
             this.reportsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -845,26 +846,43 @@
             this.dataGridView6.Size = new System.Drawing.Size(960, 407);
             this.dataGridView6.TabIndex = 14;
             // 
+            // Plan_number
+            // 
+            this.Plan_number.HeaderText = "plan number";
+            this.Plan_number.Name = "Plan_number";
+            this.Plan_number.ReadOnly = true;
+            // 
+            // Plan_count
+            // 
+            this.Plan_count.HeaderText = "Number of users";
+            this.Plan_count.Name = "Plan_count";
+            this.Plan_count.ReadOnly = true;
+            // 
+            // cost
+            // 
+            this.cost.HeaderText = "Price";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
+            // 
+            // total_revenue
+            // 
+            this.total_revenue.HeaderText = "total revenue";
+            this.total_revenue.Name = "total_revenue";
+            this.total_revenue.ReadOnly = true;
+            // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewTextBoxColumn1,
+            this.Count_of_genre});
             this.dataGridView2.Location = new System.Drawing.Point(8, 82);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(960, 407);
             this.dataGridView2.TabIndex = 11;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "report2_grid";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 200;
             // 
             // reportsDataGridView
             // 
@@ -980,29 +998,17 @@
             this.empLogoutButton.UseVisualStyleBackColor = true;
             this.empLogoutButton.Click += new System.EventHandler(this.empLogoutButton_Click);
             // 
-            // Plan_number
+            // dataGridViewTextBoxColumn1
             // 
-            this.Plan_number.HeaderText = "plan number";
-            this.Plan_number.Name = "Plan_number";
-            this.Plan_number.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Genre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // Plan_count
+            // Count_of_genre
             // 
-            this.Plan_count.HeaderText = "Number of users";
-            this.Plan_count.Name = "Plan_count";
-            this.Plan_count.ReadOnly = true;
-            // 
-            // cost
-            // 
-            this.cost.HeaderText = "Price";
-            this.cost.Name = "cost";
-            this.cost.ReadOnly = true;
-            // 
-            // total_revenue
-            // 
-            this.total_revenue.HeaderText = "total revenue";
-            this.total_revenue.Name = "total_revenue";
-            this.total_revenue.ReadOnly = true;
+            this.Count_of_genre.HeaderText = "Number of rentals";
+            this.Count_of_genre.Name = "Count_of_genre";
+            this.Count_of_genre.ReadOnly = true;
             // 
             // EmployeeViewForm
             // 
@@ -1114,7 +1120,6 @@
         private DataGridView dataGridView5;
         private DataGridView dataGridView3;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridView dataGridView6;
         public TextBox reportsDescriptionTextBox;
@@ -1131,5 +1136,7 @@
         private DataGridViewTextBoxColumn Plan_count;
         private DataGridViewTextBoxColumn cost;
         private DataGridViewTextBoxColumn total_revenue;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn Count_of_genre;
     }
 }
