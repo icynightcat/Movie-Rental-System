@@ -337,7 +337,7 @@ namespace MoviesApp
             dataGridView3.Visible = true;
             dataGridView6.Visible = false;
             dataGridView5.Visible = false;
-            reportsDescriptionTextBox.Text = "Report 3: top 5 movies per genre";
+            reportsDescriptionTextBox.Text = "Report 3: Top 5 movies per genre with the top 3 associated formats";
             dataGridView3.BringToFront();
             RBCN = 3;
         }
