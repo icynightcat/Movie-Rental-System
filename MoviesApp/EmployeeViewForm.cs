@@ -907,5 +907,47 @@ on m.movie_id = top_5.movie_id
             // Open the window
             f2.ShowDialog(); //showing form after creation
         }
+
+        private void searchCustomersButton_Click(object sender, EventArgs e)
+        {
+            string name_search = searchCustomersTextBox.Text;
+            string all_customers;
+            if (int.TryParse(name_search, out _))
+            {
+                all_customers = $"select * from Customer where account_number like '%{name_search}%'";
+            }
+            else
+            {
+                all_customers = $"select * from Customer where first_name like '%{name_search}%' OR " +
+                                        $"last_name like '%{name_search}%'";
+            }
+            SqlDataReader customers = connection.GetDataReader(all_customers);
+            empCustomerGridView.Rows.Clear();
+            
+            if(customers != null && customers.HasRows)
+            {
+                while(customers.Read())
+                {
+                    empCustomerGridView.Rows.Add(
+                            customers["account_number"].ToString(),
+                            customers["first_name"].ToString(),
+                            customers["last_name"].ToString(),
+                            customers["address"].ToString(),
+                            customers["city"].ToString(),
+                            customers["state"].ToString(),
+                            customers["zip_code"].ToString(),
+                            customers["telephone"].ToString(),
+                            customers["email"].ToString(),
+                            customers["create_cust_date"].ToString(),
+                            customers["credit_card"].ToString(),
+                            customers["plan_number"].ToString(),
+                            customers["start_date"].ToString(),
+                            customers["end_date"].ToString(),
+                            customers["customer_rating"].ToString()
+                        );
+                }
+                customers.Close();
+            }
+        }
     }
 }
