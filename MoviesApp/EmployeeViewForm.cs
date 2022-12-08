@@ -430,7 +430,7 @@ namespace MoviesApp
                                        $"from(select count(*) as plan_count, temp.cost, (count(*) * temp.cost) as revenue" +
                                        $"from(select P.plan_number, C.account_number, P.cost" +
                                        $"from Customer C, Plans P" +
-                                       $"where P.plan_number = C.plan_number and C.start_date < '%{full_date}%' and C.end_date >= '%{full_date}%') as temp " +
+                                       $"where P.plan_number = C.plan_number and C.start_date < '{full_date}' and C.end_date >= '{full_date}') as temp" +
                                        $"group by temp.plan_number, temp.cost) as temp2";
 
                         SqlDataReader? revdata = connection.GetDataReader(query);
@@ -440,7 +440,7 @@ namespace MoviesApp
                             revenue = revdata["total_revenue"].ToString();      //passing ID
                             revdata.Close();                //closes the reader after the data is read in
                         }
-                        reportsDescriptionTextBox.Text = revenue;
+                        
                         query = $"select sum(M.distribution_fee) as total_movie_cost " +
                                 $"from Movie M;";
                         SqlDataReader? costdata = connection.GetDataReader(query);
