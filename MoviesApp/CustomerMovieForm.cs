@@ -32,30 +32,30 @@ namespace MoviesApp
             connection = inputConnection;
             movieName.Text = r.Cells[0].Value.ToString(); // initialize name
             movieGenre.Text = r.Cells[1].Value.ToString(); // intialize genre
-            id =  input;
-            allowed = Customer_info();// have to get customer id and plan number
+            id =  input; 
+            allowed = Customer_info();// have to get plan number and orders from wihlist and compare to check limit
 
         }
         
-        private int Customer_info() // this should be an int
+        private int Customer_info() 
         {
-            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd");
+            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd"); // todays date
 
+            // gets plan number for customer
             string query1 = $"select plan_number from Customer where account_number = {id}";
 
-            SqlDataReader? custdata = connection.GetDataReader(query1); //get data reader must be initalized like line 9
+            SqlDataReader? custdata = connection.GetDataReader(query1); 
 
-            if (custdata != null) //checks if there is data in the table as well as a table
+            if (custdata != null) 
             {
                 custdata.Read();
 
-                string plan_num = custdata["plan_number"].ToString(); // what is wrong with this? how do i just set plan numebr to a variable
+                string plan_num = custdata["plan_number"].ToString(); 
                 plan_number = Convert.ToInt32(plan_num);
                 custdata.Close();
             }
 
-            
-
+            // getting list of movies the customer already has in plan
             string query2 = $"select count (*) as moviesrented from" +
             $" (select movie_name, start_datetime,end_datetime, format, account_number" +
             $" from Movie M, Movie_copies MC, Orders O" +
@@ -73,41 +73,37 @@ namespace MoviesApp
                 moviesOut = Convert.ToInt32(moviesO);
                 wishldata.Close();
             }
-           
 
-            
-            //MessageBox.Show(p);
-            //MessageBox.Show(m);
-
+            //trying to see if limit is reached or not
             if (plan_number == 1)
             {
                 if (moviesOut == 1)
-                { return 1; } // true
+                { return 1; } // limit reached
                 else 
-                { return 0; } // false
+                { return 0; } // limit not reached
             }
             else if(plan_number == 2)
             {
                 if (moviesOut == 1)
-                { return 1; } // true
+                { return 1; } // limit reached
                 else 
-                { return 0; } // false
+                { return 0; } // limit not reached
             }
             else if (plan_number == 3)
             {
                 if (moviesOut == 2)
                 {
-                    return 1;
+                    return 1; // limit reached
                 } // true
                 else 
-                { return 0; } // false
+                { return 0; } // limit not reached
             }
             else if (plan_number == 4)
             {
                 if (moviesOut == 3)
-                { return 1; } // true
+                { return 1; } // limit reached
                 else 
-                { return 0; } // false
+                { return 0; } // limit not reached
             }
 
             return -1;
@@ -116,36 +112,33 @@ namespace MoviesApp
         private void rentButtonCustMovie(object sender, EventArgs e)
         {
             string format = movieFormat.Text;
-
             string title = movieName.Text;
+
             DateTime rentalDate = dateToRent.Value;
             DateTime returnDate = dateToReturn.Value;
           
             string rentDate = rentalDate.ToString("yyyy-MM-dd");
             string returnD = returnDate.ToString("yyyy-MM-dd");
 
-            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd");
+            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd"); // getting todays date
 
-            string query = $"select TOP 1 M1.movie_id, M1.movie_name, MT1.copy_id, MT1.format" +
-            $" from Movie_copies MT1, Movie M1" +
-            $" where M1.movie_name = '{title}' and MT1.format = '{format}' and" +
-            $" exists" +
-            $" (select M2.movie_id, MT.copy_id, M2.movie_name, Mt.format" +
-            $" from Movie_copies MT, Movie M2" +
-            $" where M2.movie_id = Mt.movie_id and" +
-            $" not exists" +
-            $" (select * from Orders O" +
-            $" where O.movie_id = MT.movie_id and O.copy_id = MT.copy_id and O.end_datetime >= '{date}'))";
-
-            //textBox23.Text = query;
+            // trying to see if the order is available to rent or not for the customer
+            string query = $"select Top 1 table5.movie_id, table5.copy_id from" +
+            $" (select table3.movie_id, table3.copy_id, table3.format, table4.movie_name from" +
+            $" (select table1.movie_id, table1.copy_id, table2.format from" +
+            $" ((select MC.movie_id, MC.copy_id from Movie_copies MC)" +
+            $" except" +
+            $" (select O.movie_id, O.copy_id from Orders O" +
+            $" where O.end_datetime >= '{date}')) table1, Movie_copies table2" +
+            $" where table2.movie_id = table1.movie_id and table2.copy_id = table1.copy_id) table3, Movie table4" +
+            $" where table3.movie_id = table4.movie_id) table5" +
+            $" where table5.movie_name = '{title}' and table5.format = '{format}'";
 
             SqlDataReader? c_orderData = connection.GetDataReader(query);
-            Console.WriteLine(query);
 
             if (c_orderData != null) //means order is possible 
             {
-
-                // check customer's plan to make sure they are not maxed out
+                
                 c_orderData.Read();
                 string movID = c_orderData["movie_id"].ToString();
                 movieID = Convert.ToInt32(movID);
@@ -154,48 +147,45 @@ namespace MoviesApp
 
                 c_orderData.Close();
 
+                // check customer's plan to make sure they are not maxed out
+
                 if (allowed == -1)
-                {
+                {   // customer does not have a plan
                     MessageBox.Show("Plan number invalid");
                 }
                 else if (allowed == 1)
                 {
-                    //if they are maxed out, then show message box error saying movie limit exceeded, please try again after returning
+                    //if they are maxed out
                     MessageBox.Show("Order not possible, max limit reached.");
                 }
-                else if (allowed == 0) // if they arent then
+                else if (allowed == 0) // if limit is not reached then
                 {
 
-                    //push order into order table with start date time
+                    //push order into order table with proper dates
 
                     string mutation = $"insert into Orders(movie_id, copy_id, order_placed_time, start_datetime, end_datetime," +
                         $" account_number) values({movieID}, {copyID}, '{date}', '{rentDate}', '{returnD}', {id})";
-
-                    textBox23.Text = mutation;
 
                     int result = connection.ExecuteMutation(mutation);
 
                     if (result == 0)
                     {
-                        MessageBox.Show("Sorry, we do not have that format available at the moment. Please choose another format.");
+                        MessageBox.Show("Sorry, there is a problem at our end, please try again later");
                     }
                     else
                     {
-                        MessageBox.Show("it works");
-                    }
-
                         // show message box saying that order has been added successfully
                         MessageBox.Show("Movie successfully rented.");
+                    }
 
                     // close form
-                    //this.Close();
+                    this.Close();
                 }
 
-                
             }
-            else // means order is not possible
+            else // if order is not possible
             {
-                MessageBox.Show("Order not possible, please choose another date");
+                MessageBox.Show("Sorry we do not have that format available at the moment for this time, please choose another date or format");
             }
         }
 

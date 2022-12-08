@@ -18,7 +18,7 @@ namespace MoviesApp
 
             cust_wishlists();
             cust_orders();
-            
+
             bestSelllers();
             recommendation();
 
@@ -157,12 +157,12 @@ namespace MoviesApp
 
         private void cust_orders()
         {
-            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd");
+            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd"); // today's date
+            
             string query1 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
                 $" from Movie M, Movie_copies MC, Orders O" +
                 $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime < '{date}' order by start_datetime desc";
 
-            // have to add todays's date from c# and into the query
 
             SqlDataReader? orderData = connection.GetDataReader(query1);
             if (orderData != null && orderData.HasRows)
@@ -187,22 +187,12 @@ namespace MoviesApp
 
         private void cust_wishlists()
         {
-            //DateTime now = DateTime.Now;
-            //Console.WriteLine("{0}", now.Date);
-            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd");
 
-            //MessageBox.Show(DateTime.Now.ToString("dd"));
-
-            //MessageBox.Show(date); 
-            //2022-12-06
-
-
+            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd"); // today's date
 
             string query2 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
                 $" from Movie M, Movie_copies MC, Orders O" +
                 $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {id} and start_datetime >= '{date}' order by start_datetime desc";
-
-            // have to add todays's date from c# into the query
 
             SqlDataReader? wishData = connection.GetDataReader(query2);
             if (wishData != null && wishData.HasRows)
@@ -295,6 +285,10 @@ namespace MoviesApp
             DataGridViewRow r = searchResults.Rows[searchResults.SelectedCells[0].RowIndex]; //clickable row
             CustomerMovieForm f2 = new CustomerMovieForm(r, connection,id); // creating the 2nd form from first
             f2.ShowDialog(); //showing form after creation
+            cust_wishlists();
+            cust_orders();
+            bestSelllers();
+            recommendation();
         }
 
         private void dataGridView3_CellContentClick(object sender, EventArgs e)
@@ -302,17 +296,26 @@ namespace MoviesApp
             DataGridViewRow r = recommendedGridView.Rows[recommendedGridView.SelectedCells[0].RowIndex]; //clickable row
             CustomerMovieForm f2 = new CustomerMovieForm(r, connection,id); // creating the 2nd form from first
             f2.ShowDialog(); //showing form after creation
+            cust_wishlists();
+            cust_orders();
+            bestSelllers();
+            recommendation();
         }
 
         private void bestSellerGridView_CellContentClick(object sender, EventArgs e)
         {
-            DataGridViewRow r = bestSellerGridView.Rows[bestSellerGridView.SelectedCells[0].RowIndex]; //clickable row
+            DataGridViewRow r = bestSellerGridView.Rows[bestSellerGridView.SelectedCells[0].RowIndex]; //clickable row, if they choose the header, ti automatically picks the first row in the table
             CustomerMovieForm f2 = new CustomerMovieForm(r, connection,id); // creating the 2nd form from first
             f2.ShowDialog(); //showing form after creation
+            cust_wishlists();
+            cust_orders();
+            bestSelllers();
+            recommendation();
         }
 
         private void CustomerViewForm_Load_1(object sender, EventArgs e)
         {
+            //This takes care of the last rows not being shown
             recommendedGridView.AllowUserToAddRows = false;
             wishGridView.AllowUserToAddRows = false;
             pastOrderGridView.AllowUserToAddRows = false;

@@ -43,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.textBox23 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label4
@@ -195,19 +194,11 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 16;
             // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(613, 205);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(125, 27);
-            this.textBox23.TabIndex = 17;
-            // 
             // CustomerMovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 659);
-            this.Controls.Add(this.textBox23);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -251,6 +242,5 @@
         private Label label3;
         private Label label6;
         private MonthCalendar monthCalendar1;
-        private TextBox textBox23;
     }
 }
