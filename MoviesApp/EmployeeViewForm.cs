@@ -751,7 +751,7 @@ on m.movie_id = top_5.movie_id
                     string query8 = $"select temp.plan_number, count(*) as plan_count, temp.cost, (count(*) * temp.cost) as revenue " +
                                     $"from(select P.plan_number, C.account_number, P.cost " +
                                     $"from Customer C, Plans P " +
-                                    $"where P.plan_number = C.plan_number and C.start_date < '20221001' and C.end_date >= '20221001') as temp " +
+                                    $"where P.plan_number = C.plan_number and C.start_date < '{full_date}' and C.end_date >= '{full_date}') as temp " +
                                     $"group by temp.plan_number, temp.cost;";
 
                     SqlDataReader? revdata8 = connection.GetDataReader(query8);
