@@ -467,7 +467,35 @@ namespace MoviesApp
                     break;
 
                 case 3:
-
+                    string top_5_query = @"
+select top_5.movie_id, m.movie_name, t4.[Top 3 Formats] from (select TOP 5 o.movie_id, count(*) number_of_copies from Orders o
+group by o.movie_id
+order by count(*) DESC, o.movie_id) top_5
+left outer join (
+select movie_id, STRING_AGG(format, ', ') 'Top 3 Formats' from (
+	select movie_id, format, ROW_NUMBER() OVER (PARTITION BY movie_id ORDER BY times_format_rented DESC) as row_num
+		from (
+			select distinct movie_id, format, COUNT(format) OVER (PARTITION BY movie_id, format) times_format_rented from (
+					SELECT o.order_id, o.movie_id, c.copy_id, c.format from Orders o
+					left outer join Movie_copies c
+					on o.movie_id = c.movie_id and o.copy_id = c.copy_id) temp
+				) temp2) t3
+				where row_num <= 3
+				group by movie_id) t4
+on t4.movie_id = top_5.movie_id
+left outer join Movie m
+on m.movie_id = top_5.movie_id
+";
+                    dataGridView3.Rows.Clear();
+                    SqlDataReader? top_5_data = connection.GetDataReader(top_5_query);
+                    if (top_5_data != null && top_5_data.HasRows)
+                    {
+                        while (top_5_data.Read())
+                        {
+                            dataGridView3.Rows.Add(top_5_data["movie_id"].ToString(), top_5_data["movie_name"].ToString(), top_5_data["Top 3 Formats"].ToString());
+                        }
+                        top_5_data.Close();
+                    }
                     break;
                 case 4:
 
