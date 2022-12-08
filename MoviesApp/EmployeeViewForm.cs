@@ -811,8 +811,8 @@ on m.movie_id = top_5.movie_id
                     string month = (MonthComboBox.SelectedIndex  + 1).ToString();
                     int quarter = Quarter_picked;
 
-                    string start_date = "Filler";
-                    string end_date = "Filler";
+                    string start = "Filler";
+                    string end = "Filler";
                     int time_frame_multiplier = 1;
                     switch (quarter)
                     {
@@ -862,7 +862,7 @@ on m.movie_id = top_5.movie_id
                         $"(CASE WHEN p_utilization.utilization > 40 THEN 'YES' ELSE 'NO' END) as 'Upgrade Recommended' " +
                         $"from (" +
                         $"select c.account_number, (CASE WHEN c.plan_number = 1 then 100*count(*)/{2* time_frame_multiplier} else 100* count(*)/({30 * time_frame_multiplier} * c.plan_number) end) as utilization " +
-                        $"from (select * from orders where start_datetime >= '{start_date}' and end_datetime < '{end_date}') valid_orders " +
+                        $"from (select * from orders where start_datetime >= '{start}' and end_datetime < '{end}') valid_orders " +
                         $"left outer join Customer c on c.account_number = valid_orders.account_number group by c.account_number, c.plan_number) p_utilization " +
                         $"left outer join Customer c on c.account_number = p_utilization.account_number order by p_utilization.utilization DESC";
                     dataGridView5.Rows.Clear();
