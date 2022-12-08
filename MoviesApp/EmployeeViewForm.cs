@@ -1,5 +1,6 @@
 using System.Data.SqlClient;
 using System.DirectoryServices;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using MoviesApp.SQL;
 
@@ -305,9 +306,9 @@ namespace MoviesApp
         
         /******************* reports **************************/
         public int RBCN = 1; //report button click number, picks the report to generate when a report button is chosen
-        public string Month_picked = "NONE"; //basic starting month chosen, full names
+        public int Month_picked = 0; //basic starting month chosen, full names
         public int Year_picked = 2022; //starting year
-        public string Quarter_picked = "NONE"; //quarter picked, First Quarter, Second Quarter, Third Quarter, Forth Quarter
+        public int Quarter_picked = 0; //quarter picked, First Quarter, Second Quarter, Third Quarter, Forth Quarter, full year is 5
 
         //when clicking a button, on of the grid views will display
         private void report2Button_Click_1(object sender, EventArgs e)
@@ -370,18 +371,42 @@ namespace MoviesApp
         private void QuarterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MonthComboBox.Text = "Month";
-            Month_picked = "NONE";
+            Month_picked = 0;
             MonthComboBox.Refresh();
-            Quarter_picked = QuarterComboBox.Text;
-            
+            string Quarter_picked_str = QuarterComboBox.Text;
+            switch (Quarter_picked_str)
+            {
+                case "First Quarter":
+                    Quarter_picked = 1;
+                    break;
+                case "Second Quarter":
+                    Quarter_picked = 2;
+                    break;
+                case "Third Quarter":
+                    Quarter_picked = 3;
+                    break;
+                case "Forth Quarter":
+                    Quarter_picked = 4;
+                    break;
+                case "Full Year":
+                    Quarter_picked = 5;
+                    break;
+                
+            }
         }
 
         private void MonthComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             QuarterComboBox.Text = "Quarter";
-            Quarter_picked = "NONE";
+            Quarter_picked = 0;
             QuarterComboBox.Refresh();
-            Month_picked = MonthComboBox.Text;
+            string Month_picked_str = MonthComboBox.Text;
+            Month_picked = DateTime.ParseExact(Month_picked_str, "MMMM", CultureInfo.CreateSpecificCulture("en-GB")).Month;
+            if (Month_picked < 10)
+            {
+                int b = 0;
+                Month_picked = int.Parse(b.ToString() + Month_picked.ToString());
+            }
         }
 
         private void reportsGenerateButton_Click(object sender, EventArgs e)
