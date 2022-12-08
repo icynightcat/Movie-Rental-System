@@ -2,6 +2,7 @@ using System.Data.SqlClient;
 using System.DirectoryServices;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using Microsoft.VisualBasic.Devices;
 using MoviesApp.SQL;
 
 namespace MoviesApp
@@ -306,7 +307,7 @@ namespace MoviesApp
         
         /******************* reports **************************/
         public int RBCN = 1; //report button click number, picks the report to generate when a report button is chosen
-        public int Month_picked = 0; //basic starting month chosen, full names
+        public string Month_picked = "0"; //basic starting month chosen, full names
         public int Year_picked = 2022; //starting year
         public int Quarter_picked = 0; //quarter picked, First Quarter, Second Quarter, Third Quarter, Forth Quarter, full year is 5
 
@@ -371,7 +372,7 @@ namespace MoviesApp
         private void QuarterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MonthComboBox.Text = "Month";
-            Month_picked = 0;
+            Month_picked = "0";
             MonthComboBox.Refresh();
             string Quarter_picked_str = QuarterComboBox.Text;
             switch (Quarter_picked_str)
@@ -401,11 +402,11 @@ namespace MoviesApp
             Quarter_picked = 0;
             QuarterComboBox.Refresh();
             string Month_picked_str = MonthComboBox.Text;
-            Month_picked = DateTime.ParseExact(Month_picked_str, "MMMM", CultureInfo.CreateSpecificCulture("en-GB")).Month;
-            if (Month_picked < 10)
+            int Month_picked_int = DateTime.ParseExact(Month_picked_str, "MMMM", CultureInfo.CreateSpecificCulture("en-GB")).Month;
+            if (Month_picked_int < 10)
             {
-                int b = 0;
-                Month_picked = int.Parse(b.ToString() + Month_picked.ToString());
+                string b = "0";
+                Month_picked = b + Month_picked_int.ToString();
             }
         }
 
@@ -414,8 +415,51 @@ namespace MoviesApp
             //needs to know all the info from each value to call functions and send over info
             switch (RBCN) //based on the value of RBCN it will display the info of the report
             {
-                case 1: 
-                    
+                case 1:
+                    string full_date;
+                    reportsDataGridView.Rows.Clear();
+                    if (Quarter_picked == 0) //short, just the month
+                    {
+                        string revenue = "0";
+                        string costs = "0";
+                        full_date = Year_picked.ToString() + Month_picked + "01";
+
+                        reportsDescriptionTextBox.Text = full_date;
+
+                        string query = $"select sum(temp2.revenue) as total_revenue" +
+                                       $"from(select count(*) as plan_count, temp.cost, (count(*) * temp.cost) as revenue" +
+                                       $"from(select P.plan_number, C.account_number, P.cost" +
+                                       $"from Customer C, Plans P" +
+                                       $"where P.plan_number = C.plan_number and C.start_date < '%{full_date}%' and C.end_date >= '%{full_date}%') as temp " +
+                                       $"group by temp.plan_number, temp.cost) as temp2";
+
+                        SqlDataReader? revdata = connection.GetDataReader(query);
+                        if (revdata != null && revdata.HasRows)
+                        {
+                            revdata.Read();                                     //to see the data you must read() first
+                            revenue = revdata["total_revenue"].ToString();      //passing ID
+                            revdata.Close();                //closes the reader after the data is read in
+                        }
+                        reportsDescriptionTextBox.Text = revenue;
+                        query = $"select sum(M.distribution_fee) as total_movie_cost " +
+                                $"from Movie M;";
+                        SqlDataReader? costdata = connection.GetDataReader(query);
+                        if (costdata != null && costdata.HasRows)
+                        {
+                            costdata.Read();                                     //to see the data you must read() first
+                            costs = costdata["total_movie_cost"].ToString();      //passing ID
+                            costdata.Close();                //closes the reader after the data is read in
+                        }
+
+                        float profits = float.Parse(revenue) - float.Parse(costs);
+                        reportsDataGridView.Rows.Add(revenue, costs, profits);
+
+                    }
+                    else //long, looping search and add
+                    {
+
+                    }
+
                     break;
 
                 case 2:

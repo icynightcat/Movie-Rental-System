@@ -93,12 +93,14 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportsDataGridView = new System.Windows.Forms.DataGridView();
-            this.test_report1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empLogoutButton = new System.Windows.Forms.Button();
+            this.Revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_Movie_Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Profits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empMoviesDataGridView)).BeginInit();
@@ -648,7 +650,6 @@
             this.reportsTabPage.Controls.Add(this.MonthComboBox);
             this.reportsTabPage.Controls.Add(this.QuarterComboBox);
             this.reportsTabPage.Controls.Add(this.YearComboBox);
-            this.reportsTabPage.Controls.Add(this.dataGridView6);
             this.reportsTabPage.Controls.Add(this.reportsGenerateButton);
             this.reportsTabPage.Controls.Add(this.report5Button);
             this.reportsTabPage.Controls.Add(this.report4Button);
@@ -657,10 +658,11 @@
             this.reportsTabPage.Controls.Add(this.report1Button);
             this.reportsTabPage.Controls.Add(this.reportsDescriptionTextBox);
             this.reportsTabPage.Controls.Add(this.label1);
-            this.reportsTabPage.Controls.Add(this.dataGridView2);
             this.reportsTabPage.Controls.Add(this.reportsDataGridView);
             this.reportsTabPage.Controls.Add(this.dataGridView5);
             this.reportsTabPage.Controls.Add(this.dataGridView3);
+            this.reportsTabPage.Controls.Add(this.dataGridView6);
+            this.reportsTabPage.Controls.Add(this.dataGridView2);
             this.reportsTabPage.Location = new System.Drawing.Point(4, 24);
             this.reportsTabPage.Name = "reportsTabPage";
             this.reportsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -859,19 +861,15 @@
             this.reportsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.reportsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reportsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.test_report1});
+            this.Revenue,
+            this.Total_Movie_Cost,
+            this.Profits});
             this.reportsDataGridView.Location = new System.Drawing.Point(8, 82);
             this.reportsDataGridView.Name = "reportsDataGridView";
             this.reportsDataGridView.RowHeadersWidth = 51;
             this.reportsDataGridView.RowTemplate.Height = 25;
             this.reportsDataGridView.Size = new System.Drawing.Size(960, 407);
             this.reportsDataGridView.TabIndex = 9;
-            // 
-            // test_report1
-            // 
-            this.test_report1.HeaderText = "report1_test";
-            this.test_report1.Name = "test_report1";
-            this.test_report1.ReadOnly = true;
             // 
             // dataGridView5
             // 
@@ -921,6 +919,24 @@
             this.empLogoutButton.Text = "Logout";
             this.empLogoutButton.UseVisualStyleBackColor = true;
             this.empLogoutButton.Click += new System.EventHandler(this.empLogoutButton_Click);
+            // 
+            // Revenue
+            // 
+            this.Revenue.HeaderText = "Revenue";
+            this.Revenue.Name = "Revenue";
+            this.Revenue.ReadOnly = true;
+            // 
+            // Total_Movie_Cost
+            // 
+            this.Total_Movie_Cost.HeaderText = "Movie Cost";
+            this.Total_Movie_Cost.Name = "Total_Movie_Cost";
+            this.Total_Movie_Cost.ReadOnly = true;
+            // 
+            // Profits
+            // 
+            this.Profits.HeaderText = "Profits";
+            this.Profits.Name = "Profits";
+            this.Profits.ReadOnly = true;
             // 
             // EmployeeViewForm
             // 
@@ -1029,7 +1045,6 @@
         private ExTextBox exTextBox1;
         private ComboBox comboBox1;
         private ExTextBox exTextBox4;
-        private DataGridViewTextBoxColumn test_report1;
         private DataGridView dataGridView5;
         private DataGridView dataGridView3;
         private DataGridView dataGridView2;
@@ -1042,5 +1057,8 @@
         private ComboBox MonthComboBox;
         private ComboBox QuarterComboBox;
         private ComboBox YearComboBox;
+        private DataGridViewTextBoxColumn Revenue;
+        private DataGridViewTextBoxColumn Total_Movie_Cost;
+        private DataGridViewTextBoxColumn Profits;
     }
 }
