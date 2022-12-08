@@ -773,7 +773,86 @@ on m.movie_id = top_5.movie_id
                     break;
 
                 case 5:
+                    int plan1 = 2;
+                    int plan2 = 30;
+                    int plan3 = 60;
+                    int plan4 = 90;
+                    int months = 3;
 
+                    int year = Year_picked;
+                    string month = (MonthComboBox.SelectedIndex  + 1).ToString();
+                    int quarter = Quarter_picked;
+
+                    string start_date = "Filler";
+                    string end_date = "Filler";
+                    int time_frame_multiplier = 1;
+                    switch (quarter)
+                    {
+                        // no quarter selected
+                        case 0:
+                            time_frame_multiplier = 1;
+                            if (month == "12")
+                            {
+                                start_date = year.ToString() + "1201";
+                                end_date = (year + 1).ToString() + "0101";
+                            } else
+                            {
+                                start_date = year.ToString() + month.ToString() + "01";
+                                end_date = year.ToString() + month.ToString() + "01";
+                            }
+                            break;
+                        case 1:
+                            time_frame_multiplier = 3;
+                            start_date = year.ToString() + "0101";
+                            end_date = year.ToString() + "0401";
+                            break;
+                        case 2:
+                            time_frame_multiplier = 3;
+                            start_date = year.ToString() + "0401";
+                            end_date = year.ToString() + "0701";
+                            break;
+                        case 3:
+                            time_frame_multiplier = 3;
+                            start_date = year.ToString() + "0701";
+                            end_date = year.ToString() + "1001";
+                            break;
+                        case 4:
+                            time_frame_multiplier = 3;
+                            start_date = year.ToString() + "1001";
+                            end_date = (year + 1).ToString() + "0101";
+                            break;
+                        case 5:
+                            time_frame_multiplier = 12;
+                            start_date = year.ToString() + "0101";
+                            end_date = (year + 1).ToString() + "0101";
+                            break;
+                        default:
+                            break;
+                    }
+
+                    string rec_query = $"select c.account_number, c.first_name, c.last_name, c.plan_number, p_utilization.utilization, " +
+                        $"(CASE WHEN p_utilization.utilization > 40 THEN 'YES' ELSE 'NO' END) as 'Upgrade Recommended' " +
+                        $"from (" +
+                        $"select c.account_number, (CASE WHEN c.plan_number = 1 then 100*count(*)/{2* time_frame_multiplier} else 100* count(*)/({30 * time_frame_multiplier} * c.plan_number) end) as utilization " +
+                        $"from (select * from orders where start_datetime >= '{start_date}' and end_datetime < '{end_date}') valid_orders " +
+                        $"left outer join Customer c on c.account_number = valid_orders.account_number group by c.account_number, c.plan_number) p_utilization " +
+                        $"left outer join Customer c on c.account_number = p_utilization.account_number order by p_utilization.utilization DESC";
+                    dataGridView5.Rows.Clear();
+                    SqlDataReader? recommendedReader = connection.GetDataReader(rec_query);
+                    if(recommendedReader != null && recommendedReader.HasRows)
+                    {
+                        while(recommendedReader.Read())
+                        {
+                            dataGridView5.Rows.Add(
+                                recommendedReader["account_number"].ToString(),
+                                recommendedReader["first_name"].ToString(), 
+                                recommendedReader["last_name"].ToString(), 
+                                recommendedReader["plan_number"].ToString(), 
+                                recommendedReader["utilization"].ToString(), 
+                                recommendedReader["Upgrade Recommended"].ToString());
+                        }
+                        recommendedReader.Close();
+                    }
                     break;
 
             }
