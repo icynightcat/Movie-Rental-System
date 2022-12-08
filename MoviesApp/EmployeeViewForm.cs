@@ -345,14 +345,14 @@ namespace MoviesApp
         {
 
             YearComboBox.Visible = true;
-            QuarterComboBox.Visible = true;
+            QuarterComboBox.Visible = false;
             MonthComboBox.Visible = true;
             reportsDataGridView.Visible = false;
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
             dataGridView6.Visible = true;
             dataGridView5.Visible = false;
-            reportsDescriptionTextBox.Text = "Report 4: profit earnings";
+            reportsDescriptionTextBox.Text = "Report 4: Earnings for each account";
             dataGridView6.BringToFront();
             RBCN = 4;
         }
@@ -381,7 +381,7 @@ namespace MoviesApp
             dataGridView3.Visible = false;
             dataGridView6.Visible = false;
             dataGridView5.Visible = false;
-            reportsDescriptionTextBox.Text = "Report 1: profit per month";
+            reportsDescriptionTextBox.Text = "Report 1: Profits per, month, quarter, or year";
             reportsDataGridView.BringToFront();
             RBCN = 1;
         }
@@ -745,8 +745,39 @@ on m.movie_id = top_5.movie_id
                     break;
                 
                 case 4:
+                    // string full_date;
+                    dataGridView6.Rows.Clear();
+                    if (Quarter_picked == 0) //short, just the month
+                    {
 
-                    
+                    }
+                    else
+                    {
+
+                        switch (Quarter_picked)
+                        {
+                            case 1:
+
+                                return;
+
+                            case 2:
+
+                                return;
+
+                            case 3:
+
+                                return;
+
+                            case 4:
+
+                                return;
+
+                            case 5:
+
+                                return;
+                        }
+
+                    }
                     break;
 
                 case 5:
