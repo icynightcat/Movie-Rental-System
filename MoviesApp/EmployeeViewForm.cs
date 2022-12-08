@@ -387,7 +387,28 @@ namespace MoviesApp
         private void reportsGenerateButton_Click(object sender, EventArgs e)
         {
             //needs to know all the info from each value to call functions and send over info
+            switch (RBCN) //based on the value of RBCN it will display the info of the report
+            {
+                case 1: 
+                    
+                    break;
 
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+
+                case 5:
+
+                    break;
+
+            }
         }
 
         private void YearComboBox_SelectedIndexChanged(object sender, EventArgs e)
