@@ -653,8 +653,55 @@ namespace MoviesApp
                                 return;
 
                             case 5:
+                                var Q5 = new string[12];
+                                Q5[0] = Year_picked.ToString() + "0101";
+                                Q5[1] = Year_picked.ToString() + "0201";
+                                Q5[2] = Year_picked.ToString() + "0301";
+                                Q5[3] = Year_picked.ToString() + "0401";
+                                Q5[4] = Year_picked.ToString() + "0501";
+                                Q5[5] = Year_picked.ToString() + "0601";
+                                Q5[6] = Year_picked.ToString() + "0701";
+                                Q5[7] = Year_picked.ToString() + "0801";
+                                Q5[8] = Year_picked.ToString() + "0901";
+                                Q5[9] = Year_picked.ToString() + "1001";
+                                Q5[10] = Year_picked.ToString() + "1101";
+                                Q5[11] = Year_picked.ToString() + "1201";
+                                double revenue5 = 0;
+                                string revenue_5 = "0";
+                                string costs5 = "0";
+                                string query5;
+                                foreach (string full_date5 in Q5)
+                                {
 
+                                    query5 = $"select sum(temp2.revenue) as total_revenue " +
+                                                   $"from(select count(*) as plan_count, temp.cost, (count(*) * temp.cost) as revenue " +
+                                                   $"from(select P.plan_number, C.account_number, P.cost " +
+                                                   $"from Customer C, Plans P " +
+                                                   $"where P.plan_number = C.plan_number and C.start_date < '{full_date5}' and C.end_date >= '{full_date5}') as temp " +
+                                                   $"group by temp.plan_number, temp.cost) as temp2";
 
+                                    SqlDataReader? revdata5 = connection.GetDataReader(query5);
+                                    if (revdata5 != null && revdata5.HasRows)
+                                    {
+                                        revdata5.Read();                  //to see the data you must read() first
+                                        revenue_5 = revdata5["total_revenue"].ToString(); //.ToString();     
+                                        revdata5.Close();                //closes the reader after the data is read in
+                                        revenue5 = revenue5 + Convert.ToDouble(revenue_5);
+                                    }
+
+                                }
+                                query5 = $"select sum(M.distribution_fee) as total_movie_cost " +
+                                        $"from Movie M;";
+                                SqlDataReader? costdata5 = connection.GetDataReader(query5);
+                                if (costdata5 != null && costdata5.HasRows)
+                                {
+                                    costdata5.Read();                                     //to see the data you must read() first
+                                    costs5 = costdata5["total_movie_cost"].ToString();
+                                    costdata5.Close();                //closes the reader after the data is read in
+                                }
+
+                                double profits5 = revenue5 - (float.Parse(costs5) * 12);
+                                reportsDataGridView.Rows.Add(revenue5, (float.Parse(costs5) * 12), profits5);
                                 return;
                         }
                     }
