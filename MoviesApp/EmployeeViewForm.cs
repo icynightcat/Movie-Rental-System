@@ -294,16 +294,6 @@ namespace MoviesApp
 
 
 
-        /************** Transactions Page ********************/
-
-        private void empNewTransactionButton_Click(object sender, EventArgs e)
-        {
-            // Pass movie id of clicked-on row into MovieForm
-            TransactionForm f = new TransactionForm(ID, connection);
-
-            // Open the window
-            f.ShowDialog(); //showing form after creation
-        }
 
         
         /******************* reports **************************/
@@ -1053,7 +1043,7 @@ on m.movie_id = top_5.movie_id
                 $"{condition} " +
                 "Order by temp.employee_id, temp.end_datetime ASC";
 
-            MessageBox.Show(order_query);
+            
             txGridView.Rows.Clear();
             SqlDataReader? orderData = connection.GetDataReader(order_query);
             if (orderData != null && orderData.HasRows)
@@ -1076,5 +1066,20 @@ on m.movie_id = top_5.movie_id
                 orderData.Close();
             }
             }
+
+        private void txGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex < 0)
+                return;
+
+            // Get clicked movie id
+            string clickedOrderId = txGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            // Pass movie id of clicked-on row into MovieForm
+            TransactionForm f2 = new TransactionForm(ID, connection, clickedOrderId);
+
+            // Open the window
+            f2.ShowDialog();
+        }
     }
 }

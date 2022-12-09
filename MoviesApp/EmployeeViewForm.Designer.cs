@@ -917,6 +917,7 @@
             this.txGridView.RowTemplate.Height = 25;
             this.txGridView.Size = new System.Drawing.Size(1694, 730);
             this.txGridView.TabIndex = 14;
+            this.txGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.txGridView_CellClick);
             // 
             // order_id
             // 
