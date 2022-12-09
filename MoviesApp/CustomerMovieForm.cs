@@ -21,6 +21,7 @@ namespace MoviesApp
         string id;
         int allowed;
         int moviesOut;
+        int totalOut;
         int plan_number;
         int movieID;
         int copyID;
@@ -74,9 +75,26 @@ namespace MoviesApp
                 wishldata.Close();
             }
 
+            // getting list of total orders for customer
+            string query3 = $"select count(*) as moviesrented from" +
+            $"Orders O where account_number = {id}";
+
+            SqlDataReader? wdata = connection.GetDataReader(query3);
+
+            if (wdata != null && wdata.HasRows)
+            {
+
+                wdata.Read();
+                string total = wdata["moviesrented"].ToString();
+                totalOut = Convert.ToInt32(total);
+                wdata.Close();
+            }
+
             //trying to see if limit is reached or not
             if (plan_number == 1)
             {
+                if (totalOut == 2)
+                { return 1; }
                 if (moviesOut == 1)
                 { return 1; } // limit reached
                 else 
