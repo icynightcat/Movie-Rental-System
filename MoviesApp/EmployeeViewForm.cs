@@ -817,38 +817,38 @@ on m.movie_id = top_5.movie_id
                             time_frame_multiplier = 1;
                             if (month == "12")
                             {
-                                start_date = year.ToString() + "1201";
-                                end_date = (year + 1).ToString() + "0101";
+                                start = year.ToString() + "1201";
+                                end = (year + 1).ToString() + "0101";
                             } else
                             {
-                                start_date = year.ToString() + month.ToString() + "01";
-                                end_date = year.ToString() + month.ToString() + "01";
+                                start = year.ToString() + month.ToString() + "01";
+                                end = year.ToString() + month.ToString() + "01";
                             }
                             break;
                         case 1:
                             time_frame_multiplier = 3;
-                            start_date = year.ToString() + "0101";
-                            end_date = year.ToString() + "0401";
+                            start = year.ToString() + "0101";
+                            end = year.ToString() + "0401";
                             break;
                         case 2:
                             time_frame_multiplier = 3;
-                            start_date = year.ToString() + "0401";
-                            end_date = year.ToString() + "0701";
+                            start = year.ToString() + "0401";
+                            end = year.ToString() + "0701";
                             break;
                         case 3:
                             time_frame_multiplier = 3;
-                            start_date = year.ToString() + "0701";
-                            end_date = year.ToString() + "1001";
+                            start = year.ToString() + "0701";
+                            end = year.ToString() + "1001";
                             break;
                         case 4:
                             time_frame_multiplier = 3;
-                            start_date = year.ToString() + "1001";
-                            end_date = (year + 1).ToString() + "0101";
+                            start = year.ToString() + "1001";
+                            end = (year + 1).ToString() + "0101";
                             break;
                         case 5:
                             time_frame_multiplier = 12;
-                            start_date = year.ToString() + "0101";
-                            end_date = (year + 1).ToString() + "0101";
+                            start = year.ToString() + "0101";
+                            end = (year + 1).ToString() + "0101";
                             break;
                         default:
                             break;
