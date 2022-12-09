@@ -307,7 +307,7 @@ namespace MoviesApp
         
         /******************* reports **************************/
         public int RBCN = 1; //report button click number, picks the report to generate when a report button is chosen
-        public string Month_picked = "0"; //basic starting month chosen, full names
+        public string Month_picked = "01"; //basic starting month chosen, full names
         public int Year_picked = 2022; //starting year
         public int Quarter_picked = 0; //quarter picked, First Quarter, Second Quarter, Third Quarter, Forth Quarter, full year is 5
 
@@ -389,7 +389,7 @@ namespace MoviesApp
         private void QuarterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MonthComboBox.Text = "Month";
-            Month_picked = "0";
+            Month_picked = "01";
             MonthComboBox.Refresh();
             string Quarter_picked_str = QuarterComboBox.Text;
             switch (Quarter_picked_str)
@@ -425,6 +425,7 @@ namespace MoviesApp
                 string b = "0";
                 Month_picked = b + Month_picked_int.ToString();
             }
+
         }
 
         private void reportsGenerateButton_Click(object sender, EventArgs e)
