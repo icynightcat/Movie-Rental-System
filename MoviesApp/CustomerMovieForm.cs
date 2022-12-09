@@ -46,7 +46,7 @@ namespace MoviesApp
 
             SqlDataReader? custdata = connection.GetDataReader(query1); 
 
-            if (custdata != null) 
+            if (custdata != null && custdata.HasRows) 
             {
                 custdata.Read();
 
@@ -65,7 +65,7 @@ namespace MoviesApp
             
             SqlDataReader? wishldata = connection.GetDataReader(query2);
 
-            if (wishldata != null)
+            if (wishldata != null && wishldata.HasRows)
             {
 
                 wishldata.Read();
@@ -136,7 +136,7 @@ namespace MoviesApp
 
             SqlDataReader? c_orderData = connection.GetDataReader(query);
 
-            if (c_orderData != null) //means order is possible 
+            if (c_orderData != null && c_orderData.HasRows) //means order is possible 
             {
                 
                 c_orderData.Read();
