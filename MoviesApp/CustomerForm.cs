@@ -24,6 +24,9 @@ namespace MoviesApp
             InitializeComponent();
             connection = input_connection;
             account_number = input;
+            current_rentals();
+            history();
+            suggestion();
             if (account_number != "")
             {
                 {
@@ -202,6 +205,98 @@ namespace MoviesApp
         
             
         }
+
+        private void current_rentals()
+        {
+            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd"); // today's date
+
+            string query3 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
+                $" from Movie M, Movie_copies MC, Orders O" +
+                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {account_number} and start_datetime >= '{date}' order by start_datetime desc";
+
+            SqlDataReader? orderData = connection.GetDataReader(query3);
+            if (orderData != null && orderData.HasRows)
+            {
+                customerCurrentRentalsDataGridView.Rows.Clear();
+                while (orderData.Read())
+                {
+                    customerCurrentRentalsDataGridView.Rows.Add(
+                        orderData["start_datetime"].ToString(),
+                        orderData["end_datetime"].ToString(),
+                        orderData["movie_name"].ToString(),
+                        orderData["format"].ToString(),
+                        ""
+                        );
+                }
+            }
+            if (orderData != null)
+            {
+                orderData.Close();
+            }
+
+        }
+
+        private void history()
+        {
+            string date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd"); // today's date
+
+            string query2 = $"select movie_name, start_datetime,end_datetime, format, account_number" +
+                $" from Movie M, Movie_copies MC, Orders O" +
+                $" where M.movie_id = MC.movie_id and M.movie_id = O.movie_id and Mc.copy_id = O.copy_id and account_number = {account_number} and start_datetime < '{date}' order by start_datetime desc";
+
+            SqlDataReader? wishData = connection.GetDataReader(query2);
+            if (wishData != null && wishData.HasRows)
+            {
+                customerHistoryDataGridView.Rows.Clear();
+                while (wishData.Read())
+                {
+                    customerHistoryDataGridView.Rows.Add(
+                        wishData["start_datetime"].ToString(),
+                        wishData["end_datetime"].ToString(),
+                        wishData["movie_name"].ToString(),
+                        wishData["format"].ToString(),
+                        ""
+                        );
+                }
+            }
+
+            if (wishData != null)
+            {
+                wishData.Close();
+            }
+        }
+
+        private void suggestion()
+        {
+            string query3 = $"select t.movie_name, STRING_AGG(t.type_of_movie, ', ') as 'genres'" +
+            $" from(select M.movie_name, Mt2.type_of_movie from Movie_type MT2, Movie M," +
+            $" (select Top 3 type_of_movie, count(*) as fav" +
+            $" from Movie_type MT, Orders O" +
+            $" where MT.movie_id = O.movie_id and O.account_number = {account_number}" +
+            $" group by type_of_movie" +
+            $" order by fav desc) T1 where MT2.movie_id = M.movie_id and MT2.type_of_movie in (T1.type_of_movie)) t" +
+            $" group by t.movie_name";
+
+
+            SqlDataReader? allData = connection.GetDataReader(query3);
+            if (allData != null && allData.HasRows)
+            {
+                customerSuggestDataGridView.Rows.Clear();
+                while (allData.Read())
+                {
+                    customerSuggestDataGridView.Rows.Add(
+                        allData["movie_name"].ToString(),
+                        allData["genres"].ToString()
+                        );
+                }
+            }
+            if (allData != null)
+            {
+                allData.Close();
+            }
+
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
         }
