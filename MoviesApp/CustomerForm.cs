@@ -35,6 +35,10 @@ namespace MoviesApp
                     if(customerData != null && customerData.HasRows)
                     {
                         customerData.Read();
+                        string name = customerData["first_name"].ToString() + " " + customerData["last_name"].ToString();
+                        customerNameLabel2.Text = name;
+                        customerNameLabel3.Text = name;
+                        suggestNameLabel.Text = name;
                         customerIDTextBox.Text = customerData["account_number"].ToString();
                         customerCreatedTextBox.Text = customerData["create_cust_date"].ToString();
                         customerFirstNameTextBox.Text = customerData["first_name"].ToString();
