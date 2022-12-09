@@ -95,12 +95,17 @@
             this.searchEmployeesButton = new System.Windows.Forms.Button();
             this.searchEmpTextBox = new MoviesApp.ExTextBox();
             this.transactionsTabPage = new System.Windows.Forms.TabPage();
-            this.empNewTransactionButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txGridView = new System.Windows.Forms.DataGridView();
+            this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tx_account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.end_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tx_copyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tx_employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tx_moveName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tx_cust_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.transactionsSearchButton = new System.Windows.Forms.Button();
-            this.exTextBox1 = new MoviesApp.ExTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.exTextBox4 = new MoviesApp.ExTextBox();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
             this.MonthComboBox = new System.Windows.Forms.ComboBox();
@@ -152,7 +157,7 @@
             this.employeesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empEmployeesDataGridView)).BeginInit();
             this.transactionsTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txGridView)).BeginInit();
             this.reportsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsDataGridView)).BeginInit();
@@ -879,12 +884,9 @@
             // 
             // transactionsTabPage
             // 
-            this.transactionsTabPage.Controls.Add(this.empNewTransactionButton);
-            this.transactionsTabPage.Controls.Add(this.dataGridView1);
+            this.transactionsTabPage.Controls.Add(this.txGridView);
             this.transactionsTabPage.Controls.Add(this.label5);
             this.transactionsTabPage.Controls.Add(this.transactionsSearchButton);
-            this.transactionsTabPage.Controls.Add(this.exTextBox1);
-            this.transactionsTabPage.Controls.Add(this.comboBox1);
             this.transactionsTabPage.Controls.Add(this.exTextBox4);
             this.transactionsTabPage.Location = new System.Drawing.Point(8, 46);
             this.transactionsTabPage.Margin = new System.Windows.Forms.Padding(6);
@@ -895,29 +897,90 @@
             this.transactionsTabPage.Text = "Transactions";
             this.transactionsTabPage.UseVisualStyleBackColor = true;
             // 
-            // empNewTransactionButton
+            // txGridView
             // 
-            this.empNewTransactionButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.empNewTransactionButton.Location = new System.Drawing.Point(1439, 41);
-            this.empNewTransactionButton.Margin = new System.Windows.Forms.Padding(6);
-            this.empNewTransactionButton.Name = "empNewTransactionButton";
-            this.empNewTransactionButton.Size = new System.Drawing.Size(314, 60);
-            this.empNewTransactionButton.TabIndex = 15;
-            this.empNewTransactionButton.Text = "Add New";
-            this.empNewTransactionButton.UseVisualStyleBackColor = true;
-            this.empNewTransactionButton.Click += new System.EventHandler(this.empNewTransactionButton_Click);
+            this.txGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.txGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.txGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.order_id,
+            this.tx_account,
+            this.start_datetime,
+            this.end_datetime,
+            this.tx_copyId,
+            this.tx_employee,
+            this.tx_moveName,
+            this.tx_cust_name});
+            this.txGridView.Location = new System.Drawing.Point(59, 260);
+            this.txGridView.Margin = new System.Windows.Forms.Padding(6);
+            this.txGridView.Name = "txGridView";
+            this.txGridView.RowHeadersWidth = 51;
+            this.txGridView.RowTemplate.Height = 25;
+            this.txGridView.Size = new System.Drawing.Size(1694, 730);
+            this.txGridView.TabIndex = 14;
             // 
-            // dataGridView1
+            // order_id
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(59, 260);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1694, 730);
-            this.dataGridView1.TabIndex = 14;
+            this.order_id.HeaderText = "Order Id";
+            this.order_id.MinimumWidth = 10;
+            this.order_id.Name = "order_id";
+            this.order_id.ReadOnly = true;
+            this.order_id.Width = 200;
+            // 
+            // tx_account
+            // 
+            this.tx_account.HeaderText = "Account Number";
+            this.tx_account.MinimumWidth = 10;
+            this.tx_account.Name = "tx_account";
+            this.tx_account.ReadOnly = true;
+            this.tx_account.Width = 200;
+            // 
+            // start_datetime
+            // 
+            this.start_datetime.HeaderText = "Start Date";
+            this.start_datetime.MinimumWidth = 10;
+            this.start_datetime.Name = "start_datetime";
+            this.start_datetime.ReadOnly = true;
+            this.start_datetime.Width = 200;
+            // 
+            // end_datetime
+            // 
+            this.end_datetime.HeaderText = "End Date";
+            this.end_datetime.MinimumWidth = 10;
+            this.end_datetime.Name = "end_datetime";
+            this.end_datetime.ReadOnly = true;
+            this.end_datetime.Width = 200;
+            // 
+            // tx_copyId
+            // 
+            this.tx_copyId.HeaderText = "Copy Id";
+            this.tx_copyId.MinimumWidth = 10;
+            this.tx_copyId.Name = "tx_copyId";
+            this.tx_copyId.ReadOnly = true;
+            this.tx_copyId.Width = 200;
+            // 
+            // tx_employee
+            // 
+            this.tx_employee.HeaderText = "Employee Id";
+            this.tx_employee.MinimumWidth = 10;
+            this.tx_employee.Name = "tx_employee";
+            this.tx_employee.ReadOnly = true;
+            this.tx_employee.Width = 200;
+            // 
+            // tx_moveName
+            // 
+            this.tx_moveName.HeaderText = "Movie Name";
+            this.tx_moveName.MinimumWidth = 10;
+            this.tx_moveName.Name = "tx_moveName";
+            this.tx_moveName.ReadOnly = true;
+            this.tx_moveName.Width = 200;
+            // 
+            // tx_cust_name
+            // 
+            this.tx_cust_name.HeaderText = "Customer Name";
+            this.tx_cust_name.MinimumWidth = 10;
+            this.tx_cust_name.Name = "tx_cust_name";
+            this.tx_cust_name.ReadOnly = true;
+            this.tx_cust_name.Width = 200;
             // 
             // label5
             // 
@@ -926,9 +989,9 @@
             this.label5.Location = new System.Drawing.Point(59, 45);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(222, 36);
+            this.label5.Size = new System.Drawing.Size(361, 36);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Search History";
+            this.label5.Text = "Orders and Transactions";
             // 
             // transactionsSearchButton
             // 
@@ -940,42 +1003,18 @@
             this.transactionsSearchButton.TabIndex = 12;
             this.transactionsSearchButton.Text = "Search";
             this.transactionsSearchButton.UseVisualStyleBackColor = true;
-            // 
-            // exTextBox1
-            // 
-            this.exTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exTextBox1.Hint = "Customer Name";
-            this.exTextBox1.Location = new System.Drawing.Point(485, 181);
-            this.exTextBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.exTextBox1.Name = "exTextBox1";
-            this.exTextBox1.Size = new System.Drawing.Size(940, 44);
-            this.exTextBox1.TabIndex = 11;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Comedy",
-            "Drama",
-            "Action",
-            "Foreign"});
-            this.comboBox1.Location = new System.Drawing.Point(59, 181);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(411, 44);
-            this.comboBox1.TabIndex = 10;
-            this.comboBox1.Text = "Genre";
+            this.transactionsSearchButton.Click += new System.EventHandler(this.transactionsSearchButton_Click);
             // 
             // exTextBox4
             // 
             this.exTextBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exTextBox4.Hint = "Movie Name";
+            this.exTextBox4.Hint = "Enter Name OR Movie Name OR Order Id OR Account Number";
             this.exTextBox4.Location = new System.Drawing.Point(59, 113);
             this.exTextBox4.Margin = new System.Windows.Forms.Padding(6);
             this.exTextBox4.Name = "exTextBox4";
             this.exTextBox4.Size = new System.Drawing.Size(1690, 44);
             this.exTextBox4.TabIndex = 9;
+            this.exTextBox4.TextChanged += new System.EventHandler(this.exTextBox4_TextChanged);
             // 
             // reportsTabPage
             // 
@@ -1440,7 +1479,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.empEmployeesDataGridView)).EndInit();
             this.transactionsTabPage.ResumeLayout(false);
             this.transactionsTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txGridView)).EndInit();
             this.reportsTabPage.ResumeLayout(false);
             this.reportsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -1506,12 +1545,9 @@
         private DataGridViewTextBoxColumn actorLastName;
         private DataGridViewTextBoxColumn actorGender;
         private DataGridViewTextBoxColumn actorAge;
-        private Button empNewTransactionButton;
-        private DataGridView dataGridView1;
+        private DataGridView txGridView;
         private Label label5;
         private Button transactionsSearchButton;
-        private ExTextBox exTextBox1;
-        private ComboBox comboBox1;
         private ExTextBox exTextBox4;
         private DataGridView dataGridView5;
         private DataGridView dataGridView3;
@@ -1565,5 +1601,13 @@
         private DataGridViewTextBoxColumn emp_phone;
         private DataGridViewTextBoxColumn emp_start;
         private DataGridViewTextBoxColumn emp_rate;
+        private DataGridViewTextBoxColumn order_id;
+        private DataGridViewTextBoxColumn tx_account;
+        private DataGridViewTextBoxColumn start_datetime;
+        private DataGridViewTextBoxColumn end_datetime;
+        private DataGridViewTextBoxColumn tx_copyId;
+        private DataGridViewTextBoxColumn tx_employee;
+        private DataGridViewTextBoxColumn tx_moveName;
+        private DataGridViewTextBoxColumn tx_cust_name;
     }
 }

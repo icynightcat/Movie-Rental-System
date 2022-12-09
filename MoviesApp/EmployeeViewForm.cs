@@ -1027,5 +1027,54 @@ on m.movie_id = top_5.movie_id
             // Open the window
             f2.ShowDialog();
         }
+
+        private void exTextBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void transactionsSearchButton_Click(object sender, EventArgs e)
+        {
+            string input_text = exTextBox4.Text.ToString();
+            string condition;
+            if (int.TryParse(input_text, out _))
+            {
+                condition = $"where temp.account_number like '%{input_text}%' OR temp.order_id like '%{input_text}%'";
+            }
+            else
+            {
+                condition = $"where temp.name like '%{input_text}%' OR temp.movie_name like '%{input_text}%'";
+            }
+            string order_query = "select * from (select o.order_id, o.account_number, o.start_datetime, o.end_datetime, o.copy_id, o.employee_id, m.movie_name, concat(c.first_name, ' ', c.last_name) name from Orders o " +
+                "left Outer JOIN customer c " +
+                "on o.account_number = c.account_number " +
+                "left outer Join Movie m " +
+                "on m.movie_id = o.movie_id) temp " +
+                $"{condition} " +
+                "Order by temp.employee_id, temp.end_datetime ASC";
+
+            MessageBox.Show(order_query);
+            txGridView.Rows.Clear();
+            SqlDataReader? orderData = connection.GetDataReader(order_query);
+            if (orderData != null && orderData.HasRows)
+            {
+                while(orderData.Read())
+                {
+
+                    txGridView.Rows.Add(
+                        orderData["order_id"].ToString(),
+                        orderData["account_number"].ToString(),
+                        orderData["start_datetime"].ToString(),
+                        orderData["end_datetime"].ToString(),
+                        orderData["copy_id"].ToString(),
+                        orderData["employee_id"].ToString(),
+                        orderData["movie_name"].ToString(),
+                        orderData["name"].ToString()
+
+                        );
+                }
+                orderData.Close();
+            }
+            }
     }
 }
