@@ -17,13 +17,13 @@ namespace MoviesApp
         private string ID = ""; //id initalized to use
 
         //allows us to call dbconnections to make sql calls faster
-        private DBConnection connection = new DBConnection(); //must be within the partial class form DOES THIS NEED TO BE CALLED MANY TIMES?? DOES IT STAY OPEN??
+        private DBConnection connection; //must be within the partial class form DOES THIS NEED TO BE CALLED MANY TIMES?? DOES IT STAY OPEN??
 
 
-        public EmployeeForm(string input)
+        public EmployeeForm(string input, DBConnection input_connection)
         {
             ID = input; //ID from form sent back
-
+            connection = input_connection;
             string query = $"select * from Employees where employee_id = {ID}";
             SqlDataReader? empdata = connection.GetDataReader(query);
             empdata.Read(); //read the data back from the tables

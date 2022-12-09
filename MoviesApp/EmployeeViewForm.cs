@@ -207,7 +207,8 @@ namespace MoviesApp
         }
         private void launchEmployeeButton_Click(object sender, EventArgs e)
         {
-            new EmployeeForm(ID).ShowDialog();
+            EmployeeForm f2 = new EmployeeForm("", connection);
+            f2.ShowDialog();
 
         }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -972,6 +973,43 @@ on m.movie_id = top_5.movie_id
 
             // Open the window
             f2.ShowDialog(); 
+        }
+
+        private void searchEmployeesButton_Click(object sender, EventArgs e)
+        {
+            string name_search = searchEmpTextBox.Text;
+            string employees;
+            if (int.TryParse(name_search, out _))
+            {
+                employees = $"select * from Employees where employee_id like '%{name_search}%'";
+            }
+            else
+            {
+                employees = $"select * from Employees where first_name like '%{name_search}%' OR " +
+                                        $"last_name like '%{name_search}%'";
+            }
+            SqlDataReader employee_data = connection.GetDataReader(employees);
+            empEmployeesDataGridView.Rows.Clear();
+            
+            if (employee_data != null && employee_data.HasRows)
+            {
+                while (employee_data.Read())
+                {
+                    empEmployeesDataGridView.Rows.Add(
+                            employee_data["employee_id"].ToString(),
+                            employee_data["first_name"].ToString(),
+                            employee_data["last_name"].ToString(),
+                            employee_data["address"].ToString(),
+                            employee_data["city"].ToString(),
+                            employee_data["state"].ToString(),
+                            employee_data["zip_code"].ToString(),
+                            employee_data["telephone"].ToString(),
+                            employee_data["start_date"].ToString(),
+                            employee_data["hourly_rate"].ToString()
+                        ) ;
+                }
+                employee_data.Close();
+            }
         }
     }
 }
