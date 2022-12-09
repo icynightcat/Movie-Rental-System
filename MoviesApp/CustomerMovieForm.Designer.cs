@@ -49,9 +49,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(114, 52);
+            this.label4.Location = new System.Drawing.Point(100, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 24);
+            this.label4.Size = new System.Drawing.Size(59, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "Name:";
             this.label4.Click += new System.EventHandler(this.movieName_Click);
@@ -60,9 +60,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(109, 88);
+            this.label2.Location = new System.Drawing.Point(95, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 24);
+            this.label2.Size = new System.Drawing.Size(61, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Genre:";
             // 
@@ -70,9 +70,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(32, 135);
+            this.label1.Location = new System.Drawing.Point(28, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.Size = new System.Drawing.Size(128, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Choose format:";
             // 
@@ -80,9 +80,10 @@
             // 
             this.backButtonOnCustMovForm.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.backButtonOnCustMovForm.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.backButtonOnCustMovForm.Location = new System.Drawing.Point(46, 543);
+            this.backButtonOnCustMovForm.Location = new System.Drawing.Point(40, 407);
+            this.backButtonOnCustMovForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backButtonOnCustMovForm.Name = "backButtonOnCustMovForm";
-            this.backButtonOnCustMovForm.Size = new System.Drawing.Size(150, 45);
+            this.backButtonOnCustMovForm.Size = new System.Drawing.Size(131, 34);
             this.backButtonOnCustMovForm.TabIndex = 4;
             this.backButtonOnCustMovForm.Text = "Back";
             this.backButtonOnCustMovForm.UseVisualStyleBackColor = false;
@@ -92,9 +93,10 @@
             // 
             this.rentCustMovie.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.rentCustMovie.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rentCustMovie.Location = new System.Drawing.Point(894, 543);
+            this.rentCustMovie.Location = new System.Drawing.Point(782, 407);
+            this.rentCustMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rentCustMovie.Name = "rentCustMovie";
-            this.rentCustMovie.Size = new System.Drawing.Size(159, 45);
+            this.rentCustMovie.Size = new System.Drawing.Size(139, 34);
             this.rentCustMovie.TabIndex = 5;
             this.rentCustMovie.Text = "Rent";
             this.rentCustMovie.UseVisualStyleBackColor = false;
@@ -103,18 +105,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(433, 212);
+            this.label5.Location = new System.Drawing.Point(379, 159);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 20);
+            this.label5.Size = new System.Drawing.Size(0, 15);
             this.label5.TabIndex = 6;
             // 
             // movieName
             // 
             this.movieName.AutoSize = true;
             this.movieName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.movieName.Location = new System.Drawing.Point(199, 52);
+            this.movieName.Location = new System.Drawing.Point(174, 39);
             this.movieName.Name = "movieName";
-            this.movieName.Size = new System.Drawing.Size(154, 23);
+            this.movieName.Size = new System.Drawing.Size(126, 18);
             this.movieName.TabIndex = 7;
             this.movieName.Text = "movieNameHere";
             // 
@@ -122,18 +124,18 @@
             // 
             this.movieYear.AutoSize = true;
             this.movieYear.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.movieYear.Location = new System.Drawing.Point(124, 98);
+            this.movieYear.Location = new System.Drawing.Point(108, 74);
             this.movieYear.Name = "movieYear";
-            this.movieYear.Size = new System.Drawing.Size(0, 23);
+            this.movieYear.Size = new System.Drawing.Size(0, 18);
             this.movieYear.TabIndex = 8;
             // 
             // movieGenre
             // 
             this.movieGenre.AutoSize = true;
             this.movieGenre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.movieGenre.Location = new System.Drawing.Point(199, 88);
+            this.movieGenre.Location = new System.Drawing.Point(174, 66);
             this.movieGenre.Name = "movieGenre";
-            this.movieGenre.Size = new System.Drawing.Size(158, 23);
+            this.movieGenre.Size = new System.Drawing.Size(127, 18);
             this.movieGenre.TabIndex = 9;
             this.movieGenre.Text = "movieGenreHere";
             this.movieGenre.Click += new System.EventHandler(this.movieGenre_Click);
@@ -149,32 +151,35 @@
             "USB",
             "VHS",
             "Lazer Disk"});
-            this.movieFormat.Location = new System.Drawing.Point(199, 131);
+            this.movieFormat.Location = new System.Drawing.Point(174, 98);
+            this.movieFormat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.movieFormat.Name = "movieFormat";
-            this.movieFormat.Size = new System.Drawing.Size(182, 31);
+            this.movieFormat.Size = new System.Drawing.Size(160, 26);
             this.movieFormat.TabIndex = 11;
             // 
             // dateToRent
             // 
-            this.dateToRent.Location = new System.Drawing.Point(771, 50);
+            this.dateToRent.Location = new System.Drawing.Point(675, 38);
+            this.dateToRent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateToRent.Name = "dateToRent";
-            this.dateToRent.Size = new System.Drawing.Size(273, 27);
+            this.dateToRent.Size = new System.Drawing.Size(239, 23);
             this.dateToRent.TabIndex = 12;
             // 
             // dateToReturn
             // 
-            this.dateToReturn.Location = new System.Drawing.Point(771, 136);
+            this.dateToReturn.Location = new System.Drawing.Point(675, 102);
+            this.dateToReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateToReturn.Name = "dateToReturn";
-            this.dateToReturn.Size = new System.Drawing.Size(273, 27);
+            this.dateToReturn.Size = new System.Drawing.Size(239, 23);
             this.dateToReturn.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(579, 52);
+            this.label3.Location = new System.Drawing.Point(507, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 24);
+            this.label3.Size = new System.Drawing.Size(140, 19);
             this.label3.TabIndex = 14;
             this.label3.Text = "Enter rental date:";
             // 
@@ -182,23 +187,24 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(579, 138);
+            this.label6.Location = new System.Drawing.Point(507, 104);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 24);
+            this.label6.Size = new System.Drawing.Size(143, 19);
             this.label6.TabIndex = 15;
             this.label6.Text = "Enter return date:";
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(91, 212);
+            this.monthCalendar1.Location = new System.Drawing.Point(80, 159);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 16;
             // 
             // CustomerMovieForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 659);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -214,8 +220,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
-            this.MaximumSize = new System.Drawing.Size(1137, 775);
-            this.MinimumSize = new System.Drawing.Size(1137, 660);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "CustomerMovieForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Movie Search Form";

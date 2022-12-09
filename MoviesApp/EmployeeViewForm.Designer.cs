@@ -159,9 +159,11 @@
             this.tabControl1.Controls.Add(this.transactionsTabPage);
             this.tabControl1.Controls.Add(this.reportsTabPage);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.tabControl1.MinimumSize = new System.Drawing.Size(1000, 600);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(986, 562);
+            this.tabControl1.Size = new System.Drawing.Size(1000, 600);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -180,7 +182,7 @@
             this.moviesTabPage.Location = new System.Drawing.Point(4, 24);
             this.moviesTabPage.Name = "moviesTabPage";
             this.moviesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.moviesTabPage.Size = new System.Drawing.Size(978, 534);
+            this.moviesTabPage.Size = new System.Drawing.Size(992, 572);
             this.moviesTabPage.TabIndex = 0;
             this.moviesTabPage.Text = "Movies";
             this.moviesTabPage.UseVisualStyleBackColor = true;
@@ -837,7 +839,7 @@
             this.reportsTabPage.Location = new System.Drawing.Point(4, 24);
             this.reportsTabPage.Name = "reportsTabPage";
             this.reportsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.reportsTabPage.Size = new System.Drawing.Size(978, 534);
+            this.reportsTabPage.Size = new System.Drawing.Size(992, 572);
             this.reportsTabPage.TabIndex = 5;
             this.reportsTabPage.Text = "Reports";
             this.reportsTabPage.UseVisualStyleBackColor = true;
