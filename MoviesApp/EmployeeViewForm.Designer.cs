@@ -60,6 +60,21 @@
             this.searchCustomersButton = new System.Windows.Forms.Button();
             this.searchCustomersTextBox = new MoviesApp.ExTextBox();
             this.empCustomerGridView = new System.Windows.Forms.DataGridView();
+            this.account_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zip_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.create_cust_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.credit_card = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customer_rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mailingListTabPage = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.mailingListLabel = new System.Windows.Forms.Label();
@@ -112,21 +127,6 @@
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empLogoutButton = new System.Windows.Forms.Button();
-            this.account_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zip_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.create_cust_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.credit_card = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.start_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customer_rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.moviesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empMoviesDataGridView)).BeginInit();
@@ -537,6 +537,128 @@
             this.empCustomerGridView.RowTemplate.Height = 25;
             this.empCustomerGridView.Size = new System.Drawing.Size(1694, 907);
             this.empCustomerGridView.TabIndex = 0;
+            this.empCustomerGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.empCustomerGridView_CellContentClick);
+            this.empCustomerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.empCustomerGridView_CellContentClick);
+            // 
+            // account_number
+            // 
+            this.account_number.HeaderText = "Account Number";
+            this.account_number.MinimumWidth = 10;
+            this.account_number.Name = "account_number";
+            this.account_number.ReadOnly = true;
+            this.account_number.Width = 200;
+            // 
+            // first_name
+            // 
+            this.first_name.HeaderText = "First Name";
+            this.first_name.MinimumWidth = 10;
+            this.first_name.Name = "first_name";
+            this.first_name.ReadOnly = true;
+            this.first_name.Width = 200;
+            // 
+            // last_name
+            // 
+            this.last_name.HeaderText = "Last Name";
+            this.last_name.MinimumWidth = 10;
+            this.last_name.Name = "last_name";
+            this.last_name.ReadOnly = true;
+            this.last_name.Width = 200;
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Address";
+            this.address.MinimumWidth = 10;
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Width = 200;
+            // 
+            // city
+            // 
+            this.city.HeaderText = "City";
+            this.city.MinimumWidth = 10;
+            this.city.Name = "city";
+            this.city.ReadOnly = true;
+            this.city.Width = 200;
+            // 
+            // state
+            // 
+            this.state.HeaderText = "State";
+            this.state.MinimumWidth = 10;
+            this.state.Name = "state";
+            this.state.ReadOnly = true;
+            this.state.Width = 200;
+            // 
+            // zip_code
+            // 
+            this.zip_code.HeaderText = "Zip Code";
+            this.zip_code.MinimumWidth = 10;
+            this.zip_code.Name = "zip_code";
+            this.zip_code.ReadOnly = true;
+            this.zip_code.Width = 200;
+            // 
+            // telephone
+            // 
+            this.telephone.HeaderText = "Telephone";
+            this.telephone.MinimumWidth = 10;
+            this.telephone.Name = "telephone";
+            this.telephone.ReadOnly = true;
+            this.telephone.Width = 200;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 10;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 200;
+            // 
+            // create_cust_date
+            // 
+            this.create_cust_date.HeaderText = "Creation Date";
+            this.create_cust_date.MinimumWidth = 10;
+            this.create_cust_date.Name = "create_cust_date";
+            this.create_cust_date.ReadOnly = true;
+            this.create_cust_date.Width = 200;
+            // 
+            // credit_card
+            // 
+            this.credit_card.HeaderText = "Credit Card";
+            this.credit_card.MinimumWidth = 10;
+            this.credit_card.Name = "credit_card";
+            this.credit_card.ReadOnly = true;
+            this.credit_card.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Plan Number";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // start_date
+            // 
+            this.start_date.HeaderText = "Start Date";
+            this.start_date.MinimumWidth = 10;
+            this.start_date.Name = "start_date";
+            this.start_date.ReadOnly = true;
+            this.start_date.Width = 200;
+            // 
+            // end_date
+            // 
+            this.end_date.HeaderText = "End Date";
+            this.end_date.MinimumWidth = 10;
+            this.end_date.Name = "end_date";
+            this.end_date.ReadOnly = true;
+            this.end_date.Width = 200;
+            // 
+            // customer_rating
+            // 
+            this.customer_rating.HeaderText = "Rating";
+            this.customer_rating.MinimumWidth = 10;
+            this.customer_rating.Name = "customer_rating";
+            this.customer_rating.ReadOnly = true;
+            this.customer_rating.Width = 200;
             // 
             // mailingListTabPage
             // 
@@ -1161,126 +1283,6 @@
             this.empLogoutButton.Text = "Logout";
             this.empLogoutButton.UseVisualStyleBackColor = true;
             this.empLogoutButton.Click += new System.EventHandler(this.empLogoutButton_Click);
-            // 
-            // account_number
-            // 
-            this.account_number.HeaderText = "Account Number";
-            this.account_number.MinimumWidth = 10;
-            this.account_number.Name = "account_number";
-            this.account_number.ReadOnly = true;
-            this.account_number.Width = 200;
-            // 
-            // first_name
-            // 
-            this.first_name.HeaderText = "First Name";
-            this.first_name.MinimumWidth = 10;
-            this.first_name.Name = "first_name";
-            this.first_name.ReadOnly = true;
-            this.first_name.Width = 200;
-            // 
-            // last_name
-            // 
-            this.last_name.HeaderText = "Last Name";
-            this.last_name.MinimumWidth = 10;
-            this.last_name.Name = "last_name";
-            this.last_name.ReadOnly = true;
-            this.last_name.Width = 200;
-            // 
-            // address
-            // 
-            this.address.HeaderText = "Address";
-            this.address.MinimumWidth = 10;
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            this.address.Width = 200;
-            // 
-            // city
-            // 
-            this.city.HeaderText = "City";
-            this.city.MinimumWidth = 10;
-            this.city.Name = "city";
-            this.city.ReadOnly = true;
-            this.city.Width = 200;
-            // 
-            // state
-            // 
-            this.state.HeaderText = "State";
-            this.state.MinimumWidth = 10;
-            this.state.Name = "state";
-            this.state.ReadOnly = true;
-            this.state.Width = 200;
-            // 
-            // zip_code
-            // 
-            this.zip_code.HeaderText = "Zip Code";
-            this.zip_code.MinimumWidth = 10;
-            this.zip_code.Name = "zip_code";
-            this.zip_code.ReadOnly = true;
-            this.zip_code.Width = 200;
-            // 
-            // telephone
-            // 
-            this.telephone.HeaderText = "Telephone";
-            this.telephone.MinimumWidth = 10;
-            this.telephone.Name = "telephone";
-            this.telephone.ReadOnly = true;
-            this.telephone.Width = 200;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 10;
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 200;
-            // 
-            // create_cust_date
-            // 
-            this.create_cust_date.HeaderText = "Creation Date";
-            this.create_cust_date.MinimumWidth = 10;
-            this.create_cust_date.Name = "create_cust_date";
-            this.create_cust_date.ReadOnly = true;
-            this.create_cust_date.Width = 200;
-            // 
-            // credit_card
-            // 
-            this.credit_card.HeaderText = "Credit Card";
-            this.credit_card.MinimumWidth = 10;
-            this.credit_card.Name = "credit_card";
-            this.credit_card.ReadOnly = true;
-            this.credit_card.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Plan Number";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 200;
-            // 
-            // start_date
-            // 
-            this.start_date.HeaderText = "Start Date";
-            this.start_date.MinimumWidth = 10;
-            this.start_date.Name = "start_date";
-            this.start_date.ReadOnly = true;
-            this.start_date.Width = 200;
-            // 
-            // end_date
-            // 
-            this.end_date.HeaderText = "End Date";
-            this.end_date.MinimumWidth = 10;
-            this.end_date.Name = "end_date";
-            this.end_date.ReadOnly = true;
-            this.end_date.Width = 200;
-            // 
-            // customer_rating
-            // 
-            this.customer_rating.HeaderText = "Rating";
-            this.customer_rating.MinimumWidth = 10;
-            this.customer_rating.Name = "customer_rating";
-            this.customer_rating.ReadOnly = true;
-            this.customer_rating.Width = 200;
             // 
             // EmployeeViewForm
             // 

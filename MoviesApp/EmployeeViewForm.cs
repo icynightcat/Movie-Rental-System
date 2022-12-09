@@ -202,7 +202,7 @@ namespace MoviesApp
         }
         private void launchCustomerButton_Click(object sender, EventArgs e)
         {
-            new CustomerForm().ShowDialog();
+            new CustomerForm("", connection).ShowDialog();
 
         }
         private void launchEmployeeButton_Click(object sender, EventArgs e)
@@ -891,7 +891,15 @@ on m.movie_id = top_5.movie_id
         {
             if (e.RowIndex < 0)
                 return;
-            //TODO link to a customer
+
+            // Get clicked movie id
+            string clickedCustomerId = empCustomerGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            // Pass movie id of clicked-on row into MovieForm
+            CustomerForm f2 = new CustomerForm(clickedCustomerId, connection);
+
+            // Open the window
+            f2.ShowDialog();
         }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -948,6 +956,21 @@ on m.movie_id = top_5.movie_id
                 }
                 customers.Close();
             }
+        }
+
+        private void empCustomerGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            // Get clicked movie id
+            string clickedCustomerId = empCustomerGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+            // Pass movie id of clicked-on row into MovieForm
+            CustomerForm f2 = new CustomerForm(clickedCustomerId, connection);
+
+            // Open the window
+            f2.ShowDialog(); 
         }
     }
 }
