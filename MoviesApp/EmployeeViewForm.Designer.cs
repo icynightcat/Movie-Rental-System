@@ -525,6 +525,9 @@
             // 
             // empCustomerGridView
             // 
+            this.empCustomerGridView.AllowUserToAddRows = false;
+            this.empCustomerGridView.AllowUserToDeleteRows = false;
+            this.empCustomerGridView.AllowUserToOrderColumns = true;
             this.empCustomerGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.empCustomerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empCustomerGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -726,6 +729,9 @@
             // 
             // empEmployeesDataGridView
             // 
+            this.empEmployeesDataGridView.AllowUserToAddRows = false;
+            this.empEmployeesDataGridView.AllowUserToDeleteRows = false;
+            this.empEmployeesDataGridView.AllowUserToOrderColumns = true;
             this.empEmployeesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.empEmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empEmployeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -747,6 +753,7 @@
             this.empEmployeesDataGridView.RowTemplate.Height = 25;
             this.empEmployeesDataGridView.Size = new System.Drawing.Size(1694, 915);
             this.empEmployeesDataGridView.TabIndex = 3;
+            this.empEmployeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.empEmployeesDataGridView_CellClick);
             // 
             // empId
             // 

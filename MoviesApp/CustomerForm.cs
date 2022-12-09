@@ -24,7 +24,6 @@ namespace MoviesApp
             InitializeComponent();
             connection = input_connection;
             account_number = input;
-            
             if (account_number != "")
             {
                 {

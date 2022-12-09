@@ -997,6 +997,7 @@ on m.movie_id = top_5.movie_id
                 {
                     empEmployeesDataGridView.Rows.Add(
                             employee_data["employee_id"].ToString(),
+                            employee_data["social_insurance_number"].ToString(),
                             employee_data["first_name"].ToString(),
                             employee_data["last_name"].ToString(),
                             employee_data["address"].ToString(),
@@ -1006,10 +1007,25 @@ on m.movie_id = top_5.movie_id
                             employee_data["telephone"].ToString(),
                             employee_data["start_date"].ToString(),
                             employee_data["hourly_rate"].ToString()
-                        ) ;
+                        );
                 }
                 employee_data.Close();
             }
+        }
+
+        private void empEmployeesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex < 0)
+                return;
+
+            // Get clicked movie id
+            string clickedEmployeeId = empEmployeesDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            
+            // Pass movie id of clicked-on row into MovieForm
+            EmployeeForm f2 = new EmployeeForm(clickedEmployeeId, connection);
+
+            // Open the window
+            f2.ShowDialog();
         }
     }
 }
