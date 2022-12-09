@@ -30,6 +30,14 @@
         {
             this.viewCustomerTabControl = new System.Windows.Forms.TabControl();
             this.accountInfoTabPage = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.empViewCustStartDate = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.empViewCustPhone = new System.Windows.Forms.TextBox();
+            this.empViewCustEmail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.empViewCustomerEndDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.empViewCustRating = new System.Windows.Forms.TextBox();
             this.empViewCustState = new System.Windows.Forms.TextBox();
@@ -75,12 +83,6 @@
             this.customerSuggestDataGridView = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.customerDoneButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.empViewCustomerEndDate = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.empViewCustPhone = new System.Windows.Forms.TextBox();
-            this.empViewCustEmail = new System.Windows.Forms.TextBox();
             this.viewCustomerTabControl.SuspendLayout();
             this.accountInfoTabPage.SuspendLayout();
             this.contactTabPage.SuspendLayout();
@@ -108,6 +110,8 @@
             // 
             // accountInfoTabPage
             // 
+            this.accountInfoTabPage.Controls.Add(this.label9);
+            this.accountInfoTabPage.Controls.Add(this.empViewCustStartDate);
             this.accountInfoTabPage.Controls.Add(this.label7);
             this.accountInfoTabPage.Controls.Add(this.label8);
             this.accountInfoTabPage.Controls.Add(this.empViewCustPhone);
@@ -144,11 +148,93 @@
             this.accountInfoTabPage.Text = "Account Info";
             this.accountInfoTabPage.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(968, 354);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(229, 36);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Plan Start Date";
+            // 
+            // empViewCustStartDate
+            // 
+            this.empViewCustStartDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.empViewCustStartDate.Location = new System.Drawing.Point(1222, 346);
+            this.empViewCustStartDate.Margin = new System.Windows.Forms.Padding(6);
+            this.empViewCustStartDate.Name = "empViewCustStartDate";
+            this.empViewCustStartDate.Size = new System.Drawing.Size(244, 44);
+            this.empViewCustStartDate.TabIndex = 32;
+            this.empViewCustStartDate.Text = "yyyy-MM-dd";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(34, 584);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(133, 36);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Phone #";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(32, 521);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 36);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Email";
+            // 
+            // empViewCustPhone
+            // 
+            this.empViewCustPhone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.empViewCustPhone.Location = new System.Drawing.Point(219, 578);
+            this.empViewCustPhone.Margin = new System.Windows.Forms.Padding(6);
+            this.empViewCustPhone.Name = "empViewCustPhone";
+            this.empViewCustPhone.Size = new System.Drawing.Size(477, 44);
+            this.empViewCustPhone.TabIndex = 29;
+            // 
+            // empViewCustEmail
+            // 
+            this.empViewCustEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.empViewCustEmail.Location = new System.Drawing.Point(219, 514);
+            this.empViewCustEmail.Margin = new System.Windows.Forms.Padding(6);
+            this.empViewCustEmail.Name = "empViewCustEmail";
+            this.empViewCustEmail.Size = new System.Drawing.Size(477, 44);
+            this.empViewCustEmail.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(979, 414);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(218, 36);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Plan End Date";
+            // 
+            // empViewCustomerEndDate
+            // 
+            this.empViewCustomerEndDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.empViewCustomerEndDate.Location = new System.Drawing.Point(1221, 406);
+            this.empViewCustomerEndDate.Margin = new System.Windows.Forms.Padding(6);
+            this.empViewCustomerEndDate.Name = "empViewCustomerEndDate";
+            this.empViewCustomerEndDate.Size = new System.Drawing.Size(244, 44);
+            this.empViewCustomerEndDate.TabIndex = 26;
+            this.empViewCustomerEndDate.Text = "yyyy-MM-dd";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(1072, 430);
+            this.label5.Location = new System.Drawing.Point(1092, 479);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 36);
@@ -159,7 +245,7 @@
             // empViewCustRating
             // 
             this.empViewCustRating.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.empViewCustRating.Location = new System.Drawing.Point(1222, 423);
+            this.empViewCustRating.Location = new System.Drawing.Point(1222, 471);
             this.empViewCustRating.Margin = new System.Windows.Forms.Padding(6);
             this.empViewCustRating.Name = "empViewCustRating";
             this.empViewCustRating.Size = new System.Drawing.Size(244, 44);
@@ -229,6 +315,7 @@
             this.label2.Size = new System.Drawing.Size(126, 36);
             this.label2.TabIndex = 15;
             this.label2.Text = "Created";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // customerCreatedTextBox
             // 
@@ -239,6 +326,7 @@
             this.customerCreatedTextBox.Size = new System.Drawing.Size(244, 44);
             this.customerCreatedTextBox.TabIndex = 14;
             this.customerCreatedTextBox.Text = "yyyy-MM-dd";
+            this.customerCreatedTextBox.TextChanged += new System.EventHandler(this.customerCreatedTextBox_TextChanged);
             // 
             // customerNextPaymentLabel2
             // 
@@ -268,7 +356,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(1120, 514);
+            this.label1.Location = new System.Drawing.Point(1120, 538);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 36);
@@ -284,7 +372,7 @@
             "Plan 2",
             "Plan 3",
             "Plan 4"});
-            this.customerPlanComboBox.Location = new System.Drawing.Point(1222, 507);
+            this.customerPlanComboBox.Location = new System.Drawing.Point(1222, 531);
             this.customerPlanComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.customerPlanComboBox.Name = "customerPlanComboBox";
             this.customerPlanComboBox.Size = new System.Drawing.Size(383, 44);
@@ -294,7 +382,7 @@
             // 
             this.customerCCLabel.AutoSize = true;
             this.customerCCLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerCCLabel.Location = new System.Drawing.Point(1026, 579);
+            this.customerCCLabel.Location = new System.Drawing.Point(1026, 603);
             this.customerCCLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.customerCCLabel.Name = "customerCCLabel";
             this.customerCCLabel.Size = new System.Drawing.Size(176, 36);
@@ -305,7 +393,7 @@
             // customerCCTextBox
             // 
             this.customerCCTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerCCTextBox.Location = new System.Drawing.Point(1222, 572);
+            this.customerCCTextBox.Location = new System.Drawing.Point(1222, 596);
             this.customerCCTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.customerCCTextBox.Name = "customerCCTextBox";
             this.customerCCTextBox.Size = new System.Drawing.Size(383, 44);
@@ -338,7 +426,7 @@
             // 
             this.customerIDLabel.AutoSize = true;
             this.customerIDLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerIDLabel.Location = new System.Drawing.Point(147, 331);
+            this.customerIDLabel.Location = new System.Drawing.Point(160, 332);
             this.customerIDLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.customerIDLabel.Name = "customerIDLabel";
             this.customerIDLabel.Size = new System.Drawing.Size(47, 36);
@@ -366,7 +454,7 @@
             // customerIDTextBox
             // 
             this.customerIDTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customerIDTextBox.Location = new System.Drawing.Point(219, 324);
+            this.customerIDTextBox.Location = new System.Drawing.Point(227, 324);
             this.customerIDTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.customerIDTextBox.Name = "customerIDTextBox";
             this.customerIDTextBox.Size = new System.Drawing.Size(383, 44);
@@ -646,67 +734,6 @@
             this.customerDoneButton.UseVisualStyleBackColor = true;
             this.customerDoneButton.Click += new System.EventHandler(this.customerDoneButton_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(1072, 365);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 36);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "End Date";
-            // 
-            // empViewCustomerEndDate
-            // 
-            this.empViewCustomerEndDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.empViewCustomerEndDate.Location = new System.Drawing.Point(1222, 358);
-            this.empViewCustomerEndDate.Margin = new System.Windows.Forms.Padding(6);
-            this.empViewCustomerEndDate.Name = "empViewCustomerEndDate";
-            this.empViewCustomerEndDate.Size = new System.Drawing.Size(244, 44);
-            this.empViewCustomerEndDate.TabIndex = 26;
-            this.empViewCustomerEndDate.Text = "yyyy-MM-dd";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(34, 584);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 36);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Phone #";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(32, 521);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 36);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Email";
-            // 
-            // empViewCustPhone
-            // 
-            this.empViewCustPhone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.empViewCustPhone.Location = new System.Drawing.Point(219, 578);
-            this.empViewCustPhone.Margin = new System.Windows.Forms.Padding(6);
-            this.empViewCustPhone.Name = "empViewCustPhone";
-            this.empViewCustPhone.Size = new System.Drawing.Size(477, 44);
-            this.empViewCustPhone.TabIndex = 29;
-            // 
-            // empViewCustEmail
-            // 
-            this.empViewCustEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.empViewCustEmail.Location = new System.Drawing.Point(219, 514);
-            this.empViewCustEmail.Margin = new System.Windows.Forms.Padding(6);
-            this.empViewCustEmail.Name = "empViewCustEmail";
-            this.empViewCustEmail.Size = new System.Drawing.Size(477, 44);
-            this.empViewCustEmail.TabIndex = 28;
-            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
@@ -793,5 +820,7 @@
         private Label label8;
         private TextBox empViewCustPhone;
         private TextBox empViewCustEmail;
+        private Label label9;
+        private TextBox empViewCustStartDate;
     }
 }

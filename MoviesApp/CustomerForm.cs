@@ -46,6 +46,7 @@ namespace MoviesApp
                         empViewCustState.Text = customerData["state"].ToString();
                         empViewCustEmail.Text = customerData["email"].ToString();
                         empViewCustPhone.Text = customerData["telephone"].ToString();
+                        empViewCustStartDate.Text = customerData["start_date"].ToString();
                         // im not going to make up a business rule for this
                         customerNextPaymentLabel2.Text = (DateTime.UtcNow.AddMonths(1)).ToString("yyyy-MM-dd");
 
@@ -75,22 +76,23 @@ namespace MoviesApp
         }
         private void customerDoneButton_Click(object sender, EventArgs e)
         {
+            string first_name = customerFirstNameTextBox.Text.ToString();
+            string last_name = customerLastNameTextBox.Text.ToString();
+            string address = empViewCustAddress.Text.ToString();
+            string city = empViewCustCity.Text.ToString();
+            string state = empViewCustState.Text.ToString();
+            string zip_code = empViewCustZip.Text.ToString();
+            string telephone = empViewCustPhone.Text.ToString();
+            string email = empViewCustEmail.Text.ToString();
+            string credit_card = customerCCTextBox.Text.ToString();
+            string plan_number = (customerPlanComboBox.SelectedIndex + 1).ToString();
+            string customer_rating = empViewCustRating.Text.ToString();
+
             if (account_number == "")
             { 
-                string first_name = customerFirstNameTextBox.Text.ToString();
-                string last_name = customerLastNameTextBox.Text.ToString();
-                string address = empViewCustAddress.Text.ToString();
-                string city = empViewCustCity.Text.ToString();
-                string state = empViewCustState.Text.ToString();
-                string zip_code = empViewCustZip.Text.ToString();
-                string telephone = empViewCustPhone.Text.ToString();
-                string email = empViewCustEmail.Text.ToString();
                 string create_cust_date = DateTime.UtcNow.ToString("yyyy-MM-dd");
-                string credit_card = customerCCTextBox.Text.ToString();
-                string plan_number = (customerPlanComboBox.SelectedIndex + 1).ToString();
                 string start_date = DateTime.UtcNow.ToString("yyyy-MM-dd"); ;
-                string end_date = DateTime.UtcNow.AddMonths(1).ToString("yyyy-MM-dd"); ;
-                string customer_rating = empViewCustRating.Text.ToString();
+                string end_date = DateTime.UtcNow.AddMonths(1).ToString("yyyy-MM-dd"); 
 
                 List<String> argList = new List<String>();
                 argList.Add(first_name);
@@ -127,6 +129,7 @@ namespace MoviesApp
                 if (connection.ExecuteMutation(mutation) == 1)
                 {
                     MessageBox.Show($"Successfully added {first_name} {last_name}");
+                    this.Close();
                 }
                 else
                 {
@@ -136,8 +139,69 @@ namespace MoviesApp
             else
             {
                 // update account 
+                string create_cust_date = customerCreatedTextBox.Text.ToString();
+                string start_date = empViewCustStartDate.Text.ToString();
+                string end_date = empViewCustomerEndDate.Text.ToString();
+                string account_number = customerIDTextBox.Text.ToString();
+                List<String> argList = new List<String>();
+                argList.Add(account_number);
+                argList.Add(first_name);
+                argList.Add(last_name);
+                argList.Add(address);
+                argList.Add(city);
+                argList.Add(state);
+                argList.Add(zip_code);
+                argList.Add(telephone);
+                argList.Add(email);
+                argList.Add(create_cust_date);
+                argList.Add(start_date);
+                argList.Add(end_date);
+                argList.Add(customer_rating);
+                argList.Add(plan_number);
+                argList.Add(credit_card);
+
+                if (argList.Contains(""))
+                {
+                    MessageBox.Show("All fields must be filled for new customer");
+                    return;
+                }
+                if (!int.TryParse(customer_rating, out _))
+                {
+                    MessageBox.Show("Please enter an integer rating");
+                    return;
+                }
+
+                string update_mutation = "UPDATE Customer " +
+                    "SET " + 
+                    $"first_name = '{first_name}', " +
+                    $"last_name = '{last_name}', " +
+                    $"address = '{address}', " +
+                    $"city = '{city}', " +
+                    $"state = '{state}', " +
+                    $"zip_code = '{zip_code}', " +
+                    $"telephone = '{telephone}', " +
+                    $"email = '{email}', " +
+                    $"create_cust_date = '{create_cust_date}', " +
+                    $"start_date = '{start_date}', " +
+                    $"end_date = '{end_date}', " +
+                    $"customer_rating = {int.Parse(customer_rating)}, " +
+                    $"plan_number = {customerPlanComboBox.SelectedIndex + 1}, " +
+                    $"credit_card = '{credit_card}'" +
+                    $"WHERE account_number = '{account_number}'";
+
+                int rows_updated = connection.ExecuteMutation(update_mutation);
+                if (rows_updated == 1)
+                {
+                    MessageBox.Show($"Successfully updated {first_name} {last_name}");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show($"Something went wrong! Rows Updated {rows_updated}");
+                }
             }
-            this.Close();
+        
+            
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -165,6 +229,16 @@ namespace MoviesApp
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customerCreatedTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
