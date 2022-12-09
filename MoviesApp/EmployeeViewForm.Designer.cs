@@ -899,6 +899,9 @@
             // 
             // txGridView
             // 
+            this.txGridView.AllowUserToAddRows = false;
+            this.txGridView.AllowUserToDeleteRows = false;
+            this.txGridView.AllowUserToOrderColumns = true;
             this.txGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.txGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.txGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
