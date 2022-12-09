@@ -185,7 +185,7 @@ namespace MoviesApp
             }
             else // if order is not possible
             {
-                MessageBox.Show("Sorry we do not have that format available at the moment for this time, please choose another date or format");
+                MessageBox.Show("Sorry we do not have that format available at the moment, please choose another format");
             }
         }
 
