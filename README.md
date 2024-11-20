@@ -1,4 +1,4 @@
-# CMPT-291-Movies
+Movie Rental System
 
 ## Dev setup instructions
 1. clone the repo
